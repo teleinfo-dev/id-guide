@@ -11,8 +11,8 @@ export default defineConfig({
   base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
 
   lang: 'zh-CN',
-  title: '茂茂物语',
-  description: '茂茂的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等',
+  title: '工业互联网标识解析工具',
+  description: '',
   head,
 
   lastUpdated: true,
@@ -37,11 +37,11 @@ export default defineConfig({
       label: '本页目录',
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/maomao1996/vitepress-nav-template' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/id-pointer/id-pointer-sdk' }],
 
     footer: {
-      message: '如有转载或 CV 的请标注本站原文地址',
-      copyright: 'Copyright © 2019-present maomao',
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2021-2022 teleinfo.cn',
     },
 
     darkModeSwitchLabel: '外观',
