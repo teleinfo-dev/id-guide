@@ -52,7 +52,41 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       items: [
         {
           text: '简介',
+          link: '/openApi/v3/api-introduce.md',
+        },
+      ],
+    },
+    {
+      text: 'OpenAPI-V3',
+      items: [
+        {
+          text: '认证接口',
+          link: '/openApi/v3/identity-auth.md',
+        },
+        {
+          text: '企业接口',
           link: '/openApi/v3/ent.md',
+        },
+        {
+          text: '前缀接口',
+          link: '/openApi/v3/prefix.md',
+        },
+        {
+          text: '模版接口',
+          link: '/openApi/v3/template.md',
+        },
+        {
+          text: '标识接口',
+          link: '/openApi/v3/handle-operate.md',
+        },
+      ],
+    },
+    {
+      text: '附录',
+      items: [
+        {
+          text: '附录',
+          link: '/openApi/v3/attachment.md',
         },
       ],
     },
@@ -63,7 +97,41 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       items: [
         {
           text: '简介',
-          link: '/OpenApi/v5/ent.md',
+          link: '/OpenApi/v5/api-introduce.md',
+        },
+      ],
+    },
+    {
+      text: 'OpenAPI-V5',
+      items: [
+        {
+          text: '认证接口',
+          link: '/openApi/v5/identity-auth.md',
+        },
+        {
+          text: '企业接口',
+          link: '/openApi/v5/ent.md',
+        },
+        {
+          text: '前缀接口',
+          link: '/openApi/v5/prefix.md',
+        },
+        {
+          text: '模版接口',
+          link: '/openApi/v5/template.md',
+        },
+        {
+          text: '标识接口',
+          link: '/openApi/v5/handle-operate.md',
+        },
+      ],
+    },
+    {
+      text: '附录',
+      items: [
+        {
+          text: '附录',
+          link: '/openApi/v5/attachment.md',
         },
       ],
     },

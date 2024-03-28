@@ -4,16 +4,16 @@ layoutClass: 'm-home-layout'
 
 hero:
   name: 工业互联网标识解析
-  text: 工具
-  tagline: '-'
+  tagline: ''
+  text: '<div style="margin-top: 16px;">开发说明文档</div>'
   image:
     src: /logo.png
     alt: 工业互联网标识解析
   actions:
-    - text: SDK
+    - text: 标识解析SDK
       link: /sdk/v2/introduction
-    - text: OpenApi
-      link: /openApi/v3/ent
+    - text: 二级节点OpenAPI
+      link: /openApi/v5/api-introduce.md
       theme: alt
 
 features:
@@ -23,9 +23,9 @@ features:
     link: /sdk/v2/introduction
     linkText: 快速开始
   - icon: <img src="/openApi.png" />
-    title: 二级节点OpenAPI
-    details: 二级节点OpenAPI提供HTTP REST风格接口进行标识操作，所有操作都采用UTF-8编码以确保兼容性和易用性，便于其他系统接入.
-    link: /openApi/v3/ent
+    title: 工业互联网标识解析二级节点OpenAPI
+    details: 工业互联网标识解析二级节点OpenAPI提供HTTP REST风格接口进行标识操作，所有操作都采用UTF-8编码以确保兼容性和易用性，便于其他系统接入.
+    link: /openApi/v5/api-introduce.md
     linkText: 快速开始
   # - icon: 💡
   #   title: Workflow

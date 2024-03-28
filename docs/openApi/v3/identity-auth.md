@@ -14,12 +14,12 @@
 | username | String   | 是           | 50           | 用户名（界面登陆的用户名） | admin      |
 | password | String   | 是           | 64           | 密码（界面登陆的密码）     | 123456     |
 
-### 请求示例
+###  请求示例
 
 ```json
 {
-  "username": "admin",
-  "password": "******"
+    "username": "admin",
+    "password": "******"
 }
 ```
 
@@ -32,25 +32,25 @@
 | data       | Object   | -            | 返回数据     | {"token":} |
 | data.token | String   | -            | 密钥身份信息 | "xxx"      |
 
-### 响应示例
+###  响应示例
 
 ```json
 {
-  "message": "success",
-  "status": 1,
-  "data": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IcCI63YS1jYTAyLTRmZmMtYTE5My1jYjUzYmFmMmU3MGIifQ"
-  }
+    "message": "success",
+    "status": 1,
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IcCI63YS1jYTAyLTRmZmMtYTE5My1jYjUzYmFmMmU3MGIifQ"
+    }
 }
 ```
 
-### 异常示例
+###  异常示例
 
 ```json
 {
-  "message": "用户名/密码错误！",
-  "status": -2,
-  "data": null
+    "message": "用户名/密码错误！",
+    "status": -2,
+    "data": null
 }
 ```
 
@@ -60,7 +60,7 @@
 
 ## 密文传输
 
-### 请求参数
+###  请求参数
 
 - 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
 - 请求方式：POST
@@ -71,20 +71,19 @@
 | username | String   | 是           | 50           | 用户名（界面登陆的用户名） | admin      |
 | password | String   | 是           | 64           | 密码:                      |            |
 
-1. 首先 sha256 界面登陆密码获取 token
+1. 首先sha256界面登陆密码获取token
 
 2. 再`sha256(token+时间戳)`，时间戳格式`yyyy-MM-dd` | `58e2c92c46485fdbc35fdcd0814d6c0f000cad5aa156848ca5edaf29406b7661` |
 
-### 请求示例
+###  请求示例
 
 ```json
 {
-  "username": "admin",
-  "password": "58e2c92c46485fdbc35fdcd0814d6c0f000cad5aa156848ca5edaf29406b7661"
+    "username": "admin",
+    "password": "58e2c92c46485fdbc35fdcd0814d6c0f000cad5aa156848ca5edaf29406b7661"
 }
 ```
-
-> 注意：例子中的`password=sha256(sha256(‘12345’) + ‘2019-08-15’)`
+>注意：例子中的`password=sha256(sha256(‘12345’) + ‘2019-08-15’)`
 
 ### 响应参数
 
@@ -99,29 +98,28 @@
 
 ```json
 {
-  "message": "success",
-  "status": 1,
-  "data": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IcCI63YS1jYTAyLTRmZmMtYTE5My1jYjUzYmFmMmU3MGIifQ"
-  }
+    "message": "success",
+    "status": 1,
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IcCI63YS1jYTAyLTRmZmMtYTE5My1jYjUzYmFmMmU3MGIifQ"
+    }
 }
 ```
 
-### 异常示例
-
+###  异常示例
 ```json
 {
-  "message": "用户名/密码错误！",
-  "status": -2,
-  "data": null
+    "message": "用户名/密码错误！",
+    "status": -2,
+    "data": null
 }
 ```
 
 - 常见错误见附录
 
-## 用户注册
+##  用户注册
 
-### 请求参数
+###  请求参数
 
 - 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
 - 请求方式：POST
@@ -145,19 +143,20 @@
 | openUserName | String   | 否           | 255          | openUserName | "李四"     |
 | remarks      | String   | 否           | -            | 备注         | "用户"     |
 
-### 请求示例
+
+###  请求示例
 
 ```json
 {
-  "email": "ddd@admin.com",
-  "mobile": "13945056533",
-  "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-  "remarks": "",
-  "userName": "ddd"
+    "email": "ddd@admin.com",
+    "mobile": "13945056533",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "remarks": "",
+    "userName": "ddd"
 }
 ```
 
-### 响应参数
+###  响应参数
 
 | **参数** | **类型** | **最大长度** | **备注**   | **示例值** |
 | -------- | -------- | ------------ | ---------- | ---------- |
@@ -165,28 +164,28 @@
 | message  | String   | -            | 状态码描述 | "success"  |
 | data     | Object   | -            | 返回数据   | true       |
 
-### 响应示例
+###  响应示例
 
 ```json
 {
-  "message": "success",
-  "status": 1,
-  "data": true
+    "message": "success",
+    "status": 1,
+    "data": true
 }
 ```
 
-### 异常示例
+###  异常示例
 
 ```json
 {
-  "message": "用户名/密码错误！",
-  "status": -2,
-  "data": null
+    "message": "用户名/密码错误！",
+    "status": -2,
+    "data": null
 }
 ```
 
-### 注意事项
+###  注意事项
 
-> 1.  `sysUser.password`为 sha256 加密后的密码
-> 2.  `sysUser.userName`、`sysUser.mobile`、`sysUser. email`唯一
-> 3.  只有管理员可以调用该接口
+>1. `sysUser.password`为sha256加密后的密码
+>2. `sysUser.userName`、`sysUser.mobile`、`sysUser. email`唯一
+>3. 只有管理员可以调用该接口

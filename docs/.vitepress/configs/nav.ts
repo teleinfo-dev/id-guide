@@ -2,7 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
   {
-    text: 'SDK',
+    text: '标识解析SDK',
     items: [
       {
         text: 'V2.0',
@@ -15,15 +15,15 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
   },
   {
-    text: 'OpenApi',
+    text: '二级节点OpenAPI',
     items: [
       {
         text: 'V5',
-        link: '/openApi/v5/ent',
+        link: '/openApi/v5/api-introduce.md',
       },
       {
         text: 'V3',
-        link: '/openApi/v3/ent',
+        link: '/openApi/v3/api-introduce.md',
       },
     ],
   },
