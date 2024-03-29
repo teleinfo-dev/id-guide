@@ -97,7 +97,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       items: [
         {
           text: '简介',
-          link: '/OpenApi/v5/api-introduce.md',
+          link: '/openApi/v5/api-introduce.md',
         },
       ],
     },
