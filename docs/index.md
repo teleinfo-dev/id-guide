@@ -5,7 +5,7 @@ layoutClass: 'm-home-layout'
 hero:
   name: 工业互联网标识解析
   tagline: ''
-  text: '<div style="margin-top: 16px;">开发说明文档</div>'
+  text: 开发说明文档
   image:
     src: /logo.png
     alt: 工业互联网标识解析
