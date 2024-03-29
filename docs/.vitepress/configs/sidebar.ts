@@ -118,7 +118,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
         {
           text: '模版接口',
-          link: '/openApi/v5/template.md',
+          link: '/openApi/v5/templatev5.md',
         },
         {
           text: '标识接口',
