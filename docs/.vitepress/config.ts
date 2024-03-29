@@ -11,7 +11,7 @@ export default defineConfig({
   base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
 
   lang: 'zh-CN',
-  title: '工业互联网标识解析工具',
+  title: '工业互联网标识解析',
   description: '',
   head,
 
