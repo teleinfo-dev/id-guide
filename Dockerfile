@@ -1,4 +1,4 @@
-FROM harbor.idx.space/ops/nginx:1.21.4
+FROM arm64v8/nginx:1.21.4
 
 COPY ./dist /usr/share/nginx/html/
 

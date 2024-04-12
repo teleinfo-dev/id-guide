@@ -7,8 +7,9 @@ import { head, nav, sidebar } from './configs'
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
 
 export default defineConfig({
-  outDir: '../dist/doc',
-  base: '/doc/',
+  outDir: '../dist',
+  // base: '',
+  base: '/pointer/',
 
   lang: 'zh-CN',
   title: '工业互联网标识解析',
