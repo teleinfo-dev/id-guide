@@ -7,8 +7,12 @@ import { head, nav, sidebar } from './configs'
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
 
 export default defineConfig({
-  outDir: '../dist',
+  outDir: '../dist/doc',
   base: '/doc/',
+
+  // rewrites: {
+  //   'doc/openApi/(.*)': 'openApi/$1'
+  // },
 
   lang: 'zh-CN',
   title: '工业互联网标识解析',
