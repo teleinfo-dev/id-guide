@@ -10,10 +10,6 @@ export default defineConfig({
   outDir: '../dist/doc',
   base: '/doc/',
 
-  // rewrites: {
-  //   'doc/openApi/(.*)': 'openApi/$1'
-  // },
-
   lang: 'zh-CN',
   title: '工业互联网标识解析',
   description: '',
