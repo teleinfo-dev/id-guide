@@ -238,7 +238,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         items: [
           {
             text: '附录',
-            link: '/idhub/attachment.md',
+            link: '/idhub/snms/attachment.md',
           },
         ],
       }
