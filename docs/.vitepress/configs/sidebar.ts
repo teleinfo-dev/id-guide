@@ -136,4 +136,111 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
+  '/idhub/standard': [
+    {
+      text: '开始',
+      items: [
+        {
+          text: '简介',
+          link: '/idhub/standard/api-introduce.md',
+        },
+      ],
+    },
+    {
+      text: '标准接口',
+      items: [
+        {
+          text: '元数据',
+          link: '/idhub/standard/meta.md',
+        },
+        {
+          text: '数据权限',
+          link: '/idhub/standard/data-auth.md',
+        },
+        {
+          text: '标识操作',
+          link: '/idhub/standard/handle.md',
+        }
+      ],
+    },
+    {
+      text: '附录',
+      items: [
+        {
+          text: '响应状态码',
+          link: '/idhub/standard/state-code.md',
+        },
+      ],
+    }
+  ],
+    '/idhub/snms': [
+      {
+        text: '开始',
+        items: [
+          {
+            text: '简介',
+            link: '/idhub/snms/api-introduce.md',
+          },
+        ],
+      },
+      {
+        text: 'V3',
+        items: [
+          {
+            text: '认证接口',
+            link: '/idhub/snms/v3/identity-auth.md',
+          },
+          {
+            text: '企业接口',
+            link: '/idhub/snms/v3/ent.md',
+          },
+          {
+            text: '前缀接口',
+            link: '/idhub/snms/v3/prefix.md',
+          },
+          {
+            text: '模版接口',
+            link: '/idhub/snms/v3/template.md',
+          },
+          {
+            text: '标识接口',
+            link: '/idhub/snms/v3/handle-operate.md',
+          },
+        ],
+      },
+      {
+        text: 'V5',
+        items: [
+          {
+            text: '认证接口',
+            link: '/idhub/snms/v5/identity-auth.md',
+          },
+          {
+            text: '企业接口',
+            link: '/idhub/snms/v5/ent.md',
+          },
+          {
+            text: '前缀接口',
+            link: '/idhub/snms/v5/prefix.md',
+          },
+          {
+            text: '模版接口',
+            link: '/idhub/snms/v5/templatev5.md',
+          },
+          {
+            text: '标识接口',
+            link: '/idhub/snms/v5/handle-operate.md',
+          },
+        ],
+      },
+      {
+        text: '附录',
+        items: [
+          {
+            text: '附录',
+            link: '/idhub/attachment.md',
+          },
+        ],
+      }
+    ],
 }

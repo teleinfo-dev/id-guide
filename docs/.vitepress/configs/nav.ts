@@ -27,4 +27,17 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
     ],
   },
+  {
+    text: '企业节点IDHub',
+    items: [
+      {
+        text: '标准版',
+        link: '/idhub/standard/api-introduce.md',
+      },
+      {
+        text: '兼容版',
+        link: '/idhub/snms/api-introduce.md',
+      },
+    ],
+  },
 ]

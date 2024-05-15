@@ -14,6 +14,8 @@ hero:
       link: /sdk/v2/introduction
     - text: 二级节点OpenAPI
       link: /openApi/v5/api-introduce.md
+    - text: 企业节点IDHub
+      link: /idhub/standard/api-introduce.md
       theme: alt
 
 features:
@@ -27,11 +29,11 @@ features:
     details: 工业互联网标识解析二级节点OpenAPI提供HTTP REST风格接口进行标识操作，所有操作都采用UTF-8编码以确保兼容性和易用性，便于其他系统接入.
     link: /openApi/v5/api-introduce.md
     linkText: 快速开始
-  # - icon: 💡
-  #   title: Workflow
-  #   details: 在工作中学到的一切<small>（常用库/工具/奇淫技巧等）</small><br />配合 CV 大法来更好的摸鱼
-  #   link: https://notes.fe-mm.com/workflow/utils/library
-  #   linkText: 常用工具库
+  - icon: <img src="/docs/idhub.png" />
+    title: 工业互联网标识企业节点
+    details: 开放IDHub标准版API接口，是为了让应用集成企业节点更便捷
+    link: /idhub/standard/api-introduce.md
+    linkText: 快速开始
   # - icon: 🧰
   #   title: 提效工具
   #   details: 工欲善其事，必先利其器<br />记录开发和日常使用中所用到的软件、插件、扩展等
