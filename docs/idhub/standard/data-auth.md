@@ -60,7 +60,7 @@
     "code": 10000,
     "message": "成功",
     "data": [
-     
+   
         {
             "name": "zhaohan",
             "userHandle": "88.608.8889/User_zhaohan",
@@ -94,12 +94,7 @@
 
 ```json
 {
-    "message":"系统繁忙",
-    "status":-1,
-    "data": null
+    "message": "接口参数错误:入参userType只能是[0, 1, 2]",
+    "code": 60005
 }
 ```
-
-### 注意事项
-
-> 只有管理员角色能调用该接口（例：admin用户）
