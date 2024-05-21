@@ -166,6 +166,89 @@
 ### 注意
 > 1. 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值
 
+## 标识修改(非覆盖)
+
+### 请求参数说明：
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
+- 请求方式: POST
+- 请求路径: `/api/v1/doip`
+- Header:
+
+| **参数**      | **类型** | **是否必填** | **最大长度** | **备注**                            | **示例值**          |
+| ------------- | -------- | ------------ | ------------ | ----------------------------------- |------------------|
+| Content-Type  | String   | 是           | -            | application/json                    | application/json |
+| Authorization | String   | 是           | -            | Bearer + 空格 + token(身份接口获取) | token            |
+
+- Params:
+
+| 名称         | 位置  | 类型   | 必选 | 说明                   |
+| ------------ | ----- | ------ | ---- |----------------------|
+| targetId     | Params| string | 是   | 标识                   |
+| operationId  | Params| string | 是   | 默认值：0.DOIP.EXTEND/Op.Update.Non.Overlay |
+
+- Body:
+
+| 名称         | 位置  | 类型   | 必选 | 说明                                    |
+| ------------ | ----- | ------ | ---- |---------------------------------------|
+| type         | body  | string | 是   | 元数据模板标识                               |
+| attributes   | body  | string | 是   | 标识主体                                  |
+| attributes.content | body | json   | 是   | 属性值，key-value结构；<br/>k为元数据属性英文名称，value为属性值 |
+
+### 请求参数示例：
+
+> `/api/v1/doip?targetId=88.608.8899/META_zj02&operationId=0.DOIP/Op.Update`
+
+```json
+{
+  "type": "88.608.8899/META_zj02",
+  "attributes": {
+    "content": {
+      "en1": "432344",
+      "en2": "22323222",
+      "en3": "803232077"
+    }
+  }
+}
+```
+
+### 返回数据结构：
+
+| 名称     | 类型    | 必选 | 约束   | 中文名 | 说明   |
+| -------- | ------- | ---- | ------ | ------ | ------ |
+| code     | integer | true | none   | none   |        |
+| message  | string  | true | none   | none   |        |
+| data     | object  | true | none   | none   |        |
+
+### 成功示例：
+
+```json
+{
+  "code": 10000,
+  "message": "success",
+  "data": {
+    "type": "88.608.8899/META_zj02",
+    "attributes": {
+      "content": {
+        "en1": "432344",
+        "en2": "22323222",
+        "en3": "803232077"
+      }
+    }
+  }
+}
+```
+
+### 异常示例：
+
+```json
+{
+    "message": "非本企业标识",
+    "code": 701
+}
+```
+
+### 注意
+> 1. 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值
 ## 标识删除
 
 ### 请求参数说明
