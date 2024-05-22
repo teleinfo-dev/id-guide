@@ -8,7 +8,7 @@
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：GET
-- 请求路径：`/api/v2/handle-user-group/list`
+- 请求路径：`/api/v1/open/handle-user-group/list`
 - Header：
 
 | **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
@@ -54,7 +54,6 @@
         {
             "name": "测试应用",
             "userHandle": "88.608.8889/App_ceshi",
-            "type": 1,
             "belongCompany": "HNl66CEPJnHF0GVIEMXVo2HqjYmJizjj"
         }
   
