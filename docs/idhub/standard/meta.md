@@ -782,7 +782,7 @@ api/v1/open/meta/delete?metaHandleList=88.608.8889/META_3242&metaHandleList=88.6
 
 - 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
 - 请求方式：POST
-- 请求路径：`/api/v1/open/meta/grant/info`
+- 请求路径：`/api/v1/open/meta/grant-info`
 - Header：
 
 | 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
