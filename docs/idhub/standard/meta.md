@@ -698,7 +698,7 @@ api/v1/open/meta/delete?metaHandleList=88.608.8889/META_3242&metaHandleList=88.6
 
 ```
 
-## 更新元数据基本信息
+## 编辑元数据基本信息
 
 通过此接口对元数据基本信息进行修改。
 
