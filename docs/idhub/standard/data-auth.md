@@ -1,8 +1,8 @@
 # 数据权限接口
 
-## 标识用户/用户组列表查询
+## 应用身份用户列表查询
 
-查询所有的标识用户/用户组。
+查询所有应用身份用户列表。
 
 ### 请求参数
 
@@ -13,7 +13,7 @@
 
 | **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
 | -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
-| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | admin            |
+| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | exxxxxxx         |
 | Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
 
 - Query Param：
@@ -22,7 +22,7 @@
 
 ### 请求示例
 
-> /api/v2/handle-user-group/list
+> /api/v1/open/handle-user-group/list
 
 ### 响应参数
 
@@ -66,8 +66,7 @@
 
 ```json
 {
-    "message": "接口参数错误:入参userType只能是[0, 1, 2]",
-    "code": 60005
+  
 }
 ```
 
