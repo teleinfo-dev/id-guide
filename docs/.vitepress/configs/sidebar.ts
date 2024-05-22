@@ -150,6 +150,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: '标准接口',
       items: [
         {
+          text: '认证接口',
+          link: '/idhub/standard/challenge.md',
+        },
+        {
           text: '元数据',
           link: '/idhub/standard/meta.md',
         },
@@ -160,7 +164,11 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: '标识操作',
           link: '/idhub/standard/handle.md',
-        }
+        },
+        {
+          text: '文件处理',
+          link: '/idhub/standard/file.md',
+        },
       ],
     },
     {

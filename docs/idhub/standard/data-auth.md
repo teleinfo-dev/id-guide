@@ -1,13 +1,5 @@
 # 数据权限接口
 
-## 数据权限公开/撤销
-
-通过此接口对元数据基本信息进行修改。
-
-## 授权用户/用户组
-
-通过此接口对元数据基本信息进行修改。
-
 ## 标识用户/用户组列表查询
 
 查询所有的标识用户/用户组。
@@ -181,15 +173,15 @@
 
 - Body：
 
-| **参数**                 | **类型**          | **是否必填** | **最大长度** | **备注**            | **示例值**           |
-|------------------------|-----------------|----------|----------|-------------------|-------------------|
-| metaHandle             | String          | 是        | -        | 元数据标识             | 88.608.6688/Meta_1 |
-| accessList             | [object]        | 是        | -        | 授权数据              |                   |
-| accessList.item        | array[object]   | 是        | -        | 所属元数据的属性英文名称      | key               |
-| accessList.authType    | integer         | 是        | -        | 授权类型，枚举值；1-查看，2-编辑 | 1                 |
-| accessList.scope       | integer         | 是        | -        | 授权范围；枚举值  1-公开，2-指定范围 | 1                 |
-| accessList.handleUsers | array[string]   | 否        | -        | 要授权的标识用户          |                   |
-| accessList.removeHandleUsers | array[string]   | 否        | -        | 要移除授权的标识用户        |                   |
+| **参数**                 | **类型**            | **是否必填** | **最大长度** | **备注**            | **示例值**           |
+|------------------------|-------------------|----------|----------|-------------------|-------------------|
+| metaHandle             | String            | 是        | -        | 元数据标识             | 88.608.6688/Meta_1 |
+| accessList             | [object]          | 是        | -        | 授权数据              |                   |
+| accessList.item        | array[object]     | 是        | -        | 所属元数据的属性英文名称      | key               |
+| accessList.authType    | integer           | 是        | -        | 授权类型，枚举值；1-查看，2-编辑 | 1                 |
+| accessList.scope       | integer           | 是        | -        | 授权范围；枚举值  1-公开，2-指定范围 | 1                 |
+| accessList.handleUsers | array[string]     | 否        | -        | 要授权的标识用户          |                   |
+| accessList.removeHandleUsers | array[string]     | 否        | -        | 要移除授权的标识用户        |                   |
 
 ### 请求示例
 
