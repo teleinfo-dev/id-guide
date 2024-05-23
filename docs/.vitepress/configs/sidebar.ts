@@ -220,10 +220,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             link: '/idhub/snms/v5/identity-auth.md',
           },
           {
-            text: '企业接口',
-            link: '/idhub/snms/v5/ent.md',
-          },
-          {
             text: '前缀接口',
             link: '/idhub/snms/v5/prefix.md',
           },
