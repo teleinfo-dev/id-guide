@@ -106,7 +106,9 @@
 }
 ```
 
----
+### 注意
+
+> 1. 如果在企业节点中新增了 `非字符型` 的模板属性，将不能再进行查询操作
 
 ## 新增数据模板
 
@@ -222,26 +224,26 @@
 
 - Body：
 
-| 参数                        | 类型    | 是否必填 | 最大长度 | 备注                                            | 示例值         |
-| --------------------------- | ------- | -------- | -------- | ----------------------------------------------- | -------------- |
-| prefix                      | String  | 必填     | -        | 前缀                                            | 88.101.5       |
-| version                     | String  | 必填     | -        | 模板版本， 不允许修改                           | 1.0.1          |
-| industryCategory            | String  | 必填     | -        | 行业门类                                        | A              |
-| industrySpecific            | String  | 必填     | -        | 行业大类                                        | 01             |
-| industryTrade               | String  | 必填     | -        | 行业中类                                        | 011            |
-| industrySubclass            | String  | 必填     | -        | 行业小类                                        | 0111           |
-| type                        | Integer | 必填     | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他] | 1              |
-| description                 | String  | 非必填   | -        | 描述                                            | 模板1.0.1      |
-| items                       | Array   | 必填     | -        | 模板内容                                        | -              |
-| items[i].name               | String  | 必填     | -        | 中文名称                                        | 模板           |
-| items[i].idType             | String  | 必填     | -        | 英文名称                                        | ip             |
-| items[i].idIndex            | Integer | 非必填   | -        | 模板索引                                        | 2000           |
-| items[i].required           | Boolean | 非必填   | -        | 是否必填项                                      | false          |
-| items[i].state              | Integer | 必填     | -        | 模板属性状态                                    | 0-禁用，1-启用 |
-| items[i].metadata           | Array   | 必填     | -        | 数据限制                                        | -              |
-| items[i].metadata.type      | String  | 非必填   | -        | 数据类型（现只支持String）                      | string         |
-| items[i].metadata.minLength | Int     | 必填     | -        | 最小长度                                        | 1              |
-| items[i].metadata.maxLength | Int     | 必填     | -        | 最大长度                                        | 10             |
+| 参数                        | 类型    | 是否必填 | 最大长度 | 备注                                                           | 示例值         |
+| --------------------------- | ------- | -------- | -------- | -------------------------------------------------------------- | -------------- |
+| prefix                      | String  | 必填     | -        | 前缀                                                           | 88.101.5       |
+| version                     | String  | 必填     | -        | 模板版本， 不允许修改                                          | 1.0.1          |
+| industryCategory            | String  | 必填     | -        | 行业门类                                                       | A              |
+| industrySpecific            | String  | 必填     | -        | 行业大类                                                       | 01             |
+| industryTrade               | String  | 必填     | -        | 行业中类                                                       | 011            |
+| industrySubclass            | String  | 必填     | -        | 行业小类                                                       | 0111           |
+| type                        | Integer | 必填     | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他]                | 1              |
+| description                 | String  | 非必填   | -        | 描述                                                           | 模板1.0.1      |
+| items                       | Array   | 必填     | -        | 模板内容                                                       | -              |
+| items[i].name               | String  | 必填     | -        | 中文名称，模板内唯一                                           | 模板           |
+| items[i].idType             | String  | 必填     | -        | 英文名称，模板内唯一，编辑时不可修改，如果更改，即视为新增属性 | ip             |
+| items[i].idIndex            | Integer | 非必填   | -        | 模板索引                                                       | 2000           |
+| items[i].required           | Boolean | 非必填   | -        | 是否必填项                                                     | false          |
+| items[i].state              | Integer | 必填     | -        | 模板属性状态                                                   | 0-禁用，1-启用 |
+| items[i].metadata           | Array   | 必填     | -        | 数据限制                                                       | -              |
+| items[i].metadata.type      | String  | 非必填   | -        | 数据类型（现只支持String）                                     | string         |
+| items[i].metadata.minLength | Int     | 必填     | -        | 最小长度                                                       | 1              |
+| items[i].metadata.maxLength | Int     | 必填     | -        | 最大长度                                                       | 10             |
 
 ### 请求示例
 
@@ -302,11 +304,9 @@
 
 ### 注意事项
 
+> - 如果在企业节点中新增了 `非字符型` 的模板属性，将不能再进行查询操作
 > - items[i].metadata.type 必须为小写 string
-> - 修改操作，items[i].idIndex 和 items[i].idType 必须匹配
-> - items[i].idIndex 不传进行新增操作，items[i].idType 不能重复
-> - items[i].state 不传保持状态不变，修改进行启用禁用操作
-> - items[i].idIndex，1000、1001、1999 为预留字段，不可使用
+> - items[i].idIndex，需要从2000开始，不传，默认为2000
 
 ---
 
@@ -363,9 +363,15 @@
 ### 异常示例
 
 ```json
+
 {
   "message":"系统繁忙",
   "status":-1,
   "data": null
 }
 ```
+
+
+### 注意
+
+> 1. 如果在企业节点中新增了 `非字符型` 的模板属性，将不能再进行查询操作
