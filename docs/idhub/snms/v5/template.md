@@ -139,7 +139,7 @@
 | items                       | Array   | 必填     | -        | 模板内容                                        | -         |
 | items[i].name               | String  | 必填     | -        | 中文名称                                        | 模板      |
 | items[i].idType             | String  | 必填     | -        | 英文名称                                        | ip        |
-| items[i].idIndex            | Integer | 必填     | -        | 模板索引                                        | 2000      |
+| items[i].idIndex            | Integer | 必填     | -        | 模板索引,`从2000开始 `                        | 2000      |
 | items[i].required           | Boolean | 非必填   | -        | 是否必填项                                      | false     |
 | items[i].metadata           | Array   | 必填     | -        | 数据限制                                        | -         |
 | items[i].metadata.type      | String  | 非必填   | -        | 数据类型（现只支持String）                      | string    |
@@ -225,7 +225,7 @@
 | 参数                        | 类型    | 是否必填 | 最大长度 | 备注                                            | 示例值         |
 | --------------------------- | ------- | -------- | -------- | ----------------------------------------------- | -------------- |
 | prefix                      | String  | 必填     | -        | 前缀                                            | 88.101.5       |
-| version                     | String  | 必填     | -        | 模板版本                                        | 1.0.1          |
+| version                     | String  | 必填     | -        | 模板版本， 不允许修改                           | 1.0.1          |
 | industryCategory            | String  | 必填     | -        | 行业门类                                        | A              |
 | industrySpecific            | String  | 必填     | -        | 行业大类                                        | 01             |
 | industryTrade               | String  | 必填     | -        | 行业中类                                        | 011            |
