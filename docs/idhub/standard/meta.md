@@ -503,14 +503,8 @@
 ### 请求示例
 
 ```json
- {
-    "metaHandleList": [
-        "88.608.8889/META_3456",
-        "88.608.8889/META_qwert11",
-        "88.608.8889/META_xz_update_basic",
-        "88.608.8889/META_345678990"
-    ]
-}
+
+/api/v1/open/meta/delete?metaHandleList=88.608.8889/META_3456&metaHandleList=88.608.8889/META_34563333
 ```
 
 ### 响应数据
