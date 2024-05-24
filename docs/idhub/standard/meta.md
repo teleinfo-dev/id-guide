@@ -485,7 +485,7 @@
 ### 请求参数
 
 - 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：PUT
+- 请求方式：Delete
 - 请求路径：`/api/v1/open/meta/delete`
 - Header：
 
@@ -528,28 +528,7 @@
 {
     "code": 10000,
     "message": "成功",
-    "data": [
-        {
-            "metaHandle": "88.608.8889/META_3456",
-            "state": "success",
-            "reason": ""
-        },
-        {
-            "metaHandle": "88.608.8889/META_qwert11",
-            "state": "success",
-            "reason": ""
-        },
-        {
-            "metaHandle": "88.608.8889/META_xz_update_basic",
-            "state": "success",
-            "reason": ""
-        },
-        {
-            "metaHandle": "88.608.8889/META_345678990",
-            "state": "failed",
-            "reason": "元数据标识88.608.8889/META_345678990不存在"
-        }
-    ]
+   
 }
 
 ```
@@ -557,17 +536,11 @@
 ### 异常示例
 
 ```json
+
+
 {
-    "message": "validate.bind.error",
-    "data": {
-        "errors": [
-            {
-                "name": "metaHandleList",
-                "errorMsg": "入参元数据标识列表metaHandleList不能为空"
-            }
-        ]
-    },
-    "code": 30000
+    "message": "元数据删除失败:[88.608.8889/META_xz_test_schemaDTO]元数据不是自己创建，不能删除",
+    "code": 606
 }
 ```
 
@@ -740,3 +713,9 @@
     "code": 30000
 }
 ```
+
+
+
+## 创建元数据副本
+
+开发中........
