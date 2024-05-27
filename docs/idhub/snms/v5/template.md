@@ -234,7 +234,7 @@
 | industrySubclass            | String  | 必填     | -        | 行业小类                                                       | 0111           |
 | type                        | Integer | 必填     | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他]                | 1              |
 | description                 | String  | 非必填   | -        | 描述                                                           | 模板1.0.1      |
-| items                       | Array   | 必填     | -        | 模板内容                                                       | -              |
+| items                       | Array   | 必填     | -        | 模板内容,  `增量更新，如果不传实体，默认不更新；实体不能删除，只能禁用`                                                   | -              |
 | items[i].name               | String  | 必填     | -        | 中文名称，模板内唯一                                           | 模板           |
 | items[i].idType             | String  | 必填     | -        | 英文名称，模板内唯一，编辑时不可修改，如果更改，即视为新增属性 | ip             |
 | items[i].idIndex            | Integer | 非必填   | -        | 模板索引                                                       | 2000           |
@@ -370,7 +370,6 @@
   "data": null
 }
 ```
-
 
 ### 注意
 

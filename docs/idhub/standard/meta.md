@@ -66,7 +66,6 @@
   "industrySpecific": "75",
   "industryTrade": "751",
   "industrySubclass": "7517",
-  "isQuote": 0,
   "metaItemCreateDTOS": [
     {
       "itemCode": "43242",
@@ -708,8 +707,72 @@
 }
 ```
 
-
-
 ## 创建元数据副本
 
-开发中........
+参照其他企业元数据创建本企业元数据。
+
+### 请求参数
+
+- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+- 请求方式：POST
+- 请求路径：`/api/v1/open/meta/baseon-create`
+- Header：
+
+| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
+| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
+| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是       | -        | application/json                    | application/json |
+
+- Body参数：
+
+| 参数                  | 类型   | 是否必填 | 最大长度 | 备注               | 示例值 |
+| --------------------- | ------ | -------- | -------- | ------------------ | ------ |
+| baseonHandle          | String | 是       | -        | 要引用的元数据标识 |        |
+| baseInfo.metaHandle   | String | 是       | -        | 要创建的元数据标识 |        |
+| baseInfo.metaCode     | String | 是       | 50       | 设置的元数据编码   |        |
+| baseInfo.classifyCode | String | 是       |          | 所属的本企业分类   |        |
+
+### 请求示例
+
+```json
+
+  {
+  "baseonHandle": "88.608.6688/META_xz_contains_all",
+  "baseInfo": {
+    "metaHandle": "88.608.8889/META_xz_contains_all_copy1",
+    "metaCode": "xzcopy1",
+    "classifyCode": "sp"
+  }
+}
+
+```
+
+### 响应数据
+
+| 参数    | 类型    | 最大长度 | 备注                    | 示例值 |
+| ------- | ------- | -------- | ----------------------- | ------ |
+| code    | Integer | -        | 状态码(详见状态码说明） | 10000  |
+| message | String  | -        | 状态码描述              | 成功   |
+
+- 响应参数
+
+### 响应示例
+
+```json
+{
+    "code": 10000,
+    "message": "成功"
+}
+
+```
+
+### 异常示例
+
+```json
+{
+    "message": "接口参数错误:入参metaHandle异常：要修改的元数据不存在!",
+    "code": 60005
+   
+}
+
+```
