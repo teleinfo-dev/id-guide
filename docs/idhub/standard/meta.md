@@ -206,15 +206,15 @@
 > 3. 文件范围为指定（ASSIGN），但文件类型（FileType）为空，提示“元数据文件类型指定文件格式fileType不能为空”。
 > 4. 对于指定的文件类型：如果是自定义文件后缀且自定义文件后缀为空，提示“元数据文件类型自定义文件格式selfDefFileSuffix不能为空”。
 
-## 元数据基本信息查询
+## 查询元数据
 
-查询元数据非实体属性列表外的基本信息。
+查询元数据基本信息和实体列表。
 
 ### 请求参数
 
 - 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
 - 请求方式：GET
-- 请求路径：`/api/v1/open/meta/basic-info`
+- 请求路径：`/api/v1/open/meta/info`
 - Header：
 
 | 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
@@ -231,7 +231,7 @@
 ### 请求示例
 
 ```json
- /api/v1/open/meta/basic-info?metaHandle=88.608.6688/META_1234
+ /api/v1/open/meta/info?metaHandle=88.608.6688/META_1234
 ```
 
 ### 响应数据
@@ -249,10 +249,11 @@
     "code": 1,
     "message": "成功",
     "data": {
-        "metaClassify": "hxh",
-        "metaHandle": "88.608.8889/META_qwert11",
-        "metaName": "qerq",
-        "metaCode": "eqweqw2",
+        "classifyCode": "sp",
+        "classifyName": "食品",
+        "metaHandle": "88.608.8889/META_xz_copy_test",
+        "metaName": "xz_copy_test副本转换",
+        "metaCode": "xz_copy_test",
         "industry": "农、林、牧、渔业/农业/谷物种植/稻谷种植",
         "industryCategory": "A",
         "industrySpecific": "01",
@@ -260,9 +261,108 @@
         "industrySubclass": "0111",
         "metaState": 1,
         "metaContributor": "88.608.8889",
-        "standard": "ewewq",
-        "metaDesc": "",
-        "acl": "662b71bb8ccd971a5f1d5bfc"
+        "standard": "这里是依据标准：嘿嘿嘿嘿嘿",
+        "metaDesc": "这里是描述：哈哈哈哈哈哈哈",
+        "createdTime": "2024-05-21 16:59:02",
+        "updatedTime": "2024-05-22 13:41:50",
+        "itemVOS": [
+            {
+                "itemIndex": 2000,
+                "itemCode": "code1",
+                "englishName": "en1",
+                "chineseName": "zh1",
+                "itemState": 0,
+                "definition": "这里是实体定义：呵呵呵呵",
+                "inputNecessary": 1,
+                "listItemNecessary": 0,
+                "required": 1,
+                "uniqueField": 1,
+                "comment": "这里是实体的备注：嘿哈嘿哈",
+                "itemSchemaVO": {
+                    "dataType": 1,
+                    "minLength": 0,
+                    "maxLength": 4000,
+                    "charRange": "这里是字符型值域"
+                }
+            },
+            {
+                "itemIndex": 2001,
+                "itemCode": "code2",
+                "englishName": "en2",
+                "chineseName": "zh2",
+                "itemState": 0,
+                "definition": "这里是实体定义：呵呵呵呵",
+                "inputNecessary": 1,
+                "listItemNecessary": 0,
+                "required": 1,
+                "uniqueField": 1,
+                "comment": "这里是实体备注：呵呵呵呵",
+                "itemSchemaVO": {
+                    "dataType": 2,
+                    "minLength": 0,
+                    "maxLength": 38,
+                    "accuracy": 1,
+                    "numberRange": "[1,10]"
+                }
+            },
+            {
+                "itemIndex": 2002,
+                "itemCode": "code3",
+                "englishName": "en3",
+                "chineseName": "zh3",
+                "itemState": 0,
+                "definition": "这里是实体定义：呵呵呵呵",
+                "inputNecessary": 1,
+                "listItemNecessary": 0,
+                "required": 1,
+                "uniqueField": 1,
+                "comment": "这里是实体备注：呵呵呵呵",
+                "itemSchemaVO": {
+                    "dataType": 3,
+                    "dateFormat": "YYYY-MM-DD"
+                }
+            },
+            {
+                "itemIndex": 2003,
+                "itemCode": "code4",
+                "englishName": "en4",
+                "chineseName": "zh4",
+                "itemState": 0,
+                "definition": "这里是实体定义：呵呵呵呵",
+                "inputNecessary": 1,
+                "listItemNecessary": 0,
+                "required": 1,
+                "uniqueField": 0,
+                "comment": "这里是实体备注：呵呵呵呵",
+                "itemSchemaVO": {
+                    "dataType": 4,
+                    "maxFileCount": 1,
+                    "fileRange": 2,
+                    "fileType": "1,6",
+                    "selfDefFileSuffix": "pem"
+                }
+            },
+            {
+                "itemIndex": 2004,
+                "itemCode": "code5",
+                "englishName": "en5",
+                "chineseName": "zh5",
+                "itemState": 0,
+                "definition": "这是是实体定义",
+                "inputNecessary": 1,
+                "listItemNecessary": 0,
+                "required": 1,
+                "uniqueField": 1,
+                "comment": "这里是实体备注",
+                "itemSchemaVO": {
+                    "dataType": 5,
+                    "referenceType": 1
+                },
+                "itemReferenceVO": {
+                    "referenceMetaHandle": "88.608.8889/META_12345"
+                }
+            }
+        ]
     }
 }
 
@@ -769,10 +869,10 @@
 ### 异常示例
 
 ```json
+
 {
-    "message": "接口参数错误:入参metaHandle异常：要修改的元数据不存在!",
-    "code": 60005
-   
+    "message": "没有权限查看数据",
+    "code": 60001
 }
 
 ```
