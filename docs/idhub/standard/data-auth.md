@@ -1,30 +1,28 @@
 # 数据权限接口
 
-## 标识用户/用户组列表查询
+## 应用身份用户列表查询
 
-查询所有的标识用户/用户组。
+查询所有应用身份用户列表。
 
 ### 请求参数
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：GET
-- 请求路径：`/api/v2/handle-user-group/list`
+- 请求路径：`/api/v1/open/handle-user-group/list`
 - Header：
 
 | **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
 | -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
-| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | admin            |
+| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | exxxxxxx         |
 | Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
 
 - Query Param：
 
-| **参数** | **类型**      | **是否必填** | **最大长度** | **备注**                                                                                         | **示例值** |
-| -------------- | ------------------- | ------------------ | ------------------ | ------------------------------------------------------------------------------------------------------ | ---------------- |
-| userType       | Array `<Integer>` | 否                 | -                  | 要查询的用户类型列表，不传返回全部用户。<br />枚举值：`0-用户身份` ,`1-应用身份`, `2-用户组身份` | [1,2]            |
+无
 
 ### 请求示例
 
-> /api/v2/handle-user-group/list?userType=1&userType=2
+> /api/v1/open/handle-user-group/list
 
 ### 响应参数
 
@@ -38,12 +36,11 @@
 
 - data数据结构
 
-| **参数** | **参数类型** | **最大长度** | **备注** | **示例值**                                               |
-| -------------- | ------------------ | ------------------ | -------------- | -------------------------------------------------------------- |
-| name           | String             | -                  | 用户名         | "my"                                                           |
-| userHandle     | String             | -                  | 身份标识       | "88.608.6688/User_zyh03"                                       |
-| type           | integer            | -                  | 身份类型       | 身份类型枚举:` 0-用户身份` ,`1-应用身份`, `2-用户组身份` |
-| belongCompany  | String             | -                  | 所属企业       |                                                                |
+| **参数** | **参数类型** | **最大长度** | **备注** | **示例值**         |
+| -------------- | ------------------ | ------------------ | -------------- | ------------------------ |
+| name           | String             | -                  | 用户名         | "my"                     |
+| userHandle     | String             | -                  | 身份标识       | "88.608.6688/User_zyh03" |
+| belongCompany  | String             | -                  | 所属企业       |                          |
 
 ### 响应示例
 
@@ -53,30 +50,13 @@
     "message": "成功",
     "data": [
    
-        {
-            "name": "zhaohan",
-            "userHandle": "88.608.8889/User_zhaohan",
-            "type": 0,
-            "belongCompany": "HNl66CEPJnHF0GVIEMXVo2HqjYmJizjj"
-        },
+  
         {
             "name": "测试应用",
             "userHandle": "88.608.8889/App_ceshi",
-            "type": 1,
-            "belongCompany": "HNl66CEPJnHF0GVIEMXVo2HqjYmJizjj"
-        },
-        {
-            "name": "zkb",
-            "userHandle": "88.608.8889/User_1234",
-            "type": 0,
-            "belongCompany": "HNl66CEPJnHF0GVIEMXVo2HqjYmJizjj"
-        },
-        {
-            "name": "wscGroup",
-            "userHandle": "88.608.8889/Group_wsc",
-            "type": 2,
             "belongCompany": "HNl66CEPJnHF0GVIEMXVo2HqjYmJizjj"
         }
+  
     ]
 }
   
@@ -86,8 +66,7 @@
 
 ```json
 {
-    "message": "接口参数错误:入参userType只能是[0, 1, 2]",
-    "code": 60005
+  
 }
 ```
 
@@ -109,11 +88,11 @@
 
 - Body：
 
-| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                | **示例值**            |
-| -------------- | ------------- | ------------------ | ------------------ |-----------------------|--------------------|
-| metaHandle | String        | 是                 | -                  | 元数据                   | 88.608.6688/Meta_1 |
-| scope | integer        | 是                 | -                  | 授权范围；枚举值  1-公开，2-撤销公开 | 88.608.6688/Meta   |
-| items | array[string]| 是                 | -                  | 所属元数据的属性英文名称，可填写多个    | key1,key2,key3                |
+| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                       | **示例值**   |
+| -------------- | -------------- | ------------------ | ------------------ | ------------------------------------ | ------------------ |
+| metaHandle     | String         | 是                 | -                  | 元数据                               | 88.608.6688/Meta_1 |
+| scope          | integer        | 是                 | -                  | 授权范围；枚举值  1-公开，2-撤销公开 | 88.608.6688/Meta   |
+| items          | array[string]  | 是                 | -                  | 所属元数据的属性英文名称，可填写多个 | key1,key2,key3     |
 
 ### 请求示例
 
@@ -151,9 +130,10 @@
   "code": 701
 }
 ```
-### 注意
-> 1. 该接口只针对基于元数据属性的同该类实例数据查看权限进行公开与撤销公开操作，不支持对元数据本身进行公开与撤销公开操作。
 
+### 注意
+
+> 1. 该接口只针对基于元数据属性的同该类实例数据查看权限进行公开与撤销公开操作，不支持对元数据本身进行公开与撤销公开操作。
 
 ## 同类数据授权
 
@@ -163,7 +143,7 @@
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：POST
-- 请求路径：`/api/v1/classes-grant/authorization`
+- 请求路径：`/api/v1/open/classes-grant/authorization`
 - Header：
 
 | **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
@@ -173,15 +153,15 @@
 
 - Body：
 
-| **参数**                 | **类型**            | **是否必填** | **最大长度** | **备注**            | **示例值**           |
-|------------------------|-------------------|----------|----------|-------------------|-------------------|
-| metaHandle             | String            | 是        | -        | 元数据标识             | 88.608.6688/Meta_1 |
-| accessList             | [object]          | 是        | -        | 授权数据              |                   |
-| accessList.item        | array[object]     | 是        | -        | 所属元数据的属性英文名称      | key               |
-| accessList.authType    | integer           | 是        | -        | 授权类型，枚举值；1-查看，2-编辑 | 1                 |
-| accessList.scope       | integer           | 是        | -        | 授权范围；枚举值  1-公开，2-指定范围 | 1                 |
-| accessList.handleUsers | array[string]     | 否        | -        | 要授权的标识用户          |                   |
-| accessList.removeHandleUsers | array[string]     | 否        | -        | 要移除授权的标识用户        |                   |
+| **参数**               | **类型** | **是否必填** | **最大长度** | **备注**                       | **示例值**   |
+| ---------------------------- | -------------- | ------------------ | ------------------ | ------------------------------------ | ------------------ |
+| metaHandle                   | String         | 是                 | -                  | 元数据标识                           | 88.608.6688/Meta_1 |
+| accessList                   | [object]       | 是                 | -                  | 授权数据                             |                    |
+| accessList.item              | array[object]  | 是                 | -                  | 所属元数据的属性英文名称             | key                |
+| accessList.authType          | integer        | 是                 | -                  | 授权类型，枚举值；1-查看，2-编辑     | 1                  |
+| accessList.scope             | integer        | 是                 | -                  | 授权范围；枚举值  1-公开，2-指定范围 | 1                  |
+| accessList.handleUsers       | array[string]  | 否                 | -                  | 要授权的标识用户                     |                    |
+| accessList.removeHandleUsers | array[string]  | 否                 | -                  | 要移除授权的标识用户                 |                    |
 
 ### 请求示例
 
@@ -243,7 +223,9 @@
     "code": 901
 }
 ```
+
 ### 注意
+
 > 1. 编辑授权时，即authType为2时，scope只能为2
 > 2. 查看授权时，即authType为1时，若scope为1，即公开权限，则handlerUsers可以为空
 
@@ -265,15 +247,15 @@
 
 - Body：
 
-| **参数**                 | **类型**           | **是否必填** | **最大长度**  | **备注**                     | **示例值**                |
-|------------------------|------------------|----------|-----------|----------------------------|------------------------|
-| handle                 | String           | 是        | -         | 实例标识                       | 88.608.6688/instance_1 |
-| grantType              | integer          | 是        | -         | 授权类型，枚举值；1-同类授权，2-单个授权     | 1                      |
-| readerScope            | integer          | 否        | -         | 枚举值  1-公开，2-指定范围           | 1                    | key                    |
-| handleUserReaders      | array[string]    | 否        | -         | 授权的查看标识用户                  | 1                      |
-| handleUserWriters      | array[string]    | 否        | -         | 授权的编辑标识用户                  | 1                      |
-| delHandleUserReaders   | array[string]    | 否        | -         | 删除的标识身份                    | 1                      |
-| delHandleUserWriters   | array[string]    | 否        | -         | 删除的标识身份                    | 1                      |
+| **参数**       | **类型** | **是否必填** | **最大长度** | **备注**                           | **示例值**       |
+| -------------------- | -------------- | ------------------ | ------------------ | ---------------------------------------- | ---------------------- |
+| handle               | String         | 是                 | -                  | 实例标识                                 | 88.608.6688/instance_1 |
+| grantType            | integer        | 是                 | -                  | 授权类型，枚举值；1-同类授权，2-单个授权 | 1                      |
+| readerScope          | integer        | 否                 | -                  | 枚举值  1-公开，2-指定范围               | 1                      |
+| handleUserReaders    | array[string]  | 否                 | -                  | 授权的查看标识用户                       | 1                      |
+| handleUserWriters    | array[string]  | 否                 | -                  | 授权的编辑标识用户                       | 1                      |
+| delHandleUserReaders | array[string]  | 否                 | -                  | 删除的标识身份                           | 1                      |
+| delHandleUserWriters | array[string]  | 否                 | -                  | 删除的标识身份                           | 1                      |
 
 ### 请求示例
 
@@ -330,7 +312,9 @@
     "code": 901
 }
 ```
+
 ### 注意
+
 > 1. 当授权类型grantType为1时，即单个授权类型时，readerScope,readers,writers可以为空
 > 2. 当授权类型grantType为2时，即同类授权类型时，readerScope不能为空；readerScope为1，即公开授权时，readers可以为空；readerScope为2，即指定范围授权时，readers为空则不发生授权操作
-> 2. 当授权类型grantType为2时，即同类授权类型时，writers为空时，则不发生授权操作
+> 3. 当授权类型grantType为2时，即同类授权类型时，writers为空时，则不发生授权操作

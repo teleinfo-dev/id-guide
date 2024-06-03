@@ -118,7 +118,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
         {
           text: '模版接口',
-          link: '/openApi/v5/templatev5.md',
+          link: '/openApi/v5/template.md',
         },
         {
           text: '标识接口',
@@ -199,10 +199,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             link: '/idhub/snms/v3/identity-auth.md',
           },
           {
-            text: '企业接口',
-            link: '/idhub/snms/v3/ent.md',
-          },
-          {
             text: '前缀接口',
             link: '/idhub/snms/v3/prefix.md',
           },
@@ -224,16 +220,12 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             link: '/idhub/snms/v5/identity-auth.md',
           },
           {
-            text: '企业接口',
-            link: '/idhub/snms/v5/ent.md',
-          },
-          {
             text: '前缀接口',
             link: '/idhub/snms/v5/prefix.md',
           },
           {
             text: '模版接口',
-            link: '/idhub/snms/v5/templatev5.md',
+            link: '/idhub/snms/v5/template.md',
           },
           {
             text: '标识接口',
