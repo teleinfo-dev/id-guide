@@ -18,39 +18,39 @@
 
 - Body参数：
 
-| 参数                                                        | 类型    | 是否必填 | 最大长度 | 备注                                                                  | 示例值                      |
-| ----------------------------------------------------------- | ------- | -------- |------| --------------------------------------------------------------------- | --------------------------- |
-| classifyCode                                                | String  | 是       |      | 本企业内的分类code                                                    | "sp"                        |
-| metaHandle                                                  | String  | 是       | 255  | 元数据标识                                                            | "88.608.6688/META_xz_test2" |
-| metaName                                                    | String  | 是       | 100  | 元数据名称                                                            |                             |
-| metaCode                                                    | String  | 是       | 100  | 元数据代码                                                            |                             |
-| industryCategory                                            | String  | 是       |      | 行业分类一级                                                          |                             |
-| industrySpecific                                            | String  | 是       |      | 行业分类二级                                                          |                             |
-| industryTrade                                               | String  | 是       |      | 行业分类三级                                                          |                             |
-| industrySubclass                                            | String  | 是       |      | 行业分类四级                                                          |                             |
-| standard                                                    | String  | 否       | 100  | 依据标准                                                              |                             |
-| metaDesc                                                    | String  | 否       | 1000 | 元数据描述                                                            |                             |
-| metaItemCreateDTOS[i].itemCode                              | String  | 是       | 50   |                                                                       |                             |
-| metaItemCreateDTOS[i].englishName                           | String  | 是       | 50   |                                                                       |                             |
-| metaItemCreateDTOS[i].chineseName                           | String  | 是       | 50   |                                                                       |                             |
-| metaItemCreateDTOS[i].definition                            | String  | 否       | 200  | 实体值域定义                                                          |                             |
-| metaItemCreateDTOS[i].inputNecessary                        | Integer | 否       | -    | 是否是输入性，`0-否，1-是`                                          |                             |
-| metaItemCreateDTOS[i].required                              | Integer | 否       | -    | 是否必填性，`0-否，1-是`                                            |                             |
-| metaItemCreateDTOS[i].uniqueField                           | Integer | 否       | -    | 是否唯一性，`0-否，1-是`                                            |                             |
-| metaItemCreateDTOS[i].comment                               | String  | 否       | 200  | 备注                                                                  |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型` |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |      | 最小长度                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |      | 最大长度                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.charRange         | String  | 否       |      | 字符值域                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.accuracy          | Integer | 否       |      | 数值型精度                                                            |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.numberRange       | String  | 否       |      | 数值范围                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dateFormat        | String  | 否       |      | 日期格式                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否       | -    | 最大文件数量                                                          |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileRange         | Integer | 否       | -    | 文件值域：`1：any，2：assign   `                                    |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType          | String  | 否       | -    | 文件类型                                                              |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否       | -    | 自定义文件后缀                                                        | "pem"                       |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.referenceType     | Integer | 否       | -    | 引用类型：`1：一对一，2：一对多  `                                  |                             |
-| metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle  | String  | 否       | -    | 引用元数据，dataType:5时必填                                          |                             |
+| 参数                                                        | 类型    | 是否必填 | 最大长度 | 备注                                                  | 示例值                      |
+| ----------------------------------------------------------- | ------- | -------- |------|-----------------------------------------------------| --------------------------- |
+| classifyCode                                                | String  | 是       |      | 本企业内的分类code                                         | "sp"                        |
+| metaHandle                                                  | String  | 是       | 255  | 元数据标识                                               | "88.608.6688/META_xz_test2" |
+| metaName                                                    | String  | 是       | 100  | 元数据名称                                               |                             |
+| metaCode                                                    | String  | 是       | 100  | 元数据代码                                               |                             |
+| industryCategory                                            | String  | 是       |      | 行业分类一级                                              |                             |
+| industrySpecific                                            | String  | 是       |      | 行业分类二级                                              |                             |
+| industryTrade                                               | String  | 是       |      | 行业分类三级                                              |                             |
+| industrySubclass                                            | String  | 是       |      | 行业分类四级                                              |                             |
+| standard                                                    | String  | 否       | 100  | 依据标准                                                |                             |
+| metaDesc                                                    | String  | 否       | 1000 | 元数据描述                                               |                             |
+| metaItemCreateDTOS[i].itemCode                              | String  | 是       | 50   |                                                     |                             |
+| metaItemCreateDTOS[i].englishName                           | String  | 是       | 50   |                                                     |                             |
+| metaItemCreateDTOS[i].chineseName                           | String  | 是       | 50   |                                                     |                             |
+| metaItemCreateDTOS[i].definition                            | String  | 否       | 200  | 实体值域定义                                              |                             |
+| metaItemCreateDTOS[i].inputNecessary                        | Integer | 否       | -    | 是否是输入性，`0-否，1-是`                                    |                             |
+| metaItemCreateDTOS[i].required                              | Integer | 否       | -    | 是否必填性，`0-否，1-是`                                     |                             |
+| metaItemCreateDTOS[i].uniqueField                           | Integer | 否       | -    | 是否唯一性，`0-否，1-是`                                     |                             |
+| metaItemCreateDTOS[i].comment                               | String  | 否       | 200  | 备注                                                  |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |      | 最小长度                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |      | 最大长度                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.charRange         | String  | 否       |      | 字符值域                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.accuracy          | Integer | 否       |      | 数值型精度                                               |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.numberRange       | String  | 否       |      | 数值范围                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.dateFormat        | String  | 否       |      | 日期格式                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否       | -    | 最大文件数量                                              |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileRange         | Integer | 否       | -    | 文件值域：`1：any，2：assign   `                            |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType          | String  | 否       | -    | 文件类型                                                |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否       | -    | 自定义文件后缀                                             | "pem"                       |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.referenceType     | Integer | 否       | -    | 引用类型：`1：一对一，2：一对多  `                                |                             |
+| metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle  | String  | 否       | -    | 引用元数据，dataType:5时必填                                 |                             |
 
 ### 请求示例
 
@@ -190,6 +190,8 @@
 >2. 最大文件数量（MaxFileCount）为空，则设置为默认最大文件数量1。
 >3. 文件范围为指定（ASSIGN），但文件类型（FileType）为空，提示“元数据文件类型指定文件格式fileType不能为空”。
 >4. 对于指定的文件类型：如果是自定义文件后缀且自定义文件后缀为空，提示“元数据文件类型自定义文件格式selfDefFileSuffix不能为空”。
+>> 音频、视频、图片类型
+>1. 无相关限制
 ---
 ## 查询元数据实体列表
 
@@ -250,7 +252,7 @@
 | metaItemCreateDTOS[i].required                              | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                            |                             |
 | metaItemCreateDTOS[i].uniqueField                           | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                            |                             |
 | metaItemCreateDTOS[i].comment                               | String  | 否       | 200      | 备注                                                                  |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型` |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |          | 最小长度                                                              |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |          | 最大长度                                                              |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.charRange         | String  | 否       |          | 字符值域                                                              |                             |
@@ -315,7 +317,7 @@
 | metaItemDTOS[i].required                          | Integer | 否       | -    | 是否必填性，`0-否，1-是`                                            |        |
 | metaItemDTOS[i].uniqueField                       | Integer | 否       | -    | 是否唯一性，`0-否，1-是`                                            |        |
 | metaItemDTOS[i].comment                           | String  | 否       | 200  | 备注                                                                  |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.dataType           | Integer | 是       |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型` |        |
+| metaItemDTOS[i].itemSchemaCreateDTO.dataType           | Integer | 是       |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`|        |
 | metaItemDTOS[i].itemSchemaCreateDTO.minLength          | Integer | 否       |      | 最小长度                                                              |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.maxLength          | Integer | 否       |      | 最大长度                                                              |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.charRange          | String  | 否       |      | 字符值域                                                              |        |
@@ -461,6 +463,8 @@
 >2. 最大文件数量（MaxFileCount）为空，则设置为默认最大文件数量1。
 >3. 文件范围为指定（ASSIGN），但文件类型（FileType）为空，提示“元数据文件类型指定文件格式fileType不能为空”。
 >4. 对于指定的文件类型：如果是自定义文件后缀且自定义文件后缀为空，提示“元数据文件类型自定义文件格式selfDefFileSuffix不能为空”。
+>> 音频、视频、图片类型
+>1. 无相关限制
 ---
 ## 更新元数据基本信息
 
