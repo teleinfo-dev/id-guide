@@ -3,30 +3,31 @@
 ## 标识注册
 
 ### 请求参数
+
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式: POST
 - 请求路径: `/api/v1/doip`
 - Header:
 
-| **参数**      | **类型** | **是否必填** | **最大长度** | **备注**                            | **示例值**          |
-| ------------- | -------- | ------------ | ------------ | ----------------------------------- |------------------|
-| Content-Type  | String   | 是           | -            | application/json                    | application/json |
-| Authorization | String   | 是           | -            | Bearer + 空格 + token(身份接口获取) | token            |
+| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
+| -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
+| Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
+| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | token            |
 
 - Params:
 
-| 名称         | 位置  | 类型   | 必选 | 说明                   |
-| ------------ | ----- | ------ | ---- |----------------------|
-| targetId     | Params| string | 是   | 标识                   |
-| operationId  | Params| string | 是   | 默认值：0.DOIP/Op.Create |
+| 名称        | 位置   | 类型   | 必选 | 说明                     |
+| ----------- | ------ | ------ | ---- | ------------------------ |
+| targetId    | Params | string | 是   | 要注册的标识             |
+| operationId | Params | string | 是   | 默认值：0.DOIP/Op.Create |
 
 - Body:
 
-| 名称         | 位置  | 类型   | 必选 | 说明                                    |
-| ------------ | ----- | ------ | ---- |---------------------------------------|
-| type         | body  | string | 是   | 元数据模板标识                               |
-| attributes   | body  | string | 是   | 标识主体                                  |
-| attributes.content | body | json   | 是   | 属性值，key-value结构；<br/>k为元数据属性英文名称，value为属性值 |
+| 名称               | 位置 | 类型   | 必选 | 说明                                                          |
+| ------------------ | ---- | ------ | ---- | ------------------------------------------------------------- |
+| type               | body | string | 是   | 创建标识基于的元数据模板标识                                  |
+| attributes         | body | string | 是   | 标识主体                                                      |
+| attributes.content | body | json   | 是   | 属性值，key-value结构；``k为元数据属性英文名称，value为属性值 |
 
 ### 请求示例：
 
@@ -47,11 +48,11 @@
 
 ### 返回数据结构：
 
-| 名称     | 类型    | 必选 | 约束   | 中文名 | 说明   |
-| -------- | ------- | ---- | ------ | ------ | ------ |
-| code     | integer | true | none   | none   |        |
-| message  | string  | true | none   | none   |        |
-| data     | object  | true | none   | none   |        |
+| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| ------- | ------- | ---- | ---- | ------ | ---- |
+| code    | integer | true | none | none   |      |
+| message | string  | true | none | none   |      |
+| data    | object  | true | none | none   |      |
 
 ### 成功示例：
 
@@ -81,34 +82,34 @@
 }
 ```
 
-
 ## 标识修改
 
 ### 请求参数说明：
+
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式: POST
 - 请求路径: `/api/v1/doip`
 - Header:
 
-| **参数**      | **类型** | **是否必填** | **最大长度** | **备注**                            | **示例值**          |
-| ------------- | -------- | ------------ | ------------ | ----------------------------------- |------------------|
-| Content-Type  | String   | 是           | -            | application/json                    | application/json |
-| Authorization | String   | 是           | -            | Bearer + 空格 + token(身份接口获取) | token            |
+| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
+| -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
+| Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
+| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | token            |
 
 - Params:
 
-| 名称         | 位置  | 类型   | 必选 | 说明                   |
-| ------------ | ----- | ------ | ---- |----------------------|
-| targetId     | Params| string | 是   | 标识                   |
-| operationId  | Params| string | 是   | 默认值：0.DOIP/Op.Update |
+| 名称        | 位置   | 类型   | 必选 | 说明                                                                                            |
+| ----------- | ------ | ------ | ---- | ----------------------------------------------------------------------------------------------- |
+| targetId    | Params | string | 是   | 将要修改的标识                                                                                  |
+| operationId | Params | string | 是   | 默认值：0.DOIP/Op.Update   (覆盖更新)<br />  0.DOIP.EXTEND/Op.Update.Non.Overlay （增量更新） |
 
 - Body:
 
-| 名称         | 位置  | 类型   | 必选 | 说明                                    |
-| ------------ | ----- | ------ | ---- |---------------------------------------|
-| type         | body  | string | 是   | 元数据模板标识                               |
-| attributes   | body  | string | 是   | 标识主体                                  |
-| attributes.content | body | json   | 是   | 属性值，key-value结构；<br/>k为元数据属性英文名称，value为属性值 |
+| 名称               | 位置 | 类型   | 必选 | 说明                                                          |
+| ------------------ | ---- | ------ | ---- | ------------------------------------------------------------- |
+| type               | body | string | 是   | 标识创建时基于的元数据模板标识                                |
+| attributes         | body | string | 是   | 标识主体                                                      |
+| attributes.content | body | json   | 是   | 属性值，key-value结构；``k为元数据属性英文名称，value为属性值 |
 
 ### 请求参数示例：
 
@@ -129,11 +130,11 @@
 
 ### 返回数据结构：
 
-| 名称     | 类型    | 必选 | 约束   | 中文名 | 说明   |
-| -------- | ------- | ---- | ------ | ------ | ------ |
-| code     | integer | true | none   | none   |        |
-| message  | string  | true | none   | none   |        |
-| data     | object  | true | none   | none   |        |
+| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| ------- | ------- | ---- | ---- | ------ | ---- |
+| code    | integer | true | none | none   |      |
+| message | string  | true | none | none   |      |
+| data    | object  | true | none | none   |      |
 
 ### 成功示例：
 
@@ -164,27 +165,29 @@
 ```
 
 ### 注意
+
 > 1. 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值
 
 ## 标识删除
 
 ### 请求参数说明
+
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式: POST
 - 请求路径: `/api/v1/doip`
 - Header:
 
-| **参数**      | **类型** | **是否必填** | **最大长度** | **备注**                            | **示例值**          |
-| ------------- | -------- | ------------ | ------------ | ----------------------------------- |------------------|
-| Content-Type  | String   | 是           | -            | application/json                    | application/json |
-| Authorization | String   | 是           | -            | Bearer + 空格 + token(身份接口获取) | token            |
+| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
+| -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
+| Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
+| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | token            |
 
 - Params:
 
-| 名称         | 位置  | 类型   | 必选 | 说明                   |
-| ------------ | ----- | ------ | ---- |----------------------|
-| targetId     | Params| string | 是   | 标识                   |
-| operationId  | Params| string | 是   | 默认值：0.DOIP/Op.Delete |
+| 名称        | 位置   | 类型   | 必选 | 说明                     |
+| ----------- | ------ | ------ | ---- | ------------------------ |
+| targetId    | Params | string | 是   | 要删除的标识             |
+| operationId | Params | string | 是   | 默认值：0.DOIP/Op.Delete |
 
 ### 请求示例
 
@@ -192,10 +195,10 @@
 
 ### 返回数据结构：
 
-| 名称       | 类型    | 必选 | 约束   | 中文名 | 说明   |
-| ---------- | ------- | ---- | ------ | ------ | ------ |
-| code       | integer | true | none   | none   |        |
-| message    | string  | true | none   | none   |        |
+| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| ------- | ------- | ---- | ---- | ------ | ---- |
+| code    | integer | true | none | none   |      |
+| message | string  | true | none | none   |      |
 
 ### 成功返回示例：
 
@@ -222,28 +225,28 @@
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式: GET
 - 请求路径: `/api/v1/doip`
-
 - Params:
 
-| 名称         | 位置     | 类型    | 必选 | 说明             |
-| ------------ | -------- | ------- | ---- | ---------------- |
-| targetId     | Params   | string  | 是   | 标识             |
-| operationId  | Params   | string  | 是   | 0.DOIP/Op.Retrieve |
+| 名称        | 位置   | 类型   | 必选 | 说明               |
+| ----------- | ------ | ------ | ---- | ------------------ |
+| targetId    | Params | string | 是   | 标识               |
+| operationId | Params | string | 是   | 0.DOIP/Op.Retrieve |
 
 ### 返回数据结构
 
-| 名称             | 类型    | 必选 | 约束   | 中文名   | 说明     |
-| ---------------- | ------- | ---- | ------ | -------- | -------- |
-| code             | integer | true | none   | none     |          |
-| message          | string  | true | none   | none     |          |
-| data             | json    | true | none   | none     |          |
-| data.id          | string  | true | none   | none     |          |
-| data.type        | string  | true | none   | none     |          |
-| data.attributes  | json    | true | none   | none     |          |
+| 名称            | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| --------------- | ------- | ---- | ---- | ------ | ---- |
+| code            | integer | true | none | none   |      |
+| message         | string  | true | none | none   |      |
+| data            | json    | true | none | none   |      |
+| data.id         | string  | true | none | none   |      |
+| data.type       | string  | true | none | none   |      |
+| data.attributes | json    | true | none | none   |      |
 
 ### 成功返回示例
 
 #### 查询元数据标识
+
 ```json
 {
     "code": 1,
@@ -323,6 +326,7 @@
 ```
 
 #### 实例标识
+
 ```json
 {
   "code": 1,
@@ -345,6 +349,7 @@
   }
 }
 ```
+
 ### 异常返回示例：
 
 ```json
@@ -357,4 +362,3 @@
 ## 说明
 
 - 调用标识注册、修改、删除、查询接口时需要先挑战应答获取token，携带token调用接口，token有效期24小时（无操作状态下）
-
