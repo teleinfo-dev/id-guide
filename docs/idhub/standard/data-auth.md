@@ -261,14 +261,20 @@
 
 ```json
 {
-  "handle": "88.608.8889/2345678",
-  "grantType": "2",
+  "handle": "88.608.8889/SNMS-handle13",
+  "grantType": 2,
   "readerScope": 2,
-  "readers": [
-    "88.608.8889/App_wscapp"
+  "delHandleUserReaders": [
+    "88.608.8889/App_xz_app2"
   ],
-  "writers": [
-    "88.608.8889/App_wscapp"
+  "delHandleUserWriters": [
+    "88.608.8889/App_xz_app2"
+  ],
+  "handleUserWriters": [
+    "88.608.8889/App_xz_app2"
+  ],
+  "handleUserReaders": [
+    "88.608.8889/App_xz_app2"
   ]
 }
 ```
