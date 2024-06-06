@@ -28,7 +28,7 @@
 | industrySpecific                                            | String  | 是       |          | 行业分类二级                                                                                  |                             |
 | industryTrade                                               | String  | 是       |          | 行业分类三级                                                                                  |                             |
 | industrySubclass                                            | String  | 是       |          | 行业分类四级                                                                                  |                             |
-| standard                                                    | String  | 否       | 100      | 依据标准                                                                                      |                             |
+| standard                                                    | String  | 否       | 200      | 依据标准                                                                                      |                             |
 | metaDesc                                                    | String  | 否       | 1000     | 元数据描述                                                                                    |                             |
 | metaItemCreateDTOS[i].itemCode                              | String  | 是       | 50       |                                                                                               |                             |
 | metaItemCreateDTOS[i].englishName                           | String  | 是       | 50       |                                                                                               |                             |
@@ -473,20 +473,18 @@
 
 - Body参数：
 
-
-| 参数                                                        | 类型    | 是否必填 | 最大长度 | 备注                                                                                          | 示例值                      |
-| ----------------------------------------------------------- | ------- | -------- | -------- | --------------------------------------------------------------------------------------------- | --------------------------- |
-| classifyCode                                                | String  | 是       |          | 本企业内的分类code                                                                            | "sp"                        |
-| metaHandle                                                  | String  | 是       | 255      | 元数据标识                                                                                    | "88.608.6688/META_xz_test2" |
-| metaName                                                    | String  | 是       | 100      | 元数据名称                                                                                    |                             |
-| metaCode                                                    | String  | 是       | 100      | 元数据代码                                                                                    |                             |
-| industryCategory                                            | String  | 是       |          | 行业分类一级                                                                                  |                             |
-| industrySpecific                                            | String  | 是       |          | 行业分类二级                                                                                  |                             |
-| industryTrade                                               | String  | 是       |          | 行业分类三级                                                                                  |                             |
-| industrySubclass                                            | String  | 是       |          | 行业分类四级                                                                                  |                             |
-| standard                                                    | String  | 否       | 100      | 依据标准                                                                                      |                             |
-| metaDesc                                                    | String  | 否       | 1000     | 元数据描述                                                                                    |                             |
-
+| 参数             | 类型   | 是否必填 | 最大长度 | 备注               | 示例值                      |
+| ---------------- | ------ | -------- | -------- | ------------------ | --------------------------- |
+| classifyCode     | String | 是       |          | 本企业内的分类code | "sp"                        |
+| metaHandle       | String | 是       | 255      | 元数据标识         | "88.608.6688/META_xz_test2" |
+| metaName         | String | 是       | 100      | 元数据名称         |                             |
+| metaCode         | String | 是       | 100      | 元数据代码         |                             |
+| industryCategory | String | 是       |          | 行业分类一级       |                             |
+| industrySpecific | String | 是       |          | 行业分类二级       |                             |
+| industryTrade    | String | 是       |          | 行业分类三级       |                             |
+| industrySubclass | String | 是       |          | 行业分类四级       |                             |
+| standard         | String | 否       | 200      | 依据标准           |                             |
+| metaDesc         | String | 否       | 1000     | 元数据描述         |                             |
 
 ### 请求示例
 
