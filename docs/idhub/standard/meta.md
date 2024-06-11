@@ -88,10 +88,7 @@
       "inputNecessary": 1,
       "listItemNecessary": 0,
       "itemSchemaCreateDTO": {
-        "minLength": 0,
-        "maxLength": 38,
-        "accuracy": 0,
-        "numberRange": null,
+    
         "dataType": "2"
       },
       "itemReferenceDTO": {}
@@ -165,15 +162,6 @@
 
 ### 注意
 
->> 数值型
->>
->
-> 1. 最小长度（MinLength）为空，则设置为默认最小长度0。
-> 2. 最大长度（MaxLength）为空，则设置为数字类型的默认最大长度38。
-> 3. 最大长度小于1，提示“元素最大长度不能小于1”。
-> 4. 最小长度大于最大长度，提示“字符型最小值不能大于最大值”。
-> 5. 精度（Accuracy）不为空，检查其是否超过最大精度值，如果超过，提示“最大精度为16”。
-> 6. 精度为空，则设置为默认精度0。
 >
 >> 字符型
 >>
