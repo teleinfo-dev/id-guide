@@ -213,7 +213,7 @@
 | Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
 | Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
 
-- Body参数：
+- Query参数：
 
 | 参数       | 类型   | 是否必填 | 最大长度 | 备注               | 示例值                          |
 | ---------- | ------ | -------- | -------- | ------------------ | ------------------------------- |
