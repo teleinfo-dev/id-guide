@@ -412,6 +412,7 @@
 
 ```json
 {
-  
+  "code": 101,
+  "message": "无效的token"
 }
 ```
