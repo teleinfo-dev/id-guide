@@ -587,7 +587,7 @@
 | metaItemDTOS[i].required                              | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                            |        |
 | metaItemDTOS[i].uniqueField                           | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                            |        |
 | metaItemDTOS[i].comment                               | String  | 否       | 200      | 备注                                                                  |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型` |        |
+| metaItemDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |          | 最小长度                                                              |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |          | 最大长度                                                              |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.dateFormat        | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                        |        |
