@@ -374,9 +374,6 @@
 | messageType        | Int          | -            | 消息类型（1.数据授权，2.授权移除                                                         | 1                                                           |
 | createdTime        | String       | -            | 创建时间                                                                       | "2024-06-12 17:01:42"                                       |
 | messageDetail      | String       | -            | 消息详情                                                                       | "北京能力有限公司已向您授权元数据：88.608.5288/META_xz1_app1_0612的查看权限。" |
-| messageState       | Int          | -            | 消息状态（1.未读，2-已读）                                                                       | 1                                                           |
-| resolveHandle      | String       | -            | 需要解析的标识名称                                                                       | "88.608.5288/META_xz1_app1_0612"                            |
-
 
 ### 响应示例
 
