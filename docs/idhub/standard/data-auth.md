@@ -392,11 +392,7 @@
         "messageTitleType": 1,
         "messageType": 1,
         "messageDetail": "北京能力有限公司已向您授权元数据：88.608.5288/META_xz1_app1_0612的查看权限。",
-        "relationId": "4",
-        "messageState": 1,
-        "createdTime": "2024-06-12 17:01:42",
-        "source": 0,
-        "resolveHandle": "88.608.5288/META_xz1_app1_0612"
+        "createdTime": "2024-06-12 17:01:42"
       }
     ]
   }
