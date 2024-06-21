@@ -43,7 +43,7 @@
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength        | Integer | 否       |          | 最大长度<br />字符型：默认 4000                                                               |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.dateFormat       | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                                                |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.maxFileCount     | Integer | 否       | -        | 最大文件数量                                                                                  |                             |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType         | String  | 否       | -        | 文件类型                                                                                      |                             |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType         | String  | 否       | -        | 文件类型, "2,3", 2:doc;docx;xps;dot    3: xls;xlsx;xlsb;xlsm;csv  4:pdf    5:zip;rar                                                                                     |                             |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.referenceType    | Integer | 否       | -        | 引用类型：`1：一对一，2：一对多  `                                                          |                             |
 | metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                  |                             |
 
@@ -114,7 +114,7 @@
       "listItemNecessary": 0,
       "itemSchemaCreateDTO": {
 
-    "fileType": ".doc",
+    "fileType": "2,3",
         "maxFileCount": 1,
         "dataType": "4"
       },
