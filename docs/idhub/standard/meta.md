@@ -48,7 +48,7 @@
 | metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                  |                             |
 
 ### 请求示例
-
+```json
 {
   "classifyCode": "hxh",
   "metaHandle": "88.608.8889/META_xz_20240516",
@@ -122,6 +122,7 @@
     }
   ]
 }
+```
 
 ### 响应数据
 
