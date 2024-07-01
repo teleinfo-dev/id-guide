@@ -46,96 +46,96 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
-  '/openApi/v3': [
-    {
-      text: '开始',
-      items: [
-        {
-          text: '简介',
-          link: '/openApi/v3/api-introduce.md',
-        },
-      ],
-    },
-    {
-      text: 'OpenAPI-V3',
-      items: [
-        {
-          text: '认证接口',
-          link: '/openApi/v3/identity-auth.md',
-        },
-        {
-          text: '企业接口',
-          link: '/openApi/v3/ent.md',
-        },
-        {
-          text: '前缀接口',
-          link: '/openApi/v3/prefix.md',
-        },
-        {
-          text: '模版接口',
-          link: '/openApi/v3/template.md',
-        },
-        {
-          text: '标识接口',
-          link: '/openApi/v3/handle-operate.md',
-        },
-      ],
-    },
-    {
-      text: '附录',
-      items: [
-        {
-          text: '附录',
-          link: '/openApi/v3/attachment.md',
-        },
-      ],
-    },
-  ],
-  '/openApi/v5': [
-    {
-      text: '开始',
-      items: [
-        {
-          text: '简介',
-          link: '/openApi/v5/api-introduce.md',
-        },
-      ],
-    },
-    {
-      text: 'OpenAPI-V5',
-      items: [
-        {
-          text: '认证接口',
-          link: '/openApi/v5/identity-auth.md',
-        },
-        {
-          text: '企业接口',
-          link: '/openApi/v5/ent.md',
-        },
-        {
-          text: '前缀接口',
-          link: '/openApi/v5/prefix.md',
-        },
-        {
-          text: '模版接口',
-          link: '/openApi/v5/template.md',
-        },
-        {
-          text: '标识接口',
-          link: '/openApi/v5/handle-operate.md',
-        },
-      ],
-    },
-    {
-      text: '附录',
-      items: [
-        {
-          text: '附录',
-          link: '/openApi/v5/attachment.md',
-        },
-      ],
-    },
-  ],
+  // '/openApi/v3': [
+  //   {
+  //     text: '开始',
+  //     items: [
+  //       {
+  //         text: '简介',
+  //         link: '/openApi/v3/api-introduce.md',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     text: 'OpenAPI-V3',
+  //     items: [
+  //       {
+  //         text: '认证接口',
+  //         link: '/openApi/v3/identity-auth.md',
+  //       },
+  //       {
+  //         text: '企业接口',
+  //         link: '/openApi/v3/ent.md',
+  //       },
+  //       {
+  //         text: '前缀接口',
+  //         link: '/openApi/v3/prefix.md',
+  //       },
+  //       {
+  //         text: '模版接口',
+  //         link: '/openApi/v3/template.md',
+  //       },
+  //       {
+  //         text: '标识接口',
+  //         link: '/openApi/v3/handle-operate.md',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     text: '附录',
+  //     items: [
+  //       {
+  //         text: '附录',
+  //         link: '/openApi/v3/attachment.md',
+  //       },
+  //     ],
+  //   },
+  // ],
+  // '/openApi/v5': [
+  //   {
+  //     text: '开始',
+  //     items: [
+  //       {
+  //         text: '简介',
+  //         link: '/openApi/v5/api-introduce.md',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     text: 'OpenAPI-V5',
+  //     items: [
+  //       {
+  //         text: '认证接口',
+  //         link: '/openApi/v5/identity-auth.md',
+  //       },
+  //       {
+  //         text: '企业接口',
+  //         link: '/openApi/v5/ent.md',
+  //       },
+  //       {
+  //         text: '前缀接口',
+  //         link: '/openApi/v5/prefix.md',
+  //       },
+  //       {
+  //         text: '模版接口',
+  //         link: '/openApi/v5/template.md',
+  //       },
+  //       {
+  //         text: '标识接口',
+  //         link: '/openApi/v5/handle-operate.md',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     text: '附录',
+  //     items: [
+  //       {
+  //         text: '附录',
+  //         link: '/openApi/v5/attachment.md',
+  //       },
+  //     ],
+  //   },
+  // ],
   '/idhub/standard': [
     {
       text: '开始',
@@ -147,7 +147,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
     {
-      text: '标准接口',
+      text: 'OpenAPI',
       items: [
         {
           text: '认证接口',
@@ -169,70 +169,122 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '文件处理',
           link: '/idhub/standard/file.md',
         },
-      ],
-    },
-    {
-      text: '附录',
-      items: [
         {
           text: '响应状态码',
           link: '/idhub/standard/state-code.md',
         },
       ],
-    }
+    },
+    // {
+    //   text: '附录',
+    //   items: [
+    //     {
+    //       text: '响应状态码',
+    //       link: '/idhub/standard/state-code.md',
+    //     },
+    //   ],
+    // },
+    {
+      text: '兼容版',
+      items: [
+        {
+          text: 'V3',
+          items: [
+            {
+              text: '认证接口',
+              link: '/idhub/snms/v3/identity-auth.md',
+            },
+            {
+              text: '模版接口',
+              link: '/idhub/snms/v3/template.md',
+            },
+            {
+              text: '标识接口',
+              link: '/idhub/snms/v3/handle-operate.md',
+            },
+          ],
+        },
+        {
+          text: 'V5',
+          items: [
+            {
+              text: '认证接口',
+              link: '/idhub/snms/v5/identity-auth.md',
+            },
+            {
+              text: '模版接口',
+              link: '/idhub/snms/v5/template.md',
+            },
+            {
+              text: '标识接口',
+              link: '/idhub/snms/v5/handle-operate.md',
+            },
+          ],
+        },
+        {
+          text: '附录',
+          items: [
+            {
+              text: '响应状态码',
+              link: '/idhub/snms/attachment.md',
+            },
+          ],
+        }
+      ]
+    },
   ],
-    '/idhub/snms': [
-      {
-        text: '开始',
-        items: [
-          {
-            text: '简介',
-            link: '/idhub/snms/api-introduce.md',
-          },
-        ],
-      },
-      {
-        text: 'V3',
-        items: [
-          {
-            text: '认证接口',
-            link: '/idhub/snms/v3/identity-auth.md',
-          },
-          {
-            text: '模版接口',
-            link: '/idhub/snms/v3/template.md',
-          },
-          {
-            text: '标识接口',
-            link: '/idhub/snms/v3/handle-operate.md',
-          },
-        ],
-      },
-      {
-        text: 'V5',
-        items: [
-          {
-            text: '认证接口',
-            link: '/idhub/snms/v5/identity-auth.md',
-          },
-          {
-            text: '模版接口',
-            link: '/idhub/snms/v5/template.md',
-          },
-          {
-            text: '标识接口',
-            link: '/idhub/snms/v5/handle-operate.md',
-          },
-        ],
-      },
-      {
-        text: '附录',
-        items: [
-          {
-            text: '附录',
-            link: '/idhub/snms/attachment.md',
-          },
-        ],
-      }
-    ],
+    // '/idhub/snms': [
+    //   {
+    //     text: '开始',
+    //     items: [
+    //       {
+    //         text: '简介',
+    //         link: '/idhub/snms/api-introduce.md',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: 'V3',
+    //     items: [
+    //       {
+    //         text: '认证接口',
+    //         link: '/idhub/snms/v3/identity-auth.md',
+    //       },
+    //       {
+    //         text: '模版接口',
+    //         link: '/idhub/snms/v3/template.md',
+    //       },
+    //       {
+    //         text: '标识接口',
+    //         link: '/idhub/snms/v3/handle-operate.md',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: 'V5',
+    //     items: [
+    //       {
+    //         text: '认证接口',
+    //         link: '/idhub/snms/v5/identity-auth.md',
+    //       },
+    //       {
+    //         text: '模版接口',
+    //         link: '/idhub/snms/v5/template.md',
+    //       },
+    //       {
+    //         text: '标识接口',
+    //         link: '/idhub/snms/v5/handle-operate.md',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: '附录',
+    //     items: [
+    //       {
+    //         text: '附录',
+    //         link: '/idhub/snms/attachment.md',
+    //       },
+    //     ],
+    //   }
+    // ],
 }

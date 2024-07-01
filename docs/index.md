@@ -12,8 +12,8 @@ hero:
   actions:
     - text: 标识解析SDK
       link: /sdk/v2/introduction
-    - text: 二级节点OpenAPI
-      link: /openApi/v5/api-introduce.md
+    # - text: 二级节点OpenAPI
+    #   link: /openApi/v5/api-introduce.md
     - text: 企业节点IDHub
       link: /idhub/standard/api-introduce.md
       theme: alt
@@ -21,14 +21,14 @@ hero:
 features:
   - icon: <img src="/docs/sdk.png" />
     title: 工业互联网标识解析SDK
-    details: 基于Java语言开发的工业互联网标识解析体系客户端软件开发工具包，应用通过集成 id-pointer-sdk，快速对接标识解析、标识注册、标识维护等功能服务.
+    details: 基于Java语言开发的工业互联网标识解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速对接标识解析、标识注册、标识维护等功能服务.
     link: /sdk/v2/introduction
     linkText: 快速开始
-  - icon: <img src="/docs/openApi.png" />
-    title: 工业互联网标识解析二级节点OpenAPI
-    details: 工业互联网标识解析二级节点OpenAPI提供HTTP REST风格接口进行标识操作，所有操作都采用UTF-8编码以确保兼容性和易用性，便于其他系统接入.
-    link: /openApi/v5/api-introduce.md
-    linkText: 快速开始
+  # - icon: <img src="/docs/openApi.png" />
+  #   title: 工业互联网标识解析二级节点OpenAPI
+  #   details: 工业互联网标识解析二级节点OpenAPI提供HTTP REST风格接口进行标识操作，所有操作都采用UTF-8编码以确保兼容性和易用性，便于其他系统接入.
+  #   link: /openApi/v5/api-introduce.md
+  #   linkText: 快速开始
   - icon: <img src="/docs/idhub.png" />
     title: 工业互联网标识企业节点
     details: 开放IDHub标准版API接口，是为了让应用集成企业节点更便捷
