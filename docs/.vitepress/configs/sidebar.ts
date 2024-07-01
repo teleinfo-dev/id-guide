@@ -136,18 +136,19 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   //     ],
   //   },
   // ],
-  '/idhub/standard': [
+  '/idhub': [
     {
       text: '开始',
       items: [
         {
           text: '简介',
-          link: '/idhub/standard/api-introduce.md',
+          link: '/idhub/standard/introduce.md',
         },
       ],
     },
     {
       text: 'OpenAPI',
+      link: '/idhub/standard/api-introduce.md',
       items: [
         {
           text: '认证接口',
@@ -186,9 +187,11 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     // },
     {
       text: '兼容版',
+      link: '/idhub/snms/api-introduce.md',
       items: [
         {
           text: 'V3',
+          link: '/idhub/snms/v3/introduce.md',
           items: [
             {
               text: '认证接口',
@@ -206,6 +209,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
         {
           text: 'V5',
+          link: '/idhub/snms/v5/introduce.md',
           items: [
             {
               text: '认证接口',
