@@ -15,7 +15,7 @@ hero:
     # - text: 二级节点OpenAPI
     #   link: /openApi/v5/api-introduce.md
     - text: 企业节点IDHub
-      link: /idhub/standard/api-introduce.md
+      link: /idhub/standard/introduce.md
       theme: alt
 
 features:
@@ -32,7 +32,7 @@ features:
   - icon: <img src="/docs/idhub.png" />
     title: 工业互联网标识企业节点
     details: 开放IDHub标准版API接口，是为了让应用集成企业节点更便捷
-    link: /idhub/standard/api-introduce.md
+    link: /idhub/standard/introduce.md
     linkText: 快速开始
   # - icon: 🧰
   #   title: 提效工具

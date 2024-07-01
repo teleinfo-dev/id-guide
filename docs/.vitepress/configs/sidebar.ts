@@ -148,7 +148,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     },
     {
       text: 'OpenAPI',
-      link: '/idhub/standard/api-introduce.md',
+      link: '/idhub/standard/openapi-introduce.md',
       items: [
         {
           text: '认证接口',

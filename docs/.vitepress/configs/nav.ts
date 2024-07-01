@@ -29,7 +29,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   // },
   {
     text: '企业节点IDHub',
-    link: '/idhub/standard/api-introduce.md'
+    link: '/idhub/standard/introduce.md'
     // items: [
     //   {
     //     text: '标准版',
