@@ -140,7 +140,7 @@
     "code": 1,
     "message": "成功",
     "data": {
-        "metaHandle": ""
+        "metaHandle": "88.608.5288/META_fcc95749f59f428"
     }
 }
 
