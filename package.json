@@ -45,5 +45,8 @@
     "*.{js,jsx,tsx,vue,css,scss,less,md,json}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "html-to-docx": "^1.8.0"
   }
 }
