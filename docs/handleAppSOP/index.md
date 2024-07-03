@@ -29,7 +29,6 @@
 
 社区版和标准版，开放的API接口如下：
 
-
 <div style="display:flex;">
 <div style="width: 400px;padding:10px;background-color:rgb(232, 242, 254);border:1px solid #eee;margin-right:5px;">
     <details>
@@ -94,7 +93,7 @@
     <li>数据授权通知
         <ol>
             <strong>说明：当接入标识解析体系的数据被授权后，被授权的主体会收到授权通知</strong>
-        </ol>       
+        </ol>     
 </li>
 </ol>
 </details>
@@ -104,6 +103,7 @@
 企业使用标准版企业节点，系统打通、数据连接更便捷，应用集成更规范，因此我们推荐您使用**标准版沙盒环境**。
 
 标准版沙盒环境的地址为：
+
 <div style="color:red;">
 
 不体现idsphere.teleinfo.cn? 二级升级,评估安全性
@@ -119,6 +119,7 @@
 社区版沙盒环境的地址为： @李龙
 
 XXXXXXXXXX
+
 </div>
 
 **说明：沙盒环境中产生的数据，不会永久存储。接口调用日志会在应用开发完成后的一段时间后被清理，企业前缀也会被回收。**
@@ -139,8 +140,8 @@ XXXXXXXXXX
 
 ![image](./images/idlink-link-data.png)
 
-
 **说明：**
+
 * IDLink相较于SDK或API接口，无需开发，更易使用。无论使用哪种数据连接方式，接入企业节点中的数据与企业信息系统中完全一致，当信息系统中的数据发生变更后，企业节点也会更新该数据。
 * 若存在企业无合适的信息系统对接时，上层应用业务流转时产生的数据都将沉淀在企业节点中，则数据接入更适合通过SDK或API接口来对接。
 
@@ -187,7 +188,7 @@ XXXXXXXXXX
 
 </div>
 
-下面以对接生产厂商，生产系统的产品信息和仓储系统的出库单为例，且相关数据均存储到企业节点，演示数据如何接入：
+下面以对接生产厂商，生产系统的产品信息和仓储系统的入库单为例，且相关数据均存储到企业节点，演示数据如何接入：
 
 **说明：生产厂商的企业前缀为：88.111.100，物流企业的企业前缀为 88.222.77**
 
@@ -197,8 +198,8 @@ XXXXXXXXXX
 ID生产：88.111.100/APP\_ID生产         ID仓储：88.222.77/APP\_ID仓储       
 
 2. 应用开发者将生产系统、仓储系统分别与企业节点A、企业节点C对接，以企业节点API接口为标准进行开发
-
 3. 接口调用示例  $\color{#0089FF}{@李龙}$  $\color{#0089FF}{@魏思晨}$
+
 </div>
 
 以下为API接口使用示例介绍，接口详情参见企业节点标准版API接口文档。
@@ -213,11 +214,12 @@ ID生产：88.111.100/APP\_ID生产         ID仓储：88.222.77/APP\_I
 
 该接口用于获取挑战信息，为一随机nonce值。
 
-请求示例: 
+请求示例:
 
-` GET http://manufacture:3000/api/v1/doip/public/challengehandle=88.111.100/APP_ID生产 `
+`GET http://manufacture:3000/api/v1/doip/public/challengehandle=88.111.100/APP_ID生产`
 
 返回结果:
+
 ```json
     {
       "code": 1,
@@ -231,6 +233,7 @@ ID生产：88.111.100/APP\_ID生产         ID仓储：88.222.77/APP\_I
 该接口用于验证使用nonce值生成的signature（签名signature生成方式参考接口文档），验证成功则颁发token。
 
 请求示例:
+
 ```js
 POST http://manufacture:3000/api/v1/doip/public/verify-response
 -d '{
@@ -240,6 +243,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 ```
 
 返回示例:
+
 ```json
     {
      "code": 1,
@@ -259,6 +263,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 生产系统创建产品元数据模型
 
 请求示例:
+
 ```js
     POST http://manufacture:3000/api/v1/open/meta/create
 
@@ -320,6 +325,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 ```
 
 返回示例:
+
 ```json
     {
         "code": 1,
@@ -333,6 +339,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 仓储系统创建入库单元数据模型
 
 请求示例:
+
 ```js
     POST http://storage:3000/api/v1/open/meta/create
 
@@ -400,6 +407,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 应用可调用元数据发布接口对创建的元数据进行发布操作，发布后的元数据可以进行授权和注册标识操作。
 
 请求示例:
+
 ```js
     PUT http://manufacture:3000/api/v1/open/meta/publish-or-withdraw
 
@@ -412,7 +420,9 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
         "opType": "publish"
     }'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 10000,
@@ -433,6 +443,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 生产系统注册产品标识
 
 请求示例:
+
 ```js
     POST http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Create
 
@@ -449,7 +460,9 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
       }
     }'
 ```
+
 返回示例:
+
 ```json
     {
       "code": 10000,
@@ -470,6 +483,7 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 仓储系统注册入库单标识
 
 请求示例:
+
 ```js
     POST http://storage/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Create
 
@@ -486,7 +500,9 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
       }
     }'
 ```
+
 返回示例:
+
 ```json
     {
       "code": 10000,
@@ -524,7 +540,7 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 **说明：IDLink 数据导入模式，将在8月底提供。**
 
-下面以对接生产厂商的产品信息和仓储系统的出库单为例，且相关数据均存储到企业节点，演示数据如何接入：
+下面以对接生产厂商的产品信息和仓储系统的入库单为例，且相关数据均存储到企业节点，演示数据如何接入：
 
 **说明：生产厂商的企业前缀为：88.111.100，物流企业的企业前缀为 88.222.77**
 
@@ -538,9 +554,9 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 （3） 在企业节点A中创建数据连接任务
 
-<span style="color: red;">系统截图</span>
+`<span style="color: red;">`系统截图
 
-（4） 在物流企业的企业节点C（88.222.77）中配置出库单的元数据模板
+（4） 在物流企业的企业节点C（88.222.77）中配置入库单的元数据模板
 
 ![image](./images/item-manage.png)
 
@@ -570,7 +586,7 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 **说明：基于元数据模板的标识数据搜索、统计等接口将陆续开放。**
 
-<span style="color: red;">接口调用示例： @魏思晨</span>
+`<span style="color: red;">`接口调用示例： @魏思晨
 
 **元数据模版授权**
 
@@ -579,6 +595,7 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 生产系统对应用身份 `88.111.100/APP_ID_OTHER`授权元数据查看权限
 
 请求示例:
+
 ```js
     POST http://manufacture/api/v1/open/meta/grant/info
 
@@ -595,7 +612,9 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
     ]
     }'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 10000,
@@ -608,12 +627,15 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 对企业内其他应用授权后，该应用身份可以接收到对应的授权通知
 
 请求示例:
+
 ```js
     GET http://manufacture/api/v1/open/message/appMessage
 
     -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
+
 返回示例:
+
 ```json
     {
       "code": 1,
@@ -641,12 +663,15 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 接收到授权通知后，证明已被授权查看元数据，可使用以下接口查询元数据
 
 请求示例:
+
 ```js
     GET http://manufacture/api/v1/open/meta/info?metaHandle=88.111.100/META_PRODUCT
 
     -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
+
 返回示例:
+
 ```json
     {
       "code": 1,
@@ -714,13 +739,14 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 **说明：基于元数据模板的标识数据搜索、统计等接口将陆续开放。**
 
-<span style="color: red;">接口调用示例： @魏思晨</span>
+`<span style="color: red;">`接口调用示例： @魏思晨
 
 **元数据模版授权（跨企业）**
 
 生产系统跨企业对仓储系统 `88.222.77/APP_ID仓储`应用身份授权，不能直接对应用身份授权，需要首先将 `88.222.77/APP_ID仓储`加入身份组 `88.222.77/APP_GROUP`，通过对身份组授权达到对应用身份授权目的。
 
 请求示例:
+
 ```js
     POST http://manufacture/api/v1/open/meta/grant/info
 
@@ -737,7 +763,9 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
     ]
     }'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 10000,
@@ -750,12 +778,15 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 对仓库系统应用身份 `88.222.77/APP_ID仓储`授权成功后，即可对目标元数据进行解析操作
 
 请求示例
+
 ```js
     GET http://storage:3000/api/v1/doip?targetId=88.111.100/META_PRODUCT&operationId=0.DOIP/Op.Retrieve
 
     -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 1,
@@ -866,7 +897,9 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
       }
     }'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 10000,
@@ -881,26 +914,27 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 以构建追溯应用为例：
 
 1. 应用开发者在沙盒中生成追溯应用的应用身份ID追溯。
-
-2. 构建双向的标识数据关联。在2.2.3中仓储企业节点（88.222.77）已完成“出库单--->产品”的单向关联关系，还需在生产企业节点（88.111.100）中实现“产品--->出库单”的关联关系。从而最终实现不同企业间“产品<--->出库单” 双向的关联关系。
-
+2. 构建双向的标识数据关联。在2.2.3中仓储企业节点（88.222.77）已完成“入库单--->产品”的单向关联关系，还需在生产企业节点（88.111.100）中实现“产品--->入库单”的关联关系。从而最终实现不同企业间“产品<--->入库单” 双向的关联关系。
 3. 应用开发者基于标识关系图，开发追溯应用，开发步骤为：
 
    用到的API接口包括：
 
 ![image](./images/app-dev-xmind.png)
 
-<span style="color:red;">①接口调用示例@李龙</span>
+`<span style="color:red;">`①接口调用示例@李龙
 
 **生产系统解析产品标识**
 
 请求示例:
+
 ```js
     GET http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Retrieve
 
     -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 1,
@@ -948,12 +982,15 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 **仓储系统解析产品标识**
 
 请求示例:
+
 ```js
     GET http://storage:3000/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Retrieve
 
     -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
+
 返回示例:
+
 ```json
     {
         "code": 1,
@@ -1000,7 +1037,7 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
     }
 ```
 
-<span style="color:red;">② 追溯大屏开发示例 @贺小火 </span>
+`<span style="color:red;">`② 追溯大屏开发示例 @贺小火 
 
 ## 3. 标识应用交付
 
@@ -1020,8 +1057,8 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 企业节点标准版的兼容接口地址为：
 
-[http://id-pointer-sdk.pre.idx.space/docs/idhub/snms/api-introduce](http://id-pointer-sdk.pre.idx.space/docs/idhub/snms/api-introduce) <span style="color: red">（需更新）</span>
+[http://id-pointer-sdk.pre.idx.space/docs/idhub/snms/api-introduce](http://id-pointer-sdk.pre.idx.space/docs/idhub/snms/api-introduce) `<span style="color: red">`（需更新）
 
 若原标识应用需使用企业节点标准版2.0 的新服务能力，则需调用新版接口，进行适配开发。企业节点标准版的接口地址为：
 
-[http://id-pointer-sdk.pre.idx.space/docs/idhub/standard/api-introduce](http://id-pointer-sdk.pre.idx.space/docs/idhub/standard/api-introduce)  <span style="color: red">（需更新）</span>
+[http://id-pointer-sdk.pre.idx.space/docs/idhub/standard/api-introduce](http://id-pointer-sdk.pre.idx.space/docs/idhub/standard/api-introduce)  `<span style="color: red">`（需更新）
