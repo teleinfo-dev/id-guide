@@ -2,7 +2,7 @@
 
 ##  挑战接口
 
-该接口用于获取挑战信息，为一随机nonce值
+该接口用于获取挑战信息，为一随机nounce值
 
 ###  请求参数
 
@@ -52,15 +52,14 @@
   "code": 40508
 }
 ```
-- 常见错误见附录
 
 ### 注意事项
-> 1. 该接口只允许应用身份调用，其他身份调用无法获取nonce值。
+> 1. 该接口只允许应用身份调用，其他身份调用无法获取nounce值。
 
 
 ## 应答，颁发Token
 
-该接口用于验证使用nonce值生成的signature，验证成功则颁发token
+该接口用于验证使用nounce值生成的signature，验证成功则颁发token
 
 ### 请求参数
 
@@ -113,7 +112,7 @@
 ## 签名生成方式参考
 
 ### 企业节点接口认证流程
-企业节点OpenApi认证使用挑战应答的方式，主体流程如下
+企业节点OpenAPI认证使用挑战应答的方式，主体流程如下
 
 ![img.png](../images/auth-flow.png)
 
@@ -157,7 +156,7 @@ public static PrivateKey fromPkcs8Pem(String pem, String passphrase) throws Exce
   }
 ```
 
-### Python
+#### Python
 ```Python
 #!/usr/bin/env python
 #coding=utf-8
@@ -172,15 +171,15 @@ from Crypto.Hash import SHA256
 # admin1-app1
 path_to_private_key_pem_file = '//Users//graypig//Downloads//App_app100.pem'
 
-nonce="1850"  ## 替换为challenge接口获取的随机数
-byte_array_nonce = nonce.encode()
+nounce="1850"  ## 替换为challenge接口获取的随机数
+byte_array_nonce = nounce.encode()
   
 def sign_bytes_rsa( byte_array_nonce, path_to_private_key_pem_file):
 	key = open(path_to_private_key_pem_file, 'r').read()
 	rsa_key = RSA.importKey(key)
 	signer = PKCS1_v1_5.new(rsa_key)
 	_digest = SHA256.new()
-	#print len(nonce)
+	#print len(nounce)
 	# print len(digest)
 	_digest.update(byte_array_nonce)
 	# _digest.update(digest)

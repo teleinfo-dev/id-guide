@@ -32,7 +32,8 @@
 
 <div style="display:flex;">
 <div style="width: 400px;padding:10px;background-color:rgb(232, 242, 254);border:1px solid #eee;margin-right:5px;">
-    <strong>社区版API接口</strong>
+    <details>
+    <summary><strong>社区版API接口</strong></summary>
     <ol>
     <li>标识查询</li>
     <li>标识注册-新增属性</li>
@@ -41,9 +42,11 @@
     <li>前缀预置</li>
     <li>前缀剔除</li>
     </ol>
+    </details>
 </div>
 <div style="width: 400px;padding:10px;background-color:rgb(255, 250, 229);border:1px solid #eee;margin-left:5px;">
-   <strong>标准版API接口</strong>
+   <details>
+   <summary><strong>标准版API接口</strong></summary>
    <ol>
     <li>身份认证</li>
     <li>企业元数据接口
@@ -94,6 +97,7 @@
         </ol>       
 </li>
 </ol>
+</details>
 </div>
 </div>
 

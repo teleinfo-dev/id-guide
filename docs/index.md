@@ -23,12 +23,12 @@ hero:
 features:
   - icon: <img src="/docs/sop.png" />
     title: 标识应用集成SOP
-    details: 旨在协助开发者按照规范完成标识应用的开发、联调和测试，所有过程均在沙盒环境中进行。目前提供社区版沙盒供用户使用，加入IDInside计划可优先获取标准版沙盒。如有需求，请联系：<p>段老师：10086  尚老师：10010</p>
+    details: 旨在协助开发者按照规范完成标识应用的开发、联调和测试，所有过程均在沙盒环境中进行。目前提供社区版沙盒供用户使用，加入IDInside计划可优先获取标准版沙盒。如有需求，请联系：<span style="color:black">段老师：10086  尚老师：10010</span>
     link: /handleAppSOP/index
     linkText: 快速开始
   - icon: <img src="/docs/sdk.png" />
     title: 工业互联网标识解析SDK
-    details: 基于 Java 语言开发的工业互联网标识 解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速使用元数据模板、标识解析、标识注册、数据权限等功能服务。<span style="color:rgb(22,93,255)">ID-SDK将于7月10日进行公测，敬请关注！</span>
+    details: 基于 Java 语言开发的工业互联网标识 解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速使用元数据模板、标识解析、标识注册、数据权限等功能服务。<span style="color:black">ID-SDK将于7月10日进行公测，敬请关注！</span>
     link: /sdk/v2/introduction
     linkText: 快速开始
   # - icon: <img src="/docs/openApi.png" />

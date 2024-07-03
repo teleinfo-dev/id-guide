@@ -2,6 +2,12 @@
 
 ## 标识注册
 
+通过此接口，用户可进行标识注册； 
+
+`注意：`
+> 1. 用户可基于自己创建的元数据模板进行标识注册。 
+> 2. 用户可基于授权给自己查看权限的本企业元数据模板进行标识注册。
+
 ### 请求参数
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
@@ -48,11 +54,11 @@
 
 ### 返回数据结构：
 
-| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
-| ------- | ------- | ---- | ---- | ------ | ---- |
-| code    | integer | true | none | none   |      |
-| message | string  | true | none | none   |      |
-| data    | object  | true | none | none   |      |
+| 名称    | 类型    | 中文名 | 说明 |
+| ------- | ------- | ------ | ---- |
+| code    | integer | none   |      |
+| message | string  | none   |      |
+| data    | object  | none   |      |
 
 ### 成功示例：
 
@@ -83,6 +89,11 @@
 ```
 
 ## 标识修改
+
+通过此接口，用户可进行标识修改操作。 
+
+`注意:` 
+> 用户仅可修改自己创建的实例标识。
 
 ### 请求参数说明：
 
@@ -130,11 +141,11 @@
 
 ### 返回数据结构：
 
-| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
-| ------- | ------- | ---- | ---- | ------ | ---- |
-| code    | integer | true | none | none   |      |
-| message | string  | true | none | none   |      |
-| data    | object  | true | none | none   |      |
+| 名称    | 类型    | 中文名 | 说明 |
+| ------- | ------- | ------ | ---- |
+| code    | integer | none   |      |
+| message | string  | none   |      |
+| data    | object  | none   |      |
 
 ### 成功示例：
 
@@ -170,6 +181,11 @@
 
 ## 标识删除
 
+通过此接口，用户可进行标识删除操作。 
+
+`注意：`
+> 用户仅可删除自己创建的实例标识。
+
 ### 请求参数说明
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
@@ -195,10 +211,10 @@
 
 ### 返回数据结构：
 
-| 名称    | 类型    | 必选 | 约束 | 中文名 | 说明 |
-| ------- | ------- | ---- | ---- | ------ | ---- |
-| code    | integer | true | none | none   |      |
-| message | string  | true | none | none   |      |
+| 名称    | 类型    | 中文名 | 说明 |
+| ------- | ------- | ------ | ---- |
+| code    | integer | none   |      |
+| message | string  | none   |      |
 
 ### 成功返回示例：
 
@@ -218,7 +234,12 @@
 }
 ```
 
-## 标识查询
+## 标识解析
+
+通过此接口，用户可进行元数据模板标识解析与实例标识解析。
+
+`注意: `
+> 用户可解析范围为公开数据与授权给自己查看或编辑权限的数据。
 
 ### 请求参数
 
@@ -234,14 +255,14 @@
 
 ### 返回数据结构
 
-| 名称            | 类型    | 必选 | 约束 | 中文名 | 说明 |
-| --------------- | ------- | ---- | ---- | ------ | ---- |
-| code            | integer | true | none | none   |      |
-| message         | string  | true | none | none   |      |
-| data            | json    | true | none | none   |      |
-| data.id         | string  | true | none | none   |      |
-| data.type       | string  | true | none | none   |      |
-| data.attributes | json    | true | none | none   |      |
+| 名称            | 类型    | 中文名 | 说明 |
+| --------------- | ------- | ------ | ---- |
+| code            | integer | none   |      |
+| message         | string  | none   |      |
+| data            | json    | none   |      |
+| data.id         | string  | none   |      |
+| data.type       | string  | none   |      |
+| data.attributes | json    | none   |      |
 
 ### 成功返回示例
 
