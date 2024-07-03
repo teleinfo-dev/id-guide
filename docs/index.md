@@ -8,8 +8,10 @@ hero:
   text: 开发说明文档
   image:
     src: /logo.png
-    alt: 工业互联网标识解析
+    alt: 工业互联网标识解析22
   actions:
+    - text: 标识应用集成SOP
+      link: /handleAppSOP/index.md
     - text: 标识解析SDK
       link: /sdk/v2/introduction
     # - text: 二级节点OpenAPI
@@ -19,9 +21,14 @@ hero:
       theme: alt
 
 features:
+  - icon: <img src="/docs/sop.png" />
+    title: 标识应用集成SOP
+    details: 旨在协助开发者按照规范完成标识应用的开发、联调和测试，所有过程均在沙盒环境中进行。目前提供社区版沙盒供用户使用，加入IDInside计划可优先获取标准版沙盒。如有需求，请联系：<p>段老师：10086  尚老师：10010</p>
+    link: /handleAppSOP/index
+    linkText: 快速开始
   - icon: <img src="/docs/sdk.png" />
     title: 工业互联网标识解析SDK
-    details: 基于Java语言开发的工业互联网标识解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速对接标识解析、标识注册、标识维护等功能服务.
+    details: 基于 Java 语言开发的工业互联网标识 解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速使用元数据模板、标识解析、标识注册、数据权限等功能服务。<span style="color:rgb(22,93,255)">ID-SDK将于7月10日进行公测，敬请关注！</span>
     link: /sdk/v2/introduction
     linkText: 快速开始
   # - icon: <img src="/docs/openApi.png" />
@@ -30,8 +37,8 @@ features:
   #   link: /openApi/v5/api-introduce.md
   #   linkText: 快速开始
   - icon: <img src="/docs/idhub.png" />
-    title: 工业互联网标识企业节点
-    details: 开放IDHub标准版API接口，是为了让应用集成企业节点更便捷
+    title: IDHub标准版API
+    details: 开放IDHub标准版API接口，以便企业节点更轻松地集成应用，从而提升整体操作效率。
     link: /idhub/standard/introduce.md
     linkText: 快速开始
   # - icon: 🧰
@@ -51,14 +58,15 @@ features:
 ---
 
 <style>
+
 /*爱的魔力转圈圈*/
-.m-home-layout .image-src:hover {
-  transform: translate(-50%, -50%) rotate(666turn);
-  transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1);
+.m-home-layout .image-src {
+  width: 180px;
+  height: 180px;
 }
 
 .m-home-layout .details small {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .m-home-layout .bottom-small {

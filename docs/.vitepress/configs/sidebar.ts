@@ -184,7 +184,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           items: [
             {
               text: 'V3',
-              link: '/idhub/snms/v3/introduce.md',
+              // link: '/idhub/snms/v3/introduce.md',
               collapsed: true,
               items: [
                 {
@@ -203,7 +203,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             },
             {
               text: 'V5',
-              link: '/idhub/snms/v5/introduce.md',
+              // link: '/idhub/snms/v5/introduce.md',
               collapsed: true,
               items: [
                 {
