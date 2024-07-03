@@ -13,7 +13,7 @@ hero:
     - text: 标识应用集成SOP
       link: /handleAppSOP/index.md
     - text: 标识解析SDK
-      link: /sdk/v2/introduction
+      link: /sdk/v1/introduction
     # - text: 二级节点OpenAPI
     #   link: /openApi/v5/api-introduce.md
     - text: 企业节点IDHub
@@ -29,7 +29,7 @@ features:
   - icon: <img src="/docs/sdk.png" />
     title: 工业互联网标识解析SDK
     details: 基于 Java 语言开发的工业互联网标识 解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速使用元数据模板、标识解析、标识注册、数据权限等功能服务。<span style="color:black">ID-SDK将于7月10日进行公测，敬请关注！</span>
-    link: /sdk/v2/introduction
+    link: /sdk/v1/introduction
     linkText: 快速开始
   # - icon: <img src="/docs/openApi.png" />
   #   title: 工业互联网标识解析二级节点OpenAPI

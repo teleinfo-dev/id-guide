@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       {
         text: 'V1.0',
-        link: '/sdk/v2/introduction',
+        link: '/sdk/v1/introduction',
       },
       // {
       //   text: 'V1.0',

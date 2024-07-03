@@ -1,6 +1,3 @@
-<div style="background-color: rgb(232,243,255); color: rgb(22,93,255);padding: 8px 0 8px 2px; font-size: 20px; margin-top: -16px; margin-bottom: 20px;">发版通知</div>
-
-
 # 简介
 
 ## ID-SDK
