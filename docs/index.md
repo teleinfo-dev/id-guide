@@ -23,7 +23,7 @@ hero:
 features:
   - icon: <img src="/docs/sop.png" />
     title: 标识应用集成SOP
-    details: 旨在协助开发者按照规范完成标识应用的开发、联调和测试，所有过程均在沙盒环境中进行。目前提供社区版沙盒供用户使用，加入IDInside计划可优先获取标准版沙盒。如有需求，请联系：<span style="color:black">段老师：10086</span>
+    details: 旨在协助开发者按照规范完成标识应用的开发、联调和测试，所有过程均在沙盒环境中进行。目前提供社区版沙盒供用户使用，加入IDInside计划可优先获取标准版沙盒。如有需求，请联系：<span style="color:black">段老师：18611396937</span>
     link: /handleAppSOP/index
     linkText: 快速开始
   - icon: <img src="/docs/sdk.png" />
