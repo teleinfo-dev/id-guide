@@ -7,6 +7,8 @@ import { createMediumZoomProvider } from './composables/useMediumZoom'
 import MLayout from './components/MLayout.vue'
 import MNavLinks from './components/MNavLinks.vue'
 
+import DownloadDoc from './components/Download.vue'
+
 import './styles/index.scss'
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -29,6 +31,8 @@ export default {
     createMediumZoomProvider(app, router)
 
     app.component('MNavLinks', MNavLinks)
+
+    app.component('DownloadDoc', DownloadDoc)
 
     if (typeof window !== 'undefined') {
       watch(
