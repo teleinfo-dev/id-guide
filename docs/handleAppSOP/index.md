@@ -527,8 +527,15 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 ![image](./images/auth-menu.png)
 
 （3） 在企业节点A中创建数据连接任务
+  - 新建基础类型映射关系
+   ![image](./images/jichuyingshe.png)
+  - 新建引用类型映射关系
+   ![image](./images/yinyongyingshe.png)
+  - 选择元数据元素进行字段映射
+   ![image](./images/ziduanyingshe.png)
+  - 查看编码映射关系
+   ![image](./images/bianmayingshe.png) 
 
-<span style="color: red;">系统截图</span>
 
 （4） 在物流企业的企业节点C（88.222.77）中配置入库单的元数据模板
 
