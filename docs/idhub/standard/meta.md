@@ -460,6 +460,7 @@
 | ----------------------------------------------------- | ------- | -------- | -------- | --------------------------------------------------------------------------------------------- | ------ |
 | metaHanlde                                            | String  | 是       |          | 元数据标识                                                                                    |        |
 | metaItemDTOS[i].itemCode                              | String  | 是       | 50       |                                                                                               |        |
+| metaItemDTOS[i].itemIndex                              | Integer  | 否      | 50       |                                                                                               |        |
 | metaItemDTOS[i].englishName                           | String  | 是       | 50       |                                                                                               |        |
 | metaItemDTOS[i].chineseName                           | String  | 是       | 50       |                                                                                               |        |
 | metaItemDTOS[i].definition                            | String  | 否       |          | 实体值域定义                                                                                  |        |
