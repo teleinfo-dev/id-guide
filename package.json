@@ -49,6 +49,8 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "html-docx-js-typescript": "^0.1.5",
-    "html-to-docx": "^1.8.0"
+    "html-to-docx": "^1.8.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1"
   }
 }

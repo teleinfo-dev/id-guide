@@ -1,10 +1,11 @@
 import { basename } from 'node:path'
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
 import MarkdownPreview from 'vite-plugin-markdown-preview'
 
 import { head, nav, sidebar } from './configs'
 
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
+
 
 export default defineConfig({
   outDir: '../dist',
@@ -21,12 +22,23 @@ export default defineConfig({
 
   /* markdown 配置 */
   markdown: {
-    lineNumbers: true,
+    lineNumbers: true
   },
 
   /* 主题配置 */
   themeConfig: {
     i18nRouting: false,
+
+    search: {
+      provider: 'local',
+    //   options: {
+    //     // detailedView: true,
+    //     miniSearch: {
+    //       searchOptions: {
+    //     }
+    //   }
+    // }
+  },
 
     logo: '/logo.png',
 
