@@ -46,6 +46,24 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
+  'sdk/v2': [
+    {
+      text: '开始',
+      items: [
+        { text: '简介', link: '/sdk/v2/introduction' },
+        { text: '身份认证', link: '/sdk/v2/user-auth' }
+      ],
+    },
+    {
+      text: '基本功能',
+      items: [
+        { text: '元数据', link: '/sdk/v2/basic/meta' },
+        { text: '数据权限', link: '/sdk/v2/basic/data-auth' },
+        { text: '标识操作', link: '/sdk/v2/basic/handle' },
+        { text: '文件处理', link: '/sdk/v2/basic/file' }
+      ],
+    }
+  ],
   // '/openApi/v3': [
   //   {
   //     text: '开始',
