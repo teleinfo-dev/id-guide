@@ -196,11 +196,11 @@ ID生产：88.111.100/APP\_ID生产         ID仓储：88.222.77/APP\_I
 返回结果:
 
 ```json
-    {
-      "code": 1,
-      "message": "成功",
-      "data": "1816"
-    }
+{
+  "code": 1,
+  "message": "成功",
+  "data": "1816"
+}
 ```
 
 **应答**
@@ -209,7 +209,7 @@ ID生产：88.111.100/APP\_ID生产         ID仓储：88.222.77/APP\_I
 
 请求示例:
 
-```js
+```shell
 POST http://manufacture:3000/api/v1/doip/public/verify-response
 -d '{
       "handle":"handle=88.111.100/APP_ID生产",
@@ -220,13 +220,13 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 返回示例:
 
 ```json
-    {
-     "code": 1,
-     "message": "成功",
-     "data": {
-     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4L0FwcF96ajAxIiwiZXhwIjoxNzAyNTQyMTM0LCJpYXQiOjE3MDI0NTU3MzQsImp0aSI6IjMxMzlmNDVkLTA5YzAtNDljZS04MTdkLWE4NDRhZmFlZTFjMyJ9.9Akw3pAwMM-tHZ6WOB6OI4E_ZMvDKyRn6CPYD1TWahc"
-     }
-    }
+{
+ "code": 1,
+ "message": "成功",
+ "data": {
+ "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4L0FwcF96ajAxIiwiZXhwIjoxNzAyNTQyMTM0LCJpYXQiOjE3MDI0NTU3MzQsImp0aSI6IjMxMzlmNDVkLTA5YzAtNDljZS04MTdkLWE4NDRhZmFlZTFjMyJ9.9Akw3pAwMM-tHZ6WOB6OI4E_ZMvDKyRn6CPYD1TWahc"
+ }
+}
 ```
 
 通过挑战应答接口，应用可以获取token，用于调用后续元数据，标识等相关接口
@@ -239,142 +239,142 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 
 请求示例:
 
-```js
-    POST http://manufacture:3000/api/v1/open/meta/create
+```shell
+POST http://manufacture:3000/api/v1/open/meta/create
 
-    --H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+--H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-      "classifyCode": "assign",
-      "metaHandle": "88.111.100/META_PRODUCT",
-      "metaName": "产品元数据",
-      "metaCode": "product",
-      "standard": "",
-      "metaDesc": "",
-      "industryCategory": "M",
-      "industrySpecific": "75",
-      "industryTrade": "751",
-      "industrySubclass": "7517",
-      "metaItemCreateDTOS": [
-        {
-          "itemCode": "productBrand",
-          "englishName": "productBrand",
-          "chineseName": "产品品牌",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "minLength": 0,
-            "maxLength": 4000,
-            "dataType": "1"
-          }
-        },
-        {
-          "itemCode": "productName",
-          "englishName": "productName",
-          "chineseName": "产品名称",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "dataType": "1"
-          }
-        },
-        {
-          "itemCode": "manufactureDate",
-          "englishName": "manufactureDate",
-          "chineseName": "生产日期",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "dateFormat": "yyyy-MM-dd HH:mm:ss",
-            "dataType": "3"
-          }
-        }
-      ]
-    }'
+-d '{
+  "classifyCode": "assign",
+  "metaHandle": "88.111.100/META_PRODUCT",
+  "metaName": "产品元数据",
+  "metaCode": "product",
+  "standard": "",
+  "metaDesc": "",
+  "industryCategory": "M",
+  "industrySpecific": "75",
+  "industryTrade": "751",
+  "industrySubclass": "7517",
+  "metaItemCreateDTOS": [
+    {
+      "itemCode": "productBrand",
+      "englishName": "productBrand",
+      "chineseName": "产品品牌",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "minLength": 0,
+        "maxLength": 4000,
+        "dataType": "1"
+      }
+    },
+    {
+      "itemCode": "productName",
+      "englishName": "productName",
+      "chineseName": "产品名称",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "dataType": "1"
+      }
+    },
+    {
+      "itemCode": "manufactureDate",
+      "englishName": "manufactureDate",
+      "chineseName": "生产日期",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "dateFormat": "yyyy-MM-dd HH:mm:ss",
+        "dataType": "3"
+      }
+    }
+  ]
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 1,
-        "message": "成功",
-        "data": {
-            "metaId": 61
-        }
+{
+    "code": 1,
+    "message": "成功",
+    "data": {
+        "metaId": 61
     }
+}
 ```
 
 `仓储系统创建入库单元数据模型`
 
 请求示例:
 
-```js
-    POST http://storage:3000/api/v1/open/meta/create
+```shell
+POST http://storage:3000/api/v1/open/meta/create
 
-    --H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+--H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-      "classifyCode": "assign",
-      "metaHandle": "88.222.77/META_RUKUDAN",
-      "metaName": "入库单元数据",
-      "metaCode": "rukudan",
-      "standard": "",
-      "metaDesc": "",
-      "industryCategory": "M",
-      "industrySpecific": "75",
-      "industryTrade": "751",
-      "industrySubclass": "7517",
-      "metaItemCreateDTOS": [
-        {
-          "itemCode": "storageDate",
-          "englishName": "storageDate",
-          "chineseName": "入库日期",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "dateFormat": "yyyy-MM-dd HH:mm:ss",
-            "dataType": "3"
-          }
-        },
-        {
-          "itemCode": "storagePerson",
-          "englishName": "storagePerson",
-          "chineseName": "入库负责人",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "dataType": "1"
-          }
-        },
-        {
-          "itemCode": "storageProduct",
-          "englishName": "storageProduct",
-          "chineseName": "入库产品",
-          "required": 0,
-          "uniqueField": 0,
-          "inputNecessary": 1,
-          "listItemNecessary": 0,
-          "itemSchemaCreateDTO": {
-            "referenceType": 2,
-            "dataType": "5"
-          },
-          "itemReferenceDTO": {
-              "referenceMetaHandle": "88.111.100/META_PRODUCT"
-            }
+-d '{
+  "classifyCode": "assign",
+  "metaHandle": "88.222.77/META_RUKUDAN",
+  "metaName": "入库单元数据",
+  "metaCode": "rukudan",
+  "standard": "",
+  "metaDesc": "",
+  "industryCategory": "M",
+  "industrySpecific": "75",
+  "industryTrade": "751",
+  "industrySubclass": "7517",
+  "metaItemCreateDTOS": [
+    {
+      "itemCode": "storageDate",
+      "englishName": "storageDate",
+      "chineseName": "入库日期",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "dateFormat": "yyyy-MM-dd HH:mm:ss",
+        "dataType": "3"
+      }
+    },
+    {
+      "itemCode": "storagePerson",
+      "englishName": "storagePerson",
+      "chineseName": "入库负责人",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "dataType": "1"
+      }
+    },
+    {
+      "itemCode": "storageProduct",
+      "englishName": "storageProduct",
+      "chineseName": "入库产品",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "referenceType": 2,
+        "dataType": "5"
+      },
+      "itemReferenceDTO": {
+          "referenceMetaHandle": "88.111.100/META_PRODUCT"
         }
-      ]
-    }'
+    }
+  ]
+}'
 ```
 
 **(3) 元数据发布**
@@ -383,32 +383,32 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 
 请求示例:
 
-```js
-    PUT http://manufacture:3000/api/v1/open/meta/publish-or-withdraw
+```shell
+PUT http://manufacture:3000/api/v1/open/meta/publish-or-withdraw
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d ' {
-        "metaHandleList": [
-            "88.111.100/META_PRODUCT"
-        ],
-        "opType": "publish"
-    }'
+-d ' {
+    "metaHandleList": [
+        "88.111.100/META_PRODUCT"
+    ],
+    "opType": "publish"
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 10000,
-        "message": "成功",
-        "data": [
-            {
-                "metaHandle": "88.111.100/META_PRODUCT",
-                "state": "success"
-            }
-        ]
-    }
+{
+    "code": 10000,
+    "message": "成功",
+    "data": [
+        {
+            "metaHandle": "88.111.100/META_PRODUCT",
+            "state": "success"
+        }
+    ]
+}
 ```
 
 **(4) 注册标识**
@@ -419,80 +419,80 @@ POST http://manufacture:3000/api/v1/doip/public/verify-response
 
 请求示例:
 
-```js
-    POST http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Create
+```shell
+POST http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Create
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-      "type": "88.111.100/META_PRODUCT",
-      "attributes": {
-        "content": {
-          "productBrand": "泰尔英福",
-          "productName": "企业节点",
-          "manufactureDate": "2024-06-22"
-        }
-      }
-    }'
+-d '{
+  "type": "88.111.100/META_PRODUCT",
+  "attributes": {
+    "content": {
+      "productBrand": "泰尔英福",
+      "productName": "企业节点",
+      "manufactureDate": "2024-06-22"
+    }
+  }
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-      "code": 10000,
-      "message": "成功",
-      "data": {
-        "type": "88.111.100/META_PRODUCT",
-        "attributes": {
-          "content": {
-            "productBrand": "泰尔英福",
-            "productName": "企业节点",
-            "manufactureDate": "2024-06-22"
-          }
-        }
+{
+  "code": 10000,
+  "message": "成功",
+  "data": {
+    "type": "88.111.100/META_PRODUCT",
+    "attributes": {
+      "content": {
+        "productBrand": "泰尔英福",
+        "productName": "企业节点",
+        "manufactureDate": "2024-06-22"
       }
     }
+  }
+}
 ```
 
 `仓储系统注册入库单标识`
 
 请求示例:
 
-```js
-    POST http://storage/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Create
+```shell
+POST http://storage/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Create
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-      "type": "88.222.77/META_RUKUDAN",
-      "attributes": {
-        "content": {
-          "storagePerson": "admin",
-          "storageDate": "2024-06-23",
-          "storageProduct": ["88.111.100/PRODUCT_1","88.111.100/PRODUCT_2"]
-        }
-      }
-    }'
+-d '{
+  "type": "88.222.77/META_RUKUDAN",
+  "attributes": {
+    "content": {
+      "storagePerson": "admin",
+      "storageDate": "2024-06-23",
+      "storageProduct": ["88.111.100/PRODUCT_1","88.111.100/PRODUCT_2"]
+    }
+  }
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-      "code": 10000,
-      "message": "成功",
-      "data": {
-        "type": "88.222.77/META_RUKUDAN",
-        "attributes": {
-          "content": {
-            "storagePerson": "admin",
-            "storageDate": "2024-06-23",
-            "storageProduct": ["88.111.100/PRODUCT_1","88.111.100/PRODUCT_2"]
-          }
-        }
+{
+  "code": 10000,
+  "message": "成功",
+  "data": {
+    "type": "88.222.77/META_RUKUDAN",
+    "attributes": {
+      "content": {
+        "storagePerson": "admin",
+        "storageDate": "2024-06-23",
+        "storageProduct": ["88.111.100/PRODUCT_1","88.111.100/PRODUCT_2"]
       }
     }
+  }
+}
 ```
 
 应用通过集成上述接口，能够实现一个高效闭环流程，涵盖身份验证、元数据管理、数据授权、标识符注册与解析等关键环节。此外，企业节点所提供的丰富API接口库，使得应用能够根据特定需求，轻松扩展功能，实现定制化服务。
@@ -575,30 +575,30 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 请求示例:
 
-```js
-    POST http://manufacture/api/v1/open/meta/grant/info
+```shell
+POST http://manufacture/api/v1/open/meta/grant/info
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-        "scope": 2,
-        "metaHandle": "88.111.100/META_PRODUCT",
-        "handleList": [
-            "88.111.100/APP_ID_OTHER"
-        ],
-      "removeHandleUsers": [
+-d '{
+    "scope": 2,
+    "metaHandle": "88.111.100/META_PRODUCT",
+    "handleList": [
+        "88.111.100/APP_ID_OTHER"
+    ],
+  "removeHandleUsers": [
 
-    ]
-    }'
+]
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 10000,
-        "message": "成功"
-    }
+{
+    "code": 10000,
+    "message": "成功"
+}
 ```
 
 **元数据模版授权通知**
@@ -607,34 +607,34 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 请求示例:
 
-```js
-    GET http://manufacture/api/v1/open/message/appMessage
+```shell
+GET http://manufacture/api/v1/open/message/appMessage
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
 
 返回示例:
 
 ```json
-    {
-      "code": 1,
-      "message": "成功",
-      "data": {
-        "pageSize": 20,
-        "pageNumber": 1,
-        "totalCount": 1,
-        "totalPage": 1,
-        "content": [
-          {
-            "id": 1,
-            "messageTitleType": 1,
-            "messageType": 1,
-            "messageDetail": "XXXX公司已向您授权元数据：88.111.100/META_PRODUCT的查看权限。",
-            "createdTime": "2024-06-22 17:01:42"
-          }
-        ]
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "pageSize": 20,
+    "pageNumber": 1,
+    "totalCount": 1,
+    "totalPage": 1,
+    "content": [
+      {
+        "id": 1,
+        "messageTitleType": 1,
+        "messageType": 1,
+        "messageDetail": "XXXX公司已向您授权元数据：88.111.100/META_PRODUCT的查看权限。",
+        "createdTime": "2024-06-22 17:01:42"
       }
-    }
+    ]
+  }
+}
 ```
 
 **元数据模版查询**
@@ -643,71 +643,72 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 请求示例:
 
-```js
-    GET http://manufacture/api/v1/open/meta/info?metaHandle=88.111.100/META_PRODUCT
+```shell
+GET http://manufacture/api/v1/open/meta/info?metaHandle=88.111.100/META_PRODUCT
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
 
 返回示例:
 
 ```json
-    {
-      "code": 1,
-      "message": "成功",
-      "data": {
-          "classifyCode": "assign",
-          "metaHandle": "88.111.100/META_PRODUCT",
-          "metaName": "产品元数据",
-          "metaCode": "product",
-          "standard": "",
-          "metaDesc": "",
-          "industryCategory": "M",
-          "industrySpecific": "75",
-          "industryTrade": "751",
-          "industrySubclass": "7517",
-          "metaItemCreateDTOS": [
-            {
-              "itemCode": "productBrand",
-              "englishName": "productBrand",
-              "chineseName": "产品品牌",
-              "required": 0,
-              "uniqueField": 0,
-              "inputNecessary": 1,
-              "listItemNecessary": 0,
-              "itemSchemaCreateDTO": {
-                "minLength": 0,
-                "maxLength": 4000,
-                "dataType": "1"
-              }
-            },
-            {
-              "itemCode": "productName",
-              "englishName": "productName",
-              "chineseName": "产品名称",
-              "required": 0,
-              "uniqueField": 0,
-              "inputNecessary": 1,
-              "listItemNecessary": 0,
-              "itemSchemaCreateDTO": {
-                "dataType": "1"
-              }
-            },
-            {
-              "itemCode": "manufactureDate",
-              "englishName": "manufactureDate",
-              "chineseName": "生产日期",
-              "required": 0,
-              "uniqueField": 0,
-              "inputNecessary": 1,
-              "listItemNecessary": 0,
-              "itemSchemaCreateDTO": {
-                "dateFormat": "yyyy-MM-dd HH:mm:ss",
-                "dataType": "3"
-              }
-            }
-        ]
-    }
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "classifyCode": "assign",
+    "metaHandle": "88.111.100/META_PRODUCT",
+    "metaName": "产品元数据",
+    "metaCode": "product",
+    "standard": "",
+    "metaDesc": "",
+    "industryCategory": "M",
+    "industrySpecific": "75",
+    "industryTrade": "751",
+    "industrySubclass": "7517",
+    "metaItemCreateDTOS": [
+      {
+        "itemCode": "productBrand",
+        "englishName": "productBrand",
+        "chineseName": "产品品牌",
+        "required": 0,
+        "uniqueField": 0,
+        "inputNecessary": 1,
+        "listItemNecessary": 0,
+        "itemSchemaCreateDTO": {
+          "minLength": 0,
+          "maxLength": 4000,
+          "dataType": "1"
+        }
+      },
+      {
+        "itemCode": "productName",
+        "englishName": "productName",
+        "chineseName": "产品名称",
+        "required": 0,
+        "uniqueField": 0,
+        "inputNecessary": 1,
+        "listItemNecessary": 0,
+        "itemSchemaCreateDTO": {
+          "dataType": "1"
+        }
+      },
+      {
+        "itemCode": "manufactureDate",
+        "englishName": "manufactureDate",
+        "chineseName": "生产日期",
+        "required": 0,
+        "uniqueField": 0,
+        "inputNecessary": 1,
+        "listItemNecessary": 0,
+        "itemSchemaCreateDTO": {
+          "dateFormat": "yyyy-MM-dd HH:mm:ss",
+          "dataType": "3"
+        }
+      }
+    ]
+  }
+}
 ```
 
 企业数据目录跨企业开放，其他企业获取本企业数据目录，用到的API接口包括：
@@ -724,30 +725,30 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 请求示例:
 
-```js
-    POST http://manufacture/api/v1/open/meta/grant/info
+```shell
+POST http://manufacture/api/v1/open/meta/grant/info
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 
-    -d '{
-        "scope": 2,
-        "metaHandle": "88.111.100/META_PRODUCT",
-        "handleList": [
-            "88.222.77/APP_GROUP"
-        ],
-      "removeHandleUsers": [
+-d '{
+    "scope": 2,
+    "metaHandle": "88.111.100/META_PRODUCT",
+    "handleList": [
+        "88.222.77/APP_GROUP"
+    ],
+  "removeHandleUsers": [
 
-    ]
-    }'
+    ]   
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 10000,
-        "message": "成功"
-    }
+{
+    "code": 10000,
+    "message": "成功"
+}
 ```
 
 **元数据模版解析**
@@ -756,103 +757,103 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 
 请求示例
 
-```js
-    GET http://storage:3000/api/v1/doip?targetId=88.111.100/META_PRODUCT&operationId=0.DOIP/Op.Retrieve
+```shell
+GET http://storage:3000/api/v1/doip?targetId=88.111.100/META_PRODUCT&operationId=0.DOIP/Op.Retrieve
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 1,
-        "message": "成功",
-        "data": {
-            "id": "88.111.100/META_PRODUCT",
-            "type": "0.TYPE/DO.DOIPMETA",
-            "attributes": {
-                "content": {
-                    "basicInfo": {
-                        "metaName": "产品元数据",
-                        "metaCode": "product",
-                        "industry": "科学研究和技术服务业/科技推广和应用服务业/技术推广服务/三维（3D)打印技术推广服务",
-                        "industryCategory": "M",
-                        "industrySpecific": "75",
-                        "industryTrade": "751",
-                        "industrySubclass": "7517",
-                        "metaState": 1,
-                        "metaContributor": "88.111.100",
-                        "standard": "",
-                        "metaDesc": "",
-                        "isQuote": 0,
-                        "publishedTime": "2024-06-22 11:12:26",
-                        "effectiveTime": "2024-06-22 11:15:27",
-                        "latestUpdateTime": "2024-06-228 11:19:26"
-                    },
-                    "itemInfos": [
-                        {
-                            "itemBasicInfo": {
-                                "itemIndex": 2000,
-                                "itemCode": "productBrand",
-                                "enName": "productBrand",
-                                "cnName": "产品品牌",
-                                "state": 0
-                            },
-                            "itemSchemaInfo": {
-                                "dataType": 1,
-                                "dataTypeString": "字符型",
-                                "minLength": 0,
-                                "maxLength": 4000
-                            }
-                        },
-                        {
-                            "itemBasicInfo": {
-                                "itemIndex": 2001,
-                                "itemCode": "productName",
-                                "enName": "productName",
-                                "cnName": "产品名称",
-                                "state": 0
-                            },
-                            "itemSchemaInfo": {
-                                "dataType": 1,
-                                "dataTypeString": "字符型",
-                                "minLength": 0,
-                                "maxLength": 4000
-                            }
-                        },
-                        {
-                              "itemBasicInfo": {
-                                  "itemIndex": 2002,
-                                  "itemCode": "manufactureDate",
-                                  "enName": "manufactureDate",
-                                  "cnName": "生产日期",
-                                  "state": 0
-                              },
-                              "itemSchemaInfo": {
-                                  "dataType": 3,
-                                  "dataTypeString": "字符型",
-                                  "dateFormat": "YYYY-MM-DD HH:mm:ss"
-                              }
-                          }
-                    ],
-                    "required": [],
-                    "uniqueness": [],
-                    "inputItem": [
-                        "productName",
-                        "productBrand",
-                        "manufactureDate"
-                    ],
-                    "listItem": []
+{
+    "code": 1,
+    "message": "成功",
+    "data": {
+        "id": "88.111.100/META_PRODUCT",
+        "type": "0.TYPE/DO.DOIPMETA",
+        "attributes": {
+            "content": {
+                "basicInfo": {
+                    "metaName": "产品元数据",
+                    "metaCode": "product",
+                    "industry": "科学研究和技术服务业/科技推广和应用服务业/技术推广服务/三维（3D)打印技术推广服务",
+                    "industryCategory": "M",
+                    "industrySpecific": "75",
+                    "industryTrade": "751",
+                    "industrySubclass": "7517",
+                    "metaState": 1,
+                    "metaContributor": "88.111.100",
+                    "standard": "",
+                    "metaDesc": "",
+                    "isQuote": 0,
+                    "publishedTime": "2024-06-22 11:12:26",
+                    "effectiveTime": "2024-06-22 11:15:27",
+                    "latestUpdateTime": "2024-06-228 11:19:26"
                 },
-                "metaData": {
-                    "createTime": "2024-06-22 11:11:27",
-                    "updateTime": "2024-06-22 11:11:27",
-                    "creator": "88.111.100/APP_ID生产"
-                }
+                "itemInfos": [
+                    {
+                        "itemBasicInfo": {
+                            "itemIndex": 2000,
+                            "itemCode": "productBrand",
+                            "enName": "productBrand",
+                            "cnName": "产品品牌",
+                            "state": 0
+                        },
+                        "itemSchemaInfo": {
+                            "dataType": 1,
+                            "dataTypeString": "字符型",
+                            "minLength": 0,
+                            "maxLength": 4000
+                        }
+                    },
+                    {
+                        "itemBasicInfo": {
+                            "itemIndex": 2001,
+                            "itemCode": "productName",
+                            "enName": "productName",
+                            "cnName": "产品名称",
+                            "state": 0
+                        },
+                        "itemSchemaInfo": {
+                            "dataType": 1,
+                            "dataTypeString": "字符型",
+                            "minLength": 0,
+                            "maxLength": 4000
+                        }
+                    },
+                    {
+                          "itemBasicInfo": {
+                              "itemIndex": 2002,
+                              "itemCode": "manufactureDate",
+                              "enName": "manufactureDate",
+                              "cnName": "生产日期",
+                              "state": 0
+                          },
+                          "itemSchemaInfo": {
+                              "dataType": 3,
+                              "dataTypeString": "字符型",
+                              "dateFormat": "YYYY-MM-DD HH:mm:ss"
+                          }
+                      }
+                ],
+                "required": [],
+                "uniqueness": [],
+                "inputItem": [
+                    "productName",
+                    "productBrand",
+                    "manufactureDate"
+                ],
+                "listItem": []
+            },
+            "metaData": {
+                "createTime": "2024-06-22 11:11:27",
+                "updateTime": "2024-06-22 11:11:27",
+                "creator": "88.111.100/APP_ID生产"
             }
         }
     }
+}
 ```
 
 **创建元数据副本**
@@ -860,158 +861,174 @@ IDLink实现数据接入时，提供数据查询、数据导入两种模式：
 可以解析元数据后，若需要在本系统使用该元数据进行标识注册操作，需要首先依赖该元数据创建元数据副本
 
 请求示例:
-```js
-    POST /api/v1/open/meta/baseon-create
-  
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
-  
-    -d '{
-      "baseonHandle": "88.111.100/META_PRODUCT",
-      "baseInfo": {
-        "metaHandle": "88.222.77/META_PRODUCT_COPY",
-        "metaCode": "PRODUCT_COPY",
-        "classifyCode": "ASSIGN"
-      }
-    }'
+```shell
+POST /api/v1/open/meta/baseon-create
+
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+
+-d '{
+  "baseonHandle": "88.111.100/META_PRODUCT",
+  "baseInfo": {
+    "metaHandle": "88.222.77/META_PRODUCT_COPY",
+    "metaCode": "PRODUCT_COPY",
+    "classifyCode": "ASSIGN"
+  }
+}'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 10000,
-        "message": "成功"
-    }
+{
+    "code": 10000,
+    "message": "成功"
+}
 ```
 
 #### 2.3.5 标识应用开发
 
 应用开发者完成数据接入企业节点后，可通过SDK或API接口，继续完成标识应用的开发测试。
 
-以构建追溯应用为例：
-
+构建追溯应用前，完成以下操作：
 1. 应用开发者在沙盒中生成追溯应用的应用身份ID追溯。
-2. 构建双向的标识数据关联。在2.2.3中仓储企业节点（88.222.77）已完成“入库单--->产品”的单向关联关系，还需在生产企业节点（88.111.100）中实现“产品--->入库单”的关联关系。从而最终实现不同企业间“产品<--->入库单” 双向的关联关系。
-3. 应用开发者基于标识关系图，开发追溯应用，开发步骤为：
+2. 构建双向的标识数据关联。在2.3.1中仓储企业节点（88.222.77）已完成“入库单--->产品”的单向关联关系，参开该方式还需在生产企业节点（88.111.100）中实现“产品--->入库单”的关联关系。从而最终实现不同企业间“产品<--->入库单”双向的关联关系。
+3. 基于步骤2中的元数据进行标识数据的注册，完成整个链路数据关系的建立，形成标识数据关系图。
+4. 应用开发者基于标识数据关系图，开发追溯应用。
 
-   用到的API接口包括：
+开发追溯应用流程步骤如下：
+1. 详细分析标识关系图，理解并确定不同系统之间标识数据的业务逻辑与关联关系。
+2. 理解产业链路流程，设计整个追溯链路图。
+3. 将每个业务环节映射到标识关系图谱上的标识数据，确保每个业务流程都有对应的标识。
+4. 根据约定的业务流程与标识关系图的映射关系，通过解析某一个环节的标识数据，获取到完整的链路数据。
+
+在整个追溯应用的开发过程中，需要使用企业节点的身份认证接口和标识数据解析接口，完成整个链路数据的获取。
 
 ![image](./images/app-dev-xmind.png)
 
+身份认证接口使用流程和方式参见2.3.3.1章节。
+标识数据解析接口使用方式如下，可分别获取产品标识数据、入库单标识数据以及他们之间的关联关系(接口详细使用方式请参见企业节点OpenAPI)。
 
-`生产系统解析产品标识`
+（1）生产系统解析产品标识
 
 请求示例:
 
-```js
-    GET http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Retrieve
+```shell
+GET http://manufacture:3000/api/v1/doip?targetId=88.111.100/PRODUCT_1&operationId=0.DOIP/Op.Retrieve
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 1,
-        "message": "成功",
-        "data": {
-            "id": "88.111.100/PRODUCT_1",
-            "type": "88.111.100/META_PRODUCT",
+{
+    "code": 1,
+    "message": "成功",
+    "data": {
+        "id": "88.111.100/PRODUCT_1",
+        "type": "88.111.100/META_PRODUCT",
+        "attributes": {
             "attributes": {
-                "attributes": {
-                    "metaData": {
-                        "createTime": "2024-06-22 14:13:24",
-                        "updateTime": "2024-06-22 14:13:37",
-                        "creator": "88.111.100/APP_ID生产",
-                        "updater": "88.111.100/APP_ID生产"
-                    }
+                "metaData": {
+                    "createTime": "2024-06-22 14:13:24",
+                    "updateTime": "2024-06-22 14:13:37",
+                    "creator": "88.111.100/APP_ID生产",
+                    "updater": "88.111.100/APP_ID生产"
+                }
+            },
+            "elements": [
+                {
+                    "index": 2000,
+                    "type": "productName",
+                    "name": "产品名称",
+                    "data": "企业节点",
+                    "dataType": 1
                 },
-                "elements": [
-                    {
-                        "index": 2000,
-                        "type": "productName",
-                        "name": "产品名称",
-                        "data": "企业节点",
-                        "dataType": 1
-                    },
-                    {
-                        "index": 2001,
-                        "type": "productBrand",
-                        "name": "产品品牌",
-                        "data": "泰尔英福",
-                        "dataType": 1
-                    },
-                    {
-                        "index": 2002,
-                        "type": "manufactureDate",
-                        "name": "生产日期",
-                        "data": "2024-06-22",
-                        "dataType": 3
-                    }
-                ]
-            }
+                {
+                    "index": 2001,
+                    "type": "productBrand",
+                    "name": "产品品牌",
+                    "data": "泰尔英福",
+                    "dataType": 1
+                },
+                {
+                    "index": 2002,
+                    "type": "manufactureDate",
+                    "name": "生产日期",
+                    "data": "2024-06-22",
+                    "dataType": 3
+                },
+                {
+                  "index": 2003,
+                  "type": "rukudan",
+                  "name": "入库单",
+                  "data": "88.222.77/RUKUDAN_1",
+                  "dataType": 5
+                }
+            ]
         }
     }
+}
 ```
 
-`仓储系统解析产品标识`
+（2）仓储系统解析产品标识
 
 请求示例:
 
-```js
-    GET http://storage:3000/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Retrieve
+```shell
+GET http://storage:3000/api/v1/doip?targetId=88.222.77/RUKUDAN_1&operationId=0.DOIP/Op.Retrieve
 
-    -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
 ```
 
 返回示例:
 
 ```json
-    {
-        "code": 1,
-        "message": "成功",
-        "data": {
-            "id": "88.222.77/RUKUDAN_1",
-            "type": "88.222.77/META_RUKUDAN",
+{
+    "code": 1,
+    "message": "成功",
+    "data": {
+        "id": "88.222.77/RUKUDAN_1",
+        "type": "88.222.77/META_RUKUDAN",
+        "attributes": {
             "attributes": {
-                "attributes": {
-                    "metaData": {
-                        "createTime": "2024-06-22 14:13:24",
-                        "updateTime": "2024-06-22 14:13:37",
-                        "creator": "88.222.77/APP_ID仓储",
-                        "updater": "88.222.77/APP_ID仓储"
-                    }
+                "metaData": {
+                    "createTime": "2024-06-22 14:13:24",
+                    "updateTime": "2024-06-22 14:13:37",
+                    "creator": "88.222.77/APP_ID仓储",
+                    "updater": "88.222.77/APP_ID仓储"
+                }
+            },
+            "elements": [
+                {
+                    "index": 2000,
+                    "type": "storagePerson",
+                    "name": "入库负责人",
+                    "data": "admin",
+                    "dataType": 1
                 },
-                "elements": [
-                    {
-                        "index": 2000,
-                        "type": "storagePerson",
-                        "name": "入库负责人",
-                        "data": "admin",
-                        "dataType": 1
-                    },
-                    {
-                        "index": 2001,
-                        "type": "storageDate",
-                        "name": "入库日期",
-                        "data": "2024-06-23",
-                        "dataType": 3
-                    },
-                    {
-                        "index": 2002,
-                        "type": "storageProduct",
-                        "name": "入库产品",
-                        "data": [
-                            "88.111.100/PRODUCT_1"
-                        ],
-                        "dataType": 5
-                    }
-                ]
-            }
+                {
+                    "index": 2001,
+                    "type": "storageDate",
+                    "name": "入库日期",
+                    "data": "2024-06-23",
+                    "dataType": 3
+                },
+                {
+                    "index": 2002,
+                    "type": "storageProduct",
+                    "name": "入库产品",
+                    "data": [
+                        "88.111.100/PRODUCT_1"
+                    ],
+                    "dataType": 5
+                }
+            ]
         }
     }
+}
 ```
+本示例只简单列举了整个产业链路中的入库单和入库产品的关联关系。
 
 ## 3. 标识应用交付
 
