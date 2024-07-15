@@ -28,6 +28,10 @@ export default defineConfig({
   /* 主题配置 */
   themeConfig: {
     i18nRouting: false,
+    search: {
+      provider: 'local'
+  },
+
 
     search: {
       provider: 'local',
