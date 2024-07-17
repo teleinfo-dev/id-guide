@@ -19,11 +19,12 @@ const handleHTML = () => {
     item.querySelector('.line-numbers-wrapper')?.remove();
   });
 
-  htmlCopy.querySelector('.download')?.remove();
+  // htmlCopy.querySelector('.download')?.remove();
 
 }
 
 const downloadWord = () => {
+  console.log('Download.vue:26');
   handleHTML();
   convertImagesToBase64();
   const mainContent = htmlCopy.innerHTML;

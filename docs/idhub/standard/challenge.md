@@ -6,7 +6,7 @@
 
 ###  请求参数
 
-- 请求服务：企业节点业务系统HTTP端口（默认 3000）
+  - 请求服务：企业节点业务系统HTTP端口（默认 3000）
   - 请求方式：GET
   - 请求路径：`/api/v1/doip/public/challenge`
   - Header:
