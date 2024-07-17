@@ -31,18 +31,7 @@ export default defineConfig({
     search: {
       provider: 'local'
   },
-
-
-    search: {
-      provider: 'local',
-    //   options: {
-    //     // detailedView: true,
-    //     miniSearch: {
-    //       searchOptions: {
-    //     }
-    //   }
-    // }
-  },
+  // },
 
     logo: '/logo.png',
 

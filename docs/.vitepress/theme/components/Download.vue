@@ -6,6 +6,8 @@ import { saveAs } from 'file-saver';
 let htmlCopy = '';
 let fileName = '接口文档';
 
+const enableDownload = localStorage.getItem('download');
+
 const handleHTML = () => {
   htmlCopy = document.querySelector('main');  // .cloneNode(true);
   fileName = document.querySelector('main h1:first-of-type').textContent.split(/\s/)[0];
@@ -92,7 +94,7 @@ const convertImagesToBase64 = () => {
 </script>
 
 <template>
-  <div class="download">
+  <div class="download" v-if="enableDownload == 1">
     <button class="word" @click="downloadWord">Word</button>
   </div>
 
