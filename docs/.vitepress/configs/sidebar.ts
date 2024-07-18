@@ -4,23 +4,21 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/handle-app-sop': [
     {
       text: '引言',
-      items: [
-        {
+      items: [{
           text: '编写目的',
           link: '/handle-app-sop/1-introduce/purpose',
         },
         {
           text: '整体流程',
           link: '/handle-app-sop/1-introduce/overview',
-        },
-      ],
+        }]
     },
     {
       text: '企业节点',
       items: [
         {
           text: '简介',
-          link: '/handle-app-sop/2-idhub/index',
+          link: '/handle-app-sop/2-idhub/introduce',
         },
         {
           text: '企业节点标准版',
@@ -29,27 +27,21 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: '标准版API接口',
           link: '/handle-app-sop/2-idhub/api-list',
-        },
-      ],
-     
+        }]
     },
     {
       text: '标识应用开发环境',
-      items: [
-        {
+      items: [{
           text: '安装企业节点',
-          link: '/handle-app-sop/3-develop-env/index',
-        }
-      ]
+          link: '/handle-app-sop/3-develop-env/introduce',
+        }]
     },
     {
       text: '数据接入',
-      items: [
-        {
+      items: [{
           text: '接入说明',
-          link: '/handle-app-sop/4-access-introduce/index',
-        }
-      ]
+          link: '/handle-app-sop/4-access-introduce/introduce',
+        }]
     },
     {
       text: '标识应用开发指南',
