@@ -11,7 +11,7 @@
 ### 操作步骤
 
 身份认证流程如下：
-<center><img src="./images/identity-verify.tiff" style="margin-top: 10px"/></center>
+<center><img src="./images/identity-verify.png" style="margin-top: 10px"/></center>
 
 
 #### 挑战
