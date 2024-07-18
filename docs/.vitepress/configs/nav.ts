@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '标识应用集成SOP',
-    link: '/handle-app-sop/index'
+    link: '/handle-app-sop/1-introduce/purpose'
   },
   {
     text: '标识解析SDK',
