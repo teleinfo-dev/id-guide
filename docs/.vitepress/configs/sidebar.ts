@@ -1,6 +1,140 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const sidebar: DefaultTheme.Config['sidebar'] = {
+  '/handle-app-sop': [
+    {
+      text: '引言',
+      items: [
+        {
+          text: '编写目的',
+          link: '/handle-app-sop/1-introduce/purpose',
+        },
+        {
+          text: '整体流程',
+          link: '/handle-app-sop/1-introduce/overview',
+        },
+      ],
+    },
+    {
+      text: '企业节点',
+      items: [
+        {
+          text: '简介',
+          link: '/handle-app-sop/2-idhub/index',
+        },
+        {
+          text: '企业节点标准版',
+          link: '/handle-app-sop/2-idhub/standard',
+        },
+        {
+          text: '标准版API接口',
+          link: '/handle-app-sop/2-idhub/api-list',
+        },
+      ],
+     
+    },
+    {
+      text: '标识应用开发环境',
+      items: [
+        {
+          text: '安装企业节点',
+          link: '/handle-app-sop/3-develop-env/index',
+        }
+      ]
+    },
+    {
+      text: '数据接入',
+      items: [
+        {
+          text: '接入说明',
+          link: '/handle-app-sop/4-access-introduce/index',
+        }
+      ]
+    },
+    {
+      text: '标识应用开发指南',
+      items: [
+        {
+          text: '开发流程',
+          link: '/handle-app-sop/5-develop-guide/develop-process',
+        },
+        {
+          text: '获取企业前缀',
+          link: '/handle-app-sop/5-develop-guide/get-ent-prefix',
+        },
+        {
+          text: '获取应用标识身份',
+          link: '/handle-app-sop/5-develop-guide/get-app-handle',
+        },
+        {
+          text: '企业数据接入',
+          items: [
+            {
+              text: '通过SDK、API接口接入数据',
+              link: '/handle-app-sop/5-develop-guide/sdk-api',
+            },
+            {
+              text: '通过IDLink接入数据',
+              link: '/handle-app-sop/5-develop-guide/idlink',
+            },
+          ]
+        },
+        {
+          text: '标识应用开发',
+          link: '/handle-app-sop/5-develop-guide/app-develop',
+        },
+        {
+          text: '接口兼容',
+          link: '/handle-app-sop/5-develop-guide/api-compatible',
+        }
+      ]
+    },
+    {
+      text: '标识应用实践',
+      items: [
+        {
+          text: '介绍',
+          link: '/handle-app-sop/6-app-practice/get-app-handle',
+        },
+        {
+          text: '获取应用标识身份',
+          link: '/handle-app-sop/6-app-practice/get-app-handle',
+        },
+        {
+          text: 'IDE搭建项目',
+          link: '/handle-app-sop/6-app-practice/ide-project',
+        },
+        {
+          text: '添加配置项',
+          link: '/handle-app-sop/6-app-practice/add-config',
+        },
+        {
+          text: '身份认证',
+          link: '/handle-app-sop/6-app-practice/identity-verify',
+        },
+        {
+          text: '接口调用',
+          link: '/handle-app-sop/6-app-practice/api-call',
+        },
+        {
+          text: '创建测试Controller',
+          link: '/handle-app-sop/6-app-practice/create-controller',
+        },
+        {
+          text: '运行',
+          link: '/handle-app-sop/6-app-practice/run',
+        }
+      ]
+    },
+    {
+      text: '标识应用交付',
+      link: '/handle-app-sop/7-app-deliver/index'
+    },
+    {
+      text: '企业节点快速部署',
+      link: '/handle-app-sop/8-deployment/index'
+    }
+  ],
   '/sdk/v1': [
     {
       text: '开始',
@@ -46,7 +180,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
-  'sdk/v2': [
+  '/sdk/v2': [
     {
       text: '开始',
       items: [
