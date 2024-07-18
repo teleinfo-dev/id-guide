@@ -24,7 +24,7 @@ features:
   - icon: <img src="/docs/sop.png" />
     title: 标识应用集成SOP
     details: 标识应用集成SOP，旨在帮助应用开发者按照标准规范，基于企业节点提供的服务能力，完成标识应用的开发。
-            加入IDInside计划可优先使用企业节点标准版能力。如有需求，请联系<span>:</span> <span style="color:black">段老师 19102263528</span>
+            加入IDInside计划可优先使用企业节点标准版能力。
     link: /handle-app-sop/1-introduce/purpose
     linkText: 快速开始
   - icon: <img src="/docs/sdk.png" />
