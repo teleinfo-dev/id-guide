@@ -92,10 +92,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     {
       text: '标识应用实践',
       items: [
-        {
-          text: '介绍',
-          link: '/handle-app-sop/6-app-practice/get-app-handle',
-        },
+        // {
+        //   text: '介绍',
+        //   link: '/handle-app-sop/6-app-practice/index',
+        // },
         {
           text: '获取应用标识身份',
           link: '/handle-app-sop/6-app-practice/get-app-handle',

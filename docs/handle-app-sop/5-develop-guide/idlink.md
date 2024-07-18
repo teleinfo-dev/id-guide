@@ -13,6 +13,16 @@
 2. 点“接入标识数据连接中间件”按钮，填写中间件的名称、地址，并生成密钥对。密钥对需要在部署的标识数据连接中间件服务中进行配置，用于两个系统交互认证
 <center><img src="./images/add-middleware.png" style="margin-top: 10px"/></center>
 
+例如现在开发一个中间件，需要进行如下配置
+
+```
+# 中间件秘钥
+app:
+  auth:
+    ak: ObjgdVB5RFGBchq/uU+hdQ
+    sk: j9YqedtWcphJjx5jAlEWdjwyRGy2nA4iYLYhWUEzrGc=
+```
+
 
 ### 后续步骤
 企业节点的操作用户[创建元数据模板](#产品元数据模板创建).
