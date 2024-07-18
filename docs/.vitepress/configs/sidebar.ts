@@ -120,11 +120,11 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     },
     {
       text: '标识应用交付',
-      link: '/handle-app-sop/7-app-deliver/index'
+      link: '/handle-app-sop/7-app-deliver/introduce'
     },
     {
       text: '企业节点快速部署',
-      link: '/handle-app-sop/8-deployment/index'
+      link: '/handle-app-sop/8-deployment/introduce'
     }
   ],
   '/sdk/v1': [

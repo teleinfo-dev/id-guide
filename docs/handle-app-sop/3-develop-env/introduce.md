@@ -24,5 +24,5 @@
 ## 企业节点安装步骤
 
 1. 通过企数通在线申请license
-2. [获取软件部署包](../8-deployment)
+2. [获取软件部署包](../8-deployment/introduce.md)
 3. 按部署文档快速部署
