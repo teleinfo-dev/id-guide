@@ -95,35 +95,15 @@ const convertImagesToBase64 = () => {
 </script>
 
 <template>
-  <div class="download" v-if="enableDownload == 1">
-    <button class="word" @click="downloadWord">Word</button>
-  </div>
+    <button class="download-word" @click="downloadWord" v-if="enableDownload == 1">下载(.docx)</button>
 
 </template>
 <style>
 
-.word {
-  color: #0078d4;
-  background-color: rgb(232, 247, 255);
-  margin-right: 10px;
-}
-
-.pdf {
-  color: #c43e1c;
-  background-color: rgb(255, 236, 232);
-}
-
-
-.download {
-  float: right;
-}
-
-.download > button {
-  display: inline-block;
-  /* cursor: pointer; */
+.download-word {
   font-size: 14px;
-  line-height: 28px;
-  padding: 0 6px;
+    font-weight: 500;
+    color: #0078d4;
 }
 
 </style>

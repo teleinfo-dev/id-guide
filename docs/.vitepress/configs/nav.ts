@@ -2,8 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
   {
-    text: '下载',
-    component: () => import('./path/to/MyCustomNavItem.vue')
+    component: 'DownloadDoc'
   },
   {
     text: '标识应用开发指南',
