@@ -21,110 +21,112 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           link: '/handle-app-sop/2-idhub/introduce',
         },
         {
+          text: '企业节点社区版',
+          link: '/handle-app-sop/2-idhub/community',
+        },
+        {
           text: '企业节点标准版',
           link: '/handle-app-sop/2-idhub/standard',
         },
         {
-          text: '标准版API接口',
+          text: '企业节点OpenAPI',
           link: '/handle-app-sop/2-idhub/api-list',
         }]
     },
     {
+      text: ' 企业前缀申请',
+      link: '/handle-app-sop/3-apply-prefix/introduce'
+    },
+    {
       text: '标识应用开发环境',
-      items: [{
-          text: '安装企业节点',
-          link: '/handle-app-sop/3-develop-env/introduce',
-        }]
-    },
-    {
-      text: '数据接入',
-      items: [{
-          text: '接入说明',
-          link: '/handle-app-sop/4-access-introduce/introduce',
-        }]
-    },
-    {
-      text: '标识应用开发指南',
       items: [
         {
+          text: '简介',
+          link: '/handle-app-sop/3-develop-env/introduce',
+        },
+        {
+          text: '企业节点安装',
+          link: '/handle-app-sop/3-develop-env/idhub-install',
+        }]
+    },
+    {
+      text: '快速入门',
+      items: [
+        {
+          text: '创建元数据',
+          link: '/handle-app-sop/4-get-started/create-meta',
+        },
+        {
+          text: '标识注册解析',
+          link: '/handle-app-sop/4-get-started/handle-resolve',
+        }]
+    },
+    {
+      text: '标识应用开发',
+      items: [
+        {
+          text: '场景描述',
+          link: '/handle-app-sop/5-app-develop/demo-description',
+        },
+        {
           text: '开发流程',
-          link: '/handle-app-sop/5-develop-guide/develop-process',
-        },
-        {
-          text: '获取企业前缀',
-          link: '/handle-app-sop/5-develop-guide/get-ent-prefix',
-        },
-        {
-          text: '获取应用标识身份',
-          link: '/handle-app-sop/5-develop-guide/get-app-handle',
-        },
-        {
-          text: '企业数据接入',
+          link: '/handle-app-sop/5-app-develop/dev-flow',
           items: [
             {
-              text: '通过SDK、API接口接入数据',
-              link: '/handle-app-sop/5-develop-guide/sdk-api',
+              text: 'step1: 申请企业前缀',
+              link: '/handle-app-sop/5-app-develop/step1',
             },
             {
-              text: '通过IDLink接入数据',
-              link: '/handle-app-sop/5-develop-guide/idlink',
+              text: 'step2: 获取应用标识身份',
+              link: '/handle-app-sop/5-app-develop/step2',
+            },
+            {
+              text: 'step3: 企业数据接入和管理',
+              link: '/handle-app-sop/5-app-develop/step3',
+              items: [
+                {
+                  text: 'ID-SDK/API接口使用方法',
+                  link: '/handle-app-sop/5-app-develop/step3-sdk',
+                },
+                {
+                  text: 'IDLink使用方法',
+                  link: '/handle-app-sop/5-app-develop/step3-idlink',
+                }
+              ]
+            },
+            {
+              text: 'step4: 标识应用开发',
+              link: '/handle-app-sop/5-app-develop/step4',
             },
           ]
         },
         {
-          text: '标识应用开发',
-          link: '/handle-app-sop/5-develop-guide/app-develop',
-        },
-        {
-          text: '接口兼容',
-          link: '/handle-app-sop/5-develop-guide/api-compatible',
+          text: '兼容说明',
+          link: '/handle-app-sop/5-app-develop/compatible',
         }
       ]
+    },
+    {
+      text: 'ID-SDK/API接口',
+      items: [{
+          text: '基础用法',
+          link: '/handle-app-sop/6-idsdk-api/basic',
+        }, {
+          text: '高级用法',
+          link: '/handle-app-sop/6-idsdk-api/advance',
+        }]
     },
     {
       text: '标识应用实践',
-      items: [
-        // {
-        //   text: '介绍',
-        //   link: '/handle-app-sop/6-app-practice/index',
-        // },
-        {
-          text: '获取应用标识身份',
-          link: '/handle-app-sop/6-app-practice/get-app-handle',
-        },
-        {
-          text: 'IDE搭建项目',
-          link: '/handle-app-sop/6-app-practice/ide-project',
-        },
-        {
-          text: '添加配置项',
-          link: '/handle-app-sop/6-app-practice/add-config',
-        },
-        {
-          text: '身份认证',
-          link: '/handle-app-sop/6-app-practice/identity-verify',
-        },
-        {
-          text: '接口调用',
-          link: '/handle-app-sop/6-app-practice/api-call',
-        },
-        {
-          text: '创建测试Controller',
-          link: '/handle-app-sop/6-app-practice/create-controller',
-        },
-        {
-          text: '运行',
-          link: '/handle-app-sop/6-app-practice/run',
-        }
-      ]
+      link: '/handle-app-sop/7-app-practice/introduce',
     },
     {
       text: '标识应用交付',
-      link: '/handle-app-sop/7-app-deliver/introduce'
+      link: '/handle-app-sop/8-app-deliver/introduce'
     },
     {
       text: '企业节点快速部署',
-      link: '/handle-app-sop/8-deployment/introduce'
+      link: '/handle-app-sop/9-deployment/introduce'
     }
   ],
   '/sdk/v1': [

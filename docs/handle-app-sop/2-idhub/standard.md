@@ -2,4 +2,4 @@
 
 企业节点标准版南向支撑数据快速连接，通过数据连接中间件IDLink，将企业数据接入标识体系；中间为标识内核，生成标准化的标识数据，并提供多种安全机制保障标识数据安全，同时支持构建标识数据关联关系，支撑应用系统或平台发现数据、使用数据；北向的应用集成工具包，支撑标识应用落地开发。
 
-<center><img src="./images/idhub.png" style="margin-top: 50px"/></center>
+<center><img src="./images/idhub.png" style="margin-top: 20px"/></center>

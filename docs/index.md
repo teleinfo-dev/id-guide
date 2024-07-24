@@ -10,8 +10,8 @@ hero:
     src: /logo.png
     alt: 工业互联网标识解析22
   actions:
-    - text: 标识应用集成SOP
-      link: /handleAppSOP/index.md
+    - text: 标识应用开发指南
+      link: /handle-app-sop/1-introduce/purpose
     - text: 标识解析SDK
       link: /sdk/v1/introduction
     # - text: 二级节点OpenAPI
@@ -22,8 +22,8 @@ hero:
 
 features:
   - icon: <img src="/docs/sop.png" />
-    title: 标识应用集成SOP
-    details: 标识应用集成SOP，旨在帮助应用开发者按照标准规范，基于企业节点提供的服务能力，完成标识应用的开发。
+    title: 标识应用开发指南
+    details: 标识应用开发指南，旨在帮助应用开发者按照标准规范，基于企业节点提供的服务能力，完成标识应用的开发。
             加入IDInside计划可优先使用企业节点标准版能力。
     link: /handle-app-sop/1-introduce/purpose
     linkText: 快速开始

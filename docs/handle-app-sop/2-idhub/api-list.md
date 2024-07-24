@@ -1,7 +1,6 @@
-# 标准版API接口
+# 企业节点OpenAPI
 
 相较于社区版，标准版开放的API接口更完善，系统打通、数据连接更便捷，应用集成更规范，因此我们推荐您使用标准版。
-
 
 <div style="display:flex;">
 <div style="width: 400px;padding:10px;background-color:rgb(232, 242, 254);border:1px solid #eee;margin-right:5px;">
