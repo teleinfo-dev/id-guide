@@ -6,7 +6,7 @@
 
 ### 前置条件
 
-[获取应用标识身份](../5-develop-guide/get-app-handle.md)。
+[获取应用标识身份](../5-app-develop/step2.md)。
 
 ### 操作步骤
 
