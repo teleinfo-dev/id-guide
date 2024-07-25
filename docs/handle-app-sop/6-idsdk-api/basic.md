@@ -36,7 +36,7 @@ GET 'http://127.0.0.1:3000/api/v1/doip/public/challengehandle=88.608.24061301/Ap
 
 #### 应答
 
-该接口用于验证使用nonce值生成的signature（签名signature生成方式参考接口文档），验证成功则颁发token。
+该接口用于验证使用nonce值生成的signature，验证成功则颁发token。
 
 请求示例
 
@@ -63,7 +63,7 @@ POST http://127.0.0.1:3000/api/v1/doip/public/verify-response
 
 ### 后续操作
 
-通过挑战应答接口，应用可以获取token，用于后续[创建元数据](#产品元数据模版创建), [标识注册](#标识注册)等。
+通过挑战应答接口，应用可以获取token，用于后续创建元数据, [标识注册](#标识注册)等。
 
 ## 元数据模版创建
 
@@ -86,9 +86,8 @@ POST http://127.0.0.1:3000/api/v1/open/meta/create
 
 -d '{
   "classifyCode": "assign",
-  "metaHandle": "88.608.24161301/META_PRODUCT",
-  "metaName": "产品元数据",
-  "metaCode": "product",
+  "metaName": "箱酒",
+  "metaCode": "box",
   "standard": "",
   "metaDesc": "",
   "industryCategory": "M",
@@ -97,9 +96,9 @@ POST http://127.0.0.1:3000/api/v1/open/meta/create
   "industrySubclass": "7517",
   "metaItemCreateDTOS": [
     {
-      "itemCode": "productBrand",
-      "englishName": "productBrand",
-      "chineseName": "产品品牌",
+      "itemCode": "code",
+      "englishName": "code",
+      "chineseName": "箱码",
       "required": 0,
       "uniqueField": 0,
       "inputNecessary": 1,
@@ -111,9 +110,37 @@ POST http://127.0.0.1:3000/api/v1/open/meta/create
       }
     },
     {
-      "itemCode": "productName",
-      "englishName": "productName",
-      "chineseName": "产品名称",
+      "itemCode": "product",
+      "englishName": "product",
+      "chineseName": "产品",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "minLength": 0,
+        "maxLength": 4000,
+        "dataType": "1"
+      }
+    },
+    {
+      "itemCode": "raw",
+      "englishName": "raw",
+      "chineseName": "原料",
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "listItemNecessary": 0,
+      "itemSchemaCreateDTO": {
+        "minLength": 0,
+        "maxLength": 4000,
+        "dataType": "1"
+      }
+    },
+    {
+      "itemCode": "size",
+      "englishName": "size",
+      "chineseName": "规格",
       "required": 0,
       "uniqueField": 0,
       "inputNecessary": 1,
@@ -123,15 +150,15 @@ POST http://127.0.0.1:3000/api/v1/open/meta/create
       }
     },
     {
-      "itemCode": "manufactureDate",
-      "englishName": "manufactureDate",
+      "itemCode": "date",
+      "englishName": "date",
       "chineseName": "生产日期",
       "required": 0,
       "uniqueField": 0,
       "inputNecessary": 1,
       "listItemNecessary": 0,
       "itemSchemaCreateDTO": {
-        "dateFormat": "yyyy-MM-dd HH:mm:ss",
+        "dateFormat": "yyyy-MM-dd",
         "dataType": "3"
       }
     }
@@ -153,7 +180,7 @@ POST http://127.0.0.1:3000/api/v1/open/meta/create
 
 #### 发布产品元数据
 
-应用开发者调用元数据发布接口对创建的产品元数据进行发布操作，发布后的产品元数据可以进行[数据授权](#同类数据授权) 和[标识注册](#标识注册)等操作。
+应用开发者调用元数据发布接口对创建的产品元数据进行发布操作，发布后的产品元数据可以进行[注册标识](#标识注册)等操作。
 
 请求示例
 
@@ -186,11 +213,11 @@ PUT http://127.0.0.1:3000/api/v1/open/meta/publish-or-withdraw
 ```
 
 ### 后续操作
-1. 依据已创建的产品元数据模板进行产品标识注册（跳转至5.4.2.1.1.3）。
+1. 依据已创建的产品元数据模板进行产品标识注册。
 
 `高阶用法`
-  - 元数据模板创建成功后，权限默认为“指定范围”。若需对全网（标识网络）公开，则可通过元数据模板授权（跳转至5.4.2.1.2.1）将权限变更为“公开”；否则，需通过元数据模板授权（跳转至5.4.2.1.2.1），配置元数据模板的访问权限。
-  - 当应用开发者需使用标识关联服务打通上下游企业时，需进行元数据模板关联（跳转至5.4.2.1.2.3）。
+  - 元数据模板创建成功后，权限默认为“指定范围”。若需对全网（标识网络）公开，则可通过[元数据模板授权](./advance.md#元数据模板授权)将权限变更为“公开”；否则，需通过[元数据模板授权](./advance.md#元数据模板授权)，配置元数据模板的访问权限。
+  - 当应用开发者需使用标识关联服务打通上下游企业时，需进行[元数据模板关联](./advance.md#元数据模板关联)。
 
 <span style="font-size: 12px; color: rgb(22,93,255);">
 说明：元数据模板的权限，包括“公开”和“指定范围”。“公开”指标识网络中的主体都可以使用该模板，“指定范围”指标识网络中被授权的主体才可以使用该模板。</span>
@@ -202,7 +229,7 @@ PUT http://127.0.0.1:3000/api/v1/open/meta/publish-or-withdraw
 
 ### 前置条件
 
-已完成产品[元数据模版注册](#产品元数据模版创建)。
+已完成产品[元数据模版注册](#元数据模版创建)。
 
 ### 操作步骤
 
@@ -256,8 +283,8 @@ POST http://127.0.0.1:3000/api/v1/doip?targetId=88.608.24061301/META_8fc3752a80C
 
 `高阶用法`
 1. 产品标识注册成功后，该标识的数据权限默认为“指定范围”，若需变更权限，则执行以下操作：
-  - `同一类标识数据授权`：产品标识的数据，其每个字段，若需对全网（标识网络）公开，则可通过同类数据授权（跳转至5.4.2.1.2.6）将权限变更为“公开”；否则，需通过同类数据授权（跳转至5.4.2.1.2.6），配置产品标识数据中每个字段的访问权限。执行此操作后，该类标识产品数据，遵循一套数据授权策略
-  - `单个标识数据授权`：若每条产品标识，其数据授权策略均不相同，则可通过实例标识单个授权（跳转至5.4.2.1.2.7），针对每一条标识进行单独的数据授权
+  - `同一类标识数据授权`：产品标识的数据，其每个字段，若需对全网（标识网络）公开，则可通过[同类数据授权-公开/非公开](./advance.md#同类数据授权-公开非公开)将权限变更为“公开”；否则，需通过[同类数据授权](./advance.md#同类数据授权)，配置产品标识数据中每个字段的访问权限。执行此操作后，该类标识产品数据，遵循一套数据授权策略
+  - `单个标识数据授权`：若每条产品标识，其数据授权策略均不相同，则可通过[实例标识单个授权](./advance.md#实例标识单个授权)，针对每一条标识进行单独的数据授权
 
 
 <span style="font-size: 12px; color: rgb(22,93,255);">
@@ -268,7 +295,7 @@ POST http://127.0.0.1:3000/api/v1/doip?targetId=88.608.24061301/META_8fc3752a80C
 应用开发者调用标识解析接口，解析产品标识。
 
 ### 前置条件
-已完成产品产品标识注册（跳转至5.4.2.1.1.3）。
+已完成产品产品[标识注册](#标识注册)。
 
 ### 操作步骤
 生产系统解析产品标识。
@@ -342,4 +369,4 @@ GET http://127.0.0.1:3000/api/v1/doip?targetId=88.608.24061301/META_8fc3752a80CA
 
 
 ### 后续步骤
-应用开发者已完成一个简单的标识注册，并解析该标识。当应用开发者需打通供应链上、下游企业时，可通过使用标识关联服务（高阶用法，跳转至5.4.1.1.2），实现上下游数据贯通。
+应用开发者已完成一个简单的标识注册，并解析该标识。当应用开发者需打通供应链上、下游企业时，可通过使用[标识关联](./advance.md#标识关联)服务，实现上下游数据贯通。

@@ -52,9 +52,9 @@
 
 **网络资源表**
 
-| 步骤 | 部署应用服务 | 部署服务 | 内网地址端口 | 公网端口 | 是否按要求提供（客户填写） | 注意事项 |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 网络环境准备_规划IP | 企业节点管理服务  |  <ul><li>docker</li><li>idhub-manage</li>  <li>idhub-core</li> <li>idhub-log</li><li>MySQL</li> <li>redis</li> <li>Minio</li>  <li>MongoDB</li></ul> | <ul><li>22端口（SSH）</li><li>3000（idhub-manage）</li>  <li>2641（idhub-core）</li> <li>8081（idhub-core）</li> <li>3306（MySQL）</li> <li> 27017（MongoDB）</li> <li> 6379（Redis）</li> <li> 9000（Minio）</li></ul>|  <ul><li>3100（idhub-manage-web）</li> <li>2641（idhub-core）</li></ul>| |企业节点需要对接二级节点SNMS服务、二级节点的S3服务（默认9000端口）以及递归节点 |
+| 步骤 | 部署应用服务 | 部署服务 | 内网地址端口 | 公网端口 |  注意事项 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 网络环境准备_规划IP | 企业节点管理服务  |  <ul style="width: 120px;"><li>docker</li><li>idhub-manage</li>  <li>idhub-core</li> <li>idhub-log</li><li>MySQL</li> <li>redis</li> <li>Minio</li>  <li>MongoDB</li></ul> | <ul style="width: 180px;"><li>22端口（SSH）</li><li>3000（idhub-manage）</li>  <li>2641（idhub-core）</li> <li>8081（idhub-core）</li> <li>3306（MySQL）</li> <li> 27017（MongoDB）</li> <li> 6379（Redis）</li> <li> 9000（Minio）</li></ul>|  <ul style="width: 90px;"><li>3100（idhub-manage-web）</li> <li>2641（idhub-core）</li></ul> |企业节点需要对接二级节点SNMS服务、二级节点的S3服务（默认9000端口）以及递归节点 |
 
 
 ## 快速部署

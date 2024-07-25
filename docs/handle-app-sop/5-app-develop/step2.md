@@ -13,10 +13,10 @@
     <center><img src="./images/step2-1.png" style="margin-top: 20px"/></center>
 
 2. 点击【新建应用】按钮，为应用生成标识身份
-    <center><img src="./images/step2-1.png" style="margin-top: 20px"/></center>
+    <center><img src="./images/step2-2.png" style="margin-top: 20px"/></center>
 
 3. 在应用列表中，选择应用身份单据，点【详情】，查询应用身份ID，可下载私钥
-    <center><img src="./images/step2-1.png" style="margin-top: 20px"/></center>
+    <center><img src="./images/step2-3.png" style="margin-top: 20px"/></center>
 
 ## 后续操作
 

@@ -10,9 +10,9 @@
     <center><img src="./images/handle-resolve-3.png" style="margin-top: 20px"/></center>
 
 
-截止此时，企业节点管理员已完成一个简单的标识注册、标识解析流程。
+企业节点还提供高阶用法，包括[元数据模板关联](../6-idsdk-api/advance.md#元数据模板关联)、[标识关联](../6-idsdk-api/advance.md#标识关联)、[数据权限](../6-idsdk-api/advance.md#同类数据授权)、[数据连接中间件](../5-app-develop/step3-idlink.md)等。
 
-若需控制标识数据的访问权限，则需对标识数据进行数据授权操作。数据授权的方式，包括同类数据授权（跳转至 IDLink -同类数据授权）和 单个数据授权（跳转至接口-高阶用法-实例标识单个授权）。
+其中，数据权限实现数据的安全防护，包括[同类数据授权](../5-app-develop/step3-idlink.md#同类数据授权)和 [单个数据授权](../6-idsdk-api/advance.md#实例标识单个授权)。
 
 <div style="font-size: 12px; color: rgb(22,93,255);">
 说明：

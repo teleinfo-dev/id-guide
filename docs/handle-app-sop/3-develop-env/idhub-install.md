@@ -10,9 +10,9 @@
 
 1. 在线申请license，企业可通过企数通小程序在线申请license。申请成功后，部署企业节点时，需将[license配置](#install-5)到企业节点中
 
-2. 查看部署文档 （跳转）
+2. 查看[部署文档](../9-deployment/introduce.md)
 
-3. 获取软件部署包（跳转）
+3. 获取[软件部署包](https://teleinfo.pek3b.qingstor.com/Ent_deploy.zip)
 
 4. 按部署文档快速部署
 

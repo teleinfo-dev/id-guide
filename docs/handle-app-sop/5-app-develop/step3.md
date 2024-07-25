@@ -9,7 +9,7 @@
 1. 通过 [ID-SDK](../../sdk/v2/introduction.md) / [IDHub](../../idhub/standard/introduce.md) API接口连接数据
     <p style="font-size: 12px; color: rgb(22,93,255);">说明：使用 ID-SDK 或 IDHub API 接口接入数据，应用开发者需基于接口规范进行定制化开发，涉及企业信息系统改造</p>
 
-2. 通过数据连接中间件IDLink(跳转至)连接数据
+2. 通过数据连接中间件[IDLink](./step3-idlink.md)连接数据
     <p style="font-size: 12px; color: rgb(22,93,255);">说明：使用IDLink接入数据，应用开发者无需开发，仅需在企业节点中进行数据连接配置，即可完成数据接入</p>
 
 <div style="display: flex;">
