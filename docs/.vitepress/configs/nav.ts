@@ -2,9 +2,6 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
   {
-    component: 'DownloadDoc'
-  },
-  {
     text: '标识应用开发指南',
     link: '/handle-app-sop/1-introduce/purpose'
   },
@@ -51,5 +48,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     //     link: '/idhub/snms/api-introduce.md',
     //   },
     // ],
+  },
+  {
+    component: 'DownloadDoc'
   },
 ]
