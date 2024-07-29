@@ -827,3 +827,345 @@
 }
 
 ```
+
+## 数据分类列表
+
+操作者通过此接口查询本企业下全量的数据分类列表。
+
+### 请求参数
+
+- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+- 请求方式：GET
+- 请求路径：`/api/v1/open/meta/classify-query`
+- Header：
+
+| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
+| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
+| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+
+- Query参数：
+  无
+
+### 请求示例
+
+```json
+ /api/v1/open/meta/classify-query
+```
+
+### 响应数据
+
+| 参数    | 类型    | 备注                    | 示例值 |
+| ------- | ------- | ----------------------- | ------ |
+| code    | Integer | 状态码(详见状态码说明） | 1      |
+| message | String  | 状态码描述              | 成功   |
+| data    | Object  | 具体响应对象            |        |
+
+- data 数据结构
+
+| 参数                                           | 类型      | 备注                                                   | 示例值                      |
+| ---------------------------------------------- |---------|------------------------------------------------------| --------------------------- |
+| classifyCode                                   | String  | 本企业内的分类code                                          | "sp"                        |
+| classifyName                                   | String  | 分类名称                                                 |  |
+| id                                       | Integer | 分类id                                                 |                             |
+| parentId                                       | Integer | 父id                                                  |                             |
+| sort                               | Integer | 排序                                                   |                             |
+| children                               | Array[] | 子集                                                   |                             |
+| level                                  | Integer | 层级                                                   |                             |
+
+### 响应示例
+
+```json
+{
+  "code": 1,
+  "message": "成功",
+  "data": [
+    {
+      "id": 49,
+      "parentId": 0,
+      "sort": 0,
+      "children": [],
+      "classifyName": "未分类",
+      "classifyCode": "UN_CLASSIFIED",
+      "ancestors": "0",
+      "level": 1
+    },
+    {
+      "id": 48,
+      "parentId": 0,
+      "sort": 1,
+      "children": [
+        {
+          "id": 50,
+          "parentId": 48,
+          "sort": 1,
+          "children": [
+            {
+              "id": 51,
+              "parentId": 50,
+              "sort": 1,
+              "children": [],
+              "classifyName": "dz",
+              "classifyCode": "dz",
+              "ancestors": "0,48,50",
+              "level": 3
+            }
+          ],
+          "classifyName": "dsf",
+          "classifyCode": "fsd",
+          "ancestors": "0,48",
+          "level": 2
+        }
+      ],
+      "classifyName": "新类型",
+      "classifyCode": "NEW_CODE",
+      "ancestors": "0",
+      "level": 1
+    },
+    {
+      "id": 52,
+      "parentId": 0,
+      "sort": 1,
+      "children": [
+        {
+          "id": 53,
+          "parentId": 52,
+          "sort": 1,
+          "children": [],
+          "classifyName": "二级目录1-0627",
+          "classifyCode": "20240627101101",
+          "ancestors": "0,52",
+          "level": 2
+        },
+        {
+          "id": 54,
+          "parentId": 52,
+          "sort": 2,
+          "children": [],
+          "classifyName": "二级目录2-0627",
+          "classifyCode": "20240627101202",
+          "ancestors": "0,52",
+          "level": 2
+        },
+        {
+          "id": 57,
+          "parentId": 52,
+          "sort": 3,
+          "children": [],
+          "classifyName": "二级目录0-0627",
+          "classifyCode": "202406271106",
+          "ancestors": "0,52",
+          "level": 2
+        }
+      ],
+      "classifyName": "一级目录-0627",
+      "classifyCode": "202406271011",
+      "ancestors": "0",
+      "level": 1
+    },
+    {
+      "id": 55,
+      "parentId": 0,
+      "sort": 2,
+      "children": [
+        {
+          "id": 56,
+          "parentId": 55,
+          "sort": 1,
+          "children": [],
+          "classifyName": "这是个目录-代码与元数据的重复测试",
+          "classifyCode": "20240627119",
+          "ancestors": "0,55",
+          "level": 2
+        }
+      ],
+      "classifyName": "一级目录-0627-02",
+      "classifyCode": "202406271023",
+      "ancestors": "0",
+      "level": 1
+    }
+  ]
+}
+
+```
+
+### 异常示例
+
+```json
+{
+  "code": 101,
+  "message": "无效的token"
+}
+```
+
+## 元数据列表
+
+操作者通过此接口获取某个数据分类下的元数据模板列表。
+
+### 请求参数
+
+- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+- 请求方式：GET
+- 请求路径：`/api/v1/open/meta/page`
+- Header：
+
+| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
+| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
+| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+
+- Query参数：
+
+| 参数           | 类型      | 是否必填 | 最大长度 | 备注               | 示例值              |
+|--------------|---------|------| -------- |------------------|------------------|
+| classifyCode | String  | 是    | -        | 分类code           | "NEW_code"       |
+| metaHandle   | String  | 否    | -        | 元数据标识            |  |
+| metaState    | Integer | 否    | -        | 0-未发布 1-已发布 |  |
+| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss |  |
+| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss |  |
+| page         | Integer | 否    | -        | 默认值0 |  |
+| size         | Integer | 否    | -        | 默认值10 |  |
+
+### 请求示例
+
+```json
+ /api/v1/open/meta/page?classifyCode=NEW_CODE&page=0&size=10
+```
+
+### 响应数据
+
+| 参数    | 类型    | 备注                    | 示例值 |
+| ------- | ------- | ----------------------- | ------ |
+| code    | Integer | 状态码(详见状态码说明） | 1      |
+| message | String  | 状态码描述              | 成功   |
+| data    | Object  | 具体响应对象            |        |
+
+- data 数据结构
+
+| 参数           | 类型      | 备注               | 示例值                     |
+|--------------|---------|------------------| ----------------------- |
+| metaHandle   | String  | 元数据标识            | ""                      |
+| metaName     | String  | 元数据名称            | ""                      |
+| classifyName | String  | 所属分类名称           |  |
+| id           | Integer | 元数据id            |                         |
+| metaCode     | String  | 元数据编码            |                         |
+| metaState    | Integer | 元数据状态 0-未发布 1-发布 |                         |
+| createdTime  | String  | 元数据创建时间          |                         |
+| isQuote      | Integer | 是否为副本 0-否 1-是    |                         |
+
+### 响应示例
+
+```json
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "pageSize": 10,
+    "pageNumber": 1,
+    "totalCount": 1,
+    "totalPage": 1,
+    "content": [{
+      "metaHandle": "88.608.5288/META_f90c212ea7ec471",
+      "metaCode": "peijian",
+      "metaName": "电脑配件",
+      "metaState": 1,
+      "isQuote": 0,
+      "createdTime": "2024-07-04 18:59:13",
+      "classifyName": "标识关联关系图"
+    }]
+  }
+}
+
+```
+
+### 异常示例
+
+```json
+{
+  "code": 106,
+  "message": "请求入参错误，{}"
+}
+```
+
+## 标识数据列表
+
+操作者通过此接口获取某个元数据模板下的标识列表。
+
+### 请求参数
+
+- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+- 请求方式：GET
+- 请求路径：`/api/v1/open/handle/page`
+- Header：
+
+| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
+| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
+| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+
+- Query参数：
+
+| 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值 |
+|--------------|---------|------| -------- |--------------------------|---|
+| metaHandle   | String  | 是    | -        | 元数据标识                    |  |
+| handleName   | String  | 否    | -        | 实例标识                     |   |
+| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss |  |
+| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss |  |
+| page         | Integer | 否    | -        | 默认值0                     |  |
+| size         | Integer | 否    | -        | 默认值10                    |  |
+
+### 请求示例
+
+```json
+ /api/v1/open/handle/page?metaHandle="88.608.5288/META_06271012"&page=0&size=10
+```
+
+### 响应数据
+
+| 参数    | 类型    | 备注                    | 示例值 |
+| ------- | ------- | ----------------------- | ------ |
+| code    | Integer | 状态码(详见状态码说明） | 1      |
+| message | String  | 状态码描述              | 成功   |
+| data    | Object  | 具体响应对象            |        |
+
+- data 数据结构
+
+| 参数           | 类型      | 备注            | 示例值                     |
+|--------------|---------|---------------| ----------------------- |
+| handleName   | String  | 实例标识          | ""                      |
+| updateTime   | String  | 更新时间          |  |
+| createdBy    | String  | 用户名/应用名         |                         |
+| createdTime  | String  | 创建时间          |                         |
+
+### 响应示例
+
+```json
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "pageSize": 10,
+    "pageNumber": 1,
+    "totalCount": 1,
+    "totalPage": 1,
+    "content": [
+      {
+        "handleName": "88.608.5288/234242342",
+        "updateTime": "2024-07-08 17:15:53",
+        "createTime": "2024-07-08 17:15:53",
+        "createdBy": "用户名/应用名"
+      }
+    ]
+  }
+}
+
+```
+
+### 异常示例
+
+```json
+{
+  "code": 106,
+  "message": "请求入参错误，{}"
+}
+```
