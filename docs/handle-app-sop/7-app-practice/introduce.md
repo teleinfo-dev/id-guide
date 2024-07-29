@@ -5,7 +5,7 @@
 1. 酒行业追溯大屏
     <center><img src="./images/image-1.png" style="margin-top:10px;"/></center>
 
-2. 该追溯大屏，通过企业节点，模拟打通酒行业的全业务流程
+2. 通过企业节点提供的服务能力，模拟打通酒行业的全业务流程
     <center><img src="./images/image-2.png" style="margin-top:10px;"/></center>
 
 3. 模拟打通 生产系统、仓储系统、营销系统，实现酒行业4个大环节、14个小环节的贯通
