@@ -7,11 +7,11 @@ ID-SDK 是一种专为应用开发者设计的软件开发工具包，主要用
 
 id-sdk 发布到 maven 仓库，应用在 pom.xml 文件中添加以下依赖。
 
-```java
+```pom
 <dependency>
     <groupId>cn.teleinfo</groupId>
-    <artifactId>id-sdk</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>id-sdk-impl</artifactId>
+    <version>0.0.1</version>
 </dependency>
 ```
 
