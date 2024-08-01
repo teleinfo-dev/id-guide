@@ -66,10 +66,10 @@ function updateHomePageStyle(value: boolean) {
     if (homePageStyle) return
 
     homePageStyle = document.createElement('style')
-    homePageStyle.innerHTML = `
-    :root {
-      animation: rainbow 12s linear infinite;
-    }`
+    // homePageStyle.innerHTML = `
+    // :root {
+    //   animation: rainbow 12s linear infinite;
+    // }`
     document.body.appendChild(homePageStyle)
   } else {
     if (!homePageStyle) return
