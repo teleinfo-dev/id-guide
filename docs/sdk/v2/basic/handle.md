@@ -1,9 +1,10 @@
+# 标识操作
 
-### 标识注册
+## 标识注册
 
-#### 说明：通过此方法，用户可进行标识注册
+通过此方法，用户可进行标识注册
 
-方法名：
+### 方法调用
 ```java
 DoipReturn<Map<String, Object>> post(
     @RequestParam(value = "targetId") String targetId,
@@ -11,11 +12,11 @@ DoipReturn<Map<String, Object>> post(
     @RequestBody HandleInputDTO handleInputDTO
 );
 ```
-#### 注意
+`注意`
 - 用户可基于自己创建的元数据模板进行标识注册。
 - 用户可基于授权给自己查看权限的本企业元数据模板进行标识注册。
 
-#### 方法参数
+### 方法参数
 
 |  **名称**  |  **位置**  |  **类型**  |  **必选**  |  **说明**  | **示例值**                  |
 | --- | --- | --- | --- | --- |--------------------------|
@@ -31,7 +32,7 @@ DoipReturn<Map<String, Object>> post(
 |  attributes  |  body  |  string  |  是  |  标识主体  | -                     |
 |  attributes.content  |  body  |  json  |  是  |  属性值，key-value结构；\`\`k为元数据属性英文名称，value为属性值  |                       |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
@@ -39,9 +40,8 @@ DoipReturn<Map<String, Object>> post(
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 |  data  |  object  |  \-  |  \-  |  \-  |
 
-#### 示例
 
-#### 请求示例代码
+### 请求示例
 ```java
     /**
      * 标识注册
@@ -80,7 +80,7 @@ DoipReturn<Map<String, Object>> post(
         log.info("标识注册返回结果：{}", JSONUtil.toJsonStr(doipReturn));
     }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -95,11 +95,11 @@ DoipReturn<Map<String, Object>> post(
     }
 }
 ```
-### 标识修改
+## 标识修改
 
-#### 说明：通过此方法，用户可进行标识修改操作。
+通过此方法，用户可进行标识修改操作。
 
-方法名：
+### 方法调用
 ```java
 DoipReturn<Map<String, Object>> post(
     @RequestParam(value = "targetId") String targetId,
@@ -107,11 +107,11 @@ DoipReturn<Map<String, Object>> post(
     @RequestBody HandleInputDTO handleInputDTO
 );
 ```
-#### 注意
+`注意`
 - 用户仅可修改自己创建的实例标识;
 - 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值。
 
-#### 方法参数
+### 方法参数
 
 |  **名称**  |  **位置**  |  **类型**  |  **必选**  |  **说明**  |     |
 | --- | --- | --- | --- | --- |-----|
@@ -128,7 +128,7 @@ DoipReturn<Map<String, Object>> post(
 |  attributes  |  body  |  string  |  是  |  标识主体  |     |
 |  attributes.content  |  body  |  json  |  是  |  属性值，key-value结构；\`\`k为元数据属性英文名称，value为属性值  |     |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
@@ -136,9 +136,8 @@ DoipReturn<Map<String, Object>> post(
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 |  data  |  object  |  \-  |  \-  |  \-  |
 
-#### 示例
 
-#### 请求示例代码
+### 请求示例
 ```java
 /**
  * 标识修改
@@ -164,7 +163,7 @@ void updateHandleApiTest() {
     log.info("标识修改返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -181,11 +180,11 @@ void updateHandleApiTest() {
 ```
 
 
-### 标识删除
+## 标识删除
 
-#### 说明:通过此方法，用户可进行标识删除操作。
+通过此方法，用户可进行标识删除操作。
 
-方法名：
+### 方法调用
 ```java
 DoipReturn<Map<String, Object>> post(
     @RequestParam(value = "targetId") String targetId,
@@ -193,10 +192,10 @@ DoipReturn<Map<String, Object>> post(
     @RequestBody HandleInputDTO handleInputDTO
 );
 ```
-#### 注意
+`注意`
 - 用户仅可删除自己创建的实例标识。
 
-#### 方法参数
+### 方法参数
 
 |  **名称**  |  **位置**  |  **类型**  |  **必选**  |  **说明**  |                          |
 | --- | --- | --- | --- | --- |--------------------------|
@@ -204,16 +203,15 @@ DoipReturn<Map<String, Object>> post(
 |  operationId  |  Params  |  string  |  是  |  默认值：0.DOIP/Op.Delete  | 0.DOIP/Op.Delete         |
 |  handleInputDTO  |  Params  |  object  |  否  |  只需要传对象，不需要赋值  | -                        |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
 
-#### 请求示例代码
+### 请求示例
 ```java
 /**
  * 标识删除
@@ -228,34 +226,35 @@ void deleteHandleApiTest() {
     log.info("标识删除返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
     "message": "成功",
 }
 ```
-### 标识解析
 
-#### 说明：通过此方法，用户可进行元数据模板标识解析与实例标识解析。
+## 标识解析
 
-方法名：
+通过此方法，用户可进行元数据模板标识解析与实例标识解析。
+
+### 方法调用
 ```java
  DoipReturn get(@RequestParam(value = "targetId") String targetId,
      @RequestParam(value = "operationId") String operationId
  );   
 ```
-#### 注意
+`注意`
 - 用户可解析范围为公开数据与授权给自己查看或编辑权限的数据。
 
-#### 方法参数
+### 方法参数
 
 |  **名称**  |  **位置**  |  **类型**  |  **必选**  |  **说明**  |     |
 | --- | --- | --- | --- | --- |-----|
 |  targetId  |  Params  |  string  |  是  |  标识  | 88.608.5288/handle_07_02 |
 |  operationId  |  Params  |  string  |  是  |  0.DOIP/Op.Retrieve  |  0.DOIP/Op.Retrieve   |
 
-#### 返回参数
+### 返回参数
 
 |  **名称**  |  **类型**  |  **必选**  | **中文名** | **示例**                   |
 | --- | --- | --- |---------|--------------------------|
@@ -266,9 +265,7 @@ void deleteHandleApiTest() {
 |  data.type  |  string  |  true  | 元数据标识   | 88.608.5288/META_07_01   |
 |  data.attributes  |  json  |  true  | 属性值     | key:value                |
 
-#### 示例
-
-#### 请求示例代码
+### 请求示例
 ```java
 /**
  * 标识查询
@@ -284,36 +281,13 @@ void searchHandleApiTest() {
     log.info("标识查询返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
-```json
-// 实例标识
-{
-    "code": 1,
-    "message": "成功",
-    "data": {
-        "id": "88.608.5288/handle_07_02",
-        "type": "88.608.5288/META_07_01",
-        "attributes": {
-            "attributes": {
-                "metaData": {
-                    "createTime": "2024-07-02 14:17:43",
-                    "updateTime": "2024-07-02 14:35:26",
-                    "creator": "88.608.5288/App_app0002",
-                    "updater": "88.608.5288/App_app0002"
-                }
-            },
-            "elements": [{
-                "index": 2000,
-                "type": "en1",
-                "name": "zh1",
-                "data": "update handle",
-                "dataType": 1
-            }]
-        }
-    }
-}
 
-// 元数据标识
+### 响应示例
+
+::: code-group
+
+
+```json [元数据标识]
 {
     "code": 1,
     "message": "成功",
@@ -368,3 +342,33 @@ void searchHandleApiTest() {
     }
 }
 ```
+
+```java [实例标识]
+{
+    "code": 1,
+    "message": "成功",
+    "data": {
+        "id": "88.608.5288/handle_07_02",
+        "type": "88.608.5288/META_07_01",
+        "attributes": {
+            "attributes": {
+                "metaData": {
+                    "createTime": "2024-07-02 14:17:43",
+                    "updateTime": "2024-07-02 14:35:26",
+                    "creator": "88.608.5288/App_app0002",
+                    "updater": "88.608.5288/App_app0002"
+                }
+            },
+            "elements": [{
+                "index": 2000,
+                "type": "en1",
+                "name": "zh1",
+                "data": "update handle",
+                "dataType": 1
+            }]
+        }
+    }
+}
+```
+
+:::

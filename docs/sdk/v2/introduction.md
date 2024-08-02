@@ -1,4 +1,4 @@
-## 简介
+# 简介
 
 ID-SDK是一种专为应用开发者设计的软件开发工具包，主要用于实现用户身份认证与标识管理功能。通过集成此SDK，开发者可以轻松地在他们的应用中使用标识解析、标识注册、标识维护等功能服务。本指南旨在帮助开发者快速理解并集成ID-SDK到他们的项目中，确保过程顺利且高效。
 
@@ -11,7 +11,7 @@ id-sdk发布到maven仓库，应用在pom.xml文件中添加以下依赖。
 <dependency>
     <groupId>cn.teleinfo</groupId>
     <artifactId>id-sdk-impl</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 </dependency>
 ```
 

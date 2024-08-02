@@ -1,13 +1,15 @@
-### 新增元数据
+# 元数据
 
-#### 说明:通过此方法新建元数据模板，进行设定元数据名称、元数据分类、生成元数据标识编码、定义模板实体元素等操作。
+## 新增元数据
 
-方法名：
+通过此方法新建元数据模板，进行设定元数据名称、元数据分类、生成元数据标识编码、定义模板实体元素等操作。
+
+### 方法调用
 ```java
 DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 ```
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                                                    | **示例值**                 |
 | --- | --- | --- | --- |---------------------------------------------------------------------------|-------------------------|
@@ -37,7 +39,7 @@ DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`,默认为 1                                                  |                         |
 |  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                                       |                         |
 
-#### 返回参数
+### 返回参数
 
 |  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
 | --- | --- | --- | --- | --- | --- |
@@ -45,9 +47,8 @@ DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 |  message  |  string  |  true  |  none  |  none  |  返回消息  |
 |  data  |  object  |  true  |  none  |  none  |  返回数据  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例   
 ```java
  /**
  * 新建元数据
@@ -156,7 +157,7 @@ void metaCreateApiTest() {
 }
 ```
 
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -165,22 +166,23 @@ void metaCreateApiTest() {
 }
 ```  
 
-### 查询元数据
+## 查询元数据
 
-#### 说明:操作者通过此方法查询自己所创建的元数据模板，可查看元数据模板的基本信息及实体元素列表。
+操作者通过此方法查询自己所创建的元数据模板，可查看元数据模板的基本信息及实体元素列表。
 
-方法名：
+### 方法调用
 
-`DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);`
+```java
+DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);
+```
 
-
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- | --- |
 |  metaHandle  |  String  |  是  |  \-  |  要查询的元数据标识  |  "88.608.6688/META\_123444444444"  |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
@@ -223,9 +225,7 @@ void metaCreateApiTest() {
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                               |
 |  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                               |
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例   
 ```java
 @Test
 void metaInfoApiTest() {
@@ -238,7 +238,7 @@ void metaInfoApiTest() {
     log.info("查询元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -279,16 +279,16 @@ void metaInfoApiTest() {
     }
 }
 ```
-### 编辑元数据基本信息
+## 编辑元数据基本信息
 
-#### 说明:操作者通过此方法编辑自己所创建的元数据模板，进行元数据基本信息的修改操作。
+操作者通过此方法编辑自己所创建的元数据模板，进行元数据基本信息的修改操作。
 
-方法名：
+### 方法调用
 ```java
 DoipReturn updateMetaBasicInfo(@RequestBody MetaBasicInfoDTO metaBasicInfoDTO);
 ```
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                     |
 | --- | --- | --- | --- | --- |-----------------------------|
@@ -303,16 +303,15 @@ DoipReturn updateMetaBasicInfo(@RequestBody MetaBasicInfoDTO metaBasicInfoDTO);
 |  standard  |  String  |  否  |  200  |  依据标准  |                             |
 |  metaDesc  |  String  |  否  |  1000  |  元数据描述  |                             |
 
-#### 返回参数
+### 返回参数
 
 |  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
 | --- | --- | --- | --- | --- | --- |
 |  code  |  integer  |  true  |  none  |  none  |  返回码  |
 |  message  |  string  |  true  |  none  |  none  |  返回消息  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 编辑元数据
@@ -342,25 +341,28 @@ void metaUpdateInfoApiTest() {
     log.info("编辑元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }    
 ```
-#### 响应示例
+
+### 响应示例
 ```json
 {
     "code": 1,
     "message": "成功"
 }
 ```
-### 编辑元数据实体列表
 
-#### 说明:操作者通过此方法编辑自己所创建的元数据模板，进行元数据模板实体元素的修改操作。
+## 编辑元数据实体列表
 
-方法名：
+操作者通过此方法编辑自己所创建的元数据模板，进行元数据模板实体元素的修改操作。
 
-`DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);`
+### 方法调用
 
-#### 注意
-- 用户仅可修改自己创建的元数据模板相关信息。
+```java
+DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
+```
 
-#### 方法参数
+`注意：用户仅可修改自己创建的元数据模板相关信息。`
+
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                               | **示例值**                  |
 | --- | --- | --- | --- |------------------------------------------------------|--------------------------|
@@ -385,16 +387,14 @@ void metaUpdateInfoApiTest() {
 |  metaItemDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                          |
 |  metaItemDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                          |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例 
 ```java
     /**
      * 编辑元数据实体列表
@@ -441,7 +441,7 @@ void metaUpdateInfoApiTest() {
         log.info("编辑元数据实体列表返回结果：{}", JSONUtil.toJsonStr(doipReturn));
     }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -449,34 +449,33 @@ void metaUpdateInfoApiTest() {
 }
 ```   
 
-### 删除元数据
+## 删除元数据
 
-#### 说明:通过此方法，用户可删除元数据模板；删除功能支持单个删除或批量删除元数据模板
+通过此方法，用户可删除元数据模板；删除功能支持单个删除或批量删除元数据模板
 
-方法名：
+### 方法调用
+```java
+DoipReturn deleteMeta(@RequestParam(value = "metaHandleList", defaultValue = "") List<String> metaHandleList);
+```
 
-`DoipReturn deleteMeta(@RequestParam(value = "metaHandleList", defaultValue = "") List<String> metaHandleList);`
-
-#### 注意
+`注意:`
 - 未发布元数据模板，可直接进行删除，已发布元数据模板，需撤回发布后，方可进行删除；
 - 用户仅可删除自己创建的元数据模板。
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- | --- |
 |  metaHandleList  |  Array`<string>`  |  是  |  \-  |  要操作的标识列表  |  \["88.608.6688/META\_123444444444","88.608.6688/META\_123"\]  |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例   
 ```java
 /**
  * 删除元数据
@@ -496,23 +495,23 @@ void deleteMetaApiTest() {
     log.info("删除元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
     "message": "成功"
 }
 ```
-### 元数据授权
+## 元数据授权
 
-#### 说明: 将元数据的查看权限授权给其他标识身份，将标识身份的元数据查看权限移除
+将元数据的查看权限授权给其他标识身份，将标识身份的元数据查看权限移除
 
-方法名：
+### 方法调用
 ```java
 DoipReturn addMetaGrant(@RequestBody MetaGrantApiDTO metaGrantApiDTO);
 ```
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                                                       |
 | --- | --- | --- | --- | --- |---------------------------------------------------------------|
@@ -521,16 +520,14 @@ DoipReturn addMetaGrant(@RequestBody MetaGrantApiDTO metaGrantApiDTO);
 |  handleUsers  |  Array`<string>` |  否  |  \-  |  新增身份标识  | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"\] |
 |  removeHandleUsers  |  Array`<string>` |  否  |  \-  |  删除身份标识  | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"\] |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例 
 ```java
 /**
  * 元数据授权
@@ -562,30 +559,30 @@ void addMetaGrantApiTest() {
     log.info("元数据授权返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
     "message": "成功"
 }
 ```
-### 发布/撤回元数据
+## 发布/撤回元数据
 
-#### 说明:通过此方法，可发布未发布的元数据模板，发布后，可基于该元数据模版进行标识数据创建； 可撤回已发布的元数据模板；未发布的元数据模板不可被解析，不能继续进行标识数据的创建；已创建标识数据不受其影响。
+通过此方法，可发布未发布的元数据模板，发布后，可基于该元数据模版进行标识数据创建； 可撤回已发布的元数据模板；未发布的元数据模板不可被解析，不能继续进行标识数据的创建；已创建标识数据不受其影响。
 
-方法名：
+### 方法调用
+```java
+DoipReturn publishOrWithdraw(@RequestBody PublishOrWithdrawApiDTO paramsDTO);
+```
 
-`DoipReturn publishOrWithdraw(@RequestBody PublishOrWithdrawApiDTO paramsDTO);`
-
-
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- | --- |
 |  metaHandleList  |  Array `<string>`  |  是  |  \-  |  要操作的标识列表  |  \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"\]  |
 |  opType  |  String  |  是  |  \-  |  操作类型，枚举值 `publish` 或  `withdraw`  |  "publish"  |
 
-#### 返回参数
+### 返回参数
 
 |  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
 | --- | --- | --- | --- | --- | --- |
@@ -593,9 +590,8 @@ void addMetaGrantApiTest() {
 |  message  |  string  |  true  |  none  |  none  |  返回消息  |
 |  data  |  object  |  true  |  none  |  none  |  返回数据  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 发布/撤回元数据
@@ -618,7 +614,7 @@ void publishOrWithdrawApiTest() {
     log.info("发布/撤回元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -630,21 +626,21 @@ void publishOrWithdrawApiTest() {
     }]
 }
 ```
-### 创建元数据副本
+## 创建元数据副本
 
-#### 说明:通过此方法，用户可参照其他企业的元数据模板创建自己的元数据模板，并在该元数据下进行标识注册。
+通过此方法，用户可参照其他企业的元数据模板创建自己的元数据模板，并在该元数据下进行标识注册。
 
-方法名：
+### 方法调用
 ```java
 DoipReturn baseonCreateMeta(@RequestBody BaseonCreateMetaApiDTO metaCopyApiDTO);
 ```
 
-#### 注意
+`注意`
 - 用户仅可对授权给自己查看权限或公开的元数据模板创建副本；
 - 创建副本成功后，该元数据模板不可对实体元素进行编辑。
 - 创建副本成功后，该元数据仅可向本企业应用身份或身份组进行授权（若有其他企业需要创建该元数据模板副本，应向原元数据模板所有者索要权限）；
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                              |
 | --- | --- | --- | --- | --- |--------------------------------------|
@@ -653,16 +649,15 @@ DoipReturn baseonCreateMeta(@RequestBody BaseonCreateMetaApiDTO metaCopyApiDTO);
 |  baseInfo.metaCode  |  String  |  是  |  50  |  设置的元数据编码  | "ceshi-code"                         |
 |  baseInfo.classifyCode  |  String  |  是  |   |  所属的本企业分类  | "NEW_CODE"                           |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例   
 ```java
 /**
  * 创建元数据副本
@@ -689,27 +684,28 @@ void baseonCreateMetaApiTest() {
     log.info("创建元数据副本返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
     "message": "成功",
 }
 ```
-### 数据分类列表
+## 数据分类列表
 
-#### 说明:获取本企业下全量的数据分类列表
+获取本企业下全量的数据分类列表
 
-方法名：
+### 方法调用
 ```java
 DoipReturn claasifyQuery();
 ```
 
-#### 方法参数
+### 方法参数
 
 无
 
-#### 返回参数
+### 返回参数
+*   公共响应参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
@@ -717,7 +713,7 @@ DoipReturn claasifyQuery();
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 |  data  |  object  |   |   |   |
 
-#### data数据结构
+*   data数据结构
 
 | 参数                                           | 类型      | 备注                                                   | 示例值      |
 | ---------------------------------------------- |---------|------------------------------------------------------|----------|
@@ -730,9 +726,7 @@ DoipReturn claasifyQuery();
 | level                                  | Integer | 层级                                                   | 1        |
 
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 数据分类列表
@@ -747,7 +741,7 @@ void claasifyQuery() {
     log.info("分类列表：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -876,22 +870,22 @@ void claasifyQuery() {
     ]
 }
 ```
-### 元数据列表
+## 元数据列表
 
-#### 说明:操作者通过此方法获取某个数据分类下的元数据模板列表。
+操作者通过此方法获取某个数据分类下的元数据模板列表。
 
-方法名：
+### 方法调用
 ```java
-    DoipReturn metaPage(
-        @RequestParam(value = "metaHandle", required = false) String metaHandle,
-        @RequestParam(value = "metaState", required = false) Integer metaState,
-        @RequestParam(value = "classifyCode") String classifyCode,
-        @RequestParam(value = "startTime", required = false) String startTime,
-        @RequestParam(value = "endTime", required = false) String endTime,
-        @RequestParam("page") Integer page, @RequestParam("size")Integer size);
+DoipReturn metaPage(
+    @RequestParam(value = "metaHandle", required = false) String metaHandle,
+    @RequestParam(value = "metaState", required = false) Integer metaState,
+    @RequestParam(value = "classifyCode") String classifyCode,
+    @RequestParam(value = "startTime", required = false) String startTime,
+    @RequestParam(value = "endTime", required = false) String endTime,
+    @RequestParam("page") Integer page, @RequestParam("size")Integer size);
 ```
 
-#### 方法参数
+### 方法参数
 
 | 参数           | 类型      | 是否必填 | 最大长度 | 备注               | 示例值                                |
 |--------------|---------|------| -------- |------------------|------------------------------------|
@@ -903,7 +897,7 @@ void claasifyQuery() {
 | page         | Integer | 否    | -        | 默认值0 | 0                                  |
 | size         | Integer | 否    | -        | 默认值10 | 10                                 |
 
-#### 返回参数
+### 返回参数
 
 *   公共响应参数
     
@@ -927,9 +921,7 @@ void claasifyQuery() {
 | createdTime  | String  | 元数据创建时间          | "2024-2-12 12:12:12"               |
 | isQuote      | Integer | 是否为副本 0-否 1-是    | 0                                  |
 
-#### 示例
-
-#### 请求示例代码    
+### 请求示例   
 ```java
   /**
   * 元数据列表
@@ -944,7 +936,7 @@ void claasifyQuery() {
      log.info("元数据列表：{}", JSONUtil.toJsonStr(doipReturn));
  }  
 ```
-#### 响应示例
+### 响应示例
 ```json
  {
     "code": 1,
@@ -967,20 +959,20 @@ void claasifyQuery() {
 }  
 ```
 
-### 标识数据列表
+## 标识数据列表
 
-#### 说明:操作者通过此方法获取某个元数据模板下的标识列表。
+操作者通过此方法获取某个元数据模板下的标识列表。
 
-方法名：
+### 方法调用
 ```java
-    DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
-        @RequestParam(value = "handleName", required = false) String handleName,
-        @RequestParam(value = "startTime", required = false) String startTime,
-        @RequestParam(value = "endTime", required = false) String endTime,
-        @RequestParam("page") Integer page, @RequestParam("size")Integer size);
+DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
+    @RequestParam(value = "handleName", required = false) String handleName,
+    @RequestParam(value = "startTime", required = false) String startTime,
+    @RequestParam(value = "endTime", required = false) String endTime,
+    @RequestParam("page") Integer page, @RequestParam("size")Integer size);
 ```
 
-#### 方法参数
+### 方法参数
 
 | 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值                                |
 |--------------|---------|------| -------- |--------------------------|------------------------------------|
@@ -991,7 +983,7 @@ void claasifyQuery() {
 | page         | Integer | 否    | -        | 默认值0                     | 0                                  |
 | size         | Integer | 否    | -        | 默认值10                    | 10                                 |
 
-#### 返回参数
+### 返回参数
 
 *   公共响应参数
 
@@ -1011,9 +1003,8 @@ void claasifyQuery() {
 | createdBy    | String  | 用户名/应用名         | "应用名"                     |
 | createdTime  | String  | 创建时间          | "2024-01-24 14:41:23"     |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
   /**
   * 标识数据列表
@@ -1029,7 +1020,7 @@ void claasifyQuery() {
       log.info("标识数据列表：{}", JSONUtil.toJsonStr(doipReturn));
       }
 ```
-#### 响应示例
+### 响应示例
 ```json
  {
   "code": 1,

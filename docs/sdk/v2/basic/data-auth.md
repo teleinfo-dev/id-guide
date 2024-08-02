@@ -1,19 +1,21 @@
-### 应用身份用户列表查询
+# 数据权限
 
-#### 说明：通过此方法，查询本企业节点中所有应用身份列表及本企业和导入外企业的身份组列表，用于后续进行身份授权；
+## 应用身份用户列表查询
 
-方法名：
+通过此方法，查询本企业节点中所有应用身份列表及本企业和导入外企业的身份组列表，用于后续进行身份授权；
+
+### 方法调用
 ```java
 DoipReturn getHandleUserGroupList();
 ```
-#### 注意
+`注意`
 - 向本企业授权，可授权本企业的应用身份或本企业的身份组；跨企业进行授权，只可导入跨企业身份组后进行授权。
 
-#### 请求参数
+### 请求参数
 
 无
 
-#### 返回参数
+### 返回参数
 
 *   公共响应参数
 
@@ -31,9 +33,8 @@ DoipReturn getHandleUserGroupList();
 |  userHandle  |  String  |  \-  |  身份标识  | "88.608.6688/User\_zyh03" |
 |  belongCompany  |  String  |  \-  |  所属企业  | "北京能力有限公司"                         |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 应用身份用户列表查询
@@ -48,7 +49,7 @@ void handleUserGroupListApiTest() {
     log.info("应用身份用户列表查询返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -68,20 +69,22 @@ void handleUserGroupListApiTest() {
     }]
 } 
 ```
-### 同类数据授权-公开/撤销公开
 
-#### 说明：通过此方法对基于元数据模板所创建的同类实例数据属性级别的查看权限进行公开与撤销公开的授权操作。
+## 同类数据授权-公开/撤销公开
 
-方法名：
+通过此方法对基于元数据模板所创建的同类实例数据属性级别的查看权限进行公开与撤销公开的授权操作。
+
+### 方法调用
 ```java
-    DoipReturn batchPublic(@RequestBody ClassGrantPublicDTO classGrantDTO);
+DoipReturn batchPublic(@RequestBody ClassGrantPublicDTO classGrantDTO);
 ```
-#### 注意
+
+`注意`
 - 仅操作目标所属元数据的创建者可进行同类数据授权；
 - 被操作目标的所属元数据需为发布状态才可进行同类数据授权；
 - 操作该接口不影响元数据本身的公开/撤销公开权限。
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**             |
 | --- | --- | --- | --- | --- |---------------------|
@@ -89,16 +92,15 @@ void handleUserGroupListApiTest() {
 |  scope  |  integer  |  是  |  \-  |  授权范围；枚举值 1-公开，2-撤销公开  | 1                   |
 |  items  |  array\[string\]  |  是  |  \-  |  所属元数据的属性英文名称，可填写多个  | key1,key2,key3      |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例   
 ```java
 /**
  * 同类数据授权-公开/撤销公开
@@ -126,7 +128,7 @@ void batchPublicMetaApiTest() {
     log.info("同类数据授权-公开/撤销公开返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -134,22 +136,23 @@ void batchPublicMetaApiTest() {
 }
 ```
 
-### 同类数据授权
+## 同类数据授权
 
-#### 说明：通过此方法对基于元数据模板所创建的同类实例数据属性级别的查看及编辑权限进行授权操作。
+通过此方法对基于元数据模板所创建的同类实例数据属性级别的查看及编辑权限进行授权操作。
 
-方法名：
+### 方法调用
 ```java
-    DoipReturn metaItemAuthorization(@RequestBody ClassGrantDTO classGrantDTO);
+DoipReturn metaItemAuthorization(@RequestBody ClassGrantDTO classGrantDTO);
 ```
-#### 注意
+
+`注意`
 - 仅元数据的创建者可进行同类数据授权；
 - 被授权的元数据需为发布状态才可进行同类数据授权；
 - 编辑授权时，即authType为2时，scope只能为2
 - 查看授权时，即authType为1时，若scope为1，即公开权限，则handlerUsers可以为空
 
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                 |
 | --- | --- | --- | --- | --- |-------------------------|
@@ -161,16 +164,15 @@ void batchPublicMetaApiTest() {
 |  accessList.handleUsers  |  array\[string\]  |  否  |  \-  |  要授权的标识用户  | ["88.608.6688/User_dong"] |
 |  accessList.removeHandleUsers  |  array\[string\]  |  否  |  \-  |  要移除授权的标识用户  | ["88.608.6688/User_dzh"]  |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 同类数据授权
@@ -205,7 +207,7 @@ void metaItemAuthorizationApiTest() {
     log.info("同类数据授权返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -214,20 +216,20 @@ void metaItemAuthorizationApiTest() {
 ```
     
 
-### 单一标识授权
+## 单一标识授权
 
-#### 说明：通过此方法，可对实例标识进行单个授权操作，在创建实例时，可选择“同类数据授权”或“单个授权”。选择“同类数据授权”，该标识权限则遵循同类数据授权，选择“单个授权”，则同类数据授权对该条实例标识无效，遵循单个授权。
+通过此方法，可对实例标识进行单个授权操作，在创建实例时，可选择“同类数据授权”或“单个授权”。选择“同类数据授权”，该标识权限则遵循同类数据授权，选择“单个授权”，则同类数据授权对该条实例标识无效，遵循单个授权。
 
-方法名：
+### 方法调用
 ```java
-    DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrantDTO);
+DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrantDTO);
 ```
-#### 注意
+`注意`
 - 当授权类型grantType为1时，即同类授权类型时，readerScope,readers,writers可以为空
 - 当授权类型grantType为2时，即单个授权类型时，readerScope不能为空；readerScope为1，即公开授权时，readers可以为空；readerScope为2，即指定范围授权时，readers为空则不发生授权操作
 - 当授权类型grantType为2时，即单个授权类型时，writers为空时，则不发生授权操
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                   |
 | --- | --- | --- | --- | --- |---------------------------|
@@ -239,16 +241,15 @@ void metaItemAuthorizationApiTest() {
 |  delHandleUserReaders  |  array\[string\]  |  否  |  \-  |  删除的标识身份  | ["88.608.6688/User_dzh"]  |
 |  delHandleUserWriters  |  array\[string\]  |  否  |  \-  |  删除的标识身份  | ["88.608.6688/User_dzh"]  |
 
-#### 返回参数
+### 返回参数
 
 |  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- |
 |  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
 |  message  |  String  |  \-  |  状态码描述  |  成功  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 单一标识授权
@@ -275,7 +276,7 @@ void singleHandleGrantApiTest() {
     log.info("单一标识授权返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
 {
     "code": 1,
@@ -283,26 +284,26 @@ void singleHandleGrantApiTest() {
 }
 ``` 
 
-### 授权通知
+## 授权通知
 
-#### 说明：通过此方法，用户可查看本应用身份下收到的消息列表；
+通过此方法，用户可查看本应用身份下收到的消息列表；
 
-方法名：
+### 方法调用
 ```java
-    DoipReturn appMessage(DoipPage doipPage);
+DoipReturn appMessage(DoipPage doipPage);
 ```
-#### 注意
+`注意`
 - 有其他企业或应用向您进行元数据、同类数据、单个标识数据授权查看/编辑权限时，您会收到对应授权消息通知；
 - 有其他企业或应用将您获取的元数据、同类数据、单个标识数据的查看/编辑权限移除时，您会收到对应授权消息通知。
 
-#### 方法参数
+### 方法参数
 
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
 | --- | --- | --- | --- | --- | --- |
 |  page  |  Int  |  是  |  \-  |  当前页-1  |  0  |
 |  size  |  Int  |  是  |  \-  |  每页条数  |  10  |
 
-#### 返回参数
+### 返回参数
 
 *   公共响应参数  
 
@@ -326,9 +327,8 @@ void singleHandleGrantApiTest() {
 |  createdTime  |  String  |  \-  |  创建时间  |  "2024-06-12 17:01:42"  |
 |  messageDetail  |  String  |  \-  |  消息详情  |  "北京能力有限公司已向您授权元数据：88.608.5288/META\_xz1\_app1\_0612的查看权限。"  |
 
-#### 示例
 
-#### 请求示例代码    
+### 请求示例  
 ```java
 /**
  * 查看应用身份的消息列表
@@ -344,7 +344,7 @@ void appMessageGrantApiTest() {
     log.info("查看应用身份的消息列表返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
-#### 响应示例
+### 响应示例
 ```json
  {
     "code": 1,
