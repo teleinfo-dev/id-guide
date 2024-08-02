@@ -1,7 +1,7 @@
 
 ### 上传文件
 
-#### 说明
+#### 说明：通过此方法，用户可进行文件上传操作，该操作用于创建实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素，需进行上传，可进行单个/批量上传。
 
 方法名：
 ```java
@@ -12,16 +12,22 @@ DoipReturn upload(
     @RequestParam(value = "file") MultipartFile file
 );    
 ```
-方法说明：此方法可上传文件
+#### 注意
+- 单个文件上传，不能超过50M；上传文件数量取决于元数据模板中实体元素设定，最大设定不超过50个。
+- 可上传格式如下：
+  >     文件型：doc;docx;xps;dot（word）、xls;xlsx;xlsb;xlsm;csv（excel）、pdf、zip；rar（压缩包）
+  >     音频型：wav;mp3;mp4
+  >     视频型：avi;mov;wmv;flv;mp4
+  >     图片型：jpg;jpe;png;jpeg;gif;tif;tiff;jxr;bmp
 
 #### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- | --- |
-|  handleName  |  String  |  否  |  \-  |  标识  |  88.608.6688/Meta\_1  |
-|  metaHandle  |  String  |  是  |  \-  |  元数据  |  88.608.6688/Meta\_1  |
-|  fileField  |  String  |  是  |  \-  |  文件属性  |  88.608.6688/Meta  |
-|  file  |  MultipartFile  |  是  |  \-  |  上传的文件  |   |
+|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                |
+| --- | --- | --- | --- | --- |------------------------|
+|  handleName  |  String  |  否  |  \-  |  标识  | 88.608.6688/handle_1   |
+|  metaHandle  |  String  |  是  |  \-  |  元数据  | 88.608.6688/Meta_test1 |
+|  fileField  |  String  |  是  |  \-  |  文件属性  | file                   |
+|  file  |  MultipartFile  |  是  |  \-  |  上传的文件  |                        |
 
 #### 返回参数
 
@@ -42,14 +48,18 @@ DoipReturn upload(
  */
 @Test
 void uploadApiTest() throws IOException {
+    //获取token url:服务域名 handle:应用标识身份 privateKeyPem：应用标识身份对应的私钥
     OpenApiClient openApiClient = new OpenApiClient(url, handle, privateKeyPem);
 
+    //读取文件
     File file = new File("/Users/dzh/Downloads/chrome/8fb85f17756d46.png");
+    //将文件转换成流对象
     FileInputStream fileInputStream = new FileInputStream(file);
 
     MultipartFile multipartFile = new MockMultipartFile(file.getName(), file.getName(), "application/octet-stream", fileInputStream);
     System.out.println(multipartFile.getName());
 
+    //调用上传文件方法
     DoipReturn doipReturn = openApiClient.getFileApi().upload(null, "88.608.5288/META_07_01", "file", multipartFile);
 
     log.info("上传文件返回结果：{}", JSONUtil.toJsonStr(doipReturn));
@@ -68,13 +78,14 @@ void uploadApiTest() throws IOException {
 ```
 ### 文件下载
 
-#### 说明
+#### 说明：通过此接口，用户可进行文件上传操作，该操作用于查询或实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素信息，提供用户进行下载。
 
 方法名：
 ```java
 Response download(@RequestParam(value = "filePath") String filePath);
 ```
-方法说明：此方法可下载文件
+#### 注意
+- 该接口下载的文件以流的形式返回，需要通过代码处理流来接收。
 
 #### 方法参数
 
@@ -84,7 +95,7 @@ Response download(@RequestParam(value = "filePath") String filePath);
 
 #### 返回参数
 
-该接口下载的文件以流的形式返回，需要通过代码处理流来接收
+该接口下载的文件以流的形式返回
 
 #### 示例
 
