@@ -1,13 +1,14 @@
 ## 挑战方法
 
-#### 说明
+#### 说明：该方法用于获取挑战信息，为一随机nonce值
 
 方法名：
 ```java
 DoipReturn<String> challenge(@RequestParam(value = "handle") String handle);
 ```
 
-方法说明：该方法用于获取挑战信息，为一随机nonce值
+#### 注意
+- 该方法用于获取挑战信息，为一随机nonce值
 
 #### 方法参数
 
@@ -62,21 +63,19 @@ public String challenge(String handle, String url) {
 
 ## 应答，颁发Token
 
-#### 说明
+#### 说明：该接口用于验证使用nonce值生成的signature，验证成功则颁发token
 
 方法名：
 ```java
 DoipReturn<Map<String,Object>> verifyResponse(@RequestBody VerifyResponseDTO verifyResponseDTO);
 ```
 
-方法说明：该接口用于验证使用nonce值生成的signature，验证成功则颁发token
-
 #### 方法参数
 
-|  **名称**  |  **位置**  |  **类型**  |  **必选**  |  **说明**  |
-| --- | --- | --- | --- | --- |
-|  handle  |  body  |  string  |  是  |  标识  |
-|  signature  |  body  |  string  |  是  |  签名  |
+|  **名称**  |  **位置**  |  **类型**  |  **必选**  | **说明** |
+| --- | --- | --- | --- |--------|
+|  handle  |  body  |  string  |  是  | 应用标识身份 |
+|  signature  |  body  |  string  |  是  | 签名     |
 
 #### 返回参数
 
@@ -119,7 +118,7 @@ public OpenApiClient(String url, String handle, String privateKeyPem) {
 private String authenticate(String handle, String privateKeyPem) {
     try {
         // 挑战
-        DoipReturn < String > challengeResponse = challengeResponseApi.challenge(handle);
+        DoipReturn<String> challengeResponse = challengeResponseApi.challenge(handle);
         String random = challengeResponse.getData();
         // 签名
         PrivateKey privateKey = KeyConverter.fromPkcs8Pem(privateKeyPem);
@@ -128,7 +127,7 @@ private String authenticate(String handle, String privateKeyPem) {
         VerifyResponseDTO verifyResponseDTO = new VerifyResponseDTO();
         verifyResponseDTO.setHandle(handle);
         verifyResponseDTO.setSignature(sign);
-        DoipReturn < Map < String, Object >> verifyResponse = challengeResponseApi.verifyResponse(verifyResponseDTO);
+        DoipReturn<Map<String, Object>> verifyResponse = challengeResponseApi.verifyResponse(verifyResponseDTO);
         if (!Objects.equals(verifyResponse.getCode(), DoipClientCodeEnum.SUCCESS.getCode())) {
             throw new RuntimeException("挑战失败");
         }
