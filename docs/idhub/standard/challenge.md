@@ -118,8 +118,9 @@
 
 ### 签名生成
 
-#### Java
-```java
+::: code-group
+
+```java [java]
 /**
  * 私钥签名
  * @param data
@@ -156,8 +157,7 @@ public static PrivateKey fromPkcs8Pem(String pem, String passphrase) throws Exce
   }
 ```
 
-#### Python
-```Python
+```Python [Python]
 #!/usr/bin/env python
 #coding=utf-8
 import os
@@ -190,8 +190,8 @@ def sign_bytes_rsa( byte_array_nonce, path_to_private_key_pem_file):
 sign = sign_bytes_rsa( byte_array_nonce, path_to_private_key_pem_file)
 print(sign)
 ```
-``````
 
+:::
 
 
 
