@@ -8,7 +8,7 @@ DoipReturn<String> challenge(@RequestParam(value = "handle") String handle);
 ```
 
 #### 注意
-- 该接口只允许应用身份调用，其他身份调用无法获取nounce值。
+- 该方法只允许应用身份调用，其他身份调用无法获取nounce值。
 
 #### 方法参数
 
@@ -63,7 +63,7 @@ public String challenge(String handle, String url) {
 
 ## 应答，颁发Token
 
-#### 说明：该接口用于验证使用nonce值生成的signature，验证成功则颁发token
+#### 说明：该方法用于验证使用nonce值生成的signature，验证成功则颁发token
 
 方法名：
 ```java
