@@ -8,7 +8,7 @@ DoipReturn<String> challenge(@RequestParam(value = "handle") String handle);
 ```
 
 #### 注意
-- 该方法用于获取挑战信息，为一随机nonce值
+- 该接口只允许应用身份调用，其他身份调用无法获取nounce值。
 
 #### 方法参数
 
@@ -72,10 +72,10 @@ DoipReturn<Map<String,Object>> verifyResponse(@RequestBody VerifyResponseDTO ver
 
 #### 方法参数
 
-|  **名称**  |  **位置**  |  **类型**  |  **必选**  | **说明** |
-| --- | --- | --- | --- |--------|
-|  handle  |  body  |  string  |  是  | 应用标识身份 |
-|  signature  |  body  |  string  |  是  | 签名     |
+|  **名称**  |  **位置**  |  **类型**  |  **必选**  | **说明** |     |
+| --- | --- | --- | --- |--------|-----|
+|  handle  |  body  |  string  |  是  | 应用标识身份 |  88.608.8889/App\_wscapp   |
+|  signature  |  body  |  string  |  是  | 私钥进行签名 |     |
 
 #### 返回参数
 
