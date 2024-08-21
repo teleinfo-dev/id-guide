@@ -16,8 +16,12 @@
 
 4. 按部署文档快速部署
 
-<span style="font-size: 12px; color: rgb(22,93,255);">说明：企业节点标准版，配套对接二级节点版本需升级为<strong>1.3.19.3</strong>。
-</span>
+<div style="font-size: 12px; color: rgb(22,93,255);">说明：
+<ul>
+<li>企业节点标准版，配套对接二级节点版本需升级为<strong>1.3.19.3</strong>。</li>
+<li>IDInside合作伙伴可免费安装试用企业节点标准版，试用周期为3个月。</li>
+</ul>
+</div>
 
 ### 后续操作
 
