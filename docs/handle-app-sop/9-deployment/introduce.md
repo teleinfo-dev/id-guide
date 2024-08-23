@@ -22,7 +22,7 @@
 
 <table>
 <tr>
-    <th colspan="2">部署服务器</th>
+    <th colspan="2">企业节点部署服务器</th>
 </tr>
 <tr>
     <td>操作系统</td>
@@ -50,6 +50,32 @@
 </tr>
 </table>
 
+<table>
+<tr>
+    <th colspan="2">标识中间件部署服务器</th>
+</tr>
+<tr>
+    <td>操作系统</td>
+    <td>推荐openEuler 22.03 LTS或Anolis OS 8.8 GA</td>
+</tr>
+<tr>
+    <td>处理器</td>
+    <td>4核</td>
+</tr>
+<tr>
+    <td>内存</td>
+    <td>8 GB RAM</td>
+</tr>
+<tr>
+    <td>储存空间</td>
+    <td>200G</td>
+</tr>
+<tr>
+    <td>用途</td>
+    <td>标识解析中间件部署</td>
+</tr>
+</table>
+
 **网络资源表**
 
 | 步骤 | 部署应用服务 | 部署服务 | 内网地址端口 | 公网端口 |  注意事项 |
@@ -62,16 +88,16 @@
 1. 在服务器指定目录下载部署包
 
 ```
-wget https://teleinfo.pek3b.qingstor.com/Ent_deploy.zip
+wget https://teleinfo.pek3b.qingstor.com/Ent_deploy_2.0.4.zip
 ```
 
 2. 解压部署包
 
 ```
 # 解压
-unzip Ent_deploy.zip
+unzip Ent_deploy_2.0.4.zip
 # 进入解压包目录
-cd Ent_deploy
+cd Ent_deploy_2.0.4/Ent_deploy
 ```
 
 3. 阅读readme，按照指导步骤进行操作
@@ -80,18 +106,7 @@ cd Ent_deploy
     - 确认操作系统上已经安装了docker,docker-compose，若没有，请提前安装
     - 如果操作系统不能联网，请手动上传镜像，并解压
 
-    ```
-    镜像列表
-    registry.teleinfo.cn:8443/idhub-manage/idhub-lhs:20240717151004-Standard_2.0.0
-    registry.teleinfo.cn:8443/idhub-manage/idhub-log-client:20240717110141-Standard_1.0.1
-    registry.teleinfo.cn:8443/idhub-manage/idhub-manage-web:v2.0.1
-    registry.teleinfo.cn:8443/idhub-manage/idhub-buss-manage-server:v2.0.1
-    registry.teleinfo.cn:8443/ops/minio:RELEASE.2024-04-06T05-26-02Z
-    registry.teleinfo.cn:8443/ops/mongo:4.0
-    registry.teleinfo.cn:8443/ops/mysql:8
-    registry.teleinfo.cn:8443/ops/redis:latest
-    ```
-- 项目初始化，启动应用
+- 企业节点初始化，启动应用
     ```
     # 初始化流程：
     (1).填充初始化信息(选做)，文件路径./conf/variables.yaml
@@ -115,3 +130,29 @@ cd Ent_deploy
     启动：cd ./middleware/;./start.sh
     关停：cd ./middleware/;./stop.sh
     ```
+  
+- 标识解析中间件部署
+  ```
+  (1).企业节点启动并联调完成，生成auth_ak，auth_sk
+  
+  (2).修改参数，并启动
+
+  cd Ent_deploy_2.0.4/ID-middleware
+  
+  1.修改docker-compose.yml参数：
+  
+  $ent_host_ip   # 企业节点部署的内网IP地址
+  $randomPasswd   #mysql的密码
+  $auth_ak   #企业节点上生成
+  $auth_sk   #企业节点上生成
+  
+  2.启动
+  
+  docker-compose up -d
+  
+  # 标识解析中间件日常维护：
+
+  启动：docker-compose up -d
+  关停：docker-compose down
+  ```
+
