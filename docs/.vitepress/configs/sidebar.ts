@@ -188,7 +188,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         { text: '元数据', link: '/sdk/v2/basic/meta' },
         { text: '数据权限', link: '/sdk/v2/basic/data-auth' },
         { text: '标识操作', link: '/sdk/v2/basic/handle' },
-        { text: '文件处理', link: '/sdk/v2/basic/file' }
+        // { text: '文件处理', link: '/sdk/v2/basic/file' }
       ],
     }
   ],
@@ -225,10 +225,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   text: '标识操作',
                   link: '/idhub/standard/handle.md',
                 },
-                {
-                  text: '文件处理',
-                  link: '/idhub/standard/file.md',
-                },
+                // {
+                //   text: '文件处理',
+                //   link: '/idhub/standard/file.md',
+                // },
                 {
                   text: '响应状态码',
                   link: '/idhub/standard/state-code.md',

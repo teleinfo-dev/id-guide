@@ -37,14 +37,10 @@
 | metaItemCreateDTOS[i].required                             | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                                                                 |        |
 | metaItemCreateDTOS[i].uniqueField                          | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                                                                 |        |
 | metaItemCreateDTOS[i].comment                              | String  | 否       | 200      | 备注                                                                                                       |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType         | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`              |        |
+| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType         | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型`              |        |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.minLength        | Integer | 否       |          | 最小长度<br />字符型：默认 0                                                                               |        |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength        | Integer | 否       |          | 最大长度<br />字符型：默认 4000                                                                            |        |
 | metaItemCreateDTOS[i].itemSchemaCreateDTO.dateFormat       | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                                                             |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxFileCount     | Integer | 否       | -        | 最大文件数 1-50，超过 50，默认保存为 50                                                                    |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType         | String  | 否       | -        | 文件类型, 例如 "2,3",`2: doc;docx;xps;dot`    `3: xls;xlsx;xlsb;xlsm;csv`   `4:pdf`    `5:zip;rar` |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.referenceType    | Integer | 否       | -        | 引用类型：`1：一对一，2：一对多` 默认为 `1: 一对一`                                                    |        |
-| metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                               |        |
 
 ### 请求示例
 
@@ -73,8 +69,7 @@
         "minLength": 0,
         "maxLength": 4000,
         "dataType": "1"
-      },
-      "itemReferenceDTO": {}
+      }
     },
     {
       "itemCode": "4325",
@@ -85,10 +80,8 @@
       "inputNecessary": 1,
       "listItemNecessary": 0,
       "itemSchemaCreateDTO": {
-
-    "dataType": "2"
-      },
-      "itemReferenceDTO": {}
+        "dataType": "2"
+      }
     },
     {
       "itemCode": "635345",
@@ -101,24 +94,7 @@
       "itemSchemaCreateDTO": {
         "dateFormat": "YYYY-MM-DD",
         "dataType": "3"
-      },
-      "itemReferenceDTO": {}
-    },
-    {
-      "itemCode": "665355",
-      "englishName": "2423423",
-      "chineseName": "24324234",
-      "required": 0,
-      "uniqueField": 0,
-      "inputNecessary": 1,
-      "listItemNecessary": 0,
-      "itemSchemaCreateDTO": {
-
-    "fileType": "2,3",
-        "maxFileCount": 1,
-        "dataType": "4"
-      },
-      "itemReferenceDTO": {}
+      }
     }
   ]
 }
@@ -219,9 +195,6 @@
 | itemVOS[i].itemSchemaVO.minLength              | Integer | 最小长度                                                                                      |                             |
 | itemVOS[i].itemSchemaVO.maxLength              | Integer | 最大长度                                                                                      |                             |
 | itemVOS[i].itemSchemaVO.dateFormat             | String  | 日期格式                                                                                      |                             |
-| itemVOS[i].itemSchemaVO.maxFileCount           | Integer | 最大文件数量                                                                                  |                             |
-| itemVOS[i].itemSchemaVO.referenceType          | Integer | 引用类型：`1：一对一，2：一对多  `                                                          |                             |
-| itemVOS[i].itemReferenceVO.referenceMetaHandle | String  | 引用元数据                                                                                    |                             |
 
 ### 响应示例
 
@@ -301,46 +274,6 @@
                 "itemSchemaVO": {
                     "dataType": 3,
                     "dateFormat": "YYYY-MM-DD"
-                }
-            },
-            {
-                "itemIndex": 2003,
-                "itemCode": "code4",
-                "englishName": "en4",
-                "chineseName": "zh4",
-                "itemState": 0,
-                "definition": "这里是实体定义：呵呵呵呵",
-                "inputNecessary": 1,
-                "listItemNecessary": 0,
-                "required": 1,
-                "uniqueField": 0,
-                "comment": "这里是实体备注：呵呵呵呵",
-                "itemSchemaVO": {
-                    "dataType": 4,
-                    "maxFileCount": 1,
-                    "fileRange": 2,
-                    "fileType": "1,6",
-                    "selfDefFileSuffix": "pem"
-                }
-            },
-            {
-                "itemIndex": 2004,
-                "itemCode": "code5",
-                "englishName": "en5",
-                "chineseName": "zh5",
-                "itemState": 0,
-                "definition": "这是是实体定义",
-                "inputNecessary": 1,
-                "listItemNecessary": 0,
-                "required": 1,
-                "uniqueField": 1,
-                "comment": "这里是实体备注",
-                "itemSchemaVO": {
-                    "dataType": 5,
-                    "referenceType": 1
-                },
-                "itemReferenceVO": {
-                    "referenceMetaHandle": "88.608.8889/META_12345"
                 }
             }
         ]
@@ -469,22 +402,31 @@
 | metaItemDTOS[i].required                              | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                                                    |        |
 | metaItemDTOS[i].uniqueField                           | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                                                    |        |
 | metaItemDTOS[i].comment                               | String  | 否       | 200      | 备注                                                                                          |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |        |
+| metaItemDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型` |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |          | 最小长度                                                                                      |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |          | 最大长度                                                                                      |        |
 | metaItemDTOS[i].itemSchemaCreateDTO.dateFormat        | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                                                |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否       | -        | 最大文件数量                                                                                  |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.fileRange         | Integer | 否       | -        | 文件值域：`1：any，2：assign   `                                                            |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.fileType          | String  | 否       | -        | 文件类型                                                                                      |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否       | -        | 自定义文件后缀                                                                                | "pem"  |
-| metaItemDTOS[i].itemSchemaCreateDTO.referenceType     | Integer | 否       | -        | 引用类型：`1：一对一，2：一对多  `                                                          |        |
-| metaItemDTOS[i].itemReferenceDTO.referenceMetaHandle  | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                  |        |
 
 ### 请求示例
 
 ```json
 {
-  
+  "metaHandle": "88.608.666888/META_648052609c",
+  "metaItemDTOS": [
+    {
+      "itemCode": "code2",
+      "englishName": "en2",
+      "chineseName": "zh2",
+      "itemState": 0,
+      "required": 0,
+      "uniqueField": 0,
+      "inputNecessary": 1,
+      "itemSchemaCreateDTO": {
+        "dataType": "2"
+      },
+      "itemReferenceDTO": {}
+    }
+  ]
 }
 ```
 

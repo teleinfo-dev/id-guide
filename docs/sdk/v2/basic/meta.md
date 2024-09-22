@@ -30,14 +30,11 @@ DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 |  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                                           |                         |
 |  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                                           |                         |
 |  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                                        |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`                      | 1                       |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型`                      | 1                       |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度 字符型：默认 0                                                             |                         |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度 字符型：默认 4000                                                          |                         |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                                        |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数 1-50，超过 50，默认保存为 50                                                 |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型, "2,3", 2:doc;docx;xps;dot 3: xls;xlsx;xlsb;xlsm;csv 4:pdf 5:zip;rar |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`,默认为 1                                                  |                         |
-|  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                                       |                         |
+
 
 ### 返回参数
 
@@ -79,14 +76,14 @@ void metaCreateApiTest() {
     //构建属性集合
     List<MetaItemCreateApiDTO> metaItemCreateDTOS = new ArrayList<>();
 
-    //引用类型
+    //字符型
     MetaItemCreateApiDTO quoteMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
     //属性编码
-    quoteMetaItemCreateApiDTO.setItemCode("code5");
+    quoteMetaItemCreateApiDTO.setItemCode("code1");
     //属性英文名
-    quoteMetaItemCreateApiDTO.setEnglishName("en5");
+    quoteMetaItemCreateApiDTO.setEnglishName("en1");
     //属性中文名
-    quoteMetaItemCreateApiDTO.setChineseName("zh5");
+    quoteMetaItemCreateApiDTO.setChineseName("zh1");
     //是否是输入项
     quoteMetaItemCreateApiDTO.setInputNecessary(1);
     //是否必填性
@@ -97,57 +94,14 @@ void metaCreateApiTest() {
     //构建实体对象
     MetaItemSchemaCreateApiDTO quoteMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
     //实体类型
-    quoteMetaItemSchemaCreateApiDTO.setDataType(5);
-    quoteMetaItemSchemaCreateApiDTO.setReferenceType(1);
+    quoteMetaItemSchemaCreateApiDTO.setDataType(1);
+    quoteMetaItemSchemaCreateApiDTO.setMinLength("10");
+    quoteMetaItemSchemaCreateApiDTO.setMaxLength("200");
     quoteMetaItemCreateApiDTO.setItemSchemaCreateDTO(quoteMetaItemSchemaCreateApiDTO);
-    MetaItemReferenceApiDTO itemReferenceDTO = new MetaItemReferenceApiDTO();
-    itemReferenceDTO.setReferenceMetaHandle("88.608.5288/META_07_02");
-    quoteMetaItemCreateApiDTO.setItemReferenceDTO(itemReferenceDTO);
+   
     metaItemCreateDTOS.add(quoteMetaItemCreateApiDTO);
 
 
-    //音频型
-    MetaItemCreateApiDTO musicMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    musicMetaItemCreateApiDTO.setItemCode("code6");
-    musicMetaItemCreateApiDTO.setEnglishName("en6");
-    musicMetaItemCreateApiDTO.setChineseName("zh6");
-    musicMetaItemCreateApiDTO.setInputNecessary(1);
-    musicMetaItemCreateApiDTO.setRequired(0);
-    musicMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO musicMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    musicMetaItemSchemaCreateApiDTO.setDataType(6);
-    musicMetaItemSchemaCreateApiDTO.setMaxFileCount(2);
-    musicMetaItemCreateApiDTO.setItemSchemaCreateDTO(musicMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(musicMetaItemCreateApiDTO);
-
-
-    //视频型
-    MetaItemCreateApiDTO videoMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    videoMetaItemCreateApiDTO.setItemCode("code7");
-    videoMetaItemCreateApiDTO.setEnglishName("en7");
-    videoMetaItemCreateApiDTO.setChineseName("zh7");
-    videoMetaItemCreateApiDTO.setInputNecessary(1);
-    videoMetaItemCreateApiDTO.setRequired(0);
-    videoMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO videoMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    videoMetaItemSchemaCreateApiDTO.setDataType(7);
-    videoMetaItemSchemaCreateApiDTO.setMaxFileCount(1);
-    videoMetaItemCreateApiDTO.setItemSchemaCreateDTO(videoMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(videoMetaItemCreateApiDTO);
-
-    //图片型
-    MetaItemCreateApiDTO imageMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    imageMetaItemCreateApiDTO.setItemCode("code8");
-    imageMetaItemCreateApiDTO.setEnglishName("en8");
-    imageMetaItemCreateApiDTO.setChineseName("zh8");
-    imageMetaItemCreateApiDTO.setInputNecessary(1);
-    imageMetaItemCreateApiDTO.setRequired(0);
-    imageMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO imageMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    imageMetaItemSchemaCreateApiDTO.setDataType(8);
-    imageMetaItemSchemaCreateApiDTO.setMaxFileCount(1);
-    imageMetaItemCreateApiDTO.setItemSchemaCreateDTO(imageMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(imageMetaItemCreateApiDTO);
     createApiDTO.setMetaItemCreateDTOS(metaItemCreateDTOS);
     System.out.println(JSONUtil.toJsonPrettyStr(createApiDTO));
     //发送创建元数据请求
@@ -214,16 +168,11 @@ DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);
 |  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                      |                               |
 |  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                      |                               |
 |  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                             |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型` | 1                             |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                               |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度                                                 |                               |
 |  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数量                                               |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileRange  |  Integer  |  否  |  \-  | 文件值域：`1：any，2：assign`                                |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.selfDefFileSuffix  |  String  |  否  |  \-  | 自定义文件后缀                                              | "pem"                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                               |
-|  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                               |
+
 
 ### 请求示例   
 ```java
@@ -376,16 +325,10 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
 |  metaItemDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填性，`0-否，1-是`                                      |                          |
 |  metaItemDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一性，`0-否，1-是`                                      |                          |
 |  metaItemDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                        |
+|  metaItemDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型` | 1                        |
 |  metaItemDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                          |
 |  metaItemDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度，字符型长度：0-4000                                    |                          |
 |  metaItemDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                   |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数量                                               |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.fileRange  |  Integer  |  否  |  \-  | 文件值域：`1：any，2：assign`                                |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型                                                 |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.selfDefFileSuffix  |  String  |  否  |  \-  | 自定义文件后缀                                              | "pem"                    |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                          |
-|  metaItemDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                          |
 
 ### 返回参数
 
@@ -426,11 +369,7 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
         metaItemSchemaCreateApiDTO.setMinLength(5);
         metaItemCreateApiDTO.setItemSchemaCreateDTO(metaItemSchemaCreateApiDTO);
 
-        MetaItemReferenceApiDTO metaItemReferenceApiDTO = new MetaItemReferenceApiDTO();
-        //数据类型 为5引用类型时 需要设置
-        //metaItemReferenceApiDTO.setReferenceMetaHandle("");
-        metaItemCreateApiDTO.setItemReferenceDTO(metaItemReferenceApiDTO);
-        metaItemCreateApiDTO.setItemReferenceDTO(metaItemReferenceApiDTO);
+
         metaItemDTOS.add(metaItemCreateApiDTO);
         metaItemUpdateApiDTO.setMetaItemDTOS(metaItemDTOS);
 
