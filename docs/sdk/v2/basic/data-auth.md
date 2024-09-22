@@ -88,8 +88,7 @@ DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrant
 |  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                   |
 | --- | --- | --- | --- | --- |---------------------------|
 |  handle  |  String  |  是  |  \-  |  实例标识  | 88.608.6688/instance\_1   |
-|  grantType  |  integer  |  是  |  \-  |  授权类型，枚举值；1-同类授权，2-单个授权  | 1                         |
-|  readerScope  |  integer  |  否  |  \-  |  枚举值 1-公开，2-指定范围  | 1                         |
+|  readerScope  |  integer  |  是  |  \-  |  枚举值 1-公开，2-指定范围  | 1                         |
 |  handleUserReaders  |  array\[string\]  |  否  |  \-  |  授权的查看标识用户  | ["88.608.6688/User_dong"] |
 |  handleUserWriters  |  array\[string\]  |  否  |  \-  |  授权的编辑标识用户  | ["88.608.6688/User_dong"] |
 |  delHandleUserReaders  |  array\[string\]  |  否  |  \-  |  删除的标识身份  | ["88.608.6688/User_dzh"]  |
@@ -116,7 +115,6 @@ void singleHandleGrantApiTest() {
     //构建单一标识授权参数
     SingleHandleGrantDTO singleHandleGrantDTO = new SingleHandleGrantDTO();
     singleHandleGrantDTO.setReaderScope(1);
-    singleHandleGrantDTO.setGrantType(1);
     singleHandleGrantDTO.setHandle("88.608.5288/handle_07_02");
     singleHandleGrantDTO.setHandleUserWriters(Arrays.asList("88.608.5288/App_xz2_app2"));
     singleHandleGrantDTO.setHandleUserReaders(Arrays.asList("88.608.5288/App_xz2_app2"));

@@ -86,8 +86,7 @@
 | **参数**       | **类型** | **是否必填** | **最大长度** | **备注**                           | **示例值**       |
 | -------------------- | -------------- | ------------------ | ------------------ | ---------------------------------------- | ---------------------- |
 | handle               | String         | 是                 | -                  | 实例标识                                 | 88.608.6688/instance_1 |
-| grantType            | integer        | 是                 | -                  | 授权类型，枚举值；1-同类授权，2-单个授权 | 1                      |
-| readerScope          | integer        | 否                 | -                  | 枚举值  1-公开，2-指定范围               | 1                      |
+| readerScope          | integer        | 是                 | -                  | 枚举值  1-公开，2-指定范围               | 1                      |
 | handleUserReaders    | array[string]  | 否                 | -                  | 授权的查看标识用户                       | 1                      |
 | handleUserWriters    | array[string]  | 否                 | -                  | 授权的编辑标识用户                       | 1                      |
 | delHandleUserReaders | array[string]  | 否                 | -                  | 删除的标识身份                           | 1                      |
@@ -98,7 +97,6 @@
 ```json
 {
   "handle": "88.608.8889/SNMS-handle13",
-  "grantType": 2,
   "readerScope": 2,
   "delHandleUserReaders": [
     "88.608.8889/App_xz_app2"
