@@ -152,9 +152,3 @@
     "code": 901
 }
 ```
-
-### 注意
-
-> 1. 当授权类型grantType为1时，即同类授权类型时，readerScope,readers,writers可以为空
-> 2. 当授权类型grantType为2时，即单个授权类型时，readerScope不能为空；readerScope为1，即公开授权时，readers可以为空；readerScope为2，即指定范围授权时，readers为空则不发生授权操作
-> 3. 当授权类型grantType为2时，即单个授权类型时，writers为空时，则不发生授权操作
