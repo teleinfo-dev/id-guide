@@ -2,7 +2,7 @@
 
 ## 挑战方法
 
-该方法用于获取挑战信息，为一随机nounce值
+该方法用于获取挑战信息，为一随机nounce值。
 
 ### 方法调用
 
@@ -64,7 +64,7 @@ public String challenge(String handle, String url) {
 
 ## 应答，颁发Token
 
-该方法用于验证使用nonce值生成的signature，验证成功则颁发token
+该方法用于验证使用nonce值生成的signature，验证成功则颁发token。
 
 ### 方法调用
 ```java
