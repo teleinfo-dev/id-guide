@@ -72,16 +72,12 @@ void handleUserGroupListApiTest() {
 
 ## 实例标识授权
 
-通过此方法，可对实例标识进行单个授权操作，在创建实例时，可选择“同类数据授权”或“单个授权”。选择“同类数据授权”，该标识权限则遵循同类数据授权，选择“单个授权”，则同类数据授权对该条实例标识无效，遵循单个授权。
+通过此接口，可对实例标识进行授权操作。
 
 ### 方法调用
 ```java
 DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrantDTO);
 ```
-`注意`
-- 当授权类型grantType为1时，即同类授权类型时，readerScope,readers,writers可以为空
-- 当授权类型grantType为2时，即单个授权类型时，readerScope不能为空；readerScope为1，即公开授权时，readers可以为空；readerScope为2，即指定范围授权时，readers为空则不发生授权操作
-- 当授权类型grantType为2时，即单个授权类型时，writers为空时，则不发生授权操
 
 ### 方法参数
 
