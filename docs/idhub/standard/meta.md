@@ -191,7 +191,7 @@
 | itemVOS[i].required                            | Integer | 是否必填性，`0-否，1-是`                                                                    |                             |
 | itemVOS[i].uniqueField                         | Integer | 是否唯一性，`0-否，1-是`                                                                    |                             |
 | itemVOS[i].comment                             | String  | 备注                                                                                          |                             |
-| itemVOS[i].itemSchemaVO.dataType               | Integer | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |                             |
+| itemVOS[i].itemSchemaVO.dataType               | Integer | 实体类型，`1：字符型，2：数值型，3：日期型` |                             |
 | itemVOS[i].itemSchemaVO.minLength              | Integer | 最小长度                                                                                      |                             |
 | itemVOS[i].itemSchemaVO.maxLength              | Integer | 最大长度                                                                                      |                             |
 | itemVOS[i].itemSchemaVO.dateFormat             | String  | 日期格式                                                                                      |                             |
