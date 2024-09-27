@@ -1,10 +1,10 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
-  {
-    text: '标识应用开发指南',
-    link: '/handle-app-sop/1-introduce/purpose'
-  },
+  // {
+  //   text: '标识应用开发指南',
+  //   link: '/handle-app-sop/1-introduce/purpose'
+  // },
   {
     text: '标识解析SDK',
     items: [
