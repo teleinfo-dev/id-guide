@@ -88,7 +88,7 @@
 1. 在服务器指定目录下载部署包
 
 ```
-wget https://teleinfo.pek3b.qingstor.com/Ent_deploy_2.0.4.zip
+wget https://teleinfo.pek3b.qingstor.com/Ent_deploy-v1.0-std.zip
 ```
 
 2. 解压部署包

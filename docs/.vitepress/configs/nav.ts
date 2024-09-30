@@ -1,10 +1,10 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
-  // {
-  //   text: '标识应用开发指南',
-  //   link: '/handle-app-sop/1-introduce/purpose'
-  // },
+  {
+    text: '标识应用开发指南',
+    link: '/handle-app-sop/1-introduce/purpose',
+  },
   {
     text: '标识解析SDK',
     items: [
@@ -37,7 +37,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   // },
   {
     text: '企业节点IDHub',
-    link: '/idhub/standard/introduce.md'
+    link: '/idhub/standard/introduce.md',
     // items: [
     //   {
     //     text: '标准版',
@@ -50,6 +50,6 @@ export const nav: DefaultTheme.Config['nav'] = [
     // ],
   },
   {
-    component: 'DownloadDoc'
+    component: 'DownloadDoc',
   },
 ]

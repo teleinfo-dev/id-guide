@@ -20,13 +20,17 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '简介',
           link: '/handle-app-sop/2-idhub/introduce',
         },
-        {
-          text: '企业节点社区版',
-          link: '/handle-app-sop/2-idhub/community',
-        },
+        // {
+        //   text: '企业节点社区版',
+        //   link: '/handle-app-sop/2-idhub/community',
+        // },
         {
           text: '企业节点标准版',
           link: '/handle-app-sop/2-idhub/standard',
+        },
+        {
+          text: '企业节点商业版',
+          link: '/handle-app-sop/2-idhub/business',
         },
         {
           text: '企业节点OpenAPI',
