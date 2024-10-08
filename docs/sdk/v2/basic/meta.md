@@ -12,6 +12,7 @@ DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 
 ### 方法参数
 
+<<<<<<< Updated upstream
 | **参数**                                                      | **类型**  | **是否必填** | **最大长度** | **备注**                                                                    | **示例值**                  |
 | ----------------------------------------------------------- | ------- | -------- | -------- | ------------------------------------------------------------------------- | ------------------------ |
 | classifyCode                                                | String  | 是        |          | 本企业内的分类code                                                               | "sp"                     |
@@ -39,6 +40,32 @@ DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 | metaItemCreateDTOS\[i].itemSchemaCreateDTO.fileType         | String  | 否        | -        | 文件类型, "2,3", 2:doc;docx;xps;dot 3: xls;xlsx;xlsb;xlsm;csv 4:pdf 5:zip;rar |                          |
 | metaItemCreateDTOS\[i].itemSchemaCreateDTO.referenceType    | Integer | 否        | -        | 引用类型：`1：一对一，2：一对多`,默认为 1                                                  |                          |
 | metaItemCreateDTOS\[i].itemReferenceDTO.referenceMetaHandle | String  | 否        | -        | 引用元数据，dataType:5时必填                                                       |                          |
+=======
+|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                                                    | **示例值**                 |
+| --- | --- | --- | --- |---------------------------------------------------------------------------|-------------------------|
+|  classifyCode  |  String  |  是  |   | 本企业内的分类code                                                               | "sp"                    |
+|  metaName  |  String  |  是  |  100  | 元数据名称                                                                     | "88.101.3366/Meta_demo" |
+|  metaCode  |  String  |  是  |  100  | 元数据代码                                                                     | "meta_code_demo"        |
+|  industryCategory  |  String  |  是  |   | 行业分类一级                                                                    | "R"                     |
+|  industrySpecific  |  String  |  是  |   | 行业分类二级                                                                    | "86"                    |
+|  industryTrade  |  String  |  是  |   | 行业分类三级                                                                    | "861"                   |
+|  industrySubclass  |  String  |  是  |   | 行业分类四级                                                                    | "8610"                  |
+|  standard  |  String  |  否  |  200  | 依据标准                                                                      |                         |
+|  metaDesc  |  String  |  否  |  1000  | 元数据描述                                                                     |                         |
+|  metaItemCreateDTOS\[i\].itemCode  |  String  |  是  |  50  | 属性编码                                                                      | "name_code"             |
+|  metaItemCreateDTOS\[i\].englishName  |  String  |  是  |  50  | 属性英文名                                                                     | "name"                  |
+|  metaItemCreateDTOS\[i\].chineseName  |  String  |  是  |  50  | 属性中文名                                                                     | "姓名"                    |
+|  metaItemCreateDTOS\[i\].definition  |  String  |  否  |  200  | 实体值域定义                                                                    |                         |
+|  metaItemCreateDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入项，`0-否，1-是`                                                          |                         |
+|  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                                           |                         |
+|  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                                           |                         |
+|  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                                        |                         |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型`                      | 1                       |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度 字符型：默认 0                                                             |                         |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度 字符型：默认 4000                                                          |                         |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                                        |                         |
+
+>>>>>>> Stashed changes
 
 ### 返回参数
 
@@ -80,14 +107,14 @@ void metaCreateApiTest() {
     //构建属性集合
     List<MetaItemCreateApiDTO> metaItemCreateDTOS = new ArrayList<>();
 
-    //引用类型
+    //字符型
     MetaItemCreateApiDTO quoteMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
     //属性编码
-    quoteMetaItemCreateApiDTO.setItemCode("code5");
+    quoteMetaItemCreateApiDTO.setItemCode("code1");
     //属性英文名
-    quoteMetaItemCreateApiDTO.setEnglishName("en5");
+    quoteMetaItemCreateApiDTO.setEnglishName("en1");
     //属性中文名
-    quoteMetaItemCreateApiDTO.setChineseName("zh5");
+    quoteMetaItemCreateApiDTO.setChineseName("zh1");
     //是否是输入项
     quoteMetaItemCreateApiDTO.setInputNecessary(1);
     //是否必填性
@@ -98,57 +125,14 @@ void metaCreateApiTest() {
     //构建实体对象
     MetaItemSchemaCreateApiDTO quoteMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
     //实体类型
-    quoteMetaItemSchemaCreateApiDTO.setDataType(5);
-    quoteMetaItemSchemaCreateApiDTO.setReferenceType(1);
+    quoteMetaItemSchemaCreateApiDTO.setDataType(1);
+    quoteMetaItemSchemaCreateApiDTO.setMinLength("10");
+    quoteMetaItemSchemaCreateApiDTO.setMaxLength("200");
     quoteMetaItemCreateApiDTO.setItemSchemaCreateDTO(quoteMetaItemSchemaCreateApiDTO);
-    MetaItemReferenceApiDTO itemReferenceDTO = new MetaItemReferenceApiDTO();
-    itemReferenceDTO.setReferenceMetaHandle("88.608.5288/META_07_02");
-    quoteMetaItemCreateApiDTO.setItemReferenceDTO(itemReferenceDTO);
+   
     metaItemCreateDTOS.add(quoteMetaItemCreateApiDTO);
 
 
-    //音频型
-    MetaItemCreateApiDTO musicMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    musicMetaItemCreateApiDTO.setItemCode("code6");
-    musicMetaItemCreateApiDTO.setEnglishName("en6");
-    musicMetaItemCreateApiDTO.setChineseName("zh6");
-    musicMetaItemCreateApiDTO.setInputNecessary(1);
-    musicMetaItemCreateApiDTO.setRequired(0);
-    musicMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO musicMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    musicMetaItemSchemaCreateApiDTO.setDataType(6);
-    musicMetaItemSchemaCreateApiDTO.setMaxFileCount(2);
-    musicMetaItemCreateApiDTO.setItemSchemaCreateDTO(musicMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(musicMetaItemCreateApiDTO);
-
-
-    //视频型
-    MetaItemCreateApiDTO videoMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    videoMetaItemCreateApiDTO.setItemCode("code7");
-    videoMetaItemCreateApiDTO.setEnglishName("en7");
-    videoMetaItemCreateApiDTO.setChineseName("zh7");
-    videoMetaItemCreateApiDTO.setInputNecessary(1);
-    videoMetaItemCreateApiDTO.setRequired(0);
-    videoMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO videoMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    videoMetaItemSchemaCreateApiDTO.setDataType(7);
-    videoMetaItemSchemaCreateApiDTO.setMaxFileCount(1);
-    videoMetaItemCreateApiDTO.setItemSchemaCreateDTO(videoMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(videoMetaItemCreateApiDTO);
-
-    //图片型
-    MetaItemCreateApiDTO imageMetaItemCreateApiDTO = new MetaItemCreateApiDTO();
-    imageMetaItemCreateApiDTO.setItemCode("code8");
-    imageMetaItemCreateApiDTO.setEnglishName("en8");
-    imageMetaItemCreateApiDTO.setChineseName("zh8");
-    imageMetaItemCreateApiDTO.setInputNecessary(1);
-    imageMetaItemCreateApiDTO.setRequired(0);
-    imageMetaItemCreateApiDTO.setUniqueField(0);
-    MetaItemSchemaCreateApiDTO imageMetaItemSchemaCreateApiDTO = new MetaItemSchemaCreateApiDTO();
-    imageMetaItemSchemaCreateApiDTO.setDataType(8);
-    imageMetaItemSchemaCreateApiDTO.setMaxFileCount(1);
-    imageMetaItemCreateApiDTO.setItemSchemaCreateDTO(imageMetaItemSchemaCreateApiDTO);
-    metaItemCreateDTOS.add(imageMetaItemCreateApiDTO);
     createApiDTO.setMetaItemCreateDTOS(metaItemCreateDTOS);
     System.out.println(JSONUtil.toJsonPrettyStr(createApiDTO));
     //发送创建元数据请求
@@ -194,6 +178,7 @@ DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);
 
 ### 响应参数
 
+<<<<<<< Updated upstream
 | **参数**                                                       | **类型**  | **是否必填** | **最大长度** | **备注**                                               | **示例值**                       |
 | ------------------------------------------------------------ | ------- | -------- | -------- | ---------------------------------------------------- | ----------------------------- |
 | classifyCode                                                 | String  | 是        |          | 本企业内的分类code                                          | "sp"                          |
@@ -227,6 +212,34 @@ DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);
 | metaItemCreateDTOS\[i].itemReferenceDTO.referenceMetaHandle  | String  | 否        | -        | 引用元数据，dataType:5时必填                                  |                               |
 
 ### 请求示例  &#x20;
+=======
+|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                               | **示例值**                       |
+| --- | --- | --- | --- |------------------------------------------------------|-------------------------------|
+|  classifyCode  |  String  |  是  |   | 本企业内的分类code                                          | "sp"                          |
+|  metaHandle  |  String  |  是  |   | 元数据标识                                                | "88.608.6688/META\_xz\_test2" |
+|  metaName  |  String  |  是  |  100  | 元数据名称                                                | "meta_dong_test"              |
+|  metaCode  |  String  |  是  |  100  | 元数据代码                                                | "dong_code_demo"              |
+|  industryCategory  |  String  |  是  |   | 行业分类一级                                               | "R"                           |
+|  industrySpecific  |  String  |  是  |   | 行业分类二级                                               | "86"                          |
+|  industryTrade  |  String  |  是  |   | 行业分类三级                                               | "861"                         |
+|  industrySubclass  |  String  |  是  |   | 行业分类四级                                               | "8610                         |
+|  standard  |  String  |  否  |  200  | 依据标准                                                 |                               |
+|  metaDesc  |  String  |  否  |  1000  | 元数据描述                                                |                               |
+|  metaItemCreateDTOS\[i\].itemCode  |  String  |  是  |   |                                                      | "code1_demo"                  |
+|  metaItemCreateDTOS\[i\].englishName  |  String  |  是  |   |                                                      | "name"                        |
+|  metaItemCreateDTOS\[i\].chineseName  |  String  |  是  |  50  |                                                      | "姓名"                          |
+|  metaItemCreateDTOS\[i\].definition  |  String  |  否  |   | 实体值域定义                                               |                               |
+|  metaItemCreateDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入项，`0-否，1-是`                                     |                               |
+|  metaItemCreateDTOS\[i\].listItemNecessary  |  Integer  |  否  |  \-  | 是否是列表项，`0-否，1-是`                                     |                               |
+|  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                      |                               |
+|  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                      |                               |
+|  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                               |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型` | 1                             |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                               |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度                                                 |                               |
+|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式                                                 |                               |
+
+>>>>>>> Stashed changes
 
 ```java
 @Test
@@ -371,6 +384,7 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
 
 ### 方法参数
 
+<<<<<<< Updated upstream
 | **参数**                                                 | **类型**  | **是否必填** | **最大长度** | **备注**                                               | **示例值**                   |
 | ------------------------------------------------------ | ------- | -------- | -------- | ---------------------------------------------------- | ------------------------- |
 | metaHanlde                                             | String  | 是        |          | 元数据标识                                                | "88.608.8889/META\_11122" |
@@ -393,6 +407,24 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
 | metaItemDTOS\[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否        | -        | 自定义文件后缀                                              | "pem"                     |
 | metaItemDTOS\[i].itemSchemaCreateDTO.referenceType     | Integer | 否        | -        | 引用类型：`1：一对一，2：一对多`                                   |                           |
 | metaItemDTOS\[i].itemReferenceDTO.referenceMetaHandle  | String  | 否        | -        | 引用元数据，dataType:5时必填                                  |                           |
+=======
+|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                               | **示例值**                  |
+| --- | --- | --- | --- |------------------------------------------------------|--------------------------|
+|  metaHanlde  |  String  |  是  |   | 元数据标识                                                | "88.608.8889/META_11122" |
+|  metaItemDTOS\[i\].itemCode  |  String  |  是  |  50  | 属性编码                                                 | "code1"                  |
+|  metaItemDTOS\[i\].englishName  |  String  |  是  |  50  |                                                      | "en1"                    |
+|  metaItemDTOS\[i\].chineseName  |  String  |  是  |  50  |                                                      | "cn1"                    |
+|  metaItemDTOS\[i\].definition  |  String  |  否  |   | 实体值域定义                                               |                          |
+|  metaItemDTOS\[i\].itemState  |  Integer  |  否  |   | 元素状态;0：启用，1：禁用（逻辑删除），2：未生效                           |                          |
+|  metaItemDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入性，`0-否，1-是`                                     |                          |
+|  metaItemDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填性，`0-否，1-是`                                      |                          |
+|  metaItemDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一性，`0-否，1-是`                                      |                          |
+|  metaItemDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                          |
+|  metaItemDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型` | 1                        |
+|  metaItemDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                          |
+|  metaItemDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度，字符型长度：0-4000                                    |                          |
+|  metaItemDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                   |                          |
+>>>>>>> Stashed changes
 
 ### 返回参数
 
@@ -434,11 +466,7 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
         metaItemSchemaCreateApiDTO.setMinLength(5);
         metaItemCreateApiDTO.setItemSchemaCreateDTO(metaItemSchemaCreateApiDTO);
 
-        MetaItemReferenceApiDTO metaItemReferenceApiDTO = new MetaItemReferenceApiDTO();
-        //数据类型 为5引用类型时 需要设置
-        //metaItemReferenceApiDTO.setReferenceMetaHandle("");
-        metaItemCreateApiDTO.setItemReferenceDTO(metaItemReferenceApiDTO);
-        metaItemCreateApiDTO.setItemReferenceDTO(metaItemReferenceApiDTO);
+
         metaItemDTOS.add(metaItemCreateApiDTO);
         metaItemUpdateApiDTO.setMetaItemDTOS(metaItemDTOS);
 
@@ -662,10 +690,16 @@ DoipReturn baseonCreateMeta(@RequestBody BaseonCreateMetaApiDTO metaCopyApiDTO);
 ```
 
 `注意`
+<<<<<<< Updated upstream
 
 * 用户仅可对授权给自己查看权限或公开的元数据模板创建副本；
 * 创建副本成功后，该元数据模板不可对实体元素进行编辑。
 * 创建副本成功后，该元数据仅可向本企业应用身份或身份组进行授权（若有其他企业需要创建该元数据模板副本，应向原元数据模板所有者索要权限）；
+=======
+- 用户仅可对授权给自己查看权限或公开的元数据模板创建副本
+- 创建副本成功后，该元数据模板不可对实体元素进行编辑
+- 创建副本成功后，该元数据仅可向本企业应用身份或身份组进行授权（若有其他企业需要创建该元数据模板副本，应向原元数据模板所有者索要权限）
+>>>>>>> Stashed changes
 
 ### 方法参数
 
@@ -723,7 +757,7 @@ void baseonCreateMetaApiTest() {
 
 ## 数据分类列表
 
-获取本企业下全量的数据分类列表
+获取本企业下全量的数据分类列表。
 
 ### 方法调用
 

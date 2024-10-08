@@ -20,13 +20,17 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '简介',
           link: '/handle-app-sop/2-idhub/introduce',
         },
-        {
-          text: '企业节点社区版',
-          link: '/handle-app-sop/2-idhub/community',
-        },
+        // {
+        //   text: '企业节点社区版',
+        //   link: '/handle-app-sop/2-idhub/community',
+        // },
         {
           text: '企业节点标准版',
           link: '/handle-app-sop/2-idhub/standard',
+        },
+        {
+          text: '企业节点商业版',
+          link: '/handle-app-sop/2-idhub/business',
         },
         {
           text: '企业节点OpenAPI',
@@ -188,7 +192,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         { text: '元数据', link: '/sdk/v2/basic/meta' },
         { text: '数据权限', link: '/sdk/v2/basic/data-auth' },
         { text: '标识操作', link: '/sdk/v2/basic/handle' },
-        { text: '文件处理', link: '/sdk/v2/basic/file' }
+        // { text: '文件处理', link: '/sdk/v2/basic/file' }
       ],
     }
   ],
@@ -225,10 +229,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   text: '标识操作',
                   link: '/idhub/standard/handle.md',
                 },
-                {
-                  text: '文件处理',
-                  link: '/idhub/standard/file.md',
-                },
+                // {
+                //   text: '文件处理',
+                //   link: '/idhub/standard/file.md',
+                // },
                 {
                   text: '响应状态码',
                   link: '/idhub/standard/state-code.md',

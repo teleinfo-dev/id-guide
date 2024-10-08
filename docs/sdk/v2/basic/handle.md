@@ -2,7 +2,7 @@
 
 ## 标识注册
 
-通过此方法，用户可进行标识注册
+通过此方法，用户可进行标识注册。
 
 ### 方法调用
 ```java
@@ -13,8 +13,8 @@ DoipReturn<Map<String, Object>> post(
 );
 ```
 `注意`
-- 用户可基于自己创建的元数据模板进行标识注册。
-- 用户可基于授权给自己查看权限的本企业元数据模板进行标识注册。
+- 用户可基于自己创建的元数据模板进行标识注册
+- 用户可基于授权给自己查看权限的本企业元数据模板进行标识注册
 
 ### 方法参数
 
@@ -54,28 +54,23 @@ DoipReturn<Map<String, Object>> post(
         //构建标识注册对象
         HandleInputDTO handleInputDTO = new HandleInputDTO();
         //创建标识基于的元数据模板标识
-        handleInputDTO.setType("88.608.5288/META_07_03_quote_music_video_image");
+        handleInputDTO.setType("88.608.5288/META_07_03");
         handleInputDTO.setRequestId(UUID.randomUUID().toString());
         handleInputDTO.setClientId(UUID.randomUUID().toString());
 
         HandleAttributesDTO handleAttributesDTO = new HandleAttributesDTO();
         Map<String, Object> content = new HashMap<> ();
 
-        //引用
-        content.put("en5", "88.608.5288/handle_07_02");
-        //音频
-        content.put("en6", Arrays.asList("968cf946-955a-4a52-b723-97f154898241.mp3"));
-        //视频
-        content.put("en7", Arrays.asList("b641eb7e-9888-4479-8f0e-30311983d55f.mp4"));
-        //图片
-        content.put("en8", Arrays.asList("e3ea523a-f90f-4e06-b362-fe67c17046b7.jpeg"));
+        //字符型
+        content.put("en1", "abcd");
+       
         
         handleAttributesDTO.setContent(content);
         handleInputDTO.setAttributes(handleAttributesDTO);
         
         System.out.println(JSONUtil.toJsonPrettyStr(handleInputDTO));
         //执行标识注册方法
-        DoipReturn doipReturn = openApiClient.getIntanceApi().post("88.608.5288/META_07_03_quote_music_video_image_1", DoipOp.CREATE.getName(), handleInputDTO);
+        DoipReturn doipReturn = openApiClient.getIntanceApi().post("88.608.5288/META_07_03_ins_1", DoipOp.CREATE.getName(), handleInputDTO);
 
         log.info("标识注册返回结果：{}", JSONUtil.toJsonStr(doipReturn));
     }
@@ -86,10 +81,10 @@ DoipReturn<Map<String, Object>> post(
     "code": 1,
     "message": "成功",
     "data": {
-        "type": "88.608.5288/META_07_01",
+        "type": "88.608.5288/META_07_03",
         "attributes": {
             "content": {
-                "en1": "hello handle"
+                "en1": "abcd"
             }
         }
     }
@@ -108,8 +103,8 @@ DoipReturn<Map<String, Object>> post(
 );
 ```
 `注意`
-- 用户仅可修改自己创建的实例标识;
-- 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值。
+- 用户仅可修改自己创建的实例标识
+- 修改标识的主体属性值，不能删除属性，只能修改已存在的标识属性值
 
 ### 方法参数
 
@@ -245,7 +240,7 @@ void deleteHandleApiTest() {
  );   
 ```
 `注意`
-- 用户可解析范围为公开数据与授权给自己查看或编辑权限的数据。
+- 用户可解析范围为公开数据与授权给自己查看或编辑权限的数据
 
 ### 方法参数
 

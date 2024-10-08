@@ -2,7 +2,7 @@
 
 ## 应用身份用户列表查询
 
-通过此方法，查询本企业节点中所有应用身份列表及本企业和导入外企业的身份组列表，用于后续进行身份授权；
+通过此方法，查询本企业节点中所有应用身份列表及本企业和导入外企业的身份组列表，用于后续进行身份授权。
 
 ### 方法调用
 
@@ -11,8 +11,12 @@ DoipReturn getHandleUserGroupList();
 ```
 
 `注意`
+<<<<<<< Updated upstream
 
 * 向本企业授权，可授权本企业的应用身份或本企业的身份组；跨企业进行授权，只可导入跨企业身份组后进行授权。
+=======
+- 向本企业授权，可授权本企业的应用身份或本企业的身份组；跨企业进行授权，只可导入跨企业身份组后进行授权
+>>>>>>> Stashed changes
 
 ### 请求参数
 
@@ -75,8 +79,9 @@ void handleUserGroupListApiTest() {
 } 
 ```
 
-## 同类数据授权-公开/撤销公开
+## 实例标识授权
 
+<<<<<<< Updated upstream
 通过此方法对基于元数据模板所创建的同类实例数据属性级别的查看权限进行公开与撤销公开的授权操作。
 
 ### 方法调用
@@ -230,12 +235,16 @@ void metaItemAuthorizationApiTest() {
 ## 单一标识授权
 
 通过此方法，可对实例标识进行单个授权操作，在创建实例时，可选择“同类数据授权”或“单个授权”。选择“同类数据授权”，该标识权限则遵循同类数据授权，选择“单个授权”，则同类数据授权对该条实例标识无效，遵循单个授权。
+=======
+通过此接口，可对实例标识进行授权操作。
+>>>>>>> Stashed changes
 
 ### 方法调用
 
 ```java
 DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrantDTO);
 ```
+<<<<<<< Updated upstream
 
 `注意`
 
@@ -254,6 +263,19 @@ DoipReturn singleHandleGrant(@RequestBody SingleHandleGrantDTO singleHandleGrant
 | handleUserWriters    | array\[string] | 否        | -        | 授权的编辑标识用户              | \["88.608.6688/User\_dong"] |
 | delHandleUserReaders | array\[string] | 否        | -        | 删除的标识身份                | \["88.608.6688/User\_dzh"]  |
 | delHandleUserWriters | array\[string] | 否        | -        | 删除的标识身份                | \["88.608.6688/User\_dzh"]  |
+=======
+
+### 方法参数
+
+|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                   |
+| --- | --- | --- | --- | --- |---------------------------|
+|  handle  |  String  |  是  |  \-  |  实例标识  | 88.608.6688/instance\_1   |
+|  readerScope  |  integer  |  是  |  \-  |  枚举值 1-公开，2-指定范围  | 1                         |
+|  handleUserReaders  |  array\[string\]  |  否  |  \-  |  授权的查看标识用户  | ["88.608.6688/User_dong"] |
+|  handleUserWriters  |  array\[string\]  |  否  |  \-  |  授权的编辑标识用户  | ["88.608.6688/User_dong"] |
+|  delHandleUserReaders  |  array\[string\]  |  否  |  \-  |  删除的标识身份  | ["88.608.6688/User_dzh"]  |
+|  delHandleUserWriters  |  array\[string\]  |  否  |  \-  |  删除的标识身份  | ["88.608.6688/User_dzh"]  |
+>>>>>>> Stashed changes
 
 ### 返回参数
 
@@ -276,7 +298,6 @@ void singleHandleGrantApiTest() {
     //构建单一标识授权参数
     SingleHandleGrantDTO singleHandleGrantDTO = new SingleHandleGrantDTO();
     singleHandleGrantDTO.setReaderScope(1);
-    singleHandleGrantDTO.setGrantType(1);
     singleHandleGrantDTO.setHandle("88.608.5288/handle_07_02");
     singleHandleGrantDTO.setHandleUserWriters(Arrays.asList("88.608.5288/App_xz2_app2"));
     singleHandleGrantDTO.setHandleUserReaders(Arrays.asList("88.608.5288/App_xz2_app2"));
@@ -296,6 +317,7 @@ void singleHandleGrantApiTest() {
 ```json
 {
     "code": 1,
+<<<<<<< Updated upstream
     "message": "成功",
 }
 ```
@@ -391,3 +413,8 @@ void appMessageGrantApiTest() {
     }
 }   
 ```
+=======
+    "message": "成功"
+}
+```
+>>>>>>> Stashed changes
