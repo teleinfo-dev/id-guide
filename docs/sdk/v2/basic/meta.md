@@ -5,50 +5,51 @@
 通过此方法新建元数据模板，进行设定元数据名称、元数据分类、生成元数据标识编码、定义模板实体元素等操作。
 
 ### 方法调用
+
 ```java
 DoipReturn createMetaInfo(@RequestBody MetaCreateApiDTO metaCreateDTO);
 ```
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                                                    | **示例值**                 |
-| --- | --- | --- | --- |---------------------------------------------------------------------------|-------------------------|
-|  classifyCode  |  String  |  是  |   | 本企业内的分类code                                                               | "sp"                    |
-|  metaName  |  String  |  是  |  100  | 元数据名称                                                                     | "88.101.3366/Meta_demo" |
-|  metaCode  |  String  |  是  |  100  | 元数据代码                                                                     | "meta_code_demo"        |
-|  industryCategory  |  String  |  是  |   | 行业分类一级                                                                    | "R"                     |
-|  industrySpecific  |  String  |  是  |   | 行业分类二级                                                                    | "86"                    |
-|  industryTrade  |  String  |  是  |   | 行业分类三级                                                                    | "861"                   |
-|  industrySubclass  |  String  |  是  |   | 行业分类四级                                                                    | "8610"                  |
-|  standard  |  String  |  否  |  200  | 依据标准                                                                      |                         |
-|  metaDesc  |  String  |  否  |  1000  | 元数据描述                                                                     |                         |
-|  metaItemCreateDTOS\[i\].itemCode  |  String  |  是  |  50  | 属性编码                                                                      | "name_code"             |
-|  metaItemCreateDTOS\[i\].englishName  |  String  |  是  |  50  | 属性英文名                                                                     | "name"                  |
-|  metaItemCreateDTOS\[i\].chineseName  |  String  |  是  |  50  | 属性中文名                                                                     | "姓名"                    |
-|  metaItemCreateDTOS\[i\].definition  |  String  |  否  |  200  | 实体值域定义                                                                    |                         |
-|  metaItemCreateDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入项，`0-否，1-是`                                                          |                         |
-|  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                                           |                         |
-|  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                                           |                         |
-|  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                                        |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`                      | 1                       |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度 字符型：默认 0                                                             |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度 字符型：默认 4000                                                          |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                                        |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数 1-50，超过 50，默认保存为 50                                                 |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型, "2,3", 2:doc;docx;xps;dot 3: xls;xlsx;xlsb;xlsm;csv 4:pdf 5:zip;rar |                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`,默认为 1                                                  |                         |
-|  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                                       |                         |
+| **参数**                                                      | **类型**  | **是否必填** | **最大长度** | **备注**                                                                    | **示例值**                  |
+| ----------------------------------------------------------- | ------- | -------- | -------- | ------------------------------------------------------------------------- | ------------------------ |
+| classifyCode                                                | String  | 是        |          | 本企业内的分类code                                                               | "sp"                     |
+| metaName                                                    | String  | 是        | 100      | 元数据名称                                                                     | "88.101.3366/Meta\_demo" |
+| metaCode                                                    | String  | 是        | 100      | 元数据代码                                                                     | "meta\_code\_demo"       |
+| industryCategory                                            | String  | 是        |          | 行业分类一级                                                                    | "R"                      |
+| industrySpecific                                            | String  | 是        |          | 行业分类二级                                                                    | "86"                     |
+| industryTrade                                               | String  | 是        |          | 行业分类三级                                                                    | "861"                    |
+| industrySubclass                                            | String  | 是        |          | 行业分类四级                                                                    | "8610"                   |
+| standard                                                    | String  | 否        | 200      | 依据标准                                                                      |                          |
+| metaDesc                                                    | String  | 否        | 1000     | 元数据描述                                                                     |                          |
+| metaItemCreateDTOS\[i].itemCode                             | String  | 是        | 50       | 属性编码                                                                      | "name\_code"             |
+| metaItemCreateDTOS\[i].englishName                          | String  | 是        | 50       | 属性英文名                                                                     | "name"                   |
+| metaItemCreateDTOS\[i].chineseName                          | String  | 是        | 50       | 属性中文名                                                                     | "姓名"                     |
+| metaItemCreateDTOS\[i].definition                           | String  | 否        | 200      | 实体值域定义                                                                    |                          |
+| metaItemCreateDTOS\[i].inputNecessary                       | Integer | 否        | -        | 是否是输入项，`0-否，1-是`                                                          |                          |
+| metaItemCreateDTOS\[i].required                             | Integer | 否        | -        | 是否必填项，`0-否，1-是`                                                           |                          |
+| metaItemCreateDTOS\[i].uniqueField                          | Integer | 否        | -        | 是否唯一项，`0-否，1-是`                                                           |                          |
+| metaItemCreateDTOS\[i].comment                              | String  | 否        | 200      | 备注                                                                        |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dataType         | Integer | 是        |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`                      | 1                        |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.minLength        | Integer | 否        |          | 最小长度 字符型：默认 0                                                             |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxLength        | Integer | 否        |          | 最大长度 字符型：默认 4000                                                          |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dateFormat       | String  | 否        |          | 日期格式 默认：YYYY-MM-DD                                                        |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxFileCount     | Integer | 否        | -        | 最大文件数 1-50，超过 50，默认保存为 50                                                 |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.fileType         | String  | 否        | -        | 文件类型, "2,3", 2:doc;docx;xps;dot 3: xls;xlsx;xlsb;xlsm;csv 4:pdf 5:zip;rar |                          |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.referenceType    | Integer | 否        | -        | 引用类型：`1：一对一，2：一对多`,默认为 1                                                  |                          |
+| metaItemCreateDTOS\[i].itemReferenceDTO.referenceMetaHandle | String  | 否        | -        | 引用元数据，dataType:5时必填                                                       |                          |
 
 ### 返回参数
 
-|  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
-| --- | --- | --- | --- | --- | --- |
-|  code  |  integer  |  true  |  none  |  none  |  返回码  |
-|  message  |  string  |  true  |  none  |  none  |  返回消息  |
-|  data  |  object  |  true  |  none  |  none  |  返回数据  |
+| **名称**  | **类型**  | **必选** | **约束** | **中文名** | **说明** |
+| ------- | ------- | ------ | ------ | ------- | ------ |
+| code    | integer | true   | none   | none    | 返回码    |
+| message | string  | true   | none   | none    | 返回消息   |
+| data    | object  | true   | none   | none    | 返回数据   |
 
+### 请求示例  &#x20;
 
-### 请求示例   
 ```java
  /**
  * 新建元数据
@@ -158,13 +159,14 @@ void metaCreateApiTest() {
 ```
 
 ### 响应示例
+
 ```json
 {
     "code": 1,
     "message": "成功",
     "data": null
 }
-```  
+```
 
 ## 查询元数据
 
@@ -178,54 +180,54 @@ DoipReturn metaInfo(@RequestParam(value = "metaHandle") String metaHandle);
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- | --- |
-|  metaHandle  |  String  |  是  |  \-  |  要查询的元数据标识  |  "88.608.6688/META\_123444444444"  |
+| **参数**     | **类型** | **是否必填** | **最大长度** | **备注**    | **示例值**                          |
+| ---------- | ------ | -------- | -------- | --------- | -------------------------------- |
+| metaHandle | String | 是        | -        | 要查询的元数据标识 | "88.608.6688/META\_123444444444" |
 
 ### 返回参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
-|  data  |  Object  |   |  具体响应对象  |   |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
+| data    | Object  |          | 具体响应对象       |         |
 
 ### 响应参数
-    
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                               | **示例值**                       |
-| --- | --- | --- | --- |------------------------------------------------------|-------------------------------|
-|  classifyCode  |  String  |  是  |   | 本企业内的分类code                                          | "sp"                          |
-|  metaHandle  |  String  |  是  |   | 元数据标识                                                | "88.608.6688/META\_xz\_test2" |
-|  metaName  |  String  |  是  |  100  | 元数据名称                                                | "meta_dong_test"              |
-|  metaCode  |  String  |  是  |  100  | 元数据代码                                                | "dong_code_demo"              |
-|  industryCategory  |  String  |  是  |   | 行业分类一级                                               | "R"                           |
-|  industrySpecific  |  String  |  是  |   | 行业分类二级                                               | "86"                          |
-|  industryTrade  |  String  |  是  |   | 行业分类三级                                               | "861"                         |
-|  industrySubclass  |  String  |  是  |   | 行业分类四级                                               | "8610                         |
-|  standard  |  String  |  否  |  200  | 依据标准                                                 |                               |
-|  metaDesc  |  String  |  否  |  1000  | 元数据描述                                                |                               |
-|  metaItemCreateDTOS\[i\].itemCode  |  String  |  是  |   |                                                      | "code1_demo"                  |
-|  metaItemCreateDTOS\[i\].englishName  |  String  |  是  |   |                                                      | "name"                        |
-|  metaItemCreateDTOS\[i\].chineseName  |  String  |  是  |  50  |                                                      | "姓名"                          |
-|  metaItemCreateDTOS\[i\].definition  |  String  |  否  |   | 实体值域定义                                               |                               |
-|  metaItemCreateDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入项，`0-否，1-是`                                     |                               |
-|  metaItemCreateDTOS\[i\].listItemNecessary  |  Integer  |  否  |  \-  | 是否是列表项，`0-否，1-是`                                     |                               |
-|  metaItemCreateDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填项，`0-否，1-是`                                      |                               |
-|  metaItemCreateDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一项，`0-否，1-是`                                      |                               |
-|  metaItemCreateDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                             |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数量                                               |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileRange  |  Integer  |  否  |  \-  | 文件值域：`1：any，2：assign`                                |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型                                                 |                               |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.selfDefFileSuffix  |  String  |  否  |  \-  | 自定义文件后缀                                              | "pem"                         |
-|  metaItemCreateDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                               |
-|  metaItemCreateDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                               |
+| **参数**                                                       | **类型**  | **是否必填** | **最大长度** | **备注**                                               | **示例值**                       |
+| ------------------------------------------------------------ | ------- | -------- | -------- | ---------------------------------------------------- | ----------------------------- |
+| classifyCode                                                 | String  | 是        |          | 本企业内的分类code                                          | "sp"                          |
+| metaHandle                                                   | String  | 是        |          | 元数据标识                                                | "88.608.6688/META\_xz\_test2" |
+| metaName                                                     | String  | 是        | 100      | 元数据名称                                                | "meta\_dong\_test"            |
+| metaCode                                                     | String  | 是        | 100      | 元数据代码                                                | "dong\_code\_demo"            |
+| industryCategory                                             | String  | 是        |          | 行业分类一级                                               | "R"                           |
+| industrySpecific                                             | String  | 是        |          | 行业分类二级                                               | "86"                          |
+| industryTrade                                                | String  | 是        |          | 行业分类三级                                               | "861"                         |
+| industrySubclass                                             | String  | 是        |          | 行业分类四级                                               | "8610                         |
+| standard                                                     | String  | 否        | 200      | 依据标准                                                 |                               |
+| metaDesc                                                     | String  | 否        | 1000     | 元数据描述                                                |                               |
+| metaItemCreateDTOS\[i].itemCode                              | String  | 是        |          |                                                      | "code1\_demo"                 |
+| metaItemCreateDTOS\[i].englishName                           | String  | 是        |          |                                                      | "name"                        |
+| metaItemCreateDTOS\[i].chineseName                           | String  | 是        | 50       |                                                      | "姓名"                          |
+| metaItemCreateDTOS\[i].definition                            | String  | 否        |          | 实体值域定义                                               |                               |
+| metaItemCreateDTOS\[i].inputNecessary                        | Integer | 否        | -        | 是否是输入项，`0-否，1-是`                                     |                               |
+| metaItemCreateDTOS\[i].listItemNecessary                     | Integer | 否        | -        | 是否是列表项，`0-否，1-是`                                     |                               |
+| metaItemCreateDTOS\[i].required                              | Integer | 否        | -        | 是否必填项，`0-否，1-是`                                      |                               |
+| metaItemCreateDTOS\[i].uniqueField                           | Integer | 否        | -        | 是否唯一项，`0-否，1-是`                                      |                               |
+| metaItemCreateDTOS\[i].comment                               | String  | 否        | 200      | 备注                                                   |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dataType          | Integer | 是        |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                             |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.minLength         | Integer | 否        |          | 最小长度                                                 |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxLength         | Integer | 否        |          | 最大长度                                                 |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dateFormat        | String  | 否        |          | 日期格式                                                 |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否        | -        | 最大文件数量                                               |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.fileRange         | Integer | 否        | -        | 文件值域：`1：any，2：assign`                                |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.fileType          | String  | 否        | -        | 文件类型                                                 |                               |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否        | -        | 自定义文件后缀                                              | "pem"                         |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.referenceType     | Integer | 否        | -        | 引用类型：`1：一对一，2：一对多`                                   |                               |
+| metaItemCreateDTOS\[i].itemReferenceDTO.referenceMetaHandle  | String  | 否        | -        | 引用元数据，dataType:5时必填                                  |                               |
 
-### 请求示例   
+### 请求示例  &#x20;
+
 ```java
 @Test
 void metaInfoApiTest() {
@@ -238,7 +240,9 @@ void metaInfoApiTest() {
     log.info("查询元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
@@ -279,39 +283,41 @@ void metaInfoApiTest() {
     }
 }
 ```
+
 ## 编辑元数据基本信息
 
 操作者通过此方法编辑自己所创建的元数据模板，进行元数据基本信息的修改操作。
 
 ### 方法调用
+
 ```java
 DoipReturn updateMetaBasicInfo(@RequestBody MetaBasicInfoDTO metaBasicInfoDTO);
 ```
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                     |
-| --- | --- | --- | --- | --- |-----------------------------|
-|  classifyCode  |  String  |  是  |   |  本企业内的分类code  | "sp"                        |
-|  metaHandle  |  String  |  是  |  255  |  元数据标识  | "88.608.6688/META_xz_test2" |
-|  metaName  |  String  |  是  |  100  |  元数据名称  | "meta_dz_test"              |
-|  metaCode  |  String  |  是  |  100  |  元数据代码  | "meta_dz_code"              |
-|  industryCategory  |  String  |  是  |   |  行业分类一级  | "R"  取的字典表key值              |
-|  industrySpecific  |  String  |  是  |   |  行业分类二级  | "86"                        |
-|  industryTrade  |  String  |  是  |   |  行业分类三级  | "861"                       |
-|  industrySubclass  |  String  |  是  |   |  行业分类四级  | "8610"                      |
-|  standard  |  String  |  否  |  200  |  依据标准  |                             |
-|  metaDesc  |  String  |  否  |  1000  |  元数据描述  |                             |
+| **参数**           | **类型** | **是否必填** | **最大长度** | **备注**      | **示例值**                       |
+| ---------------- | ------ | -------- | -------- | ----------- | ----------------------------- |
+| classifyCode     | String | 是        |          | 本企业内的分类code | "sp"                          |
+| metaHandle       | String | 是        | 255      | 元数据标识       | "88.608.6688/META\_xz\_test2" |
+| metaName         | String | 是        | 100      | 元数据名称       | "meta\_dz\_test"              |
+| metaCode         | String | 是        | 100      | 元数据代码       | "meta\_dz\_code"              |
+| industryCategory | String | 是        |          | 行业分类一级      | "R" 取的字典表key值                 |
+| industrySpecific | String | 是        |          | 行业分类二级      | "86"                          |
+| industryTrade    | String | 是        |          | 行业分类三级      | "861"                         |
+| industrySubclass | String | 是        |          | 行业分类四级      | "8610"                        |
+| standard         | String | 否        | 200      | 依据标准        |                               |
+| metaDesc         | String | 否        | 1000     | 元数据描述       |                               |
 
 ### 返回参数
 
-|  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
-| --- | --- | --- | --- | --- | --- |
-|  code  |  integer  |  true  |  none  |  none  |  返回码  |
-|  message  |  string  |  true  |  none  |  none  |  返回消息  |
+| **名称**  | **类型**  | **必选** | **约束** | **中文名** | **说明** |
+| ------- | ------- | ------ | ------ | ------- | ------ |
+| code    | integer | true   | none   | none    | 返回码    |
+| message | string  | true   | none   | none    | 返回消息   |
 
+### 请求示例 &#x20;
 
-### 请求示例  
 ```java
 /**
  * 编辑元数据
@@ -343,6 +349,7 @@ void metaUpdateInfoApiTest() {
 ```
 
 ### 响应示例
+
 ```json
 {
     "code": 1,
@@ -364,37 +371,38 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  | **备注**                                               | **示例值**                  |
-| --- | --- | --- | --- |------------------------------------------------------|--------------------------|
-|  metaHanlde  |  String  |  是  |   | 元数据标识                                                | "88.608.8889/META_11122" |
-|  metaItemDTOS\[i\].itemCode  |  String  |  是  |  50  | 属性编码                                                 | "code1"                  |
-|  metaItemDTOS\[i\].englishName  |  String  |  是  |  50  |                                                      | "en1"                    |
-|  metaItemDTOS\[i\].chineseName  |  String  |  是  |  50  |                                                      | "cn1"                    |
-|  metaItemDTOS\[i\].definition  |  String  |  否  |   | 实体值域定义                                               |                          |
-|  metaItemDTOS\[i\].itemState  |  Integer  |  否  |   | 元素状态;0：启用，1：禁用（逻辑删除），2：未生效                           |                          |
-|  metaItemDTOS\[i\].inputNecessary  |  Integer  |  否  |  \-  | 是否是输入性，`0-否，1-是`                                     |                          |
-|  metaItemDTOS\[i\].required  |  Integer  |  否  |  \-  | 是否必填性，`0-否，1-是`                                      |                          |
-|  metaItemDTOS\[i\].uniqueField  |  Integer  |  否  |  \-  | 是否唯一性，`0-否，1-是`                                      |                          |
-|  metaItemDTOS\[i\].comment  |  String  |  否  |  200  | 备注                                                   |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.dataType  |  Integer  |  是  |   | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                        |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.minLength  |  Integer  |  否  |   | 最小长度                                                 |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.maxLength  |  Integer  |  否  |   | 最大长度，字符型长度：0-4000                                    |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.dateFormat  |  String  |  否  |   | 日期格式 默认：YYYY-MM-DD                                   |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.maxFileCount  |  Integer  |  否  |  \-  | 最大文件数量                                               |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.fileRange  |  Integer  |  否  |  \-  | 文件值域：`1：any，2：assign`                                |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.fileType  |  String  |  否  |  \-  | 文件类型                                                 |                          |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.selfDefFileSuffix  |  String  |  否  |  \-  | 自定义文件后缀                                              | "pem"                    |
-|  metaItemDTOS\[i\].itemSchemaCreateDTO.referenceType  |  Integer  |  否  |  \-  | 引用类型：`1：一对一，2：一对多`                                   |                          |
-|  metaItemDTOS\[i\].itemReferenceDTO.referenceMetaHandle  |  String  |  否  |  \-  | 引用元数据，dataType:5时必填                                  |                          |
+| **参数**                                                 | **类型**  | **是否必填** | **最大长度** | **备注**                                               | **示例值**                   |
+| ------------------------------------------------------ | ------- | -------- | -------- | ---------------------------------------------------- | ------------------------- |
+| metaHanlde                                             | String  | 是        |          | 元数据标识                                                | "88.608.8889/META\_11122" |
+| metaItemDTOS\[i].itemCode                              | String  | 是        | 50       | 属性编码                                                 | "code1"                   |
+| metaItemDTOS\[i].englishName                           | String  | 是        | 50       |                                                      | "en1"                     |
+| metaItemDTOS\[i].chineseName                           | String  | 是        | 50       |                                                      | "cn1"                     |
+| metaItemDTOS\[i].definition                            | String  | 否        |          | 实体值域定义                                               |                           |
+| metaItemDTOS\[i].itemState                             | Integer | 否        |          | 元素状态;0：启用，1：禁用（逻辑删除），2：未生效                           |                           |
+| metaItemDTOS\[i].inputNecessary                        | Integer | 否        | -        | 是否是输入性，`0-否，1-是`                                     |                           |
+| metaItemDTOS\[i].required                              | Integer | 否        | -        | 是否必填性，`0-否，1-是`                                      |                           |
+| metaItemDTOS\[i].uniqueField                           | Integer | 否        | -        | 是否唯一性，`0-否，1-是`                                      |                           |
+| metaItemDTOS\[i].comment                               | String  | 否        | 200      | 备注                                                   |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.dataType          | Integer | 是        |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` | 1                         |
+| metaItemDTOS\[i].itemSchemaCreateDTO.minLength         | Integer | 否        |          | 最小长度                                                 |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.maxLength         | Integer | 否        |          | 最大长度，字符型长度：0-4000                                    |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.dateFormat        | String  | 否        |          | 日期格式 默认：YYYY-MM-DD                                   |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否        | -        | 最大文件数量                                               |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.fileRange         | Integer | 否        | -        | 文件值域：`1：any，2：assign`                                |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.fileType          | String  | 否        | -        | 文件类型                                                 |                           |
+| metaItemDTOS\[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否        | -        | 自定义文件后缀                                              | "pem"                     |
+| metaItemDTOS\[i].itemSchemaCreateDTO.referenceType     | Integer | 否        | -        | 引用类型：`1：一对一，2：一对多`                                   |                           |
+| metaItemDTOS\[i].itemReferenceDTO.referenceMetaHandle  | String  | 否        | -        | 引用元数据，dataType:5时必填                                  |                           |
 
 ### 返回参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
 
-### 请求示例 
+### 请求示例&#x20;
+
 ```java
     /**
      * 编辑元数据实体列表
@@ -441,41 +449,46 @@ DoipReturn updateItem(@RequestBody MetaItemUpdateApiDTO metaItemUpdateApiDTO);
         log.info("编辑元数据实体列表返回结果：{}", JSONUtil.toJsonStr(doipReturn));
     }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
     "message": "成功"
 }
-```   
+```
 
 ## 删除元数据
 
 通过此方法，用户可删除元数据模板；删除功能支持单个删除或批量删除元数据模板
 
 ### 方法调用
+
 ```java
 DoipReturn deleteMeta(@RequestParam(value = "metaHandleList", defaultValue = "") List<String> metaHandleList);
 ```
 
 `注意:`
-- 未发布元数据模板，可直接进行删除，已发布元数据模板，需撤回发布后，方可进行删除；
-- 用户仅可删除自己创建的元数据模板。
+
+* 未发布元数据模板，可直接进行删除，已发布元数据模板，需撤回发布后，方可进行删除；
+* 用户仅可删除自己创建的元数据模板。
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- | --- |
-|  metaHandleList  |  Array`<string>`  |  是  |  \-  |  要操作的标识列表  |  \["88.608.6688/META\_123444444444","88.608.6688/META\_123"\]  |
+| **参数**         | **类型**          | **是否必填** | **最大长度** | **备注**   | **示例值**                                                     |
+| -------------- | --------------- | -------- | -------- | -------- | ----------------------------------------------------------- |
+| metaHandleList | Array`<string>` | 是        | -        | 要操作的标识列表 | \["88.608.6688/META\_123444444444","88.608.6688/META\_123"] |
 
 ### 返回参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
 
-### 请求示例   
+### 请求示例  &#x20;
+
 ```java
 /**
  * 删除元数据
@@ -495,39 +508,44 @@ void deleteMetaApiTest() {
     log.info("删除元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
     "message": "成功"
 }
 ```
+
 ## 元数据授权
 
 将元数据的查看权限授权给其他标识身份，将标识身份的元数据查看权限移除
 
 ### 方法调用
+
 ```java
 DoipReturn addMetaGrant(@RequestBody MetaGrantApiDTO metaGrantApiDTO);
 ```
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                                                       |
-| --- | --- | --- | --- | --- |---------------------------------------------------------------|
-|  scope  |  Integer  |  是  |  \-  |  授权范围：`1-公开  2-指定范`围  | 1                                                             |
-|  metaHandle  |  String  |  是  |   |  元数据标识  | "88.608.5288/META_dong-ceshi-6-22"                            |
-|  handleUsers  |  Array`<string>` |  否  |  \-  |  新增身份标识  | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"\] |
-|  removeHandleUsers  |  Array`<string>` |  否  |  \-  |  删除身份标识  | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"\] |
+| **参数**            | **类型**          | **是否必填** | **最大长度** | **备注**              | **示例值**                                                      |
+| ----------------- | --------------- | -------- | -------- | ------------------- | ------------------------------------------------------------ |
+| scope             | Integer         | 是        | -        | 授权范围：`1-公开  2-指定范`围 | 1                                                            |
+| metaHandle        | String          | 是        |          | 元数据标识               | "88.608.5288/META\_dong-ceshi-6-22"                          |
+| handleUsers       | Array`<string>` | 否        | -        | 新增身份标识              | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
+| removeHandleUsers | Array`<string>` | 否        | -        | 删除身份标识              | \["88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
 
 ### 返回参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
 
-### 请求示例 
+### 请求示例&#x20;
+
 ```java
 /**
  * 元数据授权
@@ -559,39 +577,43 @@ void addMetaGrantApiTest() {
     log.info("元数据授权返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
     "message": "成功"
 }
 ```
+
 ## 发布/撤回元数据
 
 通过此方法，可发布未发布的元数据模板，发布后，可基于该元数据模版进行标识数据创建； 可撤回已发布的元数据模板；未发布的元数据模板不可被解析，不能继续进行标识数据的创建；已创建标识数据不受其影响。
 
 ### 方法调用
+
 ```java
 DoipReturn publishOrWithdraw(@RequestBody PublishOrWithdrawApiDTO paramsDTO);
 ```
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- | --- |
-|  metaHandleList  |  Array `<string>`  |  是  |  \-  |  要操作的标识列表  |  \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"\]  |
-|  opType  |  String  |  是  |  \-  |  操作类型，枚举值 `publish` 或  `withdraw`  |  "publish"  |
+| **参数**         | **类型**           | **是否必填** | **最大长度** | **备注**                           | **示例值**                                                       |
+| -------------- | ---------------- | -------- | -------- | -------------------------------- | ------------------------------------------------------------- |
+| metaHandleList | Array `<string>` | 是        | -        | 要操作的标识列表                         | \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
+| opType         | String           | 是        | -        | 操作类型，枚举值 `publish` 或  `withdraw` | "publish"                                                     |
 
 ### 返回参数
 
-|  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
-| --- | --- | --- | --- | --- | --- |
-|  code  |  integer  |  true  |  none  |  none  |  返回码  |
-|  message  |  string  |  true  |  none  |  none  |  返回消息  |
-|  data  |  object  |  true  |  none  |  none  |  返回数据  |
+| **名称**  | **类型**  | **必选** | **约束** | **中文名** | **说明** |
+| ------- | ------- | ------ | ------ | ------- | ------ |
+| code    | integer | true   | none   | none    | 返回码    |
+| message | string  | true   | none   | none    | 返回消息   |
+| data    | object  | true   | none   | none    | 返回数据   |
 
+### 请求示例 &#x20;
 
-### 请求示例  
 ```java
 /**
  * 发布/撤回元数据
@@ -614,7 +636,9 @@ void publishOrWithdrawApiTest() {
     log.info("发布/撤回元数据返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
@@ -626,38 +650,41 @@ void publishOrWithdrawApiTest() {
     }]
 }
 ```
+
 ## 创建元数据副本
 
 通过此方法，用户可参照其他企业的元数据模板创建自己的元数据模板，并在该元数据下进行标识注册。
 
 ### 方法调用
+
 ```java
 DoipReturn baseonCreateMeta(@RequestBody BaseonCreateMetaApiDTO metaCopyApiDTO);
 ```
 
 `注意`
-- 用户仅可对授权给自己查看权限或公开的元数据模板创建副本；
-- 创建副本成功后，该元数据模板不可对实体元素进行编辑。
-- 创建副本成功后，该元数据仅可向本企业应用身份或身份组进行授权（若有其他企业需要创建该元数据模板副本，应向原元数据模板所有者索要权限）；
+
+* 用户仅可对授权给自己查看权限或公开的元数据模板创建副本；
+* 创建副本成功后，该元数据模板不可对实体元素进行编辑。
+* 创建副本成功后，该元数据仅可向本企业应用身份或身份组进行授权（若有其他企业需要创建该元数据模板副本，应向原元数据模板所有者索要权限）；
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  | **示例值**                              |
-| --- | --- | --- | --- | --- |--------------------------------------|
-|  baseonHandle  |  String  |  是  |  \-  |  要引用的元数据标识  | ""88.608.5288/META_dong-ceshi-6-22"" |
-|  baseInfo.metaHandle  |  String  |  是  |  \-  |  要创建的元数据标识  | ""88.608.5288/META_ceshi-copy""      |
-|  baseInfo.metaCode  |  String  |  是  |  50  |  设置的元数据编码  | "ceshi-code"                         |
-|  baseInfo.classifyCode  |  String  |  是  |   |  所属的本企业分类  | "NEW_CODE"                           |
+| **参数**                | **类型** | **是否必填** | **最大长度** | **备注**    | **示例值**                               |
+| --------------------- | ------ | -------- | -------- | --------- | ------------------------------------- |
+| baseonHandle          | String | 是        | -        | 要引用的元数据标识 | ""88.608.5288/META\_dong-ceshi-6-22"" |
+| baseInfo.metaHandle   | String | 是        | -        | 要创建的元数据标识 | ""88.608.5288/META\_ceshi-copy""      |
+| baseInfo.metaCode     | String | 是        | 50       | 设置的元数据编码  | "ceshi-code"                          |
+| baseInfo.classifyCode | String | 是        |          | 所属的本企业分类  | "NEW\_CODE"                           |
 
 ### 返回参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
 
+### 请求示例  &#x20;
 
-### 请求示例   
 ```java
 /**
  * 创建元数据副本
@@ -684,18 +711,22 @@ void baseonCreateMetaApiTest() {
     log.info("创建元数据副本返回结果：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
     "message": "成功",
 }
 ```
+
 ## 数据分类列表
 
 获取本企业下全量的数据分类列表
 
 ### 方法调用
+
 ```java
 DoipReturn claasifyQuery();
 ```
@@ -705,28 +736,29 @@ DoipReturn claasifyQuery();
 无
 
 ### 返回参数
-*   公共响应参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
-|  data  |  object  |   |   |   |
+* 公共响应参数
 
-*   data数据结构
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
+| data    | object  |          |              |         |
 
-| 参数                                           | 类型      | 备注                                                   | 示例值      |
-| ---------------------------------------------- |---------|------------------------------------------------------|----------|
-| classifyCode                                   | String  | 本企业内的分类code                                          | "sp"     |
-| classifyName                                   | String  | 分类名称                                                 | "我是一级分类" |
-| id                                       | Integer | 分类id                                                 | 1        |
-| parentId                                       | Integer | 父id                                                  | 1        |
-| sort                               | Integer | 排序                                                   | 1        |
-| children                               | Array[] | 子集                                                   |          |
-| level                                  | Integer | 层级                                                   | 1        |
+* data数据结构
 
+| 参数           | 类型       | 备注          | 示例值      |
+| ------------ | -------- | ----------- | -------- |
+| classifyCode | String   | 本企业内的分类code | "sp"     |
+| classifyName | String   | 分类名称        | "我是一级分类" |
+| id           | Integer  | 分类id        | 1        |
+| parentId     | Integer  | 父id         | 1        |
+| sort         | Integer  | 排序          | 1        |
+| children     | Array\[] | 子集          |          |
+| level        | Integer  | 层级          | 1        |
 
-### 请求示例  
+### 请求示例 &#x20;
+
 ```java
 /**
  * 数据分类列表
@@ -741,7 +773,9 @@ void claasifyQuery() {
     log.info("分类列表：{}", JSONUtil.toJsonStr(doipReturn));
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
@@ -870,11 +904,13 @@ void claasifyQuery() {
     ]
 }
 ```
+
 ## 元数据列表
 
 操作者通过此方法获取某个数据分类下的元数据模板列表。
 
 ### 方法调用
+
 ```java
 DoipReturn metaPage(
     @RequestParam(value = "metaHandle", required = false) String metaHandle,
@@ -887,41 +923,41 @@ DoipReturn metaPage(
 
 ### 方法参数
 
-| 参数           | 类型      | 是否必填 | 最大长度 | 备注               | 示例值                                |
-|--------------|---------|------| -------- |------------------|------------------------------------|
-| classifyCode | String  | 是    | -        | 分类code           | "NEW_code"                         |
-| metaHandle   | String  | 否    | -        | 元数据标识            | "88.608.5288/META_f90c212ea7ec471" |
-| metaState    | Integer | 否    | -        | 0-未发布 1-已发布 | 1                                  |
-| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss | "2024-2-12 12:12:12"               |
-| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss | "2024-2-12 12:12:12"               |
-| page         | Integer | 否    | -        | 默认值0 | 0                                  |
-| size         | Integer | 否    | -        | 默认值10 | 10                                 |
+| 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值                                 |
+| ------------ | ------- | ---- | ---- | ------------------------ | ----------------------------------- |
+| classifyCode | String  | 是    | -    | 分类code                   | "NEW\_code"                         |
+| metaHandle   | String  | 否    | -    | 元数据标识                    | "88.608.5288/META\_f90c212ea7ec471" |
+| metaState    | Integer | 否    | -    | 0-未发布 1-已发布              | 1                                   |
+| startTime    | String  | 否    | -    | 开始时间 yyyy-MM-dd HH:mm:ss | "2024-2-12 12:12:12"                |
+| endTime      | String  | 否    | -    | 结束时间 yyyy-MM-dd HH:mm:ss | "2024-2-12 12:12:12"                |
+| page         | Integer | 否    | -    | 默认值0                     | 0                                   |
+| size         | Integer | 否    | -    | 默认值10                    | 10                                  |
 
 ### 返回参数
 
-*   公共响应参数
-    
+* 公共响应参数
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
-|  data  |  Object  |  \-  |  返回数据  |  \-  |
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
+| data    | Object  | -        | 返回数据         | -       |
 
-*   data数据结构
+* data数据结构
 
-| 参数           | 类型      | 备注               | 示例值                                |
-|--------------|---------|------------------|------------------------------------|
-| metaHandle   | String  | 元数据标识            | "88.608.5288/META_f90c212ea7ec471" |
-| metaName     | String  | 元数据名称            | "meta_dong"                        |
-| classifyName | String  | 所属分类名称           | "我是所属分类"                           |
-| id           | Integer | 元数据id            |                                    |
-| metaCode     | String  | 元数据编码            | "mete-demo-code"                   |
-| metaState    | Integer | 元数据状态 0-未发布 1-发布 | 1                                  |
-| createdTime  | String  | 元数据创建时间          | "2024-2-12 12:12:12"               |
-| isQuote      | Integer | 是否为副本 0-否 1-是    | 0                                  |
+| 参数           | 类型      | 备注               | 示例值                                 |
+| ------------ | ------- | ---------------- | ----------------------------------- |
+| metaHandle   | String  | 元数据标识            | "88.608.5288/META\_f90c212ea7ec471" |
+| metaName     | String  | 元数据名称            | "meta\_dong"                        |
+| classifyName | String  | 所属分类名称           | "我是所属分类"                            |
+| id           | Integer | 元数据id            |                                     |
+| metaCode     | String  | 元数据编码            | "mete-demo-code"                    |
+| metaState    | Integer | 元数据状态 0-未发布 1-发布 | 1                                   |
+| createdTime  | String  | 元数据创建时间          | "2024-2-12 12:12:12"                |
+| isQuote      | Integer | 是否为副本 0-否 1-是    | 0                                   |
 
-### 请求示例   
+### 请求示例  &#x20;
+
 ```java
   /**
   * 元数据列表
@@ -936,7 +972,9 @@ DoipReturn metaPage(
      log.info("元数据列表：{}", JSONUtil.toJsonStr(doipReturn));
  }  
 ```
+
 ### 响应示例
+
 ```json
  {
     "code": 1,
@@ -964,6 +1002,7 @@ DoipReturn metaPage(
 操作者通过此方法获取某个元数据模板下的标识列表。
 
 ### 方法调用
+
 ```java
 DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
     @RequestParam(value = "handleName", required = false) String handleName,
@@ -974,37 +1013,36 @@ DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
 
 ### 方法参数
 
-| 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值                                |
-|--------------|---------|------| -------- |--------------------------|------------------------------------|
-| metaHandle   | String  | 是    | -        | 元数据标识                    | "88.608.5288/META_dong-ceshi-6-22" |
-| handleName   | String  | 否    | -        | 实例标识                     | "88.608.5288/dongzhaohui"          |
-| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss | "2024-01-24 14:41:23"              |
-| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss | "2024-01-24 14:41:23"              |
-| page         | Integer | 否    | -        | 默认值0                     | 0                                  |
-| size         | Integer | 否    | -        | 默认值10                    | 10                                 |
+| 参数         | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值                                 |
+| ---------- | ------- | ---- | ---- | ------------------------ | ----------------------------------- |
+| metaHandle | String  | 是    | -    | 元数据标识                    | "88.608.5288/META\_dong-ceshi-6-22" |
+| handleName | String  | 否    | -    | 实例标识                     | "88.608.5288/dongzhaohui"           |
+| startTime  | String  | 否    | -    | 开始时间 yyyy-MM-dd HH:mm:ss | "2024-01-24 14:41:23"               |
+| endTime    | String  | 否    | -    | 结束时间 yyyy-MM-dd HH:mm:ss | "2024-01-24 14:41:23"               |
+| page       | Integer | 否    | -    | 默认值0                     | 0                                   |
+| size       | Integer | 否    | -    | 默认值10                    | 10                                  |
 
 ### 返回参数
 
-*   公共响应参数
+* 公共响应参数
 
+| **参数**  | **类型**  | **最大长度** | **备注**       | **示例值** |
+| ------- | ------- | -------- | ------------ | ------- |
+| code    | Integer | -        | 状态码(详见状态码说明） | 1       |
+| message | String  | -        | 状态码描述        | 成功      |
+| data    | Object  | -        | 返回数据         | -       |
 
-|  **参数**  |  **类型**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- |
-|  code  |  Integer  |  \-  |  状态码(详见状态码说明）  |  1  |
-|  message  |  String  |  \-  |  状态码描述  |  成功  |
-|  data  |  Object  |  \-  |  返回数据  |  \-  |
+* data数据结构
 
-*   data数据结构
+| 参数          | 类型     | 备注      | 示例值                       |
+| ----------- | ------ | ------- | ------------------------- |
+| handleName  | String | 实例标识    | "88.608.5288/dongzhaohui" |
+| updateTime  | String | 更新时间    | "2024-01-24 14:41:23"     |
+| createdBy   | String | 用户名/应用名 | "应用名"                     |
+| createdTime | String | 创建时间    | "2024-01-24 14:41:23"     |
 
-| 参数           | 类型      | 备注            | 示例值                       |
-|--------------|---------|---------------|---------------------------|
-| handleName   | String  | 实例标识          | "88.608.5288/dongzhaohui" |
-| updateTime   | String  | 更新时间          | "2024-01-24 14:41:23"     |
-| createdBy    | String  | 用户名/应用名         | "应用名"                     |
-| createdTime  | String  | 创建时间          | "2024-01-24 14:41:23"     |
+### 请求示例 &#x20;
 
-
-### 请求示例  
 ```java
   /**
   * 标识数据列表
@@ -1020,7 +1058,9 @@ DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
       log.info("标识数据列表：{}", JSONUtil.toJsonStr(doipReturn));
       }
 ```
+
 ### 响应示例
+
 ```json
  {
   "code": 1,
@@ -1041,5 +1081,3 @@ DoipReturn handlePage(@RequestParam("metaHandle") String metaHandle,
   }
 }
 ```
-
-

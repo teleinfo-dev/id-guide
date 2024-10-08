@@ -6,45 +6,45 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：POST
-- 请求路径：`/api/v1/open/meta/create`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：POST
+* 请求路径：`/api/v1/open/meta/create`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数                                                       | 类型    | 是否必填 | 最大长度 | 备注                                                                                                       | 示例值 |
-| ---------------------------------------------------------- | ------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------- | ------ |
-| classifyCode                                               | String  | 是       |          | 本企业内的分类code                                                                                         | "sp"   |
-| metaName                                                   | String  | 是       | 100      | 元数据名称                                                                                                 |        |
-| metaCode                                                   | String  | 是       | 100      | 元数据代码                                                                                                 |        |
-| industryCategory                                           | String  | 是       |          | 行业分类一级                                                                                               |        |
-| industrySpecific                                           | String  | 是       |          | 行业分类二级                                                                                               |        |
-| industryTrade                                              | String  | 是       |          | 行业分类三级                                                                                               |        |
-| industrySubclass                                           | String  | 是       |          | 行业分类四级                                                                                               |        |
-| standard                                                   | String  | 否       | 200      | 依据标准                                                                                                   |        |
-| metaDesc                                                   | String  | 否       | 1000     | 元数据描述                                                                                                 |        |
-| metaItemCreateDTOS[i].itemCode                             | String  | 是       | 50       | 属性编码                                                                                                   |        |
-| metaItemCreateDTOS[i].englishName                          | String  | 是       | 50       | 属性英文名                                                                                                 |        |
-| metaItemCreateDTOS[i].chineseName                          | String  | 是       | 50       | 属性中文名                                                                                                 |        |
-| metaItemCreateDTOS[i].definition                           | String  | 否       | 200      | 属性定义义                                                                                                 |        |
-| metaItemCreateDTOS[i].inputNecessary                       | Integer | 否       | -        | 是否是输入性，`0-否，1-是`                                                                               |        |
-| metaItemCreateDTOS[i].required                             | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                                                                 |        |
-| metaItemCreateDTOS[i].uniqueField                          | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                                                                 |        |
-| metaItemCreateDTOS[i].comment                              | String  | 否       | 200      | 备注                                                                                                       |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dataType         | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`              |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.minLength        | Integer | 否       |          | 最小长度<br />字符型：默认 0                                                                               |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxLength        | Integer | 否       |          | 最大长度<br />字符型：默认 4000                                                                            |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.dateFormat       | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                                                             |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.maxFileCount     | Integer | 否       | -        | 最大文件数 1-50，超过 50，默认保存为 50                                                                    |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.fileType         | String  | 否       | -        | 文件类型, 例如 "2,3",`2: doc;docx;xps;dot`    `3: xls;xlsx;xlsb;xlsm;csv`   `4:pdf`    `5:zip;rar` |        |
-| metaItemCreateDTOS[i].itemSchemaCreateDTO.referenceType    | Integer | 否       | -        | 引用类型：`1：一对一，2：一对多` 默认为 `1: 一对一`                                                    |        |
-| metaItemCreateDTOS[i].itemReferenceDTO.referenceMetaHandle | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                               |        |
+| 参数                                                          | 类型      | 是否必填 | 最大长度 | 备注                                                                                   | 示例值  |
+| ----------------------------------------------------------- | ------- | ---- | ---- | ------------------------------------------------------------------------------------ | ---- |
+| classifyCode                                                | String  | 是    |      | 本企业内的分类code                                                                          | "sp" |
+| metaName                                                    | String  | 是    | 100  | 元数据名称                                                                                |      |
+| metaCode                                                    | String  | 是    | 100  | 元数据代码                                                                                |      |
+| industryCategory                                            | String  | 是    |      | 行业分类一级                                                                               |      |
+| industrySpecific                                            | String  | 是    |      | 行业分类二级                                                                               |      |
+| industryTrade                                               | String  | 是    |      | 行业分类三级                                                                               |      |
+| industrySubclass                                            | String  | 是    |      | 行业分类四级                                                                               |      |
+| standard                                                    | String  | 否    | 200  | 依据标准                                                                                 |      |
+| metaDesc                                                    | String  | 否    | 1000 | 元数据描述                                                                                |      |
+| metaItemCreateDTOS\[i].itemCode                             | String  | 是    | 50   | 属性编码                                                                                 |      |
+| metaItemCreateDTOS\[i].englishName                          | String  | 是    | 50   | 属性英文名                                                                                |      |
+| metaItemCreateDTOS\[i].chineseName                          | String  | 是    | 50   | 属性中文名                                                                                |      |
+| metaItemCreateDTOS\[i].definition                           | String  | 否    | 200  | 属性定义义                                                                                |      |
+| metaItemCreateDTOS\[i].inputNecessary                       | Integer | 否    | -    | 是否是输入性，`0-否，1-是`                                                                     |      |
+| metaItemCreateDTOS\[i].required                             | Integer | 否    | -    | 是否必填性，`0-否，1-是`                                                                      |      |
+| metaItemCreateDTOS\[i].uniqueField                          | Integer | 否    | -    | 是否唯一性，`0-否，1-是`                                                                      |      |
+| metaItemCreateDTOS\[i].comment                              | String  | 否    | 200  | 备注                                                                                   |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dataType         | Integer | 是    |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片`                                 |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.minLength        | Integer | 否    |      | <p>最小长度<br>字符型：默认 0</p>                                                              |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxLength        | Integer | 否    |      | <p>最大长度<br>字符型：默认 4000</p>                                                           |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.dateFormat       | String  | 否    |      | <p>日期格式<br>默认：YYYY-MM-DD</p>                                                         |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.maxFileCount     | Integer | 否    | -    | 最大文件数 1-50，超过 50，默认保存为 50                                                            |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.fileType         | String  | 否    | -    | 文件类型, 例如 "2,3",`2: doc;docx;xps;dot` `3: xls;xlsx;xlsb;xlsm;csv` `4:pdf` `5:zip;rar` |      |
+| metaItemCreateDTOS\[i].itemSchemaCreateDTO.referenceType    | Integer | 否    | -    | 引用类型：`1：一对一，2：一对多` 默认为 `1: 一对一`                                                      |      |
+| metaItemCreateDTOS\[i].itemReferenceDTO.referenceMetaHandle | String  | 否    | -    | 引用元数据，dataType:5时必填                                                                  |      |
 
 ### 请求示例
 
@@ -126,12 +126,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 10000  |
-| message | String  | 状态码描述              | 成功   |
+| 参数      | 类型      | 备注           | 示例值   |
+| ------- | ------- | ------------ | ----- |
+| code    | Integer | 状态码(详见状态码说明） | 10000 |
+| message | String  | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -163,21 +163,21 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：GET
-- 请求路径：`/api/v1/open/meta/info`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：GET
+* 请求路径：`/api/v1/open/meta/info`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
-| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值                                              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ------------------------------------------------ |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是    | -    | application/json            | application/json                                 |
 
-- Query参数：
+* Query参数：
 
-| 参数       | 类型   | 是否必填 | 最大长度 | 备注               | 示例值                          |
-| ---------- | ------ | -------- | -------- | ------------------ | ------------------------------- |
-| metaHandle | String | 是       | -        | 要查询的元数据标识 | "88.608.6688/META_123444444444" |
+| 参数         | 类型     | 是否必填 | 最大长度 | 备注        | 示例值                              |
+| ---------- | ------ | ---- | ---- | --------- | -------------------------------- |
+| metaHandle | String | 是    | -    | 要查询的元数据标识 | "88.608.6688/META\_123444444444" |
 
 ### 请求示例
 
@@ -187,41 +187,41 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 1      |
-| message | String  | 状态码描述              | 成功   |
-| data    | Object  | 具体响应对象            |        |
+| 参数      | 类型      | 备注           | 示例值 |
+| ------- | ------- | ------------ | --- |
+| code    | Integer | 状态码(详见状态码说明） | 1   |
+| message | String  | 状态码描述        | 成功  |
+| data    | Object  | 具体响应对象       |     |
 
-- data 数据结构
+* data 数据结构
 
-| 参数                                           | 类型    | 备注                                                                                          | 示例值                      |
-| ---------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- | --------------------------- |
-| classifyCode                                   | String  | 本企业内的分类code                                                                            | "sp"                        |
-| metaHandle                                     | String  | 元数据标识                                                                                    | "88.608.6688/META_xz_test2" |
-| metaName                                       | String  | 元数据名称                                                                                    |                             |
-| metaCode                                       | String  | 元数据代码                                                                                    |                             |
-| industryCategory                               | String  | 行业分类一级                                                                                  |                             |
-| industrySpecific                               | String  | 行业分类二级                                                                                  |                             |
-| industryTrade                                  | String  | 行业分类三级                                                                                  |                             |
-| industrySubclass                               | String  | 行业分类四级                                                                                  |                             |
-| standard                                       | String  | 依据标准                                                                                      |                             |
-| metaDesc                                       | String  | 元数据描述                                                                                    |                             |
-| itemVOS[i].itemCode                            | String  | 属性编码                                                                                      |                             |
-| itemVOS[i].englishName                         | String  | 属性英文名称                                                                                  |                             |
-| itemVOS[i].chineseName                         | String  | 属性中文名称                                                                                  |                             |
-| itemVOS[i].definition                          | String  | 属性定义                                                                                      |                             |
-| itemVOS[i].inputNecessary                      | Integer | 是否是输入性，`0-否，1-是`                                                                  |                             |
-| itemVOS[i].required                            | Integer | 是否必填性，`0-否，1-是`                                                                    |                             |
-| itemVOS[i].uniqueField                         | Integer | 是否唯一性，`0-否，1-是`                                                                    |                             |
-| itemVOS[i].comment                             | String  | 备注                                                                                          |                             |
-| itemVOS[i].itemSchemaVO.dataType               | Integer | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |                             |
-| itemVOS[i].itemSchemaVO.minLength              | Integer | 最小长度                                                                                      |                             |
-| itemVOS[i].itemSchemaVO.maxLength              | Integer | 最大长度                                                                                      |                             |
-| itemVOS[i].itemSchemaVO.dateFormat             | String  | 日期格式                                                                                      |                             |
-| itemVOS[i].itemSchemaVO.maxFileCount           | Integer | 最大文件数量                                                                                  |                             |
-| itemVOS[i].itemSchemaVO.referenceType          | Integer | 引用类型：`1：一对一，2：一对多  `                                                          |                             |
-| itemVOS[i].itemReferenceVO.referenceMetaHandle | String  | 引用元数据                                                                                    |                             |
+| 参数                                              | 类型      | 备注                                                   | 示例值                           |
+| ----------------------------------------------- | ------- | ---------------------------------------------------- | ----------------------------- |
+| classifyCode                                    | String  | 本企业内的分类code                                          | "sp"                          |
+| metaHandle                                      | String  | 元数据标识                                                | "88.608.6688/META\_xz\_test2" |
+| metaName                                        | String  | 元数据名称                                                |                               |
+| metaCode                                        | String  | 元数据代码                                                |                               |
+| industryCategory                                | String  | 行业分类一级                                               |                               |
+| industrySpecific                                | String  | 行业分类二级                                               |                               |
+| industryTrade                                   | String  | 行业分类三级                                               |                               |
+| industrySubclass                                | String  | 行业分类四级                                               |                               |
+| standard                                        | String  | 依据标准                                                 |                               |
+| metaDesc                                        | String  | 元数据描述                                                |                               |
+| itemVOS\[i].itemCode                            | String  | 属性编码                                                 |                               |
+| itemVOS\[i].englishName                         | String  | 属性英文名称                                               |                               |
+| itemVOS\[i].chineseName                         | String  | 属性中文名称                                               |                               |
+| itemVOS\[i].definition                          | String  | 属性定义                                                 |                               |
+| itemVOS\[i].inputNecessary                      | Integer | 是否是输入性，`0-否，1-是`                                     |                               |
+| itemVOS\[i].required                            | Integer | 是否必填性，`0-否，1-是`                                      |                               |
+| itemVOS\[i].uniqueField                         | Integer | 是否唯一性，`0-否，1-是`                                      |                               |
+| itemVOS\[i].comment                             | String  | 备注                                                   |                               |
+| itemVOS\[i].itemSchemaVO.dataType               | Integer | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |                               |
+| itemVOS\[i].itemSchemaVO.minLength              | Integer | 最小长度                                                 |                               |
+| itemVOS\[i].itemSchemaVO.maxLength              | Integer | 最大长度                                                 |                               |
+| itemVOS\[i].itemSchemaVO.dateFormat             | String  | 日期格式                                                 |                               |
+| itemVOS\[i].itemSchemaVO.maxFileCount           | Integer | 最大文件数量                                               |                               |
+| itemVOS\[i].itemSchemaVO.referenceType          | Integer | 引用类型：`1：一对一，2：一对多`                                   |                               |
+| itemVOS\[i].itemReferenceVO.referenceMetaHandle | String  | 引用元数据                                                |                               |
 
 ### 响应示例
 
@@ -364,30 +364,30 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：PUT
-- 请求路径：`/api/v1/open/meta/update-basic-info`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：PUT
+* 请求路径：`/api/v1/open/meta/update-basic-info`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数             | 类型   | 是否必填 | 最大长度 | 备注               | 示例值                      |
-| ---------------- | ------ | -------- | -------- | ------------------ | --------------------------- |
-| classifyCode     | String | 是       |          | 本企业内的分类code | "sp"                        |
-| metaHandle       | String | 是       | 255      | 元数据标识         | "88.608.6688/META_xz_test2" |
-| metaName         | String | 是       | 100      | 元数据名称         |                             |
-| metaCode         | String | 是       | 100      | 元数据代码         |                             |
-| industryCategory | String | 是       |          | 行业分类一级       |                             |
-| industrySpecific | String | 是       |          | 行业分类二级       |                             |
-| industryTrade    | String | 是       |          | 行业分类三级       |                             |
-| industrySubclass | String | 是       |          | 行业分类四级       |                             |
-| standard         | String | 否       | 200      | 依据标准           |                             |
-| metaDesc         | String | 否       | 1000     | 元数据描述         |                             |
+| 参数               | 类型     | 是否必填 | 最大长度 | 备注          | 示例值                           |
+| ---------------- | ------ | ---- | ---- | ----------- | ----------------------------- |
+| classifyCode     | String | 是    |      | 本企业内的分类code | "sp"                          |
+| metaHandle       | String | 是    | 255  | 元数据标识       | "88.608.6688/META\_xz\_test2" |
+| metaName         | String | 是    | 100  | 元数据名称       |                               |
+| metaCode         | String | 是    | 100  | 元数据代码       |                               |
+| industryCategory | String | 是    |      | 行业分类一级      |                               |
+| industrySpecific | String | 是    |      | 行业分类二级      |                               |
+| industryTrade    | String | 是    |      | 行业分类三级      |                               |
+| industrySubclass | String | 是    |      | 行业分类四级      |                               |
+| standard         | String | 否    | 200  | 依据标准        |                               |
+| metaDesc         | String | 否    | 1000 | 元数据描述       |                               |
 
 ### 请求示例
 
@@ -408,12 +408,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 10000  |
-| message | String  | 状态码描述              | 成功   |
+| 参数      | 类型      | 备注           | 示例值   |
+| ------- | ------- | ------------ | ----- |
+| code    | Integer | 状态码(详见状态码说明） | 10000 |
+| message | String  | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -444,41 +444,41 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：PUT
-- 请求路径：`/api/v1/open/meta/update-item`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：PUT
+* 请求路径：`/api/v1/open/meta/update-item`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数                                                  | 类型    | 是否必填 | 最大长度 | 备注                                                                                          | 示例值 |
-| ----------------------------------------------------- | ------- | -------- | -------- | --------------------------------------------------------------------------------------------- | ------ |
-| metaHanlde                                            | String  | 是       |          | 元数据标识                                                                                    |        |
-| metaItemDTOS[i].itemCode                              | String  | 是       | 50       |                                                                                               |        |
-| metaItemDTOS[i].itemIndex                             | Integer | 否       |          | 传按传的顺序来，如果不传会从已有itemIndex 顺排                                                |        |
-| metaItemDTOS[i].englishName                           | String  | 是       | 50       |                                                                                               |        |
-| metaItemDTOS[i].chineseName                           | String  | 是       | 50       |                                                                                               |        |
-| metaItemDTOS[i].definition                            | String  | 否       |          | 实体值域定义                                                                                  |        |
-| metaItemDTOS[i].itemState                             | Integer | 否       |          | 元素状态;0：启用，1：禁用（逻辑删除），2：未生效                                              |        |
-| metaItemDTOS[i].inputNecessary                        | Integer | 否       | -        | 是否是输入性，`0-否，1-是`                                                                  |        |
-| metaItemDTOS[i].required                              | Integer | 否       | -        | 是否必填性，`0-否，1-是`                                                                    |        |
-| metaItemDTOS[i].uniqueField                           | Integer | 否       | -        | 是否唯一性，`0-否，1-是`                                                                    |        |
-| metaItemDTOS[i].comment                               | String  | 否       | 200      | 备注                                                                                          |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.dataType          | Integer | 是       |          | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.minLength         | Integer | 否       |          | 最小长度                                                                                      |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.maxLength         | Integer | 否       |          | 最大长度                                                                                      |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.dateFormat        | String  | 否       |          | 日期格式<br />默认：YYYY-MM-DD                                                                |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否       | -        | 最大文件数量                                                                                  |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.fileRange         | Integer | 否       | -        | 文件值域：`1：any，2：assign   `                                                            |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.fileType          | String  | 否       | -        | 文件类型                                                                                      |        |
-| metaItemDTOS[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否       | -        | 自定义文件后缀                                                                                | "pem"  |
-| metaItemDTOS[i].itemSchemaCreateDTO.referenceType     | Integer | 否       | -        | 引用类型：`1：一对一，2：一对多  `                                                          |        |
-| metaItemDTOS[i].itemReferenceDTO.referenceMetaHandle  | String  | 否       | -        | 引用元数据，dataType:5时必填                                                                  |        |
+| 参数                                                     | 类型      | 是否必填 | 最大长度 | 备注                                                   | 示例值   |
+| ------------------------------------------------------ | ------- | ---- | ---- | ---------------------------------------------------- | ----- |
+| metaHanlde                                             | String  | 是    |      | 元数据标识                                                |       |
+| metaItemDTOS\[i].itemCode                              | String  | 是    | 50   |                                                      |       |
+| metaItemDTOS\[i].itemIndex                             | Integer | 否    |      | 传按传的顺序来，如果不传会从已有itemIndex 顺排                         |       |
+| metaItemDTOS\[i].englishName                           | String  | 是    | 50   |                                                      |       |
+| metaItemDTOS\[i].chineseName                           | String  | 是    | 50   |                                                      |       |
+| metaItemDTOS\[i].definition                            | String  | 否    |      | 实体值域定义                                               |       |
+| metaItemDTOS\[i].itemState                             | Integer | 否    |      | 元素状态;0：启用，1：禁用（逻辑删除），2：未生效                           |       |
+| metaItemDTOS\[i].inputNecessary                        | Integer | 否    | -    | 是否是输入性，`0-否，1-是`                                     |       |
+| metaItemDTOS\[i].required                              | Integer | 否    | -    | 是否必填性，`0-否，1-是`                                      |       |
+| metaItemDTOS\[i].uniqueField                           | Integer | 否    | -    | 是否唯一性，`0-否，1-是`                                      |       |
+| metaItemDTOS\[i].comment                               | String  | 否    | 200  | 备注                                                   |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.dataType          | Integer | 是    |      | 实体类型，`1：字符型，2：数值型，3：日期型，4：文件型，5：引用类型 6：音频 7：视频 8：图片` |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.minLength         | Integer | 否    |      | 最小长度                                                 |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.maxLength         | Integer | 否    |      | 最大长度                                                 |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.dateFormat        | String  | 否    |      | <p>日期格式<br>默认：YYYY-MM-DD</p>                         |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.maxFileCount      | Integer | 否    | -    | 最大文件数量                                               |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.fileRange         | Integer | 否    | -    | 文件值域：`1：any，2：assign`                                |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.fileType          | String  | 否    | -    | 文件类型                                                 |       |
+| metaItemDTOS\[i].itemSchemaCreateDTO.selfDefFileSuffix | String  | 否    | -    | 自定义文件后缀                                              | "pem" |
+| metaItemDTOS\[i].itemSchemaCreateDTO.referenceType     | Integer | 否    | -    | 引用类型：`1：一对一，2：一对多`                                   |       |
+| metaItemDTOS\[i].itemReferenceDTO.referenceMetaHandle  | String  | 否    | -    | 引用元数据，dataType:5时必填                                  |       |
 
 ### 请求示例
 
@@ -490,10 +490,10 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 10000  |
-| message | String  | 状态码描述              | 成功   |
+| 参数      | 类型      | 备注           | 示例值   |
+| ------- | ------- | ------------ | ----- |
+| code    | Integer | 状态码(详见状态码说明） | 10000 |
+| message | String  | 状态码描述        | 成功    |
 
 ### 响应示例
 
@@ -522,26 +522,25 @@
 
 `注意：`
 
-> 1、未发布元数据模板，可直接进行删除，已发布元数据模板，需撤回发布后，方可进行删除；
-> 2、用户仅可删除自己创建的元数据模板
+> 1、未发布元数据模板，可直接进行删除，已发布元数据模板，需撤回发布后，方可进行删除； 2、用户仅可删除自己创建的元数据模板
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：Delete
-- 请求路径：`/api/v1/open/meta/delete`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：Delete
+* 请求路径：`/api/v1/open/meta/delete`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Query参数：
+* Query参数：
 
-| 参数           | 类型               | 是否必填 | 最大长度 | 备注             | 示例值                                                     |
-| -------------- | ------------------ | -------- | -------- | ---------------- | ---------------------------------------------------------- |
-| metaHandleList | Array `<string>` | 是       | -        | 要操作的标识列表 | [ "88.608.6688/META_123444444444", "88.608.6688/META_123"] |
+| 参数             | 类型               | 是否必填 | 最大长度 | 备注       | 示例值                                                           |
+| -------------- | ---------------- | ---- | ---- | -------- | ------------------------------------------------------------- |
+| metaHandleList | Array `<string>` | 是    | -    | 要操作的标识列表 | \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
 
 ### 请求示例
 
@@ -552,12 +551,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 最大长度 | 备注                    | 示例值 |
-| ------- | ------- | -------- | ----------------------- | ------ |
-| code    | Integer | -        | 状态码(详见状态码说明） | 10000  |
-| message | String  | -        | 状态码描述              | 成功   |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值   |
+| ------- | ------- | ---- | ------------ | ----- |
+| code    | Integer | -    | 状态码(详见状态码说明） | 10000 |
+| message | String  | -    | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -585,24 +584,24 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：POST
-- 请求路径：`/api/v1/open/meta/grant/info`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：POST
+* 请求路径：`/api/v1/open/meta/grant/info`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数              | 类型               | 是否必填 | 最大长度 | 备注                              | 示例值                                                     |
-| ----------------- | ------------------ | -------- | -------- | --------------------------------- | ---------------------------------------------------------- |
-| scope             | Integer            | 是       | -        | 授权范围：`1-公开  2-指定范`围 |                                                            |
-| metaHandle        | String             | 是       |          | 元数据标识                        |                                                            |
-| handleUsers       | Array `<string>` | 否       | -        | 新增身份标识                      | [ "88.608.6688/META_123444444444", "88.608.6688/META_123"] |
-| removeHandleUsers | Array `<string>` | 否       | -        | 删除身份标识                      | [ "88.608.6688/META_123444444444", "88.608.6688/META_123"] |
+| 参数                | 类型               | 是否必填 | 最大长度 | 备注                  | 示例值                                                           |
+| ----------------- | ---------------- | ---- | ---- | ------------------- | ------------------------------------------------------------- |
+| scope             | Integer          | 是    | -    | 授权范围：`1-公开  2-指定范`围 |                                                               |
+| metaHandle        | String           | 是    |      | 元数据标识               |                                                               |
+| handleUsers       | Array `<string>` | 否    | -    | 新增身份标识              | \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
+| removeHandleUsers | Array `<string>` | 否    | -    | 删除身份标识              | \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
 
 ### 请求示例
 
@@ -621,12 +620,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 10000  |
-| message | String  | 状态码描述              | 成功   |
+| 参数      | 类型      | 备注           | 示例值   |
+| ------- | ------- | ------------ | ----- |
+| code    | Integer | 状态码(详见状态码说明） | 10000 |
+| message | String  | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -662,22 +661,22 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：PUT
-- 请求路径：`/api/v1/open/meta/publish-or-withdraw`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：PUT
+* 请求路径：`/api/v1/open/meta/publish-or-withdraw`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数           | 类型               | 是否必填 | 最大长度 | 备注                                            | 示例值                                                     |
-| -------------- | ------------------ | -------- | -------- | ----------------------------------------------- | ---------------------------------------------------------- |
-| metaHandleList | Array `<string>` | 是       | -        | 要操作的标识列表                                | [ "88.608.6688/META_123444444444", "88.608.6688/META_123"] |
-| opType         | String             | 是       | -        | 操作类型，枚举值 `publish` 或  `withdraw` | "publish"                                                  |
+| 参数             | 类型               | 是否必填 | 最大长度 | 备注                               | 示例值                                                           |
+| -------------- | ---------------- | ---- | ---- | -------------------------------- | ------------------------------------------------------------- |
+| metaHandleList | Array `<string>` | 是    | -    | 要操作的标识列表                         | \[ "88.608.6688/META\_123444444444", "88.608.6688/META\_123"] |
+| opType         | String           | 是    | -    | 操作类型，枚举值 `publish` 或  `withdraw` | "publish"                                                     |
 
 ### 请求示例
 
@@ -695,12 +694,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 10000  |
-| message | String  | 状态码描述              | 成功   |
+| 参数      | 类型      | 备注           | 示例值   |
+| ------- | ------- | ------------ | ----- |
+| code    | Integer | 状态码(详见状态码说明） | 10000 |
+| message | String  | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -763,23 +762,23 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：POST
-- 请求路径：`/api/v1/open/meta/baseon-create`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：POST
+* 请求路径：`/api/v1/open/meta/baseon-create`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body参数：
+* Body参数：
 
-| 参数                  | 类型   | 是否必填 | 最大长度 | 备注               | 示例值 |
-| --------------------- | ------ | -------- | -------- | ------------------ | ------ |
-| baseonHandle          | String | 是       | -        | 要引用的元数据标识 |        |
-| baseInfo.metaCode     | String | 是       | 50       | 设置的元数据编码   |        |
-| baseInfo.classifyCode | String | 是       |          | 所属的本企业分类   |        |
+| 参数                    | 类型     | 是否必填 | 最大长度 | 备注        | 示例值 |
+| --------------------- | ------ | ---- | ---- | --------- | --- |
+| baseonHandle          | String | 是    | -    | 要引用的元数据标识 |     |
+| baseInfo.metaCode     | String | 是    | 50   | 设置的元数据编码  |     |
+| baseInfo.classifyCode | String | 是    |      | 所属的本企业分类  |     |
 
 ### 请求示例
 
@@ -797,12 +796,12 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 最大长度 | 备注                    | 示例值 |
-| ------- | ------- | -------- | ----------------------- | ------ |
-| code    | Integer | -        | 状态码(详见状态码说明） | 10000  |
-| message | String  | -        | 状态码描述              | 成功   |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值   |
+| ------- | ------- | ---- | ------------ | ----- |
+| code    | Integer | -    | 状态码(详见状态码说明） | 10000 |
+| message | String  | -    | 状态码描述        | 成功    |
 
-- 响应参数
+* 响应参数
 
 ### 响应示例
 
@@ -834,18 +833,17 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：GET
-- 请求路径：`/api/v1/open/meta/classify-query`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：GET
+* 请求路径：`/api/v1/open/meta/classify-query`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
-| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值                                              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ------------------------------------------------ |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是    | -    | application/json            | application/json                                 |
 
-- Query参数：
-  无
+* Query参数： 无
 
 ### 请求示例
 
@@ -855,23 +853,23 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 1      |
-| message | String  | 状态码描述              | 成功   |
-| data    | Object  | 具体响应对象            |        |
+| 参数      | 类型      | 备注           | 示例值 |
+| ------- | ------- | ------------ | --- |
+| code    | Integer | 状态码(详见状态码说明） | 1   |
+| message | String  | 状态码描述        | 成功  |
+| data    | Object  | 具体响应对象       |     |
 
-- data 数据结构
+* data 数据结构
 
-| 参数                                           | 类型      | 备注                                                   | 示例值                      |
-| ---------------------------------------------- |---------|------------------------------------------------------| --------------------------- |
-| classifyCode                                   | String  | 本企业内的分类code                                          | "sp"                        |
-| classifyName                                   | String  | 分类名称                                                 |  |
-| id                                       | Integer | 分类id                                                 |                             |
-| parentId                                       | Integer | 父id                                                  |                             |
-| sort                               | Integer | 排序                                                   |                             |
-| children                               | Array[] | 子集                                                   |                             |
-| level                                  | Integer | 层级                                                   |                             |
+| 参数           | 类型       | 备注          | 示例值  |
+| ------------ | -------- | ----------- | ---- |
+| classifyCode | String   | 本企业内的分类code | "sp" |
+| classifyName | String   | 分类名称        |      |
+| id           | Integer  | 分类id        |      |
+| parentId     | Integer  | 父id         |      |
+| sort         | Integer  | 排序          |      |
+| children     | Array\[] | 子集          |      |
+| level        | Integer  | 层级          |      |
 
 ### 响应示例
 
@@ -1004,27 +1002,27 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：GET
-- 请求路径：`/api/v1/open/meta/page`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：GET
+* 请求路径：`/api/v1/open/meta/page`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
-| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值                                              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ------------------------------------------------ |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是    | -    | application/json            | application/json                                 |
 
-- Query参数：
+* Query参数：
 
-| 参数           | 类型      | 是否必填 | 最大长度 | 备注               | 示例值              |
-|--------------|---------|------| -------- |------------------|------------------|
-| classifyCode | String  | 是    | -        | 分类code           | "NEW_code"       |
-| metaHandle   | String  | 否    | -        | 元数据标识            |  |
-| metaState    | Integer | 否    | -        | 0-未发布 1-已发布 |  |
-| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss |  |
-| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss |  |
-| page         | Integer | 否    | -        | 默认值0 |  |
-| size         | Integer | 否    | -        | 默认值10 |  |
+| 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值         |
+| ------------ | ------- | ---- | ---- | ------------------------ | ----------- |
+| classifyCode | String  | 是    | -    | 分类code                   | "NEW\_code" |
+| metaHandle   | String  | 否    | -    | 元数据标识                    |             |
+| metaState    | Integer | 否    | -    | 0-未发布 1-已发布              |             |
+| startTime    | String  | 否    | -    | 开始时间 yyyy-MM-dd HH:mm:ss |             |
+| endTime      | String  | 否    | -    | 结束时间 yyyy-MM-dd HH:mm:ss |             |
+| page         | Integer | 否    | -    | 默认值0                     |             |
+| size         | Integer | 否    | -    | 默认值10                    |             |
 
 ### 请求示例
 
@@ -1034,24 +1032,24 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 1      |
-| message | String  | 状态码描述              | 成功   |
-| data    | Object  | 具体响应对象            |        |
+| 参数      | 类型      | 备注           | 示例值 |
+| ------- | ------- | ------------ | --- |
+| code    | Integer | 状态码(详见状态码说明） | 1   |
+| message | String  | 状态码描述        | 成功  |
+| data    | Object  | 具体响应对象       |     |
 
-- data 数据结构
+* data 数据结构
 
-| 参数           | 类型      | 备注               | 示例值                     |
-|--------------|---------|------------------| ----------------------- |
-| metaHandle   | String  | 元数据标识            | ""                      |
-| metaName     | String  | 元数据名称            | ""                      |
-| classifyName | String  | 所属分类名称           |  |
-| id           | Integer | 元数据id            |                         |
-| metaCode     | String  | 元数据编码            |                         |
-| metaState    | Integer | 元数据状态 0-未发布 1-发布 |                         |
-| createdTime  | String  | 元数据创建时间          |                         |
-| isQuote      | Integer | 是否为副本 0-否 1-是    |                         |
+| 参数           | 类型      | 备注               | 示例值 |
+| ------------ | ------- | ---------------- | --- |
+| metaHandle   | String  | 元数据标识            | ""  |
+| metaName     | String  | 元数据名称            | ""  |
+| classifyName | String  | 所属分类名称           |     |
+| id           | Integer | 元数据id            |     |
+| metaCode     | String  | 元数据编码            |     |
+| metaState    | Integer | 元数据状态 0-未发布 1-发布 |     |
+| createdTime  | String  | 元数据创建时间          |     |
+| isQuote      | Integer | 是否为副本 0-否 1-是    |     |
 
 ### 响应示例
 
@@ -1093,26 +1091,26 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
-- 请求方式：GET
-- 请求路径：`/api/v1/open/handle/page`
-- Header：
+* 请求服务：企业节点业务系统 HTTP 端口（默认 3000）
+* 请求方式：GET
+* 请求路径：`/api/v1/open/handle/page`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值                                           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ------------------------------------------------ |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
-| Content-Type  | String | 是       | -        | application/json                    | application/json                                 |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值                                              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ------------------------------------------------ |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJz....... |
+| Content-Type  | String | 是    | -    | application/json            | application/json                                 |
 
-- Query参数：
+* Query参数：
 
-| 参数           | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值 |
-|--------------|---------|------| -------- |--------------------------|---|
-| metaHandle   | String  | 是    | -        | 元数据标识                    |  |
-| handleName   | String  | 否    | -        | 实例标识                     |   |
-| startTime    | String  | 否    | -        | 开始时间 yyyy-MM-dd HH:mm:ss |  |
-| endTime      | String  | 否    | -        | 结束时间 yyyy-MM-dd HH:mm:ss |  |
-| page         | Integer | 否    | -        | 默认值0                     |  |
-| size         | Integer | 否    | -        | 默认值10                    |  |
+| 参数         | 类型      | 是否必填 | 最大长度 | 备注                       | 示例值 |
+| ---------- | ------- | ---- | ---- | ------------------------ | --- |
+| metaHandle | String  | 是    | -    | 元数据标识                    |     |
+| handleName | String  | 否    | -    | 实例标识                     |     |
+| startTime  | String  | 否    | -    | 开始时间 yyyy-MM-dd HH:mm:ss |     |
+| endTime    | String  | 否    | -    | 结束时间 yyyy-MM-dd HH:mm:ss |     |
+| page       | Integer | 否    | -    | 默认值0                     |     |
+| size       | Integer | 否    | -    | 默认值10                    |     |
 
 ### 请求示例
 
@@ -1122,20 +1120,20 @@
 
 ### 响应数据
 
-| 参数    | 类型    | 备注                    | 示例值 |
-| ------- | ------- | ----------------------- | ------ |
-| code    | Integer | 状态码(详见状态码说明） | 1      |
-| message | String  | 状态码描述              | 成功   |
-| data    | Object  | 具体响应对象            |        |
+| 参数      | 类型      | 备注           | 示例值 |
+| ------- | ------- | ------------ | --- |
+| code    | Integer | 状态码(详见状态码说明） | 1   |
+| message | String  | 状态码描述        | 成功  |
+| data    | Object  | 具体响应对象       |     |
 
-- data 数据结构
+* data 数据结构
 
-| 参数           | 类型      | 备注            | 示例值                     |
-|--------------|---------|---------------| ----------------------- |
-| handleName   | String  | 实例标识          | ""                      |
-| updateTime   | String  | 更新时间          |  |
-| createdBy    | String  | 用户名/应用名         |                         |
-| createdTime  | String  | 创建时间          |                         |
+| 参数          | 类型     | 备注      | 示例值 |
+| ----------- | ------ | ------- | --- |
+| handleName  | String | 实例标识    | ""  |
+| updateTime  | String | 更新时间    |     |
+| createdBy   | String | 用户名/应用名 |     |
+| createdTime | String | 创建时间    |     |
 
 ### 响应示例
 

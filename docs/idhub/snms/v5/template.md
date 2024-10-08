@@ -6,22 +6,22 @@
 
 ### 请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
-- 请求方式：GET
-- 请求路径：`/snms/api/v5/template`
-- Header：
+* 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+* 请求方式：GET
+* 请求路径：`/snms/api/v5/template`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Param：
+* Param：
 
-| 参数    | 类型   | 是否必填 | 最大长度 | 备注     | 示例值     |
-| ------- | ------ | -------- | -------- | -------- | ---------- |
-| prefix  | String | 是       | 64       | 前缀     | 88.888.888 |
-| version | String | 是       | 128      | 模板版本 | test       |
+| 参数      | 类型     | 是否必填 | 最大长度 | 备注   | 示例值        |
+| ------- | ------ | ---- | ---- | ---- | ---------- |
+| prefix  | String | 是    | 64   | 前缀   | 88.888.888 |
+| version | String | 是    | 128  | 模板版本 | test       |
 
 ### 请求示例
 
@@ -29,36 +29,36 @@
 
 ### 响应参数
 
-- 公共响应参数
+* 公共响应参数
 
-| 参数    | 类型    | 最大长度 | 备注                   | 示例值  |
-| ------- | ------- | -------- | ---------------------- | ------- |
-| status  | Integer | -        | 状态码(详见状态码说明) | 1       |
-| message | String  | -        | 状态码描述             | success |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值     |
+| ------- | ------- | ---- | ------------ | ------- |
+| status  | Integer | -    | 状态码(详见状态码说明) | 1       |
+| message | String  | -    | 状态码描述        | success |
 
-- 响应参数
+* 响应参数
 
-| 参数                        | 类型    | 最大长度 | 备注                                            | 示例值           |
-| --------------------------- | ------- | -------- | ----------------------------------------------- | ---------------- |
-| prefix                      | String  | -        | 前缀                                            | 88.101.5         |
-| version                     | String  | -        | 模板版本                                        | 1.0.1            |
-| description                 | String  | -        | 描述                                            | 模板1.0.1        |
-| industryCategory            | String  | -        | 行业门类                                        | A                |
-| industrySpecific            | String  | -        | 行业大类                                        | 01               |
-| industryTrade               | String  | -        | 行业中类                                        | 011              |
-| industrySubclass            | String  | -        | 行业小类                                        | 0111             |
-| type                        | Integer | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他] | 1                |
-| handle                      | String  | -        | 模板标识                                        | 88.101.5/asfasda |
-| items                       | Array   | -        | 模板内容                                        | -                |
-| items[i].name               | String  | -        | 中文名称                                        | e1               |
-| items[i].idType             | String  | -        | 英文名称                                        | ip               |
-| items[i].idIndex            | Integer | -        | 模板索引                                        | 2000             |
-| items[i].required           | Boole   | -        | 是否必填项                                      | false            |
-| items[i].state              | Integer | -        | 模板属性状态(0-禁用，1-启用)                    | 0                |
-| items[i].metadata           | Array   | -        | 数据限制                                        | -                |
-| items[i].metadata.type      | String  | -        | 数据类型（现只支持String）                      | string           |
-| items[i].metadata.minLength | Int     | -        | 最小长度                                        | 1                |
-| items[i].metadata.maxLength | Int     | -        | 最大长度                                        | 10               |
+| 参数                           | 类型      | 最大长度 | 备注                            | 示例值              |
+| ---------------------------- | ------- | ---- | ----------------------------- | ---------------- |
+| prefix                       | String  | -    | 前缀                            | 88.101.5         |
+| version                      | String  | -    | 模板版本                          | 1.0.1            |
+| description                  | String  | -    | 描述                            | 模板1.0.1          |
+| industryCategory             | String  | -    | 行业门类                          | A                |
+| industrySpecific             | String  | -    | 行业大类                          | 01               |
+| industryTrade                | String  | -    | 行业中类                          | 011              |
+| industrySubclass             | String  | -    | 行业小类                          | 0111             |
+| type                         | Integer | -    | 元数据对象类型\[枚举值: 1:主动标识载体、 2:其他] | 1                |
+| handle                       | String  | -    | 模板标识                          | 88.101.5/asfasda |
+| items                        | Array   | -    | 模板内容                          | -                |
+| items\[i].name               | String  | -    | 中文名称                          | e1               |
+| items\[i].idType             | String  | -    | 英文名称                          | ip               |
+| items\[i].idIndex            | Integer | -    | 模板索引                          | 2000             |
+| items\[i].required           | Boole   | -    | 是否必填项                         | false            |
+| items\[i].state              | Integer | -    | 模板属性状态(0-禁用，1-启用)             | 0                |
+| items\[i].metadata           | Array   | -    | 数据限制                          | -                |
+| items\[i].metadata.type      | String  | -    | 数据类型（现只支持String）              | string           |
+| items\[i].metadata.minLength | Int     | -    | 最小长度                          | 1                |
+| items\[i].metadata.maxLength | Int     | -    | 最大长度                          | 10               |
 
 ### 响应示例
 
@@ -115,37 +115,37 @@
 
 ### 请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
-- 请求方式：POST
-- 请求路径：`/snms/api/v5/template`
-- Header：
+* 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+* 请求方式：POST
+* 请求路径：`/snms/api/v5/template`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body：
+* Body：
 
-| 参数                        | 类型    | 是否必填 | 最大长度 | 备注                                            | 示例值    |
-| --------------------------- | ------- | -------- | -------- | ----------------------------------------------- | --------- |
-| prefix                      | String  | 必填     | -        | 前缀                                            | 88.101.5  |
-| version                     | String  | 必填     | -        | 模板版本                                        | 1.0.1     |
-| industryCategory            | String  | 必填     | -        | 行业门类                                        | A         |
-| industrySpecific            | String  | 必填     | -        | 行业大类                                        | 01        |
-| industryTrade               | String  | 必填     | -        | 行业中类                                        | 011       |
-| industrySubclass            | String  | 必填     | -        | 行业小类                                        | 0111      |
-| type                        | Integer | 必填     | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他] | 1         |
-| description                 | String  | 非必填   | -        | 描述                                            | 模板1.0.1 |
-| items                       | Array   | 必填     | -        | 模板内容                                        | -         |
-| items[i].name               | String  | 必填     | -        | 中文名称                                        | 模板      |
-| items[i].idType             | String  | 必填     | -        | 英文名称                                        | ip        |
-| items[i].idIndex            | Integer | 必填     | -        | 模板索引,`从2000开始 `                        | 2000      |
-| items[i].required           | Boolean | 非必填   | -        | 是否必填项                                      | false     |
-| items[i].metadata           | Array   | 必填     | -        | 数据限制                                        | -         |
-| items[i].metadata.type      | String  | 非必填   | -        | 数据类型（现只支持String）                      | string    |
-| items[i].metadata.minLength | Int     | 必填     | -        | 最小长度                                        | 1         |
-| items[i].metadata.maxLength | Int     | 必填     | -        | 最大长度                                        | 10        |
+| 参数                           | 类型      | 是否必填 | 最大长度 | 备注                            | 示例值      |
+| ---------------------------- | ------- | ---- | ---- | ----------------------------- | -------- |
+| prefix                       | String  | 必填   | -    | 前缀                            | 88.101.5 |
+| version                      | String  | 必填   | -    | 模板版本                          | 1.0.1    |
+| industryCategory             | String  | 必填   | -    | 行业门类                          | A        |
+| industrySpecific             | String  | 必填   | -    | 行业大类                          | 01       |
+| industryTrade                | String  | 必填   | -    | 行业中类                          | 011      |
+| industrySubclass             | String  | 必填   | -    | 行业小类                          | 0111     |
+| type                         | Integer | 必填   | -    | 元数据对象类型\[枚举值: 1:主动标识载体、 2:其他] | 1        |
+| description                  | String  | 非必填  | -    | 描述                            | 模板1.0.1  |
+| items                        | Array   | 必填   | -    | 模板内容                          | -        |
+| items\[i].name               | String  | 必填   | -    | 中文名称                          | 模板       |
+| items\[i].idType             | String  | 必填   | -    | 英文名称                          | ip       |
+| items\[i].idIndex            | Integer | 必填   | -    | 模板索引,`从2000开始`                | 2000     |
+| items\[i].required           | Boolean | 非必填  | -    | 是否必填项                         | false    |
+| items\[i].metadata           | Array   | 必填   | -    | 数据限制                          | -        |
+| items\[i].metadata.type      | String  | 非必填  | -    | 数据类型（现只支持String）              | string   |
+| items\[i].metadata.minLength | Int     | 必填   | -    | 最小长度                          | 1        |
+| items\[i].metadata.maxLength | Int     | 必填   | -    | 最大长度                          | 10       |
 
 ### 请求示例
 
@@ -177,11 +177,11 @@
 
 ### 响应参数
 
-| 参数    | 类型    | 最大长度 | 备注                   | 示例值  |
-| ------- | ------- | -------- | ---------------------- | ------- |
-| status  | Integer | -        | 状态码(详见状态码说明) | 1       |
-| message | String  | -        | 状态码描述             | success |
-| data    | Boolean | -        | 是否操作成功           | true    |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值     |
+| ------- | ------- | ---- | ------------ | ------- |
+| status  | Integer | -    | 状态码(详见状态码说明) | 1       |
+| message | String  | -    | 状态码描述        | success |
+| data    | Boolean | -    | 是否操作成功       | true    |
 
 ### 响应示例
 
@@ -203,7 +203,7 @@
 }
 ```
 
----
+***
 
 ## 修改数据模板
 
@@ -211,38 +211,38 @@
 
 ### 请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
-- 请求方式：PUT
-- 请求路径：`/snms/api/v5/template`
-- Header：
+* 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+* 请求方式：PUT
+* 请求路径：`/snms/api/v5/template`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body：
+* Body：
 
-| 参数                        | 类型    | 是否必填 | 最大长度 | 备注                                                                                                                                         | 示例值         |
-| --------------------------- | ------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| prefix                      | String  | 必填     | -        | 前缀                                                                                                                                         | 88.101.5       |
-| version                     | String  | 必填     | -        | 模板版本， 不允许修改                                                                                                                        | 1.0.1          |
-| industryCategory            | String  | 必填     | -        | 行业门类                                                                                                                                     | A              |
-| industrySpecific            | String  | 必填     | -        | 行业大类                                                                                                                                     | 01             |
-| industryTrade               | String  | 必填     | -        | 行业中类                                                                                                                                     | 011            |
-| industrySubclass            | String  | 必填     | -        | 行业小类                                                                                                                                     | 0111           |
-| type                        | Integer | 必填     | -        | 元数据对象类型[枚举值: 1:主动标识载体、 2:其他]                                                                                              | 1              |
-| description                 | String  | 非必填   | -        | 描述                                                                                                                                         | 模板1.0.1      |
-| items                       | Array   | 必填     | -        | 模板内容,`增量更新，如果不传实体，默认不更新；实体不能删除，只能禁用`                                                                      | -              |
-| items[i].name               | String  | 必填     | -        | 中文名称，模板内唯一                                                                                                                         | 模板           |
-| items[i].idType             | String  | 必填     | -        | 英文名称，模板内唯一，更新时以 idIndex和 idType同时确定为已有模板的修改；如果没有传入 idIndex或传入的<br /> idIndex没有找到对应模板视为新增 | ip             |
-| items[i].idIndex            | Integer | 非必填   | -        | 模板索引                                                                                                                                     | 2000           |
-| items[i].required           | Boolean | 非必填   | -        | 是否必填项                                                                                                                                   | false          |
-| items[i].state              | Integer | 必填     | -        | 模板属性状态                                                                                                                                 | 0-禁用，1-启用 |
-| items[i].metadata           | Array   | 必填     | -        | 数据限制                                                                                                                                     | -              |
-| items[i].metadata.type      | String  | 非必填   | -        | 数据类型（现只支持String）                                                                                                                   | string         |
-| items[i].metadata.minLength | Int     | 必填     | -        | 最小长度                                                                                                                                     | 1              |
-| items[i].metadata.maxLength | Int     | 必填     | -        | 最大长度                                                                                                                                     | 10             |
+| 参数                           | 类型      | 是否必填 | 最大长度 | 备注                                                                                            | 示例值       |
+| ---------------------------- | ------- | ---- | ---- | --------------------------------------------------------------------------------------------- | --------- |
+| prefix                       | String  | 必填   | -    | 前缀                                                                                            | 88.101.5  |
+| version                      | String  | 必填   | -    | 模板版本， 不允许修改                                                                                   | 1.0.1     |
+| industryCategory             | String  | 必填   | -    | 行业门类                                                                                          | A         |
+| industrySpecific             | String  | 必填   | -    | 行业大类                                                                                          | 01        |
+| industryTrade                | String  | 必填   | -    | 行业中类                                                                                          | 011       |
+| industrySubclass             | String  | 必填   | -    | 行业小类                                                                                          | 0111      |
+| type                         | Integer | 必填   | -    | 元数据对象类型\[枚举值: 1:主动标识载体、 2:其他]                                                                 | 1         |
+| description                  | String  | 非必填  | -    | 描述                                                                                            | 模板1.0.1   |
+| items                        | Array   | 必填   | -    | 模板内容,`增量更新，如果不传实体，默认不更新；实体不能删除，只能禁用`                                                          | -         |
+| items\[i].name               | String  | 必填   | -    | 中文名称，模板内唯一                                                                                    | 模板        |
+| items\[i].idType             | String  | 必填   | -    | <p>英文名称，模板内唯一，更新时以 idIndex和 idType同时确定为已有模板的修改；如果没有传入 idIndex或传入的<br> idIndex没有找到对应模板视为新增</p> | ip        |
+| items\[i].idIndex            | Integer | 非必填  | -    | 模板索引                                                                                          | 2000      |
+| items\[i].required           | Boolean | 非必填  | -    | 是否必填项                                                                                         | false     |
+| items\[i].state              | Integer | 必填   | -    | 模板属性状态                                                                                        | 0-禁用，1-启用 |
+| items\[i].metadata           | Array   | 必填   | -    | 数据限制                                                                                          | -         |
+| items\[i].metadata.type      | String  | 非必填  | -    | 数据类型（现只支持String）                                                                              | string    |
+| items\[i].metadata.minLength | Int     | 必填   | -    | 最小长度                                                                                          | 1         |
+| items\[i].metadata.maxLength | Int     | 必填   | -    | 最大长度                                                                                          | 10        |
 
 ### 请求示例
 
@@ -275,11 +275,11 @@
 
 ### 响应参数
 
-| 参数    | 类型    | 最大长度 | 备注                   | 示例值  |
-| ------- | ------- | -------- | ---------------------- | ------- |
-| status  | Integer | -        | 状态码(详见状态码说明) | 1       |
-| message | String  | -        | 状态码描述             | success |
-| data    | Boolean | -        | 是否操作成功           | true    |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值     |
+| ------- | ------- | ---- | ------------ | ------- |
+| status  | Integer | -    | 状态码(详见状态码说明) | 1       |
+| message | String  | -    | 状态码描述        | success |
+| data    | Boolean | -    | 是否操作成功       | true    |
 
 ### 响应示例
 
@@ -303,11 +303,11 @@
 
 ### 注意事项
 
-> - 如果在企业节点中新增了 `非字符型` 的模板属性，将不能再进行查询操作
-> - items[i].metadata.type 必须为小写 string
-> - items[i].idIndex，需要从2000开始，不传，默认为2000
+> * 如果在企业节点中新增了 `非字符型` 的模板属性，将不能再进行查询操作
+> * items\[i].metadata.type 必须为小写 string
+> * items\[i].idIndex，需要从2000开始，不传，默认为2000
 
----
+***
 
 ## 删除数据模板
 
@@ -315,22 +315,22 @@
 
 ### 请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
-- 请求方式：DELETE
-- 请求路径：`/snms/api/v5/template`
-- Header：
+* 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+* 请求方式：DELETE
+* 请求路径：`/snms/api/v5/template`
+* Header：
 
-| 参数          | 类型   | 是否必填 | 最大长度 | 备注                                | 示例值           |
-| ------------- | ------ | -------- | -------- | ----------------------------------- | ---------------- |
-| Authorization | String | 是       | -        | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type  | String | 是       | -        | application/json                    | application/json |
+| 参数            | 类型     | 是否必填 | 最大长度 | 备注                          | 示例值              |
+| ------------- | ------ | ---- | ---- | --------------------------- | ---------------- |
+| Authorization | String | 是    | -    | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是    | -    | application/json            | application/json |
 
-- Body：
+* Body：
 
-| 参数    | 类型   | 是否必填 | 最大长度 | 备注     | 示例值      |
-| ------- | ------ | -------- | -------- | -------- | ----------- |
-| prefix  | String | 必填     | 64       | 前缀     | 88.101.0042 |
-| version | String | 必填     | 128      | 模板版本 | 1.0.1       |
+| 参数      | 类型     | 是否必填 | 最大长度 | 备注   | 示例值         |
+| ------- | ------ | ---- | ---- | ---- | ----------- |
+| prefix  | String | 必填   | 64   | 前缀   | 88.101.0042 |
+| version | String | 必填   | 128  | 模板版本 | 1.0.1       |
 
 ### 请求示例
 
@@ -343,11 +343,11 @@
 
 ### 响应参数
 
-| 参数    | 类型    | 最大长度 | 备注                   | 示例值  |
-| ------- | ------- | -------- | ---------------------- | ------- |
-| status  | Integer | -        | 状态码(详见状态码说明) | 1       |
-| message | String  | -        | 状态码描述             | success |
-| data    | Boolean | -        | 是否操作成功           | true    |
+| 参数      | 类型      | 最大长度 | 备注           | 示例值     |
+| ------- | ------- | ---- | ------------ | ------- |
+| status  | Integer | -    | 状态码(详见状态码说明) | 1       |
+| message | String  | -    | 状态码描述        | success |
+| data    | Boolean | -    | 是否操作成功       | true    |
 
 ### 响应示例
 

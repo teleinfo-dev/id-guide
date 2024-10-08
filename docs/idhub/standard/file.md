@@ -2,51 +2,51 @@
 
 ## 上传文件
 
-通过此接口，用户可进行文件上传操作，该操作用于创建实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素，需进行上传，可进行单个/批量上传。 
+通过此接口，用户可进行文件上传操作，该操作用于创建实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素，需进行上传，可进行单个/批量上传。
 
 `注意：`
-> 1. 单个文件上传，不能超过50M；上传文件数量取决于元数据模板中实体元素设定，最大设定不超过50个。 
-> 2. 可上传格式如下： 
->    - 文件型：doc;docx;xps;dot（word）、xls;xlsx;xlsb;xlsm;csv（excel）、pdf、zip；rar（压缩包）
->    - 音频型：wav;mp3;mp4 
->    - 视频型：avi;mov;wmv;flv;mp4  
->    - 图片型：jpg;jpe;png;jpeg;gif;tif;tiff;jxr;bmp
+
+> 1. 单个文件上传，不能超过50M；上传文件数量取决于元数据模板中实体元素设定，最大设定不超过50个。
+> 2. 可上传格式如下：
+>    * 文件型：doc;docx;xps;dot（word）、xls;xlsx;xlsb;xlsm;csv（excel）、pdf、zip；rar（压缩包）
+>    * 音频型：wav;mp3;mp4
+>    * 视频型：avi;mov;wmv;flv;mp4 &#x20;
+>    * 图片型：jpg;jpe;png;jpeg;gif;tif;tiff;jxr;bmp
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统HTTP端口（默认 3000）
-- 请求方式：POST
-- 请求路径：`/api/v1/doip/file-upload`
-- Header：
+* 请求服务：企业节点业务系统HTTP端口（默认 3000）
+* 请求方式：POST
+* 请求路径：`/api/v1/doip/file-upload`
+* Header：
 
-| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
-| -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
-| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
+| **参数**        | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值**          |
+| ------------- | ------ | -------- | -------- | --------------------------- | ---------------- |
+| Authorization | String | 是        | -        | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是        | -        | application/json            | application/json |
 
-- Body：
+* Body：
 
-| **参数** | **类型** | **是否必填** | **最大长度** | **备注** | **示例值**   |
-| -------------- | -------------- | ------------------ | ------------------ | -------------- | ------------------ |
-| handleName     | String         | 否                 | -                  | 标识           | 88.608.6688/Meta_1 |
-| metaHandle     | String         | 是                 | -                  | 元数据         | 88.608.6688/Meta_1 |
-| fileField      | String         | 是                 | -                  | 文件属性       | 88.608.6688/Meta   |
-| file           | MultipartFile  | 是                 | -                  | 上传的文件     |                    |
+| **参数**     | **类型**        | **是否必填** | **最大长度** | **备注** | **示例值**             |
+| ---------- | ------------- | -------- | -------- | ------ | ------------------- |
+| handleName | String        | 否        | -        | 标识     | 88.608.6688/Meta\_1 |
+| metaHandle | String        | 是        | -        | 元数据    | 88.608.6688/Meta\_1 |
+| fileField  | String        | 是        | -        | 文件属性   | 88.608.6688/Meta    |
+| file       | MultipartFile | 是        | -        | 上传的文件  |                     |
 
 ### 请求示例
 
-> /api/v1/doip/file-upload?handleName=&metaHandle=88.608.8889/META_filetest&fileField=file
-> ![img.png](../images/img.png)
+> /api/v1/doip/file-upload?handleName=\&metaHandle=88.608.8889/META\_filetest\&fileField=file ![img.png](../images/img.png)
 
 ### 响应参数
 
-| **参数** | **类型** | **备注**          | **示例值**                        |
-| -------------- | -------------- | ----------------------- | --------------------------------------- |
-| status         | Integer        | 状态码(详见状态码说明） | 1                                       |
-| message        | String         | 状态码描述              | success                                 |
-| data           | Object         | 返回数据                |                                         |
-| data.id        | String         | 文件id                  | 664da3c5802cf826c367b8c4                |
-| data.filePath  | String         | 文件路径                | 173b5de7-1454-4489-b921-dd6f2fd6d938.md |
+| **参数**        | **类型**  | **备注**       | **示例值**                                 |
+| ------------- | ------- | ------------ | --------------------------------------- |
+| status        | Integer | 状态码(详见状态码说明） | 1                                       |
+| message       | String  | 状态码描述        | success                                 |
+| data          | Object  | 返回数据         |                                         |
+| data.id       | String  | 文件id         | 664da3c5802cf826c367b8c4                |
+| data.filePath | String  | 文件路径         | 173b5de7-1454-4489-b921-dd6f2fd6d938.md |
 
 ### 响应示例
 
@@ -76,21 +76,21 @@
 
 ### 请求参数
 
-- 请求服务：企业节点业务系统HTTP端口（默认 3000）
-- 请求方式：POST
-- 请求路径：`/api/v1/doip/file-acquire`
-- Header：
+* 请求服务：企业节点业务系统HTTP端口（默认 3000）
+* 请求方式：POST
+* 请求路径：`/api/v1/doip/file-acquire`
+* Header：
 
-| **参数** | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值** |
-| -------------- | -------------- | ------------------ | ------------------ | ----------------------------------- | ---------------- |
-| Authorization  | String         | 是                 | -                  | Bearer + 空格 + token(身份接口获取) | admin            |
-| Content-Type   | String         | 是                 | -                  | application/json                    | application/json |
+| **参数**        | **类型** | **是否必填** | **最大长度** | **备注**                      | **示例值**          |
+| ------------- | ------ | -------- | -------- | --------------------------- | ---------------- |
+| Authorization | String | 是        | -        | Bearer + 空格 + token(身份接口获取) | admin            |
+| Content-Type  | String | 是        | -        | application/json            | application/json |
 
-- Body：
+* Body：
 
-| **参数** | **类型** | **是否必填** | **最大长度** | **备注** | **示例值**                        |
-| -------------- | -------------- | ------------------ | ------------------ | -------------- | --------------------------------------- |
-| filePath       | String         | 是                 | -                  | 文件路径       | 173b5de7-1454-4489-b921-dd6f2fd6d938.md |
+| **参数**   | **类型** | **是否必填** | **最大长度** | **备注** | **示例值**                                 |
+| -------- | ------ | -------- | -------- | ------ | --------------------------------------- |
+| filePath | String | 是        | -        | 文件路径   | 173b5de7-1454-4489-b921-dd6f2fd6d938.md |
 
 ### 请求示例
 

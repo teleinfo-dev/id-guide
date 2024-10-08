@@ -14,21 +14,21 @@ DoipReturn<String> challenge(@RequestParam(value = "handle") String handle);
 
 ### 方法参数
 
-|  **参数**  |  **类型**  |  **是否必填**  |  **最大长度**  |  **备注**  |  **示例值**  |
-| --- | --- | --- | --- | --- | --- |
-|  handle  |  String  |  是  |  255  |  要查询的标识  |  88.608.8889/App\_wscapp  |
+| **参数** | **类型** | **是否必填** | **最大长度** | **备注** | **示例值**                 |
+| ------ | ------ | -------- | -------- | ------ | ----------------------- |
+| handle | String | 是        | 255      | 要查询的标识 | 88.608.8889/App\_wscapp |
 
 ### 返回参数
 
-|  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
-| --- | --- | --- | --- | --- | --- |
-|  code  |  integer  |  true  |  none  |  none  |  返回码  |
-|  message  |  string  |  true  |  none  |  none  |  返回消息  |
-|  data  |  object  |  true  |  none  |  none  |  返回数据  |
-
+| **名称**  | **类型**  | **必选** | **约束** | **中文名** | **说明** |
+| ------- | ------- | ------ | ------ | ------- | ------ |
+| code    | integer | true   | none   | none    | 返回码    |
+| message | string  | true   | none   | none    | 返回消息   |
+| data    | object  | true   | none   | none    | 返回数据   |
 
 ### 请求示例
-```java  
+
+```java
 @Test
 void challengeTest() {
     new OpenApiClient().challenge(handle, url);
@@ -54,6 +54,7 @@ public String challenge(String handle, String url) {
 ```
 
 ### 响应示例
+
 ```json
 {
     "code": 1,
@@ -67,27 +68,29 @@ public String challenge(String handle, String url) {
 该方法用于验证使用nonce值生成的signature，验证成功则颁发token
 
 ### 方法调用
+
 ```java
 DoipReturn<Map<String,Object>> verifyResponse(@RequestBody VerifyResponseDTO verifyResponseDTO);
 ```
 
 ### 方法参数
 
-|  **名称**  |  **位置**  |  **类型**  |  **必选**  | **说明** |     |
-| --- | --- | --- | --- |--------|-----|
-|  handle  |  body  |  string  |  是  | 应用标识身份 |  88.608.8889/App\_wscapp   |
-|  signature  |  body  |  string  |  是  | 私钥进行签名 |     |
+| **名称**    | **位置** | **类型** | **必选** | **说明** |                         |
+| --------- | ------ | ------ | ------ | ------ | ----------------------- |
+| handle    | body   | string | 是      | 应用标识身份 | 88.608.8889/App\_wscapp |
+| signature | body   | string | 是      | 私钥进行签名 |                         |
 
 ### 返回参数
 
-|  **名称**  |  **类型**  |  **必选**  |  **约束**  |  **中文名**  |  **说明**  |
-| --- | --- | --- | --- | --- | --- |
-|  code  |  integer  |  true  |  none  |  none  |  返回码  |
-|  message  |  string  |  true  |  none  |  none  |  返回消息  |
-|  data  |  object  |  true  |  none  |  none  |   |
-|  data.token  |  string  |  true  |  none  |  none  |  返回token  |
+| **名称**     | **类型**  | **必选** | **约束** | **中文名** | **说明**  |
+| ---------- | ------- | ------ | ------ | ------- | ------- |
+| code       | integer | true   | none   | none    | 返回码     |
+| message    | string  | true   | none   | none    | 返回消息    |
+| data       | object  | true   | none   | none    |         |
+| data.token | string  | true   | none   | none    | 返回token |
 
-### 请求示例  
+### 请求示例 &#x20;
+
 ```java
 @Test
 void challengeResponseTest() {
@@ -137,7 +140,9 @@ private String authenticate(String handle, String privateKeyPem) {
     }
 }
 ```
+
 ### 响应示例
+
 ```json
 {
     "code": 1,
