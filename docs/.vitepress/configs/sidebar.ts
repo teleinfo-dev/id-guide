@@ -4,134 +4,216 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/handle-app-sop': [
     {
       text: '引言',
-      items: [{
+      collapsed: true,
+      items: [
+        {
           text: '编写目的',
           link: '/handle-app-sop/1-introduce/purpose',
         },
         {
           text: '整体流程',
           link: '/handle-app-sop/1-introduce/overview',
-        }]
+        },
+      ],
     },
     {
-      text: '企业节点',
+      text: '产品简介',
+      collapsed: true,
       items: [
         {
-          text: '简介',
+          text: '企业节点简介',
           link: '/handle-app-sop/2-idhub/introduce',
+        },
+        {
+          text: '版本功能对比',
+          link: '/handle-app-sop/2-idhub/version',
+        },
+        {
+          text: '兼容说明',
+          link: '/handle-app-sop/2-idhub/compatible',
         },
         // {
         //   text: '企业节点社区版',
         //   link: '/handle-app-sop/2-idhub/community',
         // },
-        {
-          text: '企业节点标准版',
-          link: '/handle-app-sop/2-idhub/standard',
-        },
-        {
-          text: '企业节点商业版',
-          link: '/handle-app-sop/2-idhub/business',
-        },
-        {
-          text: '企业节点OpenAPI',
-          link: '/handle-app-sop/2-idhub/api-list',
-        }]
+        // {
+        // {
+        //   text: '企业节点商业版',
+        //   link: '/handle-app-sop/2-idhub/business',
+        // },
+        // {
+        //   text: '企业节点OpenAPI',
+        //   link: '/handle-app-sop/2-idhub/api-list',
+        // },
+      ],
     },
     {
-      text: ' 企业前缀申请',
-      link: '/handle-app-sop/3-apply-prefix/introduce'
-    },
-    {
-      text: '标识应用开发环境',
+      text: '前置操作',
+      collapsed: true,
       items: [
         {
-          text: '简介',
-          link: '/handle-app-sop/3-develop-env/introduce',
+          text: '企业前缀申请',
+          link: '/handle-app-sop/3-apply-prefix/introduce',
+        },
+      ],
+    },
+    {
+      text: '企业节点标准版开发操作说明',
+      collapsed: true,
+      items: [
+        {
+          text: '概览',
+          link: '/handle-app-sop/4-develop-introduce/standard',
+        },
+        {
+          text: '产品迭代日志',
+          link: '/handle-app-sop/4-develop-introduce/iteration-log',
         },
         {
           text: '企业节点安装',
-          link: '/handle-app-sop/3-develop-env/idhub-install',
-        }]
-    },
-    {
-      text: '快速入门',
-      items: [
-        {
-          text: '创建元数据',
-          link: '/handle-app-sop/4-get-started/create-meta',
+          link: '/handle-app-sop/4-develop-introduce/idhub-install',
         },
         {
-          text: '标识注册解析',
-          link: '/handle-app-sop/4-get-started/handle-resolve',
-        }]
-    },
-    {
-      text: '标识应用开发',
-      items: [
-        {
-          text: '场景描述',
-          link: '/handle-app-sop/5-app-develop/demo-description',
-        },
-        {
-          text: '开发流程',
-          link: '/handle-app-sop/5-app-develop/dev-flow',
+          text: '快速入门',
           items: [
             {
-              text: 'step1: 申请企业前缀',
-              link: '/handle-app-sop/5-app-develop/step1',
+              text: '创建元数据',
+              link: '/handle-app-sop/4-develop-introduce/get-started/create-meta',
             },
             {
-              text: 'step2: 获取应用标识身份',
-              link: '/handle-app-sop/5-app-develop/step2',
+              text: '标识注册解析',
+              link: '/handle-app-sop/4-develop-introduce/get-started/handle-resolve',
             },
-            {
-              text: 'step3: 企业数据接入和管理',
-              link: '/handle-app-sop/5-app-develop/step3',
-              items: [
-                {
-                  text: 'ID-SDK/API接口使用方法',
-                  link: '/handle-app-sop/5-app-develop/step3-sdk',
-                },
-                {
-                  text: 'IDLink使用方法',
-                  link: '/handle-app-sop/5-app-develop/step3-idlink',
-                }
-              ]
-            },
-            {
-              text: 'step4: 标识应用开发',
-              link: '/handle-app-sop/5-app-develop/step4',
-            },
-          ]
+          ],
         },
         {
-          text: '兼容说明',
-          link: '/handle-app-sop/5-app-develop/compatible',
-        }
-      ]
+          text: '标识应用开发',
+          items: [
+            {
+              text: '场景描述',
+              link: '/handle-app-sop/4-develop-introduce/app-develop/demo-description',
+            },
+            {
+              text: '开发流程',
+              link: '/handle-app-sop/4-develop-introduce/app-develop/dev-flow',
+              items: [
+                {
+                  text: 'step1: 申请企业前缀',
+                  link: '/handle-app-sop/4-develop-introduce/app-develop/step1',
+                },
+                {
+                  text: 'step2: 获取应用标识身份',
+                  link: '/handle-app-sop/4-develop-introduce/app-develop/step2',
+                },
+                {
+                  text: 'step3: 企业数据接入和管理',
+                  link: '/handle-app-sop/4-develop-introduce/app-develop/step3',
+                  items: [
+                    {
+                      text: 'ID-SDK/API接口使用方法',
+                      link: '/handle-app-sop/4-develop-introduce/app-develop/step3-sdk',
+                    },
+                  ],
+                },
+                {
+                  text: 'step4: 标识应用开发',
+                  link: '/handle-app-sop/4-develop-introduce/app-develop/step4',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          text: 'ID-SDK_API使用说明',
+          items: [
+            {
+              text: '基础用法',
+              link: '/handle-app-sop/4-develop-introduce/idsdk-api/basic',
+            },
+            {
+              text: '高级用法',
+              link: '/handle-app-sop/4-develop-introduce/idsdk-api/advance',
+            },
+          ],
+        },
+        {
+          text: '标准版部署手册',
+          link: '/handle-app-sop/4-develop-introduce/deployment-introduce',
+        },
+      ],
     },
     {
-      text: 'ID-SDK/API接口',
-      items: [{
-          text: '基础用法',
-          link: '/handle-app-sop/6-idsdk-api/basic',
-        }, {
-          text: '高级用法',
-          link: '/handle-app-sop/6-idsdk-api/advance',
-        }]
+      text: '企业节点商业版开发操作说明',
+      collapsed: true,
+      items: [
+        {
+          text: '产品介绍',
+          link: '/handle-app-sop/5-business-introduce/product-presentation',
+        },
+        {
+          text: '产品迭代日志',
+          link: '/handle-app-sop/5-business-introduce/iteration-log',
+        },
+        {
+          text: '企业节点安装',
+          link: '/handle-app-sop/5-business-introduce/idhub-install',
+        },
+        {
+          text: '标识应用开发',
+          items: [
+            {
+              text: '场景描述',
+              link: '/handle-app-sop/5-business-introduce/app-develop/demo-description',
+            },
+            {
+              text: '开发流程',
+              link: '/handle-app-sop/5-business-introduce/app-develop/dev-flow',
+              items: [
+                {
+                  text: 'step1: 申请企业前缀',
+                  link: '/handle-app-sop/5-business-introduce/app-develop/step1',
+                },
+                {
+                  text: 'step2: 获取应用标识身份',
+                  link: '/handle-app-sop/5-business-introduce/app-develop/step2',
+                },
+                {
+                  text: 'step3: 企业数据接入和管理',
+                  link: '/handle-app-sop/5-business-introduce/app-develop/step3',
+                  items: [
+                    {
+                      text: 'ID-SDK/API接口使用方法',
+                      link: '/handle-app-sop/5-business-introduce/app-develop/step3-sdk',
+                    },
+                    {
+                      text: 'IDLink使用方法',
+                      link: '/handle-app-sop/5-business-introduce/app-develop/step3-idlink',
+                    },
+                  ],
+                },
+                {
+                  text: 'step4: 标识应用开发',
+                  link: '/handle-app-sop/5-business-introduce/app-develop/step4',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
+
     {
       text: '标识应用实践',
       link: '/handle-app-sop/7-app-practice/introduce',
     },
     {
       text: '标识应用交付',
-      link: '/handle-app-sop/8-app-deliver/introduce'
+      link: '/handle-app-sop/8-app-deliver/introduce',
     },
     {
       text: '企业节点快速部署',
-      link: '/handle-app-sop/9-deployment/introduce'
-    }
+      link: '/handle-app-sop/9-deployment/introduce',
+    },
   ],
   '/sdk/v1': [
     {
@@ -183,7 +265,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: '开始',
       items: [
         { text: '简介', link: '/sdk/v2/introduction' },
-        { text: '身份认证', link: '/sdk/v2/user-auth' }
+        { text: '身份认证', link: '/sdk/v2/user-auth' },
       ],
     },
     {
@@ -194,7 +276,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         { text: '标识操作', link: '/sdk/v2/basic/handle' },
         // { text: '文件处理', link: '/sdk/v2/basic/file' }
       ],
-    }
+    },
   ],
   '/idhub': [
     {
@@ -211,34 +293,35 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       items: [
         {
           text: '标准版',
-              link: '/idhub/standard/openapi.md',
-              items: [
-                {
-                  text: '认证接口',
-                  link: '/idhub/standard/challenge.md',
-                },
-                {
-                  text: '元数据',
-                  link: '/idhub/standard/meta.md',
-                },
-                {
-                  text: '数据权限',
-                  link: '/idhub/standard/data-auth.md',
-                },
-                {
-                  text: '标识操作',
-                  link: '/idhub/standard/handle.md',
-                },
-                // {
-                //   text: '文件处理',
-                //   link: '/idhub/standard/file.md',
-                // },
-                {
-                  text: '响应状态码',
-                  link: '/idhub/standard/state-code.md',
-                },
-              ],
-        },   {
+          link: '/idhub/standard/openapi.md',
+          items: [
+            {
+              text: '认证接口',
+              link: '/idhub/standard/challenge.md',
+            },
+            {
+              text: '元数据',
+              link: '/idhub/standard/meta.md',
+            },
+            {
+              text: '数据权限',
+              link: '/idhub/standard/data-auth.md',
+            },
+            {
+              text: '标识操作',
+              link: '/idhub/standard/handle.md',
+            },
+            // {
+            //   text: '文件处理',
+            //   link: '/idhub/standard/file.md',
+            // },
+            {
+              text: '响应状态码',
+              link: '/idhub/standard/state-code.md',
+            },
+          ],
+        },
+        {
           text: '兼容版',
           link: '/idhub/snms/api-introduce.md',
           items: [
@@ -289,11 +372,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   link: '/idhub/snms/attachment.md',
                 },
               ],
-            }
-          ]
-        }
-      ]
+            },
+          ],
+        },
+      ],
     },
   ],
-   
 }
