@@ -12,11 +12,11 @@ hero:
   actions:
     - text: 标识应用开发指南
       link: /handle-app-sop/1-introduce/purpose
-    - text: 标识解析SDK
-      link: /sdk/v1/introduction
-    - text: 企业节点IDHub
-      link: /idhub/standard/introduce.md
-      theme: alt
+    - text: 开发工具指南
+      link: /dev-tools/standard/api/standard/introduce
+    # - text: 企业节点IDHub
+    #   link: /idhub/standard/introduce.md
+    #   theme: alt
 
 features:
   - icon: <img src="/docs/sop.png" />
@@ -26,15 +26,15 @@ features:
     link: /handle-app-sop/1-introduce/purpose
     linkText: 快速开始
   - icon: <img src="/docs/sdk.png" />
-    title: 工业互联网标识解析SDK
+    title: 开发工具指南
     details: 基于 Java 语言开发的工业互联网标识 解析体系客户端软件开发工具包，应用通过集成 ID-SDK，快速使用元数据模板、标识解析、标识注册、数据权限等功能服务。
-    link: /sdk/v1/introduction
+    link: /dev-tools/standard/api/standard/introduce
     linkText: 快速开始
-  - icon: <img src="/docs/idhub.png" />
-    title: IDHub标准版API
-    details: 开放IDHub标准版API接口，以便企业节点更轻松地集成应用，从而提升整体操作效率。
-    link: /idhub/standard/introduce.md
-    linkText: 快速开始
+  # - icon: <img src="/docs/idhub.png" />
+  #   title: IDHub标准版API
+  #   details: 开放IDHub标准版API接口，以便企业节点更轻松地集成应用，从而提升整体操作效率。
+  #   link: /idhub/standard/introduce.md
+  #   linkText: 快速开始
 ---
 
 <style>
