@@ -47,7 +47,7 @@
 </tr>
 <tr>
     <td>⽹络环境准备_规划IP</td>
-    <td>企业节点标准版服务</td>
+    <td>企业节点商业版服务</td>
     <td>
         <ul>
             <li>docker</li>

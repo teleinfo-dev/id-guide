@@ -4,7 +4,7 @@
 
 标识数据管理指对接入到企业节点的数据进行管理，包括标识数据关联、数据权限控制、标识数据查询、数据目录开放等。
 
-企业数据接入企业节点，生成标准化数据的方式可通过 [ID-SDK](../../sdk/v2/introduction.md) / [IDHub](../../idhub/standard/introduce.md)接口连接数据。
+企业数据接入企业节点，生成标准化数据的方式可通过 [ID-SDK](../../../sdk/v2/introduction.md) / [IDHub](../../../idhub/standard/introduce.md)接口连接数据。
 
 <p style="font-size: 12px; color: rgb(22,93,255);">说明：使用 ID-SDK 或 IDHub API 接口接入数据，应用开发者需基于接口规范进行定制化开发，涉及企业信息系统改造</p>
 

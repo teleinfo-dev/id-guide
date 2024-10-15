@@ -8,7 +8,7 @@ IDLink是实现数据快速接入标识解析体系的数据连接中间件，�
 
 ### 前置条件
 
-企业节点A、企业节点B已完成[安装](../3-develop-env/idhub-install.md)
+企业节点A、企业节点B已完成[安装](../idhub-install.md)
 
 ### 操作步骤
 1. 登录企业节点商业版系统，进入【标识数据连接中间件接入】菜单
@@ -25,7 +25,7 @@ IDLink是实现数据快速接入标识解析体系的数据连接中间件，�
 ## 元数据模板创建
 
 ### 前置条件
-企业节点A已完成[安装](../3-develop-env/idhub-install.md)，并[申请企业前缀](../3-apply-prefix/introduce.md) `88.608.24060301`
+企业节点A已完成[安装](../idhub-install.md)，并[申请企业前缀](../../3-apply-prefix/introduce.md) `88.608.24060301`
 ### 操作步骤
 1. 企业节点A的操作用户登录企业节点商业版系统，进入【元数据模板】菜单
     <center><img src="./images/idlink/link-3.png" style="margin-top: 20px"/></center>
@@ -46,7 +46,7 @@ IDLink是实现数据快速接入标识解析体系的数据连接中间件，�
 ### 前置条件
 
 1. 产品[元数据模板创建](#元数据模板创建)完成
-2. [导入B企业标识身份组](../6-idsdk-api/advance.md#advance-import-group)
+2. [导入B企业标识身份组](../idsdk-api/advance.md#advance-import-group)
 
 ### 操作步骤
 1. 企业节点A的操作用户登录企业节点商业版系统，进入【元数据模板】菜单
@@ -98,7 +98,7 @@ IDLink是实现数据快速接入标识解析体系的数据连接中间件，�
 
 ### 前置条件
 1. 已完成产品[元数据模板创建](#元数据模板创建)
-2. [导入B企业标识身份组](../6-idsdk-api/advance.md#advance-import-group)
+2. [导入B企业标识身份组](../idsdk-api/advance.md#advance-import-group)
 
 ### 操作步骤
 1. 前往标识注册页面，找到对应元数据模板，对元数据字段进行授权。如此该元数据模板下的所有标识数据，均遵循该数据权限策略

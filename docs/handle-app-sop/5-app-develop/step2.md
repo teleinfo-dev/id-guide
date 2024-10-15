@@ -4,7 +4,7 @@
 
 ## 前置条件
 
-完成[前缀申请](../3-apply-prefix/introduce.md)和[企业节点安装](../3-develop-env/idhub-install.md)。
+完成[前缀申请](../../3-apply-prefix/introduce.md)和[企业节点安装](../idhub-install.md)。
 
 ## 操作步骤
 

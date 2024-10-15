@@ -2,6 +2,8 @@
 
 本章节教会大家，如何开发一款标识追溯大屏应用。
 
+`注：基于标准版、商业版均可实现！`
+
 1. 酒行业追溯大屏
     <center><img src="./images/image-1.png" style="margin-top:10px;"/></center>
 

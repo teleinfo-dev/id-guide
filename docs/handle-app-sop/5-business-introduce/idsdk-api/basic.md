@@ -2,11 +2,11 @@
 
 ## 身份认证
 
-在调用企业节点标准版OpenAPI接口前需要首先完成身份认证，企业节点身份认证使用[挑战应答](https://baike.baidu.com/item/%E6%8C%91%E6%88%98%E5%BA%94%E7%AD%94%E6%96%B9%E5%BC%8F/191313?fr=ge_ala)方式。
+在调用企业节点商业版OpenAPI接口前需要首先完成身份认证，企业节点身份认证使用[挑战应答](https://baike.baidu.com/item/%E6%8C%91%E6%88%98%E5%BA%94%E7%AD%94%E6%96%B9%E5%BC%8F/191313?fr=ge_ala)方式。
 
 ### 前置条件
 
-[获取应用标识身份](../5-app-develop/step2.md)。
+[获取应用标识身份](../app-develop/step2.md)。
 
 ### 操作步骤
 

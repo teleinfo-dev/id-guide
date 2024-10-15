@@ -1,6 +1,6 @@
 # 开发流程
 
-应用开发者只需4步骤，即可完成标识应用开发落地。
+应用开发者只需 4 步骤，即可完成标识应用开发落地。
 
 <center><img src="./images/dev-flow.jpg" style="margin-top: 20px"/></center>
 
@@ -10,6 +10,6 @@
 
 `step3`：将企业侧的数据接入企业节点，生成标准化的标识数据，企业节点对标识数据进行管理，完成数据贯通
 
-`step4`：企业节点提供标识数据服务，上层应用基于[ID-SDK](../../sdk/v2/introduction.md)/[API](../../idhub/standard/introduce.md)获取所需的数据，进行数据、计算、展示、操作、分析等，完成标识应用开发
+`step4`：企业节点提供标识数据服务，上层应用基于[ID-SDK](../../../sdk/v2/introduction.md)/[API](../../../idhub/standard/introduce.md)获取所需的数据，进行数据、计算、展示、操作、分析等，完成标识应用开发
 
 **后面将以生产企业、仓储企业为例，详细介绍上面的开发流程。**

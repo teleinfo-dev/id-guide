@@ -199,6 +199,23 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             },
           ],
         },
+        {
+          text: 'ID-SDK_API使用说明',
+          items: [
+            {
+              text: '基础用法',
+              link: '/handle-app-sop/5-business-introduce/idsdk-api/basic',
+            },
+            {
+              text: '高级用法',
+              link: '/handle-app-sop/5-business-introduce/idsdk-api/advance',
+            },
+          ],
+        },
+        {
+          text: '商业版部署手册',
+          link: '/handle-app-sop/5-business-introduce/deployment-introduce',
+        },
       ],
     },
 
@@ -210,10 +227,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: '标识应用交付',
       link: '/handle-app-sop/8-app-deliver/introduce',
     },
-    {
-      text: '企业节点快速部署',
-      link: '/handle-app-sop/9-deployment/introduce',
-    },
+    // {
+    //   text: '企业节点快速部署',
+    //   link: '/handle-app-sop/9-deployment/introduce',
+    // },
   ],
   '/sdk/v1': [
     {
