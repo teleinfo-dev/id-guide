@@ -6,7 +6,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     link: '/handle-app-sop/1-introduce/purpose',
   },
   {
-    text: '开发工具指南',
+    text: '开发文档',
     link: '/dev-tools/standard/api/standard/introduce',
   },
   // {
