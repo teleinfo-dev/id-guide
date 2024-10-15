@@ -54,6 +54,49 @@ POST http://127.0.0.1:3000/api/v1/open/meta/grant/info
 
 仓储系统可查看元数据模板授权通知信息，并完成[元数据模板关联](#元数据模板关联)操作。
 
+## 元数据模板授权通知
+
+### 前置条件
+
+应用开发者已将生产系统在企业节点A中创建的产品[元数据模板授权](#元数据模板授权)给仓储系统的标识身份。
+
+### 操作步骤
+
+请求示例
+
+```
+GET http://127.0.0.1:3000/api/v1/open/message/appMessage
+
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+```
+
+返回示例
+
+```json
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "pageSize": 20,
+    "pageNumber": 1,
+    "totalCount": 1,
+    "totalPage": 1,
+    "content": [
+      {
+        "id": 1,
+        "messageTitleType": 1,
+        "messageType": 1,
+        "messageDetail": "XXXX公司已向您授权元数据：88.608.24161301/META_PRODUCT的查看权限。",
+        "createdTime": "2024-06-22 17:01:42"
+      }
+    ]
+  }
+}
+```
+
+### 后续步骤
+
+仓储系统创建入库单元数据模板并关联产品元数据模板。
 
 ## 元数据模板关联
 
@@ -324,7 +367,7 @@ GET http://127.0.0.1:3000/api/v1/doip?targetId=88.608.24061301/META_8fc3752a80CA
 
 1. 应用开发者已基于[标识关联服务](#标识关联)，实现上下游数据贯通。但因被关联的产品标识，其数据权限为“指定范围”，且未对仓储系统所属企业进行授权，所以仓储系统所属企业解析不出来产品标识的数据
 
-2. 若需查询产品标识的数据，则需生产系统所属企业将产品标识授权给仓储系统所属企业。可通过[实例标识单个授权](#实例标识单个授权)完成对单条标识的单独授权。
+2. 若需查询产品标识的数据，则需生产系统所属企业将产品标识授权给仓储系统所属企业。可通过[同类数据授权](#同类数据授权)完成字段级的数据授权。也可通过[实例标识单个授权](#实例标识单个授权)完成对单条标识的单独授权。
 
 
 ## 标识身份列表查询
@@ -358,6 +401,78 @@ GET http://127.0.0.1:3000/api/v1/open/handle-user-group/list
     ]
 }
 ```
+
+## 同类数据授权
+
+应用开发者调用同类数据授权接口，在企业节点A中将生产系统的全部产品数据按需授权给仓储系统。
+
+### 前置条件
+
+已完成产品[元数据模版创建](./basic.md#元数据模版创建)。
+
+### 操作步骤
+
+将产品元数据模板中的“指定范围”的元数据字段，按需授权给仓储系统的标识身份所属身份组。
+
+请求示例
+
+```
+POST http://127.0.0.1:3000/api/v1/open/classes-grant/authorization
+
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+
+-d ' {
+  "metaHandle": "88.608.24061301/META_8fc3752a80",
+  "accessList": [
+    {
+      "item": "code",
+      "authType": 1,
+      "scope": 2,
+      "handleUsers": [
+        "88.608.5288/Group_bjyx0716"
+      ],
+      "removeHandleUsers": [
+       
+      ]
+    },
+    {
+      "item": "product",
+      "authType": 1,
+      "scope": 2,
+      "handleUsers": [
+        "88.608.5288/Group_bjyx0716"
+      ],
+      "removeHandleUsers": [
+       
+      ]
+    },
+    {
+      "item": "raw",
+      "authType": 1,
+      "scope": 2,
+      "handleUsers": [
+        "88.608.5288/Group_bjyx0716"
+      ],
+      "removeHandleUsers": [
+       
+      ]
+    }
+  ]
+}'
+```
+
+返回示例
+
+```json
+{
+    "code": 1,
+    "message": "成功"
+}
+```
+
+### 后续步骤
+
+仓储系统可查看[数据授权通知信息](#标识数据授权通知)，并在企业节点B解析入库单标识时，可解析出产品标识。
 
 
 ## 授权标识解析
@@ -417,6 +532,44 @@ GET http://127.0.0.1:3000/api/v1/doip?targetId=88.608.24061301/META_8fc3752a80CA
 ```
 
 
+## 同类数据授权-公开/非公开
+若需将产品数据进行公开，可以调用数据授权类接口中的公开/非公开接口。
+
+### 前置条件
+已完成产品[元数据模版创建](./basic.md#元数据模版创建)。
+
+### 操作步骤
+在企业节点A中调用数据授权类接口中的公开/非公开接口将code、product、raw三个字段的查看权限公开。
+
+请求示例
+```
+POST http://127.0.0.1:3000/api/v1/classes-grant/item/batch-public
+
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+
+-d '{
+    "items": [
+        "code",
+        "product",
+        "raw"
+    ],
+    "scope": 1,
+    "metaHandle": "88.608.24061301/META_8fc3752a80"
+}'
+```
+
+返回示例
+```json
+{
+    "code": 1,
+    "message": "成功"
+}
+```
+
+### 后续操作
+标识网络中的任意一个企业或系统，均可解析到产品标识中公开的数据。
+
+
 ## 实例标识单个授权
 应用开发者调用实例标识单个授权接口，在企业节点A中将生产系统的单条产品数据按需授权给仓储系统。
 
@@ -456,4 +609,42 @@ POST http://127.0.0.1:3000/api/v1/single-handle/authorization
 ### 后续操作
 仓储系统可查看[数据授权通知信息](#标识数据授权通知)，并在企业节点B[解析入库单标识](#授权标识解析)时，可解析出该条被授权的产品标识。
 
+## 标识数据授权通知
 
+### 前置条件
+已完成产品[标识的数据授权](#标识数据授权通知)。
+
+### 操作步骤
+
+请求示例
+```
+GET http://127.0.0.1:3000/api/v1/open/message/appMessage
+
+-H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OC42MDguODg4OS9BcHBfY2VzaGkiLCJpYXQiOjE3MTU5MjYzMDgsImp0aSI6ImJkYWI4MjkxLWNkYjUtNDA4MS04MzgwLTQzNGQ2NGU5MDQwZCJ9.rnCQYLclQspOR5WOnu4Ssg5gH11zFLNyRMhxlB55by8'
+```
+
+返回示例
+```json
+{
+  "code": 1,
+  "message": "成功",
+  "data": {
+    "pageSize": 20,
+    "pageNumber": 1,
+    "totalCount": 1,
+    "totalPage": 1,
+    "content": [
+      {
+        "id": 1,
+        "messageTitleType": 1
+        "messageType": 1,
+        "messageDetail": "企业A已向您授权元数据88.608.24061301/META_8fc3752a80下创建的标识数据code、product、raw等字段的查看权限",
+        "createdTime": "2024-06-22 17:01:42"
+      }
+    ]
+  }
+}
+```
+
+### 后续操作
+在企业节点B[解析入库单标识](#授权标识解析)，同时可解析出产品标识。
