@@ -12,7 +12,7 @@
 
 2. 查看[部署文档](./deployment-introduce.md)
 
-3. 获取[软件部署包](https://teleinfo.pek3b.qingstor.com/Ent_deploy.zip)
+3. 获取[软件部署包](https://teleinfo.pek3b.qingstor.com/Ent_deploy_2.0.4.zip)
 
 4. 按部署文档快速部署
 
