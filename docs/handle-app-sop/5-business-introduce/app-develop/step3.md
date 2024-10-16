@@ -6,7 +6,7 @@
 
 企业数据接入企业节点，生成标准化数据的方式有两种：
 
-1. 通过 [ID-SDK](../../../sdk/v2/introduction.md) / [IDHub](../../../idhub/standard/introduce.md) API接口连接数据
+1. 通过 [ID-SDK](../../../dev-tools/commercial/sdk/introduction.md)/[IDHub](../../../dev-tools/commercial/api/introduce.md) API接口连接数据
     <p style="font-size: 12px; color: rgb(22,93,255);">说明：使用 ID-SDK 或 IDHub API 接口接入数据，应用开发者需基于接口规范进行定制化开发，涉及企业信息系统改造</p>
 
 2. 通过数据连接中间件[IDLink](./step3-idlink.md)连接数据

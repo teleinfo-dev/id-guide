@@ -29,7 +29,13 @@ export default defineConfig({
   themeConfig: {
     i18nRouting: false,
     search: {
-      provider: 'local'
+      // provider: 'local'
+      provider: 'algolia',
+      options: {
+        appId: 'LT9FZP94E3',
+        apiKey: 'ec03c2f23124c12def26fc9356ee27a7',
+        indexName: 'snms-teleinfo'
+      }
   },
   // },
 

@@ -10,6 +10,6 @@
 
 `step3`：将企业侧的数据接入企业节点，生成标准化的标识数据，企业节点对标识数据进行管理，完成数据贯通
 
-`step4`：企业节点提供标识数据服务，上层应用基于[ID-SDK](../../../sdk/v2/introduction.md)/[API](../../../idhub/standard/introduce.md)获取所需的数据，进行数据、计算、展示、操作、分析等，完成标识应用开发
+`step4`：企业节点提供标识数据服务，上层应用基于[ID-SDK](../../../dev-tools/standard/sdk/introduction.md)/[API](../../../dev-tools/standard/api/introduce.md)获取所需的数据，进行数据、计算、展示、操作、分析等，完成标识应用开发
 
 **后面将以生产企业、仓储企业为例，详细介绍上面的开发流程。**
