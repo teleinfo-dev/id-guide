@@ -2,7 +2,7 @@
 
 ##  挑战接口
 
-该接口用于获取挑战信息，为一随机nounce值。
+该接口用于获取挑战信息，为一随机nounce值
 
 ###  请求参数
 
@@ -54,12 +54,12 @@
 ```
 
 ### 注意事项
-> 1. 该接口只允许应用身份调用，其他身份调用无法获取nounce值
+> 1. 该接口只允许应用身份调用，其他身份调用无法获取nounce值。
 
 
-## 应答，颁发Token
+## 应答颁发Token
 
-该接口用于验证使用nounce值生成的signature，验证成功则颁发token。
+该接口用于验证使用nounce值生成的signature，验证成功则颁发token
 
 ### 请求参数
 
@@ -114,7 +114,7 @@
 ### 企业节点接口认证流程
 企业节点OpenAPI认证使用挑战应答的方式，主体流程如下
 
-![img.png](../images/auth-flow.png)
+![img.png](./images/auth-flow.png)
 
 ### 签名生成
 

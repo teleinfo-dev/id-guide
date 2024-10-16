@@ -238,719 +238,332 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       collapsed: true,
       items: [
         {
-          text: 'API', 
+          text: 'API文档',
           collapsed: true,
           // link: '/dev-tools/standard/api/standard/introduce.md',
           items: [
             {
-              text: '开始',
-              items: [
-                {
-                  text: '简介',
-                  link: '/dev-tools/standard/api/standard/introduce.md',
-                },
-              ],
+              text: '简介',
+              link: '/dev-tools/standard/api/introduce.md',
             },
             {
-              text: 'OpenAPI',
+              text: 'API概览',
+              link: '/dev-tools/standard/api/api-list.md',
+            },
+            {
+              text: 'API示例',
               items: [
                 {
-                  text: '标准版',
-                      link: '/dev-tools/standard/api/standard/openapi.md',
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/standard/api/standard/challenge.md',
-                        },
-                        {
-                          text: '元数据',
-                          link: '/dev-tools/standard/api/standard/meta.md',
-                        },
-                        {
-                          text: '数据权限',
-                          link: '/dev-tools/standard/api/standard/data-auth.md',
-                        },
-                        {
-                          text: '标识操作',
-                          link: '/dev-tools/standard/api/standard/handle.md',
-                        },
-                        // {
-                        //   text: '文件处理',
-                        //   link: '/idhub/standard/file.md',
-                        // },
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/standard/api/standard/state-code.md',
-                        },
-                      ],
-                },   {
-                  text: '兼容版',
-                  link: '/dev-tools/standard/api/snms/api-introduce.md',
-                  items: [
-                    {
-                      text: 'V3',
-                      // link: '/idhub/snms/v3/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/standard/api/snms/v3/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/standard/api/snms/v3/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/standard/api/snms/v3/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: 'V5',
-                      // link: '/idhub/snms/v5/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/standard/api/snms/v5/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/standard/api/snms/v5/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/standard/api/snms/v5/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: '附录',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/standard/api/snms/attachment.md',
-                        },
-                      ],
-                    }
-                  ]
-                }
-              ]
+                  text: '认证接口',
+                  link: '/dev-tools/standard/api/challenge.md',
+                },
+                {
+                  text: '元数据',
+                  link: '/dev-tools/standard/api/meta.md',
+                },
+                {
+                  text: '数据权限',
+                  link: '/dev-tools/standard/api/data-auth.md',
+                },
+                {
+                  text: '标识操作',
+                  link: '/dev-tools/standard/api/handle.md',
+                },
+                // {
+                //   text: '文件处理',
+                //   link: '/idhub/standard/file.md',
+                // },
+                {
+                  text: '响应状态码',
+                  link: '/dev-tools/standard/api/state-code.md',
+                },
+                
+              ],
             },
-          ]
-        }, {
-          text: 'SDK',
+          ],
+        },
+        {
+          text: 'SDK文档',
           collapsed: true,
           items: [
             {
-              text: 'v1.0',
-              collapsed: true,
+              text: '概述',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/standard/sdk/v1/introduction' },
-                    {
-                      text: '快速开始',
-                      link: '/dev-tools/standard/sdk/v1/quick-start',
-                    },
-                    { text: '身份认证', link: '/dev-tools/standard/sdk/v1/user-auth' },
-                    { text: '参数配置', link: '/dev-tools/standard/sdk/v1/config' },
-                  ],
-                },
-                {
-                  text: '服务端设置',
-                  items: [
-                    { text: '前缀服务注册', link: '/dev-tools/standard/sdk/v1/prefix-home' },
-                    {
-                      text: '前缀服务删除',
-                      link: '/dev-tools/standard/sdk/v1/prefix-unhome',
-                    },
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '标识解析', link: '/dev-tools/standard/sdk/v1/id-resolve' },
-                    { text: '标识注册', link: '/dev-tools/standard/sdk/v1/id-register' },
-                    { text: '标识删除', link: '/dev-tools/standard/sdk/v1/id-delete' },
-                    { text: '标识值新增', link: '/dev-tools/standard/sdk/v1/id-value-add' },
-                    { text: '标识值修改', link: '/dev-tools/standard/sdk/v1/id-value-modify' },
-                    { text: '标识值删除', link: '/dev-tools/standard/sdk/v1/id-value-delete' },
-                  ],
-                },
-                {
-                  text: '高级特性',
-                  items: [
-                    // { text: '权限控制', link: '/sdk/hl-permission' },
-                    { text: '可信解析', link: '/dev-tools/standard/sdk/v1/hl-trust' },
-                    // { text: '标识值类型', link: '/sdk/v1/hl-id-value' },
-                    // { text: '连接池', link: '/sdk/hl-connect-pool' },
-                    // { text: '异步通信', link: '/sdk/hl-async-message' }
-                  ],
-                },
-              ]
-            }, {
-              text: 'v2.0',
-              collapsed: true,
+                { text: '简介', link: '/dev-tools/standard/sdk/introduction' },
+                { text: '身份认证', link: '/dev-tools/standard/sdk/user-auth' },
+              ],
+            },
+            {
+              text: 'SDK示例',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/standard/sdk/v2/introduction' },
-                    { text: '身份认证', link: '/dev-tools/standard/sdk/v2/user-auth' }
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '元数据', link: '/dev-tools/standard/sdk/v2/basic/meta' },
-                    { text: '数据权限', link: '/dev-tools/standard/sdk/v2/basic/data-auth' },
-                    { text: '标识操作', link: '/dev-tools/standard/sdk/v2/basic/handle' },
-                    // { text: '文件处理', link: '/sdk/v2/basic/file' }
-                  ],
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                { text: '元数据', link: '/dev-tools/standard/sdk/basic/meta' },
+                { text: '数据权限', link: '/dev-tools/standard/sdk/basic/data-auth' },
+                { text: '标识操作', link: '/dev-tools/standard/sdk/basic/handle' },
+                // { text: '文件处理', link: '/sdk/v2/basic/file' }
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       text: '商业版',
       collapsed: true,
       items: [
         {
-          text: 'API', 
+          text: 'API文档',
           collapsed: true,
           // link: '/dev-tools/standard/api/standard/introduce.md',
           items: [
             {
-              text: '开始',
+              text: '简介',
+              link: '/dev-tools/commercial/api/introduce.md',
+            },
+            {
+              text: 'API概览',
+              link: '/dev-tools/commercial/api/api-list.md',
+            },
+            {
+              text: 'API示例',
               items: [
                 {
-                  text: '简介',
-                  link: '/dev-tools/commercial/api/standard/introduce.md',
+                  text: '认证接口',
+                  link: '/dev-tools/commercial/api/challenge.md',
+                },
+                {
+                  text: '元数据',
+                  link: '/dev-tools/commercial/api/meta.md',
+                },
+                {
+                  text: '数据权限',
+                  link: '/dev-tools/commercial/api/data-auth.md',
+                },
+                {
+                  text: '标识操作',
+                  link: '/dev-tools/commercial/api/handle.md',
+                },
+                {
+                  text: '文件处理',
+                  link: '/dev-tools/commercial/api/file.md',
+                },
+                {
+                  text: '响应状态码',
+                  link: '/dev-tools/commercial/api/state-code.md',
                 },
               ],
             },
-            {
-              text: 'OpenAPI',
-              items: [
-                {
-                  text: '标准版',
-                      link: '/dev-tools/commercial/api/standard/openapi.md',
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/commercial/api/standard/challenge.md',
-                        },
-                        {
-                          text: '元数据',
-                          link: '/dev-tools/commercial/api/standard/meta.md',
-                        },
-                        {
-                          text: '数据权限',
-                          link: '/dev-tools/commercial/api/standard/data-auth.md',
-                        },
-                        {
-                          text: '标识操作',
-                          link: '/dev-tools/commercial/api/standard/handle.md',
-                        },
-                        {
-                          text: '文件处理',
-                          link: '/dev-tools/commercial/api/standard/file.md',
-                        },
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/commercial/api/state-code.md',
-                        },
-                      ],
-                },   {
-                  text: '兼容版',
-                  link: '/dev-tools/commercial/api/snms/api-introduce.md',
-                  items: [
-                    {
-                      text: 'V3',
-                      // link: '/idhub/snms/v3/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/commercial/api/snms/v3/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/commercial/api/snms/v3/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/commercial/api/snms/v3/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: 'V5',
-                      // link: '/idhub/snms/v5/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/commercial/api/snms/v5/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/commercial/api/snms/v5/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/commercial/api/snms/v5/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: '附录',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/commercial/api/snms/attachment.md',
-                        },
-                      ],
-                    }
-                  ]
-                }
-              ]
-            },
-          ]
-        }, {
-          text: 'SDK',
+          ],
+        },
+        {
+          text: 'SDK文档',
           collapsed: true,
           items: [
             {
-              text: 'v1.0',
-              collapsed: true,
+              text: '概述',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/commercial/sdk/v1/introduction' },
-                    {
-                      text: '快速开始',
-                      link: '/dev-tools/commercial/sdk/v1/quick-start',
-                    },
-                    { text: '身份认证', link: '/dev-tools/commercial/sdk/v1/user-auth' },
-                    { text: '参数配置', link: '/dev-tools/commercial/sdk/v1/config' },
-                  ],
-                },
-                {
-                  text: '服务端设置',
-                  items: [
-                    { text: '前缀服务注册', link: '/dev-tools/commercial/sdk/v1/prefix-home' },
-                    {
-                      text: '前缀服务删除',
-                      link: '/dev-tools/commercial/sdk/v1/prefix-unhome',
-                    },
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '标识解析', link: '/dev-tools/commercial/sdk/v1/id-resolve' },
-                    { text: '标识注册', link: '/dev-tools/commercial/sdk/v1/id-register' },
-                    { text: '标识删除', link: '/dev-tools/commercial/sdk/v1/id-delete' },
-                    { text: '标识值新增', link: '/dev-tools/commercial/sdk/v1/id-value-add' },
-                    { text: '标识值修改', link: '/dev-tools/commercial/sdk/v1/id-value-modify' },
-                    { text: '标识值删除', link: '/dev-tools/commercial/sdk/v1/id-value-delete' },
-                  ],
-                },
-                {
-                  text: '高级特性',
-                  items: [
-                    // { text: '权限控制', link: '/sdk/hl-permission' },
-                    { text: '可信解析', link: '/dev-tools/commercial/sdk/v1/hl-trust' },
-                    // { text: '标识值类型', link: '/sdk/v1/hl-id-value' },
-                    // { text: '连接池', link: '/sdk/hl-connect-pool' },
-                    // { text: '异步通信', link: '/sdk/hl-async-message' }
-                  ],
-                },
-              ]
-            }, {
-              text: 'v2.0',
-              collapsed: true,
+                { text: '简介', link: '/dev-tools/commercial/sdk/introduction' },
+                { text: '身份认证', link: '/dev-tools/commercial/sdk/user-auth' },
+              ],
+            },
+            {
+              text: 'SDK示例',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/commercial/sdk/v2/introduction' },
-                    { text: '身份认证', link: '/dev-tools/commercial/sdk/v2/user-auth' }
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '元数据', link: '/dev-tools/commercial/sdk/v2/basic/meta' },
-                    { text: '数据权限', link: '/dev-tools/commercial/sdk/v2/basic/data-auth' },
-                    { text: '标识操作', link: '/dev-tools/commercial/sdk/v2/basic/handle' },
-                    { text: '文件处理', link: '/dev-tools/commercial/sdk/v2/basic/file' }
-                  ],
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                { text: '元数据', link: '/dev-tools/commercial/sdk/basic/meta' },
+                { text: '数据权限', link: '/dev-tools/commercial/sdk/basic/data-auth' },
+                { text: '标识操作', link: '/dev-tools/commercial/sdk/basic/handle' },
+                { text: '文件处理', link: '/dev-tools/commercial/sdk/basic/file' },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       text: 'SaaS版',
       collapsed: true,
       items: [
         {
-          text: 'API', 
+          text: 'API文档',
           collapsed: true,
           // link: '/dev-tools/standard/api/standard/introduce.md',
           items: [
             {
-              text: '开始',
+              text: '简介',
+              link: '/dev-tools/saas/api/introduce.md',
+            },
+            {
+              text: 'API概览',
+              link: '/dev-tools/saas/api/api-list.md',
+            },
+            {
+              text: 'API示例',
               items: [
                 {
-                  text: '简介',
-                  link: '/dev-tools/saas/api/standard/introduce.md',
+                  text: '认证接口',
+                  link: '/dev-tools/saas/api/challenge.md',
+                },
+                {
+                  text: '元数据',
+                  link: '/dev-tools/saas/api/meta.md',
+                },
+                {
+                  text: '数据权限',
+                  link: '/dev-tools/saas/api/data-auth.md',
+                },
+                {
+                  text: '标识操作',
+                  link: '/dev-tools/saas/api/handle.md',
+                },
+                {
+                  text: '文件处理',
+                  link: '/dev-tools/saas/api/file.md',
+                },
+                {
+                  text: '响应状态码',
+                  link: '/dev-tools/saas/api/state-code.md',
                 },
               ],
             },
-            {
-              text: 'OpenAPI',
-              items: [
-                {
-                  text: '标准版',
-                      link: '/dev-tools/saas/api/standard/openapi.md',
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/saas/api/standard/challenge.md',
-                        },
-                        {
-                          text: '元数据',
-                          link: '/dev-tools/saas/api/standard/meta.md',
-                        },
-                        {
-                          text: '数据权限',
-                          link: '/dev-tools/saas/api/standard/data-auth.md',
-                        },
-                        {
-                          text: '标识操作',
-                          link: '/dev-tools/saas/api/standard/handle.md',
-                        },
-                        {
-                          text: '文件处理',
-                          link: '/dev-tools/saas/api/standard/file.md',
-                        },
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/saas/api/state-code.md',
-                        },
-                      ],
-                },   {
-                  text: '兼容版',
-                  link: '/dev-tools/saas/api/snms/api-introduce.md',
-                  items: [
-                    {
-                      text: 'V3',
-                      // link: '/idhub/snms/v3/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/saas/api/snms/v3/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/saas/api/snms/v3/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/saas/api/snms/v3/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: 'V5',
-                      // link: '/idhub/snms/v5/introduce.md',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '认证接口',
-                          link: '/dev-tools/saas/api/snms/v5/identity-auth.md',
-                        },
-                        {
-                          text: '模版接口',
-                          link: '/dev-tools/saas/api/snms/v5/template.md',
-                        },
-                        {
-                          text: '标识接口',
-                          link: '/dev-tools/saas/api/snms/v5/handle-operate.md',
-                        },
-                      ],
-                    },
-                    {
-                      text: '附录',
-                      collapsed: true,
-                      items: [
-                        {
-                          text: '响应状态码',
-                          link: '/dev-tools/saas/api/snms/attachment.md',
-                        },
-                      ],
-                    }
-                  ]
-                }
-              ]
-            },
-          ]
-        }, {
-          text: 'SDK',
+          ],
+        },
+        {
+          text: 'SDK文档',
           collapsed: true,
           items: [
             {
-              text: 'v1.0',
-              collapsed: true,
+              text: '概述',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/saas/sdk/v1/introduction' },
-                    {
-                      text: '快速开始',
-                      link: '/dev-tools/saas/sdk/v1/quick-start',
-                    },
-                    { text: '身份认证', link: '/dev-tools/saas/sdk/v1/user-auth' },
-                    { text: '参数配置', link: '/dev-tools/saas/sdk/v1/config' },
-                  ],
-                },
-                {
-                  text: '服务端设置',
-                  items: [
-                    { text: '前缀服务注册', link: '/dev-tools/saas/sdk/v1/prefix-home' },
-                    {
-                      text: '前缀服务删除',
-                      link: '/dev-tools/saas/sdk/v1/prefix-unhome',
-                    },
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '标识解析', link: '/dev-tools/saas/sdk/v1/id-resolve' },
-                    { text: '标识注册', link: '/dev-tools/saas/sdk/v1/id-register' },
-                    { text: '标识删除', link: '/dev-tools/saas/sdk/v1/id-delete' },
-                    { text: '标识值新增', link: '/dev-tools/saas/sdk/v1/id-value-add' },
-                    { text: '标识值修改', link: '/dev-tools/saas/sdk/v1/id-value-modify' },
-                    { text: '标识值删除', link: '/dev-tools/saas/sdk/v1/id-value-delete' },
-                  ],
-                },
-                {
-                  text: '高级特性',
-                  items: [
-                    // { text: '权限控制', link: '/sdk/hl-permission' },
-                    { text: '可信解析', link: '/dev-tools/saas/sdk/v1/hl-trust' },
-                    // { text: '标识值类型', link: '/sdk/v1/hl-id-value' },
-                    // { text: '连接池', link: '/sdk/hl-connect-pool' },
-                    // { text: '异步通信', link: '/sdk/hl-async-message' }
-                  ],
-                },
-              ]
-            }, {
-              text: 'v2.0',
-              collapsed: true,
+                { text: '简介', link: '/dev-tools/saas/sdk/introduction' },
+                { text: '身份认证', link: '/dev-tools/saas/sdk/user-auth' },
+              ],
+            },
+            {
+              text: 'SDK示例',
               items: [
-                {
-                  text: '开始',
-                  items: [
-                    { text: '简介', link: '/dev-tools/saas/sdk/v2/introduction' },
-                    { text: '身份认证', link: '/dev-tools/saas/sdk/v2/user-auth' }
-                  ],
-                },
-                {
-                  text: '基本功能',
-                  items: [
-                    { text: '元数据', link: '/dev-tools/saas/sdk/v2/basic/meta' },
-                    { text: '数据权限', link: '/dev-tools/saas/sdk/v2/basic/data-auth' },
-                    { text: '标识操作', link: '/dev-tools/saas/sdk/v2/basic/handle' },
-                    { text: '文件处理', link: '/dev-tools/saas/sdk/v2/basic/file' }
-                  ],
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-
-  ],
-  // '/sdk/v1': [
-  //   {
-  //     text: '开始',
-  //     items: [
-  //       { text: '简介', link: '/sdk/v1/introduction' },
-  //       {
-  //         text: '快速开始',
-  //         link: '/sdk/v1/quick-start',
-  //       },
-  //       { text: '身份认证', link: '/sdk/v1/user-auth' },
-  //       { text: '参数配置', link: '/sdk/v1/config' },
-  //     ],
-  //   },
-  //   {
-  //     text: '服务端设置',
-  //     items: [
-  //       { text: '前缀服务注册', link: '/sdk/v1/prefix-home' },
-  //       {
-  //         text: '前缀服务删除',
-  //         link: '/sdk/v1/prefix-unhome',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     text: '基本功能',
-  //     items: [
-  //       { text: '标识解析', link: '/sdk/v1/id-resolve' },
-  //       { text: '标识注册', link: '/sdk/v1/id-register' },
-  //       { text: '标识删除', link: '/sdk/v1/id-delete' },
-  //       { text: '标识值新增', link: '/sdk/v1/id-value-add' },
-  //       { text: '标识值修改', link: '/sdk/v1/id-value-modify' },
-  //       { text: '标识值删除', link: '/sdk/v1/id-value-delete' },
-  //     ],
-  //   },
-  //   {
-  //     text: '高级特性',
-  //     items: [
-  //       // { text: '权限控制', link: '/sdk/hl-permission' },
-  //       { text: '可信解析', link: '/sdk/v1/hl-trust' },
-  //       // { text: '标识值类型', link: '/sdk/v1/hl-id-value' },
-  //       // { text: '连接池', link: '/sdk/hl-connect-pool' },
-  //       // { text: '异步通信', link: '/sdk/hl-async-message' }
-  //     ],
-  //   },
-  // ],
-  // '/sdk/v2': [
-  //   {
-  //     text: '开始',
-  //     items: [
-  //       { text: '简介', link: '/sdk/v2/introduction' },
-  //       { text: '身份认证', link: '/sdk/v2/user-auth' }
-  //     ],
-  //   },
-  //   {
-  //     text: '基本功能',
-  //     items: [
-  //       { text: '元数据', link: '/sdk/v2/basic/meta' },
-  //       { text: '数据权限', link: '/sdk/v2/basic/data-auth' },
-  //       { text: '标识操作', link: '/sdk/v2/basic/handle' },
-  //       // { text: '文件处理', link: '/sdk/v2/basic/file' }
-  //     ],
-  //   }
-  // ],
-  // '/idhub': [
-  //   {
-  //     text: '开始',
-  //     items: [
-  //       {
-  //         text: '简介',
-  //         link: '/idhub/standard/introduce.md',
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     text: 'OpenAPI',
-  //     items: [
-  //       {
-  //         text: '标准版',
-  //             link: '/idhub/standard/openapi.md',
-  //             items: [
-  //               {
-  //                 text: '认证接口',
-  //                 link: '/idhub/standard/challenge.md',
-  //               },
-  //               {
-  //                 text: '元数据',
-  //                 link: '/idhub/standard/meta.md',
-  //               },
-  //               {
-  //                 text: '数据权限',
-  //                 link: '/idhub/standard/data-auth.md',
-  //               },
-  //               {
-  //                 text: '标识操作',
-  //                 link: '/idhub/standard/handle.md',
-  //               },
-  //               // {
-  //               //   text: '文件处理',
-  //               //   link: '/idhub/standard/file.md',
-  //               // },
-  //               {
-  //                 text: '响应状态码',
-  //                 link: '/idhub/standard/state-code.md',
-  //               },
-  //             ],
-  //       },   {
-  //         text: '兼容版',
-  //         link: '/idhub/snms/api-introduce.md',
-  //         items: [
-  //           {
-  //             text: 'V3',
-  //             // link: '/idhub/snms/v3/introduce.md',
-  //             collapsed: true,
-  //             items: [
-  //               {
-  //                 text: '认证接口',
-  //                 link: '/idhub/snms/v3/identity-auth.md',
-  //               },
-  //               {
-  //                 text: '模版接口',
-  //                 link: '/idhub/snms/v3/template.md',
-  //               },
-  //               {
-  //                 text: '标识接口',
-  //                 link: '/idhub/snms/v3/handle-operate.md',
-  //               },
-  //             ],
-  //           },
-  //           {
-  //             text: 'V5',
-  //             // link: '/idhub/snms/v5/introduce.md',
-  //             collapsed: true,
-  //             items: [
-  //               {
-  //                 text: '认证接口',
-  //                 link: '/idhub/snms/v5/identity-auth.md',
-  //               },
-  //               {
-  //                 text: '模版接口',
-  //                 link: '/idhub/snms/v5/template.md',
-  //               },
-  //               {
-  //                 text: '标识接口',
-  //                 link: '/idhub/snms/v5/handle-operate.md',
-  //               },
-  //             ],
-  //           },
-  //           {
-  //             text: '附录',
-  //             collapsed: true,
-  //             items: [
-  //               {
-  //                 text: '响应状态码',
-  //                 link: '/idhub/snms/attachment.md',
-  //               },
-  //             ],
-  //           }
-  //         ]
-  //       }
-  //     ]
-  //   },
-  // ],
-   
+                { text: '元数据', link: '/dev-tools/saas/sdk/basic/meta' },
+                { text: '数据权限', link: '/dev-tools/saas/sdk/basic/data-auth' },
+                { text: '标识操作', link: '/dev-tools/saas/sdk/basic/handle' },
+                { text: '文件处理', link: '/dev-tools/saas/sdk/basic/file' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+        text: '二级节点兼容接口',
+        collapsed: true,
+        items: [
+          {
+            text: '概述',
+            link: '/dev-tools/snms/api-introduce.md'
+          },
+          {
+            text: 'API概览',
+            link: '/dev-tools/snms/api-list.md'
+          },
+          {
+            text: 'API示例',
+            items: [
+              {
+                text: '第三版API',
+                collapsed: true,
+                items:[
+                  {
+                    text: '认证接口',
+                    link: '/dev-tools/snms/v3/identity-auth.md',
+                  },
+                  {
+                    text: '模版接口',
+                    link: '/dev-tools/snms/v3/template.md',
+                  },
+                  {
+                    text: '标识接口',
+                    link: '/dev-tools/snms/v3/handle-operate.md',
+                  },
+                ]
+              },
+              {
+                text: '第五版API',
+                collapsed: true,
+                items:[
+                  {
+                    text: '认证接口',
+                    link: '/dev-tools/snms/v5/identity-auth.md',
+                  },
+                  {
+                    text: '模版接口',
+                    link: '/dev-tools/snms/v5/template.md',
+                  },
+                  {
+                    text: '标识接口',
+                    link: '/dev-tools/snms/v5/handle-operate.md',
+                  },
+                ]
+              }
+              
+            ],
+          },
+          {
+            text: '附录',
+            collapsed: true,
+            items: [
+              {
+                text: '响应状态码',
+                link: '/dev-tools/snms/attachment.md',
+              },
+            ],
+          },
+        ],
+    },
+    {
+      text: '标识解析SDK',
+      collapsed: true,
+      items: [
+        {
+          text: '开始',
+          items: [
+            { text: '简介', link: '/dev-tools/resolve-sdk/introduction' },
+            {
+              text: '快速开始',
+              link: '/dev-tools/resolve-sdk/quick-start',
+            },
+            { text: '身份认证', link: '/dev-tools/resolve-sdk/user-auth' },
+            { text: '参数配置', link: '/dev-tools/resolve-sdk/config' },
+          ],
+        },
+        {
+          text: '服务端设置',
+          items: [
+            { text: '前缀服务注册', link: '/dev-tools/resolve-sdk/prefix-home' },
+            {
+              text: '前缀服务删除',
+              link: '/dev-tools/resolve-sdk/prefix-unhome',
+            },
+          ],
+        },
+        {
+          text: '基本功能',
+          items: [
+            { text: '标识解析', link: '/dev-tools/resolve-sdk/id-resolve' },
+            { text: '标识注册', link: '/dev-tools/resolve-sdk/id-register' },
+            { text: '标识删除', link: '/dev-tools/resolve-sdk/id-delete' },
+            { text: '标识值新增', link: '/dev-tools/resolve-sdk/id-value-add' },
+            { text: '标识值修改', link: '/dev-tools/resolve-sdk/id-value-modify' },
+            { text: '标识值删除', link: '/dev-tools/resolve-sdk/id-value-delete' },
+          ],
+        },
+        {
+          text: '高级特性',
+          items: [
+            // { text: '权限控制', link: '/sdk/hl-permission' },
+            { text: '可信解析', link: '/dev-tools/resolve-sdk/hl-trust' },
+            // { text: '标识值类型', link: '/sdk/v1/hl-id-value' },
+            // { text: '连接池', link: '/sdk/hl-connect-pool' },
+            // { text: '异步通信', link: '/sdk/hl-async-message' }
+          ],
+        },
+      ],
+    },
+  ]
 }

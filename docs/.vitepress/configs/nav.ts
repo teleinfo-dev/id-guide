@@ -7,7 +7,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   },
   {
     text: '开发文档',
-    link: '/dev-tools/standard/api/standard/introduce',
+    link: '/dev-tools/standard/api/introduce',
   },
   // {
   //   text: '标识解析SDK',
