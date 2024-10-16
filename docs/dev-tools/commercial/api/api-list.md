@@ -27,13 +27,3 @@
 | [上传文件](./file.md#上传文件) <div class="api-list-url">`POST`  /api/v1/doip/file-upload </div>  |   用户可进行文件上传操作，该操作用于创建实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素，需进行上传，可进行单个/批量上传   | 
 | [文件下载](./file.md#文件下载) <div class="api-list-url">`POST`  /api/v1/doip/file-acquire </div>  |   该接口用于查询或实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素信息，提供用户进行下载   |
 
-
-
-
-
-<style type="text/css" rel="stylesheet">
-.api-list-url { 
-    color: #646a73; 
-    margin-top:3px;
-    }
-</style>

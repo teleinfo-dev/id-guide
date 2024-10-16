@@ -4,7 +4,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：GET
 - 请求路径：`/identityv2/data/detail`
 - Header:
@@ -84,7 +84,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：POST
 - 请求路径：`/identityv2/data`
 - Header：
@@ -171,7 +171,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：POST
 - 请求路径：`/identityv2/data/batchCreate`
 - Header：
@@ -313,7 +313,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：PUT
 - 请求路径：`/identityv2/data`
 - Header（同注册标识）
@@ -343,7 +343,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：PUT
 - 请求路径：`/identityv2/data/batchUpdate`
 - Header（同批量注册标识）
@@ -373,7 +373,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：DELETE
 - 请求路径：`/identityv2/data`
 - Header：
@@ -431,7 +431,7 @@
 
 ###  请求参数
 
-- 请求服务：业务系统 SNMS 服务器的 HTTP 端口（默认 8000）
+- 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式：DELETE
 - 请求路径：`/identityv2/data/batchDelete`
 - Header：

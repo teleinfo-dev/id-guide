@@ -273,11 +273,20 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 //   text: '文件处理',
                 //   link: '/idhub/standard/file.md',
                 // },
+                // {
+                //   text: '响应状态码',
+                //   link: '/dev-tools/standard/api/state-code.md',
+                // },
+              ],
+            },
+            {
+              text: '附录',
+              collapsed: true,
+              items: [
                 {
                   text: '响应状态码',
                   link: '/dev-tools/standard/api/state-code.md',
                 },
-                
               ],
             },
           ],
@@ -290,12 +299,13 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               text: '概述',
               items: [
                 { text: '简介', link: '/dev-tools/standard/sdk/introduction' },
-                { text: '身份认证', link: '/dev-tools/standard/sdk/user-auth' },
+                { text: '快速开始', link: '/dev-tools/standard/sdk/quick-start' },
               ],
             },
             {
               text: 'SDK示例',
               items: [
+                { text: '身份认证', link: '/dev-tools/standard/sdk/user-auth' },
                 { text: '元数据', link: '/dev-tools/standard/sdk/basic/meta' },
                 { text: '数据权限', link: '/dev-tools/standard/sdk/basic/data-auth' },
                 { text: '标识操作', link: '/dev-tools/standard/sdk/basic/handle' },
@@ -345,7 +355,13 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 {
                   text: '文件处理',
                   link: '/dev-tools/commercial/api/file.md',
-                },
+                }
+              ],
+            },
+            {
+              text: '附录',
+              collapsed: true,
+              items: [
                 {
                   text: '响应状态码',
                   link: '/dev-tools/commercial/api/state-code.md',
@@ -362,12 +378,13 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               text: '概述',
               items: [
                 { text: '简介', link: '/dev-tools/commercial/sdk/introduction' },
-                { text: '身份认证', link: '/dev-tools/commercial/sdk/user-auth' },
+                { text: '快速开始', link: '/dev-tools/standard/sdk/quick-start' },
               ],
             },
             {
               text: 'SDK示例',
               items: [
+                { text: '身份认证', link: '/dev-tools/commercial/sdk/user-auth' },
                 { text: '元数据', link: '/dev-tools/commercial/sdk/basic/meta' },
                 { text: '数据权限', link: '/dev-tools/commercial/sdk/basic/data-auth' },
                 { text: '标识操作', link: '/dev-tools/commercial/sdk/basic/handle' },
@@ -378,80 +395,80 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
       ],
     },
+    // {
+    //   text: 'SaaS版',
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       text: 'API文档',
+    //       collapsed: true,
+    //       // link: '/dev-tools/standard/api/standard/introduce.md',
+    //       items: [
+    //         {
+    //           text: '简介',
+    //           link: '/dev-tools/saas/api/introduce.md',
+    //         },
+    //         {
+    //           text: 'API概览',
+    //           link: '/dev-tools/saas/api/api-list.md',
+    //         },
+    //         {
+    //           text: 'API示例',
+    //           items: [
+    //             {
+    //               text: '认证接口',
+    //               link: '/dev-tools/saas/api/challenge.md',
+    //             },
+    //             {
+    //               text: '元数据',
+    //               link: '/dev-tools/saas/api/meta.md',
+    //             },
+    //             {
+    //               text: '数据权限',
+    //               link: '/dev-tools/saas/api/data-auth.md',
+    //             },
+    //             {
+    //               text: '标识操作',
+    //               link: '/dev-tools/saas/api/handle.md',
+    //             },
+    //             {
+    //               text: '文件处理',
+    //               link: '/dev-tools/saas/api/file.md',
+    //             },
+    //             {
+    //               text: '响应状态码',
+    //               link: '/dev-tools/saas/api/state-code.md',
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       text: 'SDK文档',
+    //       collapsed: true,
+    //       items: [
+    //         {
+    //           text: '概述',
+    //           items: [
+    //             { text: '简介', link: '/dev-tools/saas/sdk/introduction' },
+    //             { text: '身份认证', link: '/dev-tools/saas/sdk/user-auth' },
+    //           ],
+    //         },
+    //         {
+    //           text: 'SDK示例',
+    //           items: [
+    //             { text: '元数据', link: '/dev-tools/saas/sdk/basic/meta' },
+    //             { text: '数据权限', link: '/dev-tools/saas/sdk/basic/data-auth' },
+    //             { text: '标识操作', link: '/dev-tools/saas/sdk/basic/handle' },
+    //             { text: '文件处理', link: '/dev-tools/saas/sdk/basic/file' },
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
-      text: 'SaaS版',
-      collapsed: true,
-      items: [
-        {
-          text: 'API文档',
-          collapsed: true,
-          // link: '/dev-tools/standard/api/standard/introduce.md',
-          items: [
-            {
-              text: '简介',
-              link: '/dev-tools/saas/api/introduce.md',
-            },
-            {
-              text: 'API概览',
-              link: '/dev-tools/saas/api/api-list.md',
-            },
-            {
-              text: 'API示例',
-              items: [
-                {
-                  text: '认证接口',
-                  link: '/dev-tools/saas/api/challenge.md',
-                },
-                {
-                  text: '元数据',
-                  link: '/dev-tools/saas/api/meta.md',
-                },
-                {
-                  text: '数据权限',
-                  link: '/dev-tools/saas/api/data-auth.md',
-                },
-                {
-                  text: '标识操作',
-                  link: '/dev-tools/saas/api/handle.md',
-                },
-                {
-                  text: '文件处理',
-                  link: '/dev-tools/saas/api/file.md',
-                },
-                {
-                  text: '响应状态码',
-                  link: '/dev-tools/saas/api/state-code.md',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          text: 'SDK文档',
-          collapsed: true,
-          items: [
-            {
-              text: '概述',
-              items: [
-                { text: '简介', link: '/dev-tools/saas/sdk/introduction' },
-                { text: '身份认证', link: '/dev-tools/saas/sdk/user-auth' },
-              ],
-            },
-            {
-              text: 'SDK示例',
-              items: [
-                { text: '元数据', link: '/dev-tools/saas/sdk/basic/meta' },
-                { text: '数据权限', link: '/dev-tools/saas/sdk/basic/data-auth' },
-                { text: '标识操作', link: '/dev-tools/saas/sdk/basic/handle' },
-                { text: '文件处理', link: '/dev-tools/saas/sdk/basic/file' },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-        text: '二级节点兼容接口',
+        text: '兼容接口',
         collapsed: true,
         items: [
           {
