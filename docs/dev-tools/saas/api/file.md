@@ -36,7 +36,7 @@
 ### 请求示例
 
 > /api/v1/doip/file-upload?handleName=&metaHandle=88.608.8889/META_filetest&fileField=file
-> ![img.png](../images/img.png)
+> ![img.png](./images/img.png)
 
 ### 响应参数
 

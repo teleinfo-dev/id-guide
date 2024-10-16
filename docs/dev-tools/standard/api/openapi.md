@@ -15,4 +15,4 @@
 3. 调用身份相关接口，获取Token
 4. 将Token作为参数，进行元数据和标识的相关操作
 
-![img.png](../images/call-flow.png)
+![img.png](./images/call-flow.png)
