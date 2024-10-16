@@ -378,7 +378,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               text: '概述',
               items: [
                 { text: '简介', link: '/dev-tools/commercial/sdk/introduction' },
-                { text: '快速开始', link: '/dev-tools/standard/sdk/quick-start' },
+                { text: '快速开始', link: '/dev-tools/commercial/sdk/quick-start' },
               ],
             },
             {
