@@ -12,13 +12,13 @@
 
 
 ## 调用流程
-- 调用身份相关接口，获取token
-- 将token作为参数，进行标识的相关操作
-- 模板数据注册，主要实现中英文替换，定义标识数据模型
-- 标识注册必须使用数据模板，并根据数据模型进行标识数据录入
-- 流程图
 
-<center><img src="./images/img.png" width="320" height="800"/></center>
+- [获取应用标识身份](../../handle-app-sop/4-develop-introduce/app-develop/step2)
+- 准备企业节点服务调用地址 (http\:\//ip:port)
+- 调用[身份认证接口](./v5/identity-auth.md#密文传输)，获取token，推荐使用密文接口
+- 携带token，调用其他[标识接口](./v5/handle-operate.md)
+
+<center><img src="./images/img.png"/></center>
 
 ## 注意事项
 - SNMS兼容接口在操作元数据模版和标识时，需要注意元数据模版是否添加了企业节点元数据新特性；若是，该禁止使用该套接口操作数据。
