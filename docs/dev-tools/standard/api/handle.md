@@ -35,7 +35,7 @@
 | attributes         | body | string | 是   | 标识主体                                                      |
 | attributes.content | body | json   | 是   | 属性值，key-value结构；``k为元数据属性英文名称，value为属性值 |
 
-### 请求示例：
+### 请求示例
 
 > `/api/v1/doip?targetId=88.608.8899/META_zj02&operationId=0.DOIP/Op.Create`
 
@@ -52,7 +52,7 @@
 }
 ```
 
-### 返回数据结构：
+### 返回数据结构
 
 | 名称    | 类型    | 中文名 | 说明 |
 | ------- | ------- | ------ | ---- |
@@ -60,7 +60,7 @@
 | message | string  | none   |      |
 | data    | object  | none   |      |
 
-### 成功示例：
+### 成功示例
 
 ```json
 {
@@ -79,7 +79,7 @@
 }
 ```
 
-### 异常示例：
+### 异常示例
 
 ```json
 {
@@ -95,7 +95,7 @@
 `注意:` 
 > 用户仅可修改自己创建的实例标识
 
-### 请求参数说明：
+### 请求参数
 
 - 请求服务：企业节点业务系统HTTP端口（默认 3000）
 - 请求方式: POST
@@ -122,7 +122,7 @@
 | attributes         | body | string | 是   | 标识主体                                                      |
 | attributes.content | body | json   | 是   | 属性值，key-value结构；``k为元数据属性英文名称，value为属性值 |
 
-### 请求参数示例：
+### 请求参数示例
 
 > `/api/v1/doip?targetId=88.608.8899/META_zj02&operationId=0.DOIP/Op.Update`
 
@@ -139,7 +139,7 @@
 }
 ```
 
-### 返回数据结构：
+### 返回数据结构
 
 | 名称    | 类型    | 中文名 | 说明 |
 | ------- | ------- | ------ | ---- |
@@ -147,7 +147,7 @@
 | message | string  | none   |      |
 | data    | object  | none   |      |
 
-### 成功示例：
+### 成功示例
 
 ```json
 {
@@ -166,7 +166,7 @@
 }
 ```
 
-### 异常示例：
+### 异常示例
 
 ```json
 {
@@ -209,14 +209,14 @@
 
 > `/api/v1/doip?targetId=88.608.6688/META_zj03&operationId=0.DOIP/Op.Delete`
 
-### 返回数据结构：
+### 返回数据结构
 
 | 名称    | 类型    | 中文名 | 说明 |
 | ------- | ------- | ------ | ---- |
 | code    | integer | none   |      |
 | message | string  | none   |      |
 
-### 成功返回示例：
+### 成功返回示例
 
 ```json
 {
@@ -225,7 +225,7 @@
 }
 ```
 
-### 异常返回示例：
+### 异常返回示例
 
 ```json
 {
@@ -371,7 +371,7 @@
 
 :::
 
-### 异常返回示例：
+### 异常返回示例
 
 ```json
 {
