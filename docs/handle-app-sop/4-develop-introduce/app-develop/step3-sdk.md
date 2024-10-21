@@ -10,7 +10,7 @@
 
 ### 接口调用步骤
 
-应用开发者调用企业节点 A 的接口地址，按下述流程，完成产品标识的注册、解析。
+应用开发者调用企业节点 A 和企业节点 B 的接口地址，按下述流程，完成产品标识与入库单标识的关联、解析。
 
 <center><img src="./images/step3-api-call.jpg" style="margin-top:10px; width: 300px; height: 417px;"/></center>
 
@@ -48,7 +48,7 @@
 7. 调用标识注册接口，完成[标识关联](../idsdk-api/advance.md#标识关联)
 8. 调用标识解析接口，完成关联[标识的解析](../idsdk-api/advance.md#关联标识解析)
 
-应用开发者调用企业节点 A 和企业节点 B 的接口地址，按述流程，完成产品标识数据授权及产品标识解析。
+应用开发者调用企业节点 A 和企业节点 B 的接口地址，按下述流程，完成产品标识数据授权及产品标识解析。
 
 <center><img src="./images/step3-data-auth.png" style="margin-top:10px;"/></center>
 

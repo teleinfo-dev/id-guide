@@ -124,7 +124,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           ],
         },
         {
-          text: 'ID-SDK_API使用说明',
+          text: 'ID-SDK/API使用说明',
           items: [
             {
               text: '基础用法',
@@ -200,7 +200,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           ],
         },
         {
-          text: 'ID-SDK_API使用说明',
+          text: 'ID-SDK/API使用说明',
           items: [
             {
               text: '基础用法',
