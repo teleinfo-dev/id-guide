@@ -16,7 +16,7 @@
 | [元数据列表](./meta.md#元数据列表) <div class="api-list-url">`GET`  /api/v1/open/meta/page </div>  |   获取某个数据分类下的元数据模板列表    | 
 | [标识数据列表](./meta.md#标识数据列表) <div class="api-list-url">`GET`  /api/v1/open/handle/page </div>  |   获取某个元数据模板下的标识列表    | 
 | [标识身份列表查询](./data-auth.md#标识身份列表查询) <div class="api-list-url">`GET`  /api/v1/open/handle-user-group/list </div>  |   查询本企业节点中所有应用身份列表及本企业和导入外企业的身份组列表，用于后续进行身份授权    | 
-| [同类数据授权-公开/撤销公开](./data-auth.md#同类数据授权-公开-撤销公开) <div class="api-list-url">`POST`  /api/v1/classes-grant/item/batch-public </div>  |   对基于元数据模板所创建的同类实例数据属性级别的查看权限进行公开与撤销公开的授权操作    | 
+| [同类数据授权-公开/撤销公开](./data-auth.md#同类数据授权-公开-撤销公开) <div class="api-list-url">`POST`  /api/v1/open/classes-grant/item/batch-public </div>  |   对基于元数据模板所创建的同类实例数据属性级别的查看权限进行公开与撤销公开的授权操作    | 
 | [同类数据授权](./data-auth.md#同类数据授权) <div class="api-list-url">`POST`  /api/v1/open/classes-grant/authorization </div>  |   对基于元数据模板所创建的同类实例数据属性级别的查看及编辑权限进行授权操作    | 
 | [实例标识单个授权](./data-auth.md#实例标识单个授权) <div class="api-list-url">`POST`  /api/v1/single-handle/authorization </div>  |   可对实例标识进行单个授权操作，在创建实例时，可选择“同类数据授权”或“单个授权”    | 
 | [授权通知接口](./data-auth.md#授权通知接口) <div class="api-list-url">`GET`  /api/v1/open/message/appMessage </div>  |   用户可查看本应用身份下收到的消息列表   | 
