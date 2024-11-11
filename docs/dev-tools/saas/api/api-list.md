@@ -25,7 +25,7 @@
 | [标识删除](./handle.md#标识删除) <div class="api-list-url">`POST`  /api/v1/doip </div>  |   用户可进行标识删除操作   | 
 | [标识解析](./handle.md#标识解析) <div class="api-list-url">`GET`  /api/v1/doip </div>  |   用户可进行元数据模板标识解析与实例标识解析   | 
 | [上传文件](./file.md#上传文件) <div class="api-list-url">`POST`  /api/v1/doip/file-upload </div>  |   用户可进行文件上传操作，该操作用于创建实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素，需进行上传，可进行单个/批量上传   | 
-| [文件下载](./file.md#文件下载) <div class="api-list-url">`POST`  /api/v1/doip/file-acquire </div>  |   该接口用于查询或实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素信息，提供用户进行下载   |
+| [文件下载](./file.md#文件下载) <div class="api-list-url">`GET`  /api/v1/doip/file-acquire </div>  |   该接口用于查询或实例时，存在“文件型”、“图片型”、“视频型”、“音频型”元素信息，提供用户进行下载   |
 
 
 
