@@ -92,10 +92,12 @@
 | -------------- | -------------- | ------------------ | ------------------ | -------------- | --------------------------------------- |
 | filePath       | String         | 是                 | -                  | 文件路径       | 173b5de7-1454-4489-b921-dd6f2fd6d938.md |
 | handle       | String         | 是                 | -                  | 标识       |  |
+| field       | String         | 是                 | -                  | 下载文件对应的字段英文名称       |  |
+
 
 ### 请求示例
 
-> /api/v1/doip/file-acquire?filePath=173b5de7-1454-4489-b921-dd6f2fd6d938.md&handle=88.608.24071101/sjjtest1028-2
+> /api/v1/doip/file-acquire?filePath=173b5de7-1454-4489-b921-dd6f2fd6d938.md&handle=88.608.24071101/sjjtest1028-2&field=en1
 
 ### 响应参数
 
