@@ -14,7 +14,7 @@
 
 <div style="font-size: 12px; color: rgb(22,93,255);">说明：
 <ul>
-<li>企业节点标准版，配套对接二级节点版本需升级为<strong>1.3.19.3</strong>。</li>
+<li>企业节点标准版，配套对接二级节点版本需升级为<strong>1.3.20.2及以上</strong>。</li>
 <li>企业节点标准版支撑企业免费使用。</li>
 </ul>
 </div>
