@@ -218,7 +218,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
       ],
     },
-
     {
       text: '标识应用实践',
       link: '/handle-app-sop/7-app-practice/introduce',
@@ -226,6 +225,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     {
       text: '标识应用交付',
       link: '/handle-app-sop/8-app-deliver/introduce',
+    },
+    {
+      text: '常见问题',
+      link: '/handle-app-sop/10-question/introduce',
     },
     // {
     //   text: '企业节点快速部署',

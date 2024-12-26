@@ -18,7 +18,7 @@
 
 <div style="font-size: 12px; color: rgb(22,93,255);">说明：
 <ul>
-<li>企业节点商业版，配套对接二级节点版本需升级为<strong>1.3.20.2及以上</strong>。</li>
+<li>企业节点商业版，配套对接二级节点版本需升级为<a href="https://kdocs.cn/l/cbyqlWCXhYG7" target="_blank">1.3.20.6及以上</a>。</li>
 <li>IDInside合作伙伴可免费安装试用企业节点商业版，试用周期为3个月。</li>
 </ul>
 </div>
