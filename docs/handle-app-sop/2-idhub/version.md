@@ -87,12 +87,12 @@
 </tr>
 <tr style="background-color:#fff">
     <td>元数据模版关联</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
     <td>标识数据关联</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
@@ -140,7 +140,7 @@
 </tr>
 <tr style="background-color:#fff">
     <td>多数据源适配</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
@@ -150,17 +150,17 @@
 </tr>
 <tr style="background-color:#fff">
     <td>数据同步</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
     <td>数据映射</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
     <td>编码映射</td>
-    <td>✅</td>
+    <td>❌</td>
     <td>✅</td>
 </tr>
 <tr style="background-color:#fff">
